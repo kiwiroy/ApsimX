@@ -47,7 +47,7 @@ namespace Models
     <Name>PMFSlurpTestBase</Name>
     <Weather>
       <Name>Weather</Name>
-      <FileName>..\WeatherFiles\lincoln.met</FileName>
+      <FileName>%root%\Examples\WeatherFiles\lincoln.met</FileName>
     </Weather>
     <Clock>
       <Name>Clock</Name>
@@ -855,7 +855,7 @@ namespace Models
       <Manager>
         <Name>ReadExternalFile</Name>
         <Script>
-          <CoverFile>C:\apsim_dev\Model\CoverInt\CoverInterpolatedApsimX.csv</CoverFile>
+          <CoverFile>C:\ApsimX\Tests\SoilWater\ShallowSoilTest\CoverInterpolated.csv</CoverFile>
           <Column>0</Column>
           <Ext_coef>0.8</Ext_coef>
           <OverRidePath>PMFSlurp.Leaf.LAIFunction.value</OverRidePath>
