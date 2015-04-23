@@ -5,44 +5,6 @@
     <Name>DataStore</Name>
     <AutoExport>false</AutoExport>
   </DataStore>
-  <Manager>
-    <Name>ResetPMFSlurpProperties</Name>
-    <Script>
-      <OverRidePath>[PMFSlurp].Leaf.LAIFunction.Value</OverRidePath>
-      <OverRideInterger>5</OverRideInterger>
-    </Script>
-    <Code><![CDATA[using System;
-using Models.Core;
-using System.Collections.Generic;
-using System.Text;
-using Models.PMF;
-using Models;
-using System.Xml.Serialization;
-using APSIM.Shared.Utilities;
-
-namespace Models
-{
-	[Serializable] 
-	public class Script : Model
-	{      
-	[Link] Plant Plant;  
-    [Link] Zone zone;
-					
-		[Description("Path for coefficient to be Overwritten")]
-		public string OverRidePath { get; set; }
-		[Description("Value for new coefficient Interger")]
-        public int OverRideInterger { get; set; }
-        
-		[EventSubscribe("AboutToSow")]
-		private void OnAboutToSow(object sender, EventArgs e)
-		{
-			object ResetValue = OverRideInterger;
-			zone.Set(OverRidePath, ResetValue);
-	    }
-	}
-}
-	   ]]></Code>
-  </Manager>
   <Simulation>
     <Name>PMFSlurpTestBase</Name>
     <Weather>
@@ -51,8 +13,8 @@ namespace Models
     </Weather>
     <Clock>
       <Name>Clock</Name>
-      <StartDate>1998-10-14T00:00:00</StartDate>
-      <EndDate>1999-05-01T00:00:00</EndDate>
+      <StartDate>1998-11-15T00:00:00</StartDate>
+      <EndDate>1999-06-02T00:00:00</EndDate>
     </Clock>
     <Summary>
       <Name>Summary</Name>
@@ -746,58 +708,11 @@ namespace Models
           <string>[ExtraVariables].Script.DltNMinTot</string>
           <string>[PMFSlurp].Leaf.Fw</string>
           <string>[PMFSlurp].Leaf.Fn</string>
-          <string>[ReadExternalFile].Script.CoverToday</string>
-          <string>[ReadExternalFile].Script.leaflai</string>
         </VariableNames>
         <EventNames>
           <string>[Clock].DoReport</string>
         </EventNames>
       </Report>
-      <Manager>
-        <Name>ResetPMFSlurpProperties</Name>
-        <Script>
-          <OverRidePath>PMFSlurp.Leaf.LAIFunction.value</OverRidePath>
-          <OverRideInterger>5</OverRideInterger>
-          <ChangeDate>1998-11-14</ChangeDate>
-        </Script>
-        <Code><![CDATA[using System;
-using Models.Core;
-using System.Collections.Generic;
-using System.Text;
-using Models.PMF;
-using Models;
-using System.Xml.Serialization;
-using APSIM.Shared.Utilities;
-
-namespace Models
-{
-	[Serializable] 
-	public class Script : Model
-	{      
-	[Link] Plant Plant;          
-    [Link] Clock Clock;	
-    [Link] Zone zone;
-		
-		[Description("Path for coefficient to be Overwritten")]
-		public string OverRidePath { get; set; }
-		[Description("Value for new coefficient Interger")]
-        public int OverRideInterger { get; set; }
-        [Description("Sowing Date")]
-        public DateTime ChangeDate { get; set; }
-        
-        [EventSubscribe("DoManagement")]
-        private void OnDoManagement(object sender, EventArgs e)
-        {
-            if (Clock.Today.Date == ChangeDate)
-            {
-            object ResetValue = OverRideInterger;
-			zone.Set(OverRidePath, ResetValue);
-			}
-	    }
-	}
-}
-	   ]]></Code>
-      </Manager>
       <Graph>
         <Name>Nitrogen supply and demand1</Name>
         <Axis>
@@ -852,168 +767,75 @@ namespace Models
         <ArbitrationMethod>Old</ArbitrationMethod>
         <NutrientUptakeMethod>2</NutrientUptakeMethod>
       </Arbitrator>
-      <Manager>
-        <Name>ReadExternalFile</Name>
-        <Script>
-          <CoverFile>C:\ApsimX\Tests\SoilWater\ShallowSoilTest\CoverInterpolated.csv</CoverFile>
-          <Column>0</Column>
-          <Ext_coef>0.8</Ext_coef>
-          <OverRidePath>PMFSlurp.Leaf.LAIFunction.value</OverRidePath>
-          <CoverToday>0</CoverToday>
-          <leaflai>0</leaflai>
-        </Script>
-        <Code><![CDATA[using System;
-using Models.Core;
-using System.Collections.Generic;
-using System.Text;
-using Models.PMF;
-using Models;
-using System.Xml.Serialization;
-using APSIM.Shared.Utilities;
-using System.IO;
-	  
-
-namespace Models
-{
-	[Serializable] 
-	public class Script : Model
-	{     
-	
-   [Link] Clock Clock;
-   [Link] Zone zone;
-   
-  [Description("File of covers to load")]
-   public string CoverFile { get; set; }
-   [Description("Column to load, 0 based excluding date column")]
-   public  int Column { get; set; }
-   [Description("Extinction coefficient")]
-   public  double Ext_coef { get; set; }
-   
-   
-   [Description("Path for coefficient to be Overwritten")]
-	public string OverRidePath { get; set; }
-
-   
-   CoverIntcs CoverVals;
-   
-  public double CoverToday { get; private set; }
-  public double leaflai { get; private set; }
-     
-   int Col;
-   string CF;
-   
-   public class CDateValues
-   {
-      public   DateTime DT = new DateTime();
-      public   double[] Values = new double[8];
-      
-   }
-
- 
-   public class CoverIntcs
-   {
-      //string CoverDataFile = CoverFileg();
-     
-      public List<CDateValues> CLS = new List<CDateValues>(); 
-
-      public double GetCover(DateTime dt, int C)
-      {
-         
-         foreach(CDateValues CDV in CLS)
-         {
-            double k = CDV.Values[C];  
-            if (CDV.DT.DayOfYear == dt.DayOfYear)
-               return k;
-         }
-         return 0;
-      }
-      
-      public void LoadFile(string CF)
-      {
-
-
-         StreamReader infile = new StreamReader(CF);
-
-
-         string S = infile.ReadToEnd();
-
-         string[] elements = S.Split('\n');
-          
-
-         //
-         int L = 0;
-         foreach (string line in elements)
-         {
-            L++;
-            if (L < 2) continue; //skip first 1 lines
-
-            string [] StrVals = line.Split(',');
-            CDateValues CL = new CDateValues();
-            try
-            {
-               CL.DT = Convert.ToDateTime(StrVals[0]);
-            }
-            catch (Exception E)
-            {
-               //Probaly extra lines at end lets just 
-               break;
-            }
-
-            for (int l = 1; l < StrVals.Length; l++)
-            {
-               CL.Values[l - 1] = Convert.ToDouble(StrVals[l]);
-            }
-
-
-            CLS.Add(CL);
-
-
-         }
-
-      }
-
-
-   }
-   
-   
-   
-   // The following event handler will be called once at the beginning of the simulation
-   //[EventHandler] public void OnInitialised()
-   [EventSubscribe("StartOfSimulation")]
-     private void OnStartOfSimulation(object sender, EventArgs e)
-
-   {
-      CoverVals = new CoverIntcs();
-      CoverVals.LoadFile(CoverFile);
-   }
-      
-   // The following event handler will be called each day at the beginning of the day
- //  [EventHandler] public void OnPrepare()
-    [EventSubscribe("StartOfDay")]
-     private void OnStartOfDay(object sender, EventArgs e)
-
-   {
-      
-      CoverToday = CoverVals.GetCover(Clock.Today.Date,Column);
-      
-      if (CoverToday == 1)
-         leaflai = Math.Log(0.01)/-Ext_coef;
-      else
-      {
-         if (CoverToday > 0)
-            leaflai = Math.Log(1 - CoverToday) / -Ext_coef;
-         else
-            leaflai = 0;
-      }
-            object ResetValue = leaflai;
-			zone.Set(OverRidePath, ResetValue);  
-   }
-   
- }
-
-}
-       ]]></Code>
-      </Manager>
+      <Graph>
+        <Name>Stress Factors</Name>
+        <Axis>
+          <Type>Left</Type>
+          <Title>Water (mm)</Title>
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Axis>
+          <Type>Bottom</Type>
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Axis>
+          <Type>Right</Type>
+          <Title>Length (mm)</Title>
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Series>
+          <Title>Series 0</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>None</Marker>
+          <Line>Solid</Line>
+          <X>
+            <TableName>Report</TableName>
+            <FieldName>Clock.Today</FieldName>
+          </X>
+          <Y>
+            <TableName>Report</TableName>
+            <FieldName>Slurp.Leaf.Fw</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>Series2</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16744448</ColourArgb>
+          <Marker>None</Marker>
+          <Line>Solid</Line>
+          <X>
+            <TableName>Report</TableName>
+            <FieldName>Clock.Today</FieldName>
+          </X>
+          <Y>
+            <TableName>Report</TableName>
+            <FieldName>Slurp.Leaf.Fn</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <DisabledSeries />
+      </Graph>
       <Area>0</Area>
       <Slope>0</Slope>
     </Zone>
@@ -2347,7 +2169,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.Fw</FieldName>
+          <FieldName>ReadExternalFile.Script.CoverToday</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -2367,7 +2189,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.Fn</FieldName>
+          <FieldName>ReadExternalFile.Script.leaflai</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
