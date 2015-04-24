@@ -64,8 +64,14 @@
               <double>0.08</double>
               <double>0.11</double>
               <double>0.11</double>
+              <double>0.08</double>
+              <double>0.11</double>
+              <double>0.11</double>
             </LL>
             <KL>
+              <double>0.06</double>
+              <double>0.06</double>
+              <double>0.06</double>
               <double>0.06</double>
               <double>0.06</double>
               <double>0.06</double>
@@ -80,44 +86,26 @@
               <double>1</double>
               <double>1</double>
               <double>1</double>
-            </XF>
-          </SoilCrop>
-          <SoilCrop>
-            <Name>PotatoSoil</Name>
-            <LL>
-              <double>0.13</double>
-              <double>0.13</double>
-              <double>0.27</double>
-              <double>0.27</double>
-              <double>0.3</double>
-              <double>0.3</double>
-            </LL>
-            <KL>
-              <double>0.1</double>
-              <double>0.06</double>
-              <double>0.03</double>
-              <double>0.01</double>
-              <double>0</double>
-              <double>0</double>
-            </KL>
-            <XF>
               <double>1</double>
               <double>1</double>
-              <double>0.1</double>
-              <double>0</double>
-              <double>0</double>
-              <double>0</double>
+              <double>1</double>
             </XF>
           </SoilCrop>
           <Thickness>
+            <double>150</double>
+            <double>150</double>
             <double>100</double>
             <double>200</double>
-            <double>300</double>
-            <double>300</double>
-            <double>300</double>
-            <double>300</double>
+            <double>200</double>
+            <double>200</double>
+            <double>200</double>
+            <double>200</double>
+            <double>200</double>
           </Thickness>
           <BD>
+            <double>1.2</double>
+            <double>1.2</double>
+            <double>1.2</double>
             <double>1.2</double>
             <double>1.2</double>
             <double>1.2</double>
@@ -132,11 +120,17 @@
             <double>0.06</double>
             <double>0.04</double>
             <double>0.02</double>
+            <double>0.06</double>
+            <double>0.04</double>
+            <double>0.02</double>
           </AirDry>
           <LL15>
             <double>0.13</double>
             <double>0.13</double>
             <double>0.1</double>
+            <double>0.06</double>
+            <double>0.04</double>
+            <double>0.02</double>
             <double>0.06</double>
             <double>0.04</double>
             <double>0.02</double>
@@ -148,10 +142,16 @@
             <double>0.15</double>
             <double>0.1</double>
             <double>0.06</double>
+            <double>0.15</double>
+            <double>0.1</double>
+            <double>0.06</double>
           </DUL>
           <SAT>
             <double>0.5</double>
             <double>0.5</double>
+            <double>0.44</double>
+            <double>0.46</double>
+            <double>0.44</double>
             <double>0.44</double>
             <double>0.46</double>
             <double>0.44</double>
@@ -178,12 +178,15 @@
           <catchment_area>0</catchment_area>
           <max_pond>0</max_pond>
           <Thickness>
+            <double>150</double>
+            <double>150</double>
             <double>100</double>
             <double>200</double>
-            <double>300</double>
-            <double>300</double>
-            <double>300</double>
-            <double>300</double>
+            <double>200</double>
+            <double>200</double>
+            <double>200</double>
+            <double>200</double>
+            <double>200</double>
           </Thickness>
           <SWCON>
             <double>0.55</double>
@@ -192,8 +195,14 @@
             <double>0.55</double>
             <double>0.55</double>
             <double>0.55</double>
+            <double>0.55</double>
+            <double>0.55</double>
+            <double>0.55</double>
           </SWCON>
           <KLAT>
+            <double>0</double>
+            <double>0</double>
+            <double>0</double>
             <double>0</double>
             <double>0</double>
             <double>0</double>
@@ -374,54 +383,95 @@
       <Fertiliser>
         <Name>Fertiliser</Name>
       </Fertiliser>
-      <Manager>
-        <Name>PMFSlurpSowingRule</Name>
-        <Script>
-          <CultivarName>StaticCrop</CultivarName>
-          <InitialRootDepth>15</InitialRootDepth>
-          <SowingDate>2011-03-14</SowingDate>
-        </Script>
-        <Code><![CDATA[
-        using System;
-        using Models.Core;
-        using Models.PMF;
-        using APSIM.Shared.Utilities;
-        
-        namespace Models
-        {
-           [Serializable] 
-           [System.Xml.Serialization.XmlInclude(typeof(Model))]
-            public class Script : Model
-            {      
-               [Link] Plant PMFSlurp;
-               [Link] Clock Clock;
-
-               [Description("Cultivar")]
-               public string CultivarName { get; set; }
-               [Description("Initial Root Depth")]
-               public double InitialRootDepth { get; set; }
-			   [Description("Sowing Date")]
-               public DateTime SowingDate { get; set; }
-
-               
-               [EventSubscribe("DoManagement")]
-               private void OnDoManagement(object sender, EventArgs e)
-               {
-				if (Clock.Today.Date == SowingDate)
-                    PMFSlurp.Sow(cultivar:CultivarName, population:1, depth:InitialRootDepth, rowSpacing:150);
-                //Potato.Sow(... Contains the following arguements:
-                //Population  double  Optional  Seeds sowing/m2.  Default is zero
-                //Cultivar    string  Required  "NameOfCultivar"
-                //Depth       double  Optional  Depth (mm) seed sown.   Default is 100mm 
-                //MaxCover    double  Optional  Proportion (0-1) of the ground row crop will cover.   Default is 1.0
-                //BudNumber   double  Optional  Number of mainstems per seed sown.  Default is 1.0
-                //RowSpacing  double  Optional  Spaceing (mm) between drill rows when crop is sown.  Default is 150mm
-                //CropClass   string  Optional  Crop class to instantiate when crop is sown.  Default is "Plant"
-			   }
-            }
-        }
-				]]></Code>
-      </Manager>
+      <SurfaceOrganicMatter>
+        <Name>surface organic matter</Name>
+        <PondActive>no</PondActive>
+        <ReportAdditions>no</ReportAdditions>
+        <ReportRemovals>no</ReportRemovals>
+        <ResidueTypes>
+          <Name>ResidueTypes</Name>
+          <LoadFromResource>ResidueTypes</LoadFromResource>
+        </ResidueTypes>
+        <TillageTypes>
+          <Name>TillageTypesList</Name>
+          <TillageType />
+        </TillageTypes>
+        <Pools>
+          <Pool>
+            <PoolName>wheat</PoolName>
+            <ResidueType>wheat</ResidueType>
+            <Mass>2000</Mass>
+            <CNRatio>80</CNRatio>
+            <CPRatio>NaN</CPRatio>
+            <StandingFraction>0</StandingFraction>
+          </Pool>
+        </Pools>
+        <PoolName>wheat</PoolName>
+        <type>wheat</type>
+        <mass>2000</mass>
+        <standing_fraction>0</standing_fraction>
+        <cpr />
+        <cnr>80</cnr>
+        <CriticalResidueWeight>2000</CriticalResidueWeight>
+        <OptimumDecompTemp>20</OptimumDecompTemp>
+        <MaxCumulativeEOS>20</MaxCumulativeEOS>
+        <CNRatioDecompCoeff>0.277</CNRatioDecompCoeff>
+        <CNRatioDecompThreshold>25</CNRatioDecompThreshold>
+        <TotalLeachRain>25</TotalLeachRain>
+        <MinRainToLeach>10</MinRainToLeach>
+        <CriticalMinimumOrganicC>0.004</CriticalMinimumOrganicC>
+        <DefaultCPRatio>0</DefaultCPRatio>
+        <DefaultStandingFraction>0</DefaultStandingFraction>
+        <StandingExtinctCoeff>0.5</StandingExtinctCoeff>
+        <FractionFaecesAdded>0.5</FractionFaecesAdded>
+      </SurfaceOrganicMatter>
+      <Operations>
+        <Name>operations</Name>
+        <Operation>
+          <Date>1998-10-02T00:00:00</Date>
+          <Action>[Irrigation].Apply(40);</Action>
+        </Operation>
+        <Operation>
+          <Date>1998-10-26T00:00:00</Date>
+          <Action>[Irrigation].Apply(70);</Action>
+        </Operation>
+        <Operation>
+          <Date>1998-12-15T00:00:00</Date>
+          <Action>[Irrigation].Apply(70);</Action>
+        </Operation>
+        <Operation>
+          <Date>1998-12-29T00:00:00</Date>
+          <Action>[Irrigation].Apply(10);</Action>
+        </Operation>
+        <Operation>
+          <Date>1998-12-30T00:00:00</Date>
+          <Action>[Irrigation].Apply(55);</Action>
+        </Operation>
+        <Operation>
+          <Date>1999-01-07T00:00:00</Date>
+          <Action>[Irrigation].Apply(50);</Action>
+        </Operation>
+        <Operation>
+          <Date>1999-01-21T00:00:00</Date>
+          <Action>[Irrigation].Apply(40);</Action>
+        </Operation>
+        <Operation>
+          <Date>1999-02-10T00:00:00</Date>
+          <Action>[Irrigation].Apply(28);</Action>
+        </Operation>
+        <Operation>
+          <Date>1999-02-19T00:00:00</Date>
+          <Action>[Irrigation].Apply(15);</Action>
+        </Operation>
+        <Operation>
+          <Date>1999-03-09T00:00:00</Date>
+          <Action>[Irrigation].Apply(25);</Action>
+        </Operation>
+        <Operation>
+          <Date>1998-12-29T00:00:00</Date>
+          <Action>[Fertiliser].Apply(150, Fertiliser.Types.UreaN, 10);</Action>
+        </Operation>
+      </Operations>
       <Manager>
         <Name>ExtraVariables</Name>
         <Script />
@@ -561,282 +611,56 @@ namespace Models
 }
 	   ]]></Code>
       </Manager>
-      <SurfaceOrganicMatter>
-        <Name>surface organic matter</Name>
-        <PondActive>no</PondActive>
-        <ReportAdditions>no</ReportAdditions>
-        <ReportRemovals>no</ReportRemovals>
-        <ResidueTypes>
-          <Name>ResidueTypes</Name>
-          <LoadFromResource>ResidueTypes</LoadFromResource>
-        </ResidueTypes>
-        <TillageTypes>
-          <Name>TillageTypesList</Name>
-          <TillageType />
-        </TillageTypes>
-        <Pools>
-          <Pool>
-            <PoolName>wheat</PoolName>
-            <ResidueType>wheat</ResidueType>
-            <Mass>2000</Mass>
-            <CNRatio>80</CNRatio>
-            <CPRatio>NaN</CPRatio>
-            <StandingFraction>0</StandingFraction>
-          </Pool>
-        </Pools>
-        <PoolName>wheat</PoolName>
-        <type>wheat</type>
-        <mass>2000</mass>
-        <standing_fraction>0</standing_fraction>
-        <cpr />
-        <cnr>80</cnr>
-        <CriticalResidueWeight>2000</CriticalResidueWeight>
-        <OptimumDecompTemp>20</OptimumDecompTemp>
-        <MaxCumulativeEOS>20</MaxCumulativeEOS>
-        <CNRatioDecompCoeff>0.277</CNRatioDecompCoeff>
-        <CNRatioDecompThreshold>25</CNRatioDecompThreshold>
-        <TotalLeachRain>25</TotalLeachRain>
-        <MinRainToLeach>10</MinRainToLeach>
-        <CriticalMinimumOrganicC>0.004</CriticalMinimumOrganicC>
-        <DefaultCPRatio>0</DefaultCPRatio>
-        <DefaultStandingFraction>0</DefaultStandingFraction>
-        <StandingExtinctCoeff>0.5</StandingExtinctCoeff>
-        <FractionFaecesAdded>0.5</FractionFaecesAdded>
-      </SurfaceOrganicMatter>
-      <Operations>
-        <Name>operations</Name>
-        <Operation>
-          <Date>1998-10-02T00:00:00</Date>
-          <Action>[Irrigation].Apply(40);</Action>
-        </Operation>
-        <Operation>
-          <Date>1998-10-26T00:00:00</Date>
-          <Action>[Irrigation].Apply(70);</Action>
-        </Operation>
-        <Operation>
-          <Date>1998-12-15T00:00:00</Date>
-          <Action>[Irrigation].Apply(70);</Action>
-        </Operation>
-        <Operation>
-          <Date>1998-12-29T00:00:00</Date>
-          <Action>[Irrigation].Apply(10);</Action>
-        </Operation>
-        <Operation>
-          <Date>1998-12-30T00:00:00</Date>
-          <Action>[Irrigation].Apply(55);</Action>
-        </Operation>
-        <Operation>
-          <Date>1999-01-07T00:00:00</Date>
-          <Action>[Irrigation].Apply(50);</Action>
-        </Operation>
-        <Operation>
-          <Date>1999-01-21T00:00:00</Date>
-          <Action>[Irrigation].Apply(40);</Action>
-        </Operation>
-        <Operation>
-          <Date>1999-02-10T00:00:00</Date>
-          <Action>[Irrigation].Apply(28);</Action>
-        </Operation>
-        <Operation>
-          <Date>1999-02-19T00:00:00</Date>
-          <Action>[Irrigation].Apply(15);</Action>
-        </Operation>
-        <Operation>
-          <Date>1999-03-09T00:00:00</Date>
-          <Action>[Irrigation].Apply(25);</Action>
-        </Operation>
-        <Operation>
-          <Date>1998-12-29T00:00:00</Date>
-          <Action>[Fertiliser].Apply(150, Fertiliser.Types.UreaN, 10);</Action>
-        </Operation>
-      </Operations>
-      <Report>
-        <Name>Report</Name>
-        <VariableNames>
-          <string>[Clock].Today</string>
-          <string>[ExtraVariables].Script.AccumPlantN</string>
-          <string>[ExtraVariables].Script.AccumMineralisation</string>
-          <string>[ExtraVariables].Script.AccumDenit</string>
-          <string>[ExtraVariables].Script.AccumFert</string>
-          <string>[ExtraVariables].Script.AccumLeach</string>
-          <string>[ExtraVariables].Script.AccumDetach</string>
-          <string>[ExtraVariables].Script.DeltaSoilOMN</string>
-          <string>[ExtraVariables].Script.DeltaSurfaceOMN</string>
-          <string>[ExtraVariables].Script.DeltaSoilMineralN</string>
-          <string>[PMFSlurp].Root.NSupply</string>
-          <string>[Soil].SoilWater.Eo</string>
-          <string>[Soil].SoilWater.Es</string>
-          <string>[ExtraVariables].Script.SWC</string>
-          <string>[ExtraVariables].Script.DUL</string>
-          <string>[Soil].SoilWater.Drainage</string>
-          <string>[Soil].SoilWater.Runoff</string>
-          <string>[ExtraVariables].Script.OutFlowLat</string>
-          <string>[Soil].SoilWater.pond</string>
-          <string>[ExtraVariables].Script.AccumEO</string>
-          <string>[ExtraVariables].Script.AccumEP</string>
-          <string>[ExtraVariables].Script.AccumES</string>
-          <string>[ExtraVariables].Script.AccumDrainage</string>
-          <string>[ExtraVariables].Script.AccumRunoff</string>
-          <string>[ExtraVariables].Script.AccumRainfall</string>
-          <string>[ExtraVariables].Script.AccumIrrigation</string>
-          <string>[ExtraVariables].Script.AccumOutflowLat</string>
-          <string>[ExtraVariables].Script.SoilWaterDeficit</string>
-          <string>[PMFSlurp].Leaf.Live.Wt</string>
-          <string>[PMFSlurp].Root.Live.Wt</string>
-          <string>[PMFSlurp].Leaf.Live.N</string>
-          <string>[PMFSlurp].Root.Live.N</string>
-          <string>[PMFSlurp].Leaf.Live.NConc</string>
-          <string>[PMFSlurp].Root.Live.NConc</string>
-          <string>[PMFSlurp].Root.WaterSupply</string>
-          <string>[PMFSlurp].Root.WaterUptake</string>
-          <string>[PMFSlurp].Leaf.Transpiration</string>
-          <string>[PMFSlurp].Leaf.WaterDemand</string>
-          <string>[PMFSlurp].Root.Depth</string>
-          <string>[PMFSlurp].Leaf.CoverTotal</string>
-          <string>[PMFSlurp].Leaf.CoverDead</string>
-          <string>[PMFSlurp].Leaf.LAI</string>
-          <string>[PMFSlurp].Leaf.Height</string>
-          <string>[PMFSlurp].Leaf.PotentialBiomass.Value</string>
-          <string>[Soil].SoilWater.SWmm</string>
-          <string>[Soil].NO3N</string>
-          <string>[ExtraVariables].Script.SoilNitrogenContent</string>
-          <string>[PMFSlurp].Arbitrator.NDemand</string>
-          <string>[MicroClimate].net_radn</string>
-          <string>[MicroClimate].peta</string>
-          <string>[MicroClimate].petr</string>
-          <string>[ExtraVariables].Script.FomN</string>
-          <string>[ExtraVariables].Script.HumN</string>
-          <string>[ExtraVariables].Script.BiomN</string>
-          <string>[ExtraVariables].Script.DltNMinRes</string>
-          <string>[ExtraVariables].Script.DltNMinTot</string>
-          <string>[PMFSlurp].Leaf.Fw</string>
-          <string>[PMFSlurp].Leaf.Fn</string>
-          <string>[ReadExternalFile].Script.leaflai</string>
-        </VariableNames>
-        <EventNames>
-          <string>[Clock].DoReport</string>
-        </EventNames>
-      </Report>
-      <Graph>
-        <Name>Nitrogen supply and demand1</Name>
-        <Axis>
-          <Type>Left</Type>
-          <Title>Water (mm)</Title>
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Axis>
-          <Type>Bottom</Type>
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Axis>
-          <Type>Right</Type>
-          <Title>Length (mm)</Title>
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Series>
-          <Title>Series 0</Title>
-          <Type>Line</Type>
-          <XAxis>Bottom</XAxis>
-          <YAxis>Left</YAxis>
-          <ColourArgb>-16776961</ColourArgb>
-          <Marker>None</Marker>
-          <Line>Solid</Line>
-          <X>
-            <TableName>Report</TableName>
-            <FieldName>Clock.Today</FieldName>
-          </X>
-          <Y>
-            <TableName>Report</TableName>
-            <FieldName>PMFSlurp.Leaf.Live.NConc</FieldName>
-          </Y>
-          <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>false</ShowInLegend>
-          <Cumulative>false</Cumulative>
-        </Series>
-        <LegendPosition>TopLeft</LegendPosition>
-        <ShowRegressionLine>false</ShowRegressionLine>
-        <DisabledSeries />
-      </Graph>
-      <Graph>
-        <Name>Stress Factors</Name>
-        <Axis>
-          <Type>Left</Type>
-          <Title>Water (mm)</Title>
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Axis>
-          <Type>Bottom</Type>
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Axis>
-          <Type>Right</Type>
-          <Title>Length (mm)</Title>
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Series>
-          <Title>Series 0</Title>
-          <Type>Scatter</Type>
-          <XAxis>Bottom</XAxis>
-          <YAxis>Left</YAxis>
-          <ColourArgb>-16776961</ColourArgb>
-          <Marker>None</Marker>
-          <Line>Solid</Line>
-          <X>
-            <TableName>Report</TableName>
-            <FieldName>Clock.Today</FieldName>
-          </X>
-          <Y>
-            <TableName>Report</TableName>
-            <FieldName>PMFSlurp.Leaf.Fw</FieldName>
-          </Y>
-          <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>false</ShowInLegend>
-          <Cumulative>false</Cumulative>
-        </Series>
-        <Series>
-          <Title>Series2</Title>
-          <Type>Scatter</Type>
-          <XAxis>Bottom</XAxis>
-          <YAxis>Left</YAxis>
-          <ColourArgb>-16744448</ColourArgb>
-          <Marker>None</Marker>
-          <Line>Solid</Line>
-          <X>
-            <TableName>Report</TableName>
-            <FieldName>Clock.Today</FieldName>
-          </X>
-          <Y>
-            <TableName>Report</TableName>
-            <FieldName>PMFSlurp.Leaf.Fn</FieldName>
-          </Y>
-          <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>false</ShowInLegend>
-          <Cumulative>false</Cumulative>
-        </Series>
-        <LegendPosition>TopLeft</LegendPosition>
-        <ShowRegressionLine>false</ShowRegressionLine>
-        <DisabledSeries />
-      </Graph>
       <Manager>
-        <Name>ReadExternalFile</Name>
+        <Name>PMFSlurpSowingRule</Name>
+        <Script>
+          <CultivarName>StaticCrop</CultivarName>
+          <InitialRootDepth>1500</InitialRootDepth>
+          <SowingDate>2011-03-14</SowingDate>
+        </Script>
+        <Code><![CDATA[
+        using System;
+        using Models.Core;
+        using Models.PMF;
+        using APSIM.Shared.Utilities;
+        
+        namespace Models
+        {
+           [Serializable] 
+           [System.Xml.Serialization.XmlInclude(typeof(Model))]
+            public class Script : Model
+            {      
+               [Link] Plant PMFSlurp;
+               [Link] Clock Clock;
+
+               [Description("Cultivar")]
+               public string CultivarName { get; set; }
+               [Description("Initial Root Depth")]
+               public double InitialRootDepth { get; set; }
+			   [Description("Sowing Date")]
+               public DateTime SowingDate { get; set; }
+
+               
+               [EventSubscribe("DoManagement")]
+               private void OnDoManagement(object sender, EventArgs e)
+               {
+				if (Clock.Today.Date == SowingDate)
+                    PMFSlurp.Sow(cultivar:CultivarName, population:1, depth:InitialRootDepth, rowSpacing:150);
+                //Potato.Sow(... Contains the following arguements:
+                //Population  double  Optional  Seeds sowing/m2.  Default is zero
+                //Cultivar    string  Required  "NameOfCultivar"
+                //Depth       double  Optional  Depth (mm) seed sown.   Default is 100mm 
+                //MaxCover    double  Optional  Proportion (0-1) of the ground row crop will cover.   Default is 1.0
+                //BudNumber   double  Optional  Number of mainstems per seed sown.  Default is 1.0
+                //RowSpacing  double  Optional  Spaceing (mm) between drill rows when crop is sown.  Default is 150mm
+                //CropClass   string  Optional  Crop class to instantiate when crop is sown.  Default is "Plant"
+			   }
+            }
+        }
+				]]></Code>
+      </Manager>
+      <Manager>
+        <Name>SetLAIofCrop</Name>
         <Script>
           <CoverFile>C:\ApsimX\Tests\ReadExternalFiles\CoverInterpolated.csv</CoverFile>
           <Column>0</Column>
@@ -993,6 +817,73 @@ public string OverRidePath { get; set; }
 }
        ]]></Code>
       </Manager>
+      <Report>
+        <Name>Report</Name>
+        <VariableNames>
+          <string>[Clock].Today</string>
+          <string>[ExtraVariables].Script.AccumPlantN</string>
+          <string>[ExtraVariables].Script.AccumMineralisation</string>
+          <string>[ExtraVariables].Script.AccumDenit</string>
+          <string>[ExtraVariables].Script.AccumFert</string>
+          <string>[ExtraVariables].Script.AccumLeach</string>
+          <string>[ExtraVariables].Script.AccumDetach</string>
+          <string>[ExtraVariables].Script.DeltaSoilOMN</string>
+          <string>[ExtraVariables].Script.DeltaSurfaceOMN</string>
+          <string>[ExtraVariables].Script.DeltaSoilMineralN</string>
+          <string>[PMFSlurp].Root.NSupply</string>
+          <string>[Soil].SoilWater.Eo</string>
+          <string>[Soil].SoilWater.Es</string>
+          <string>[ExtraVariables].Script.SWC</string>
+          <string>[ExtraVariables].Script.DUL</string>
+          <string>[Soil].SoilWater.Drainage</string>
+          <string>[Soil].SoilWater.Runoff</string>
+          <string>[ExtraVariables].Script.OutFlowLat</string>
+          <string>[Soil].SoilWater.pond</string>
+          <string>[ExtraVariables].Script.AccumEO</string>
+          <string>[ExtraVariables].Script.AccumEP</string>
+          <string>[ExtraVariables].Script.AccumES</string>
+          <string>[ExtraVariables].Script.AccumDrainage</string>
+          <string>[ExtraVariables].Script.AccumRunoff</string>
+          <string>[ExtraVariables].Script.AccumRainfall</string>
+          <string>[ExtraVariables].Script.AccumIrrigation</string>
+          <string>[ExtraVariables].Script.AccumOutflowLat</string>
+          <string>[ExtraVariables].Script.SoilWaterDeficit</string>
+          <string>[PMFSlurp].Leaf.Live.Wt</string>
+          <string>[PMFSlurp].Root.Live.Wt</string>
+          <string>[PMFSlurp].Leaf.Live.N</string>
+          <string>[PMFSlurp].Root.Live.N</string>
+          <string>[PMFSlurp].Leaf.Live.NConc</string>
+          <string>[PMFSlurp].Root.Live.NConc</string>
+          <string>[PMFSlurp].Root.WaterSupply</string>
+          <string>[PMFSlurp].Root.WaterUptake</string>
+          <string>[PMFSlurp].Leaf.Transpiration</string>
+          <string>[PMFSlurp].Leaf.WaterDemand</string>
+          <string>[PMFSlurp].Root.Depth</string>
+          <string>[PMFSlurp].Leaf.CoverTotal</string>
+          <string>[PMFSlurp].Leaf.CoverDead</string>
+          <string>[PMFSlurp].Leaf.LAI</string>
+          <string>[PMFSlurp].Leaf.Height</string>
+          <string>[PMFSlurp].Leaf.PotentialBiomass.Value</string>
+          <string>[Soil].SoilWater.SWmm</string>
+          <string>[Soil].NO3N</string>
+          <string>[ExtraVariables].Script.SoilNitrogenContent</string>
+          <string>[PMFSlurp].Arbitrator.NDemand</string>
+          <string>[MicroClimate].net_radn</string>
+          <string>[MicroClimate].peta</string>
+          <string>[MicroClimate].petr</string>
+          <string>[ExtraVariables].Script.FomN</string>
+          <string>[ExtraVariables].Script.HumN</string>
+          <string>[ExtraVariables].Script.BiomN</string>
+          <string>[ExtraVariables].Script.DltNMinRes</string>
+          <string>[ExtraVariables].Script.DltNMinTot</string>
+          <string>[PMFSlurp].Leaf.Fw</string>
+          <string>[PMFSlurp].Leaf.Fn</string>
+          <string>[ReadExternalFile].Script.leaflai</string>
+        </VariableNames>
+        <EventNames>
+          <string>[Clock].DoReport</string>
+        </EventNames>
+      </Report>
       <Area>0</Area>
       <Slope>0</Slope>
     </Zone>
@@ -1031,7 +922,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumPlantN</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1051,7 +942,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumMineralisation</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1071,7 +962,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumDenit</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1091,7 +982,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumFert</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1111,7 +1002,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumLeach</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1131,7 +1022,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.DeltaSoilOMN</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1151,7 +1042,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.DeltaSurfaceOMN</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1171,7 +1062,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.DeltaSoilMineralN</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
@@ -1212,7 +1103,7 @@ public string OverRidePath { get; set; }
           <FieldName>SoilWater.pond</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1232,7 +1123,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumEO</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1252,7 +1143,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumEP</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1272,7 +1163,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumES</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1292,7 +1183,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumDrainage</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1312,7 +1203,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumRunoff</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1332,7 +1223,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumRainfall</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1352,7 +1243,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumIrrigation</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1372,7 +1263,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.AccumOutflowLat</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1392,7 +1283,7 @@ public string OverRidePath { get; set; }
           <FieldName>ExtraVariables.Script.SoilWaterDeficit</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
@@ -1433,7 +1324,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Leaf.Live.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1453,7 +1344,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Stem.Live.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1473,7 +1364,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Tuber.Live.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1493,7 +1384,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Root.Live.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1513,7 +1404,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Leaf.Dead.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1533,7 +1424,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Stem.Dead.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1553,7 +1444,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Tuber.Dead.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1573,7 +1464,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Root.Dead.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1593,7 +1484,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Summariser.AboveGround.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1613,7 +1504,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Summariser.BelowGround.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1633,7 +1524,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Summariser.Total.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
@@ -1674,7 +1565,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Leaf.Live.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1694,7 +1585,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Stem.Live.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1714,7 +1605,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Tuber.Live.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1734,7 +1625,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Root.Live.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1754,7 +1645,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Leaf.Dead.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1774,7 +1665,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Stem.Dead.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1794,7 +1685,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Tuber.Dead.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1814,7 +1705,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Root.Dead.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1834,7 +1725,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Summariser.AboveGround.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1854,7 +1745,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Summariser.BelowGround.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1874,7 +1765,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Summariser.Total.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1894,7 +1785,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Summariser.TotalLive.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
@@ -1943,7 +1834,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Root.WaterSupply</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1963,7 +1854,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Root.WaterUptake</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -1983,7 +1874,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Leaf.WaterDemand</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -2003,7 +1894,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Leaf.Transpiration</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -2023,7 +1914,7 @@ public string OverRidePath { get; set; }
           <FieldName>Soil.SoilWater.Eo</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -2043,7 +1934,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Root.Depth</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -2063,7 +1954,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Leaf.Height</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
@@ -2111,7 +2002,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Leaf.CoverDead</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -2131,7 +2022,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Leaf.CoverGreen</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -2151,7 +2042,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Leaf.CoverTotal</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -2171,7 +2062,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Leaf.LAI</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -2191,7 +2082,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Leaf.LAIDead</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -2211,7 +2102,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Root.Depth</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
@@ -2260,7 +2151,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Arbitrator.NDemand</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -2280,7 +2171,7 @@ public string OverRidePath { get; set; }
           <FieldName>PMFSlurp.Root.NSupply.Uptake</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
@@ -2329,7 +2220,7 @@ public string OverRidePath { get; set; }
           <FieldName>ReadExternalFile.Script.CoverToday</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <Series>
@@ -2349,7 +2240,7 @@ public string OverRidePath { get; set; }
           <FieldName>ReadExternalFile.Script.leaflai</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
-        <ShowInLegend>false</ShowInLegend>
+        <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
