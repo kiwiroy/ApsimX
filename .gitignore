@@ -33,3 +33,5 @@ _ReSharper*/
 Documentation/html
 *.db
 packages/
+Tests/ReadExternalFiles/ReadFileTest.apsimx.old
+Tests/SoilWater/ShallowSoilTest/ReadFileTest.apsimx
