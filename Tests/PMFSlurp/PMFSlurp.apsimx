@@ -5,44 +5,6 @@
     <Name>DataStore</Name>
     <AutoExport>false</AutoExport>
   </DataStore>
-  <Manager>
-    <Name>ResetPMFSlurpProperties</Name>
-    <Script>
-      <OverRidePath>[PMFSlurp].Leaf.LAIFunction.Value</OverRidePath>
-      <OverRideInterger>5</OverRideInterger>
-    </Script>
-    <Code><![CDATA[using System;
-using Models.Core;
-using System.Collections.Generic;
-using System.Text;
-using Models.PMF;
-using Models;
-using System.Xml.Serialization;
-using APSIM.Shared.Utilities;
-
-namespace Models
-{
-	[Serializable] 
-	public class Script : Model
-	{      
-	[Link] Plant Plant;  
-    [Link] Zone zone;
-					
-		[Description("Path for coefficient to be Overwritten")]
-		public string OverRidePath { get; set; }
-		[Description("Value for new coefficient Interger")]
-        public int OverRideInterger { get; set; }
-        
-		[EventSubscribe("AboutToSow")]
-		private void OnAboutToSow(object sender, EventArgs e)
-		{
-			object ResetValue = OverRideInterger;
-			zone.Set(OverRidePath, ResetValue);
-	    }
-	}
-}
-	   ]]></Code>
-  </Manager>
   <Simulation>
     <Name>PMFSlurpTestBase</Name>
     <Weather>
@@ -835,7 +797,7 @@ namespace Models
           </X>
           <Y>
             <TableName>Report</TableName>
-            <FieldName>Slurp.Leaf.Live.NConc</FieldName>
+            <FieldName>PMFSlurp.Leaf.Live.NConc</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>false</ShowInLegend>
@@ -850,6 +812,51 @@ namespace Models
         <ArbitrationMethod>Old</ArbitrationMethod>
         <NutrientUptakeMethod>2</NutrientUptakeMethod>
       </Arbitrator>
+      <Manager>
+        <Name>ResetPMFSlurpProperties1</Name>
+        <Script>
+          <OverRidePath>PMFSlurp.Leaf.LAIFunction.value</OverRidePath>
+          <OverRideInterger>2</OverRideInterger>
+          <ChangeDate>1998-12-14</ChangeDate>
+        </Script>
+        <Code><![CDATA[using System;
+using Models.Core;
+using System.Collections.Generic;
+using System.Text;
+using Models.PMF;
+using Models;
+using System.Xml.Serialization;
+using APSIM.Shared.Utilities;
+
+namespace Models
+{
+	[Serializable] 
+	public class Script : Model
+	{      
+	[Link] Plant Plant;          
+    [Link] Clock Clock;	
+    [Link] Zone zone;
+		
+		[Description("Path for coefficient to be Overwritten")]
+		public string OverRidePath { get; set; }
+		[Description("Value for new coefficient Interger")]
+        public int OverRideInterger { get; set; }
+        [Description("Sowing Date")]
+        public DateTime ChangeDate { get; set; }
+        
+        [EventSubscribe("DoManagement")]
+        private void OnDoManagement(object sender, EventArgs e)
+        {
+            if (Clock.Today.Date == ChangeDate)
+            {
+            object ResetValue = OverRideInterger;
+			zone.Set(OverRidePath, ResetValue);
+			}
+	    }
+	}
+}
+	   ]]></Code>
+      </Manager>
       <Area>0</Area>
       <Slope>0</Slope>
     </Zone>
@@ -1287,7 +1294,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.Live.Wt</FieldName>
+          <FieldName>PMFSlurp.Leaf.Live.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1307,7 +1314,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Stem.Live.Wt</FieldName>
+          <FieldName>PMFSlurp.Stem.Live.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1327,7 +1334,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Tuber.Live.Wt</FieldName>
+          <FieldName>PMFSlurp.Tuber.Live.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1347,7 +1354,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Root.Live.Wt</FieldName>
+          <FieldName>PMFSlurp.Root.Live.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1367,7 +1374,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.Dead.Wt</FieldName>
+          <FieldName>PMFSlurp.Leaf.Dead.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1387,7 +1394,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Stem.Dead.Wt</FieldName>
+          <FieldName>PMFSlurp.Stem.Dead.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1407,7 +1414,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Tuber.Dead.Wt</FieldName>
+          <FieldName>PMFSlurp.Tuber.Dead.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1427,7 +1434,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Root.Dead.Wt</FieldName>
+          <FieldName>PMFSlurp.Root.Dead.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1447,7 +1454,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Summariser.AboveGround.Wt</FieldName>
+          <FieldName>PMFSlurp.Summariser.AboveGround.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1467,7 +1474,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Summariser.BelowGround.Wt</FieldName>
+          <FieldName>PMFSlurp.Summariser.BelowGround.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1487,7 +1494,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Summariser.Total.Wt</FieldName>
+          <FieldName>PMFSlurp.Summariser.Total.Wt</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1528,7 +1535,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.Live.N</FieldName>
+          <FieldName>PMFSlurp.Leaf.Live.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1548,7 +1555,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Stem.Live.N</FieldName>
+          <FieldName>PMFSlurp.Stem.Live.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1568,7 +1575,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Tuber.Live.N</FieldName>
+          <FieldName>PMFSlurp.Tuber.Live.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1588,7 +1595,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Root.Live.N</FieldName>
+          <FieldName>PMFSlurp.Root.Live.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1608,7 +1615,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.Dead.N</FieldName>
+          <FieldName>PMFSlurp.Leaf.Dead.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1628,7 +1635,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Stem.Dead.N</FieldName>
+          <FieldName>PMFSlurp.Stem.Dead.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1648,7 +1655,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Tuber.Dead.N</FieldName>
+          <FieldName>PMFSlurp.Tuber.Dead.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1668,7 +1675,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Root.Dead.N</FieldName>
+          <FieldName>PMFSlurp.Root.Dead.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1688,7 +1695,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Summariser.AboveGround.N</FieldName>
+          <FieldName>PMFSlurp.Summariser.AboveGround.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1708,7 +1715,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Summariser.BelowGround.N</FieldName>
+          <FieldName>PMFSlurp.Summariser.BelowGround.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1728,7 +1735,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Summariser.Total.N</FieldName>
+          <FieldName>PMFSlurp.Summariser.Total.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1748,7 +1755,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Summariser.TotalLive.N</FieldName>
+          <FieldName>PMFSlurp.Summariser.TotalLive.N</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1797,7 +1804,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Root.WaterSupply</FieldName>
+          <FieldName>PMFSlurp.Root.WaterSupply</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1817,7 +1824,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Root.WaterUptake</FieldName>
+          <FieldName>PMFSlurp.Root.WaterUptake</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1837,7 +1844,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.WaterDemand</FieldName>
+          <FieldName>PMFSlurp.Leaf.WaterDemand</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1857,7 +1864,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.Transpiration</FieldName>
+          <FieldName>PMFSlurp.Leaf.Transpiration</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1897,7 +1904,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Root.Depth</FieldName>
+          <FieldName>PMFSlurp.Root.Depth</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1917,7 +1924,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.Height</FieldName>
+          <FieldName>PMFSlurp.Leaf.Height</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1965,7 +1972,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.CoverDead</FieldName>
+          <FieldName>PMFSlurp.Leaf.CoverDead</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -1985,7 +1992,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.CoverGreen</FieldName>
+          <FieldName>PMFSlurp.Leaf.CoverGreen</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -2005,7 +2012,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.CoverTotal</FieldName>
+          <FieldName>PMFSlurp.Leaf.CoverTotal</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -2025,7 +2032,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.LAI</FieldName>
+          <FieldName>PMFSlurp.Leaf.LAI</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -2045,7 +2052,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.LAIDead</FieldName>
+          <FieldName>PMFSlurp.Leaf.LAIDead</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -2065,7 +2072,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Root.Depth</FieldName>
+          <FieldName>PMFSlurp.Root.Depth</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -2114,7 +2121,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Arbitrator.NDemand</FieldName>
+          <FieldName>PMFSlurp.Arbitrator.NDemand</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -2134,7 +2141,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Root.NSupply.Uptake</FieldName>
+          <FieldName>PMFSlurp.Root.NSupply.Uptake</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -2183,7 +2190,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.Fw</FieldName>
+          <FieldName>PMFSlurp.Leaf.Fw</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
@@ -2203,7 +2210,7 @@ namespace Models
         </X>
         <Y>
           <TableName>Report</TableName>
-          <FieldName>Slurp.Leaf.Fn</FieldName>
+          <FieldName>PMFSlurp.Leaf.Fn</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
