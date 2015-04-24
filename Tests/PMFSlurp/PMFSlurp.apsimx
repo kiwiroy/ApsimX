@@ -19,6 +19,9 @@
     <Summary>
       <Name>Summary</Name>
     </Summary>
+    <SoilArbitrator>
+      <Name>Soil Arbitrator</Name>
+    </SoilArbitrator>
     <Zone>
       <Name>Field</Name>
       <Soil>
@@ -331,6 +334,9 @@
           <OCUnits>Total</OCUnits>
           <PHUnits>Water</PHUnits>
         </Sample>
+        <SoilArbitrator>
+          <Name>Soil Arbitrator</Name>
+        </SoilArbitrator>
         <RecordNumber>0</RecordNumber>
         <SoilType />
         <LocalName />
@@ -807,11 +813,6 @@ namespace Models
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
       </Graph>
-      <Arbitrator>
-        <Name>Arbitrator</Name>
-        <ArbitrationMethod>Old</ArbitrationMethod>
-        <NutrientUptakeMethod>2</NutrientUptakeMethod>
-      </Arbitrator>
       <Manager>
         <Name>ResetPMFSlurpProperties1</Name>
         <Script>
