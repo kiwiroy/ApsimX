@@ -5,9 +5,16 @@
     <Name>DataStore</Name>
     <Model xsi:type="ExcelInput">
       <Name>Observed</Name>
-      <FileName>%root%\Tests\SoilWater\ShallowSoilTest\ProfileWaterContent.xls</FileName>
+      <FileName>%root%\Tests\SoilWater\ShallowSoilTest\SoilWaterContent.xls</FileName>
       <SheetNames>
-        <string>SWC</string>
+        <string>ProfileSWC</string>
+      </SheetNames>
+    </Model>
+    <Model xsi:type="ExcelInput">
+      <Name>Observed1</Name>
+      <FileName>%root%\Tests\SoilWater\ShallowSoilTest\SoilWaterContent.xls</FileName>
+      <SheetNames>
+        <string>LayerSWC</string>
       </SheetNames>
     </Model>
     <AutoExport>false</AutoExport>
@@ -2121,7 +2128,7 @@ public class Script : Model
             <string>[PMFSlurp].Leaf.CoverTotal</string>
             <string>[PMFSlurp].Leaf.LAI</string>
             <string>[PMFSlurp].Leaf.Height</string>
-            <string>[Soil].SoilWater.SWmm</string>
+            <string>[Soil].SoilWater.SW</string>
             <string>[MicroClimate].net_radn</string>
             <string>[MicroClimate].peta</string>
             <string>[MicroClimate].petr</string>
@@ -3498,7 +3505,7 @@ public class Script : Model
       <Slope>0</Slope>
     </Simulation>
     <Graph>
-      <Name>SoilWaterContent</Name>
+      <Name>ProfileSoilWaterContent</Name>
       <Axis>
         <Type>Bottom</Type>
         <Inverted>false</Inverted>
@@ -3543,11 +3550,11 @@ public class Script : Model
         <Marker>FilledCircle</Marker>
         <Line>None</Line>
         <X>
-          <TableName>SWC</TableName>
+          <TableName>ProfileSWC</TableName>
           <FieldName>Clock.Today</FieldName>
         </X>
         <Y>
-          <TableName>SWC</TableName>
+          <TableName>ProfileSWC</TableName>
           <FieldName>ExtraVariables.Script.SWC</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
@@ -3556,7 +3563,78 @@ public class Script : Model
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>
-      <DisabledSeries />
+      <DisabledSeries>
+        <string>LandPTreatmentLucerneOnePerWeek</string>
+        <string>LandPTreatmentLucerneThreeWeekly</string>
+        <string>LandPTreatmentPastureOncePerWeek</string>
+        <string>LandPTreatmentPastureThreeWeekly</string>
+      </DisabledSeries>
+    </Graph>
+    <Graph>
+      <Name>0_150mm</Name>
+      <Axis>
+        <Type>Bottom</Type>
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Axis>
+        <Type>Left</Type>
+        <Title>SoilWater content</Title>
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Series>
+        <Title>Predicted</Title>
+        <Type>Scatter</Type>
+        <XAxis>Bottom</XAxis>
+        <YAxis>Left</YAxis>
+        <ColourArgb>-32768</ColourArgb>
+        <Marker>None</Marker>
+        <Line>Solid</Line>
+        <X>
+          <TableName>Report</TableName>
+          <FieldName>Clock.Today</FieldName>
+        </X>
+        <Y>
+          <TableName>Report</TableName>
+          <FieldName>Soil.SoilWater.SW(1)</FieldName>
+        </Y>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <ShowInLegend>true</ShowInLegend>
+        <Cumulative>false</Cumulative>
+      </Series>
+      <Series>
+        <Title>Observed</Title>
+        <Type>Scatter</Type>
+        <XAxis>Bottom</XAxis>
+        <YAxis>Left</YAxis>
+        <ColourArgb>-16776961</ColourArgb>
+        <Marker>FilledCircle</Marker>
+        <Line>None</Line>
+        <X>
+          <TableName>LayerSWC</TableName>
+          <FieldName>Clock.Today</FieldName>
+        </X>
+        <Y>
+          <TableName>LayerSWC</TableName>
+          <FieldName>Soil.SoilWater.SW(1)</FieldName>
+        </Y>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <ShowInLegend>false</ShowInLegend>
+        <Cumulative>false</Cumulative>
+      </Series>
+      <LegendPosition>TopLeft</LegendPosition>
+      <ShowRegressionLine>false</ShowRegressionLine>
+      <DisabledSeries>
+        <string>LandPTreatmentLucerneOnePerWeek</string>
+        <string>LandPTreatmentLucerneThreeWeekly</string>
+        <string>LandPTreatmentPastureOncePerWeek</string>
+        <string>LandPTreatmentPastureThreeWeekly</string>
+      </DisabledSeries>
     </Graph>
   </Experiment>
   <ExplorerWidth>235</ExplorerWidth>
