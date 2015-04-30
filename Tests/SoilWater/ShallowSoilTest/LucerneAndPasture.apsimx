@@ -1065,10 +1065,116 @@
               <Action>[Irrigation].Apply(10);</Action>
             </Operation>
           </Operations>
+          <Water>
+            <Name>Water</Name>
+            <SoilCrop>
+              <Name>PMFSlurpSoil</Name>
+              <LL>
+                <double>0.1</double>
+                <double>0.1</double>
+                <double>0.12</double>
+                <double>0.06</double>
+                <double>0.04</double>
+                <double>0.02</double>
+                <double>0.06</double>
+                <double>0.04</double>
+                <double>0.06</double>
+              </LL>
+              <KL>
+                <double>0.06</double>
+                <double>0.06</double>
+                <double>0.06</double>
+                <double>0.06</double>
+                <double>0.06</double>
+                <double>0.06</double>
+                <double>0.06</double>
+                <double>0.06</double>
+                <double>0.06</double>
+              </KL>
+              <XF>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+              </XF>
+            </SoilCrop>
+            <Thickness>
+              <double>150</double>
+              <double>150</double>
+              <double>100</double>
+              <double>200</double>
+              <double>200</double>
+              <double>200</double>
+              <double>200</double>
+              <double>200</double>
+              <double>200</double>
+            </Thickness>
+            <BD>
+              <double>1.2</double>
+              <double>1.2</double>
+              <double>1.2</double>
+              <double>1.2</double>
+              <double>1.2</double>
+              <double>1.2</double>
+              <double>1.2</double>
+              <double>1.2</double>
+              <double>1.2</double>
+            </BD>
+            <AirDry>
+              <double>0.05</double>
+              <double>0.1</double>
+              <double>0.12</double>
+              <double>0.06</double>
+              <double>0.04</double>
+              <double>0.02</double>
+              <double>0.06</double>
+              <double>0.04</double>
+              <double>0.06</double>
+            </AirDry>
+            <LL15>
+              <double>0.1</double>
+              <double>0.1</double>
+              <double>0.12</double>
+              <double>0.06</double>
+              <double>0.04</double>
+              <double>0.02</double>
+              <double>0.06</double>
+              <double>0.04</double>
+              <double>0.06</double>
+            </LL15>
+            <DUL>
+              <double>0.33</double>
+              <double>0.33</double>
+              <double>0.37</double>
+              <double>0.28</double>
+              <double>0.13</double>
+              <double>0.06</double>
+              <double>0.15</double>
+              <double>0.1</double>
+              <double>0.13</double>
+            </DUL>
+            <SAT>
+              <double>0.5</double>
+              <double>0.5</double>
+              <double>0.44</double>
+              <double>0.46</double>
+              <double>0.44</double>
+              <double>0.44</double>
+              <double>0.46</double>
+              <double>0.44</double>
+              <double>0.44</double>
+            </SAT>
+          </Water>
           <Specifications>
             <string>[PMFSlurpSowingRule].Script.SowingDate=2011-03-24</string>
             <string>[SetLAIofCrop].Script.Column = 4</string>
             <string>[IrrigationEvents]</string>
+            <string>[Soil].Water</string>
           </Specifications>
         </Factor>
         <Factor>
@@ -1426,13 +1532,13 @@
               <LL>
                 <double>0.1</double>
                 <double>0.1</double>
-                <double>0.1</double>
-                <double>0.08</double>
-                <double>0.11</double>
-                <double>0.11</double>
-                <double>0.08</double>
-                <double>0.11</double>
-                <double>0.11</double>
+                <double>0.12</double>
+                <double>0.06</double>
+                <double>0.04</double>
+                <double>0.02</double>
+                <double>0.06</double>
+                <double>0.04</double>
+                <double>0.06</double>
               </LL>
               <KL>
                 <double>0.06</double>
@@ -1482,24 +1588,24 @@
             <AirDry>
               <double>0.05</double>
               <double>0.1</double>
-              <double>0.1</double>
+              <double>0.12</double>
               <double>0.06</double>
               <double>0.04</double>
               <double>0.02</double>
               <double>0.06</double>
               <double>0.04</double>
-              <double>0.02</double>
+              <double>0.06</double>
             </AirDry>
             <LL15>
               <double>0.1</double>
               <double>0.1</double>
-              <double>0.1</double>
+              <double>0.12</double>
               <double>0.06</double>
               <double>0.04</double>
               <double>0.02</double>
               <double>0.06</double>
               <double>0.04</double>
-              <double>0.02</double>
+              <double>0.06</double>
             </LL15>
             <DUL>
               <double>0.33</double>
@@ -1510,7 +1616,7 @@
               <double>0.06</double>
               <double>0.15</double>
               <double>0.1</double>
-              <double>0.06</double>
+              <double>0.13</double>
             </DUL>
             <SAT>
               <double>0.5</double>
@@ -4227,6 +4333,72 @@ public class Script : Model
         <Y>
           <TableName>LayerSWC</TableName>
           <FieldName>Soil.SoilWater.SW(8)</FieldName>
+        </Y>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <ShowInLegend>false</ShowInLegend>
+        <Cumulative>false</Cumulative>
+      </Series>
+      <LegendPosition>TopLeft</LegendPosition>
+      <ShowRegressionLine>false</ShowRegressionLine>
+      <DisabledSeries>
+        <string>LandPTreatmentLucerneOnePerWeek</string>
+        <string>LandPTreatmentLucerneThreeWeekly</string>
+        <string>LandPTreatmentPastureOncePerWeek</string>
+        <string>LandPTreatmentPastureThreeWeekly</string>
+      </DisabledSeries>
+    </Graph>
+    <Graph>
+      <Name>1400_1600mm</Name>
+      <Axis>
+        <Type>Bottom</Type>
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Axis>
+        <Type>Left</Type>
+        <Title>SoilWater content</Title>
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Series>
+        <Title>Predicted</Title>
+        <Type>Scatter</Type>
+        <XAxis>Bottom</XAxis>
+        <YAxis>Left</YAxis>
+        <ColourArgb>-32768</ColourArgb>
+        <Marker>None</Marker>
+        <Line>Solid</Line>
+        <X>
+          <TableName>Report</TableName>
+          <FieldName>Clock.Today</FieldName>
+        </X>
+        <Y>
+          <TableName>Report</TableName>
+          <FieldName>Soil.SoilWater.SW(9)</FieldName>
+        </Y>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <ShowInLegend>true</ShowInLegend>
+        <Cumulative>false</Cumulative>
+      </Series>
+      <Series>
+        <Title>Observed</Title>
+        <Type>Scatter</Type>
+        <XAxis>Bottom</XAxis>
+        <YAxis>Left</YAxis>
+        <ColourArgb>-16776961</ColourArgb>
+        <Marker>FilledCircle</Marker>
+        <Line>None</Line>
+        <X>
+          <TableName>LayerSWC</TableName>
+          <FieldName>Clock.Today</FieldName>
+        </X>
+        <Y>
+          <TableName>LayerSWC</TableName>
+          <FieldName>Soil.SoilWater.SW(9)</FieldName>
         </Y>
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
