@@ -2085,7 +2085,7 @@ namespace Models
         <Manager>
           <Name>SetLAIofCrop</Name>
           <Script>
-            <CoverFile>C:\ApsimX\Tests\ReadExternalFiles\CoverInterpolated.csv</CoverFile>
+            <CoverFile>CoverInterpolated.csv</CoverFile>
             <Column>0</Column>
             <Ext_coef>0.8</Ext_coef>
             <OverRidePath>PMFSlurp.Leaf.LAIFunction.value</OverRidePath>
@@ -2110,6 +2110,7 @@ public class Script : Model
 {     
 	[Link] Clock Clock;
 	[Link] Zone zone;
+	[Link] Simulation simulation;
    
 	[Description("File of covers to load")]
 	public string CoverFile { get; set; }
@@ -2183,8 +2184,12 @@ public class Script : Model
  [EventSubscribe("StartOfSimulation")]
  private void OnStartOfSimulation(object sender, EventArgs e)
  {
- 	CoverVals = new CoverIntcs();
-    CoverVals.LoadFile(CoverFile);
+ 	//CoverVals = new CoverIntcs();
+    //CoverVals.LoadFile(CoverFile);
+	CoverVals = new CoverIntcs();
+	string fullPath = PathUtilities.GetAbsolutePath(CoverFile, simulation.FileName);
+	CoverVals.LoadFile(fullPath);
+
  }
       
  [EventSubscribe("StartOfDay")]
@@ -4414,5 +4419,5 @@ public class Script : Model
       </DisabledSeries>
     </Graph>
   </Experiment>
-  <ExplorerWidth>297</ExplorerWidth>
+  <ExplorerWidth>345</ExplorerWidth>
 </Simulations>
