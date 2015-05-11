@@ -34,3 +34,4 @@ Documentation/html
 *.db
 packages/
 Tests/Maize/MaizeValidation.apsimx.orig
+Models/Resources/Maize.xml.orig
