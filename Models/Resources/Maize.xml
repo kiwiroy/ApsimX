@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Plant>
   <Name>Maize</Name>
-  <CropType>Maize</CropType>
+  <Cultivar>
+    <Name>Pioneer_39G12</Name>
+    <Command>[Phenology].GrainFilling.Target = 550</Command>
+  </Cultivar>
   <Cultivar>
     <Name>Pioneer_3153</Name>
-    <Alias>Pie</Alias>
   </Cultivar>
   <Cultivar>
     <Name>Katumani</Name>
@@ -18,6 +20,19 @@
     <Command>[Phenology].MaturityToHarvestRipe.Target = 1</Command>
     <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
   </Cultivar>
+  <Cultivar>
+    <Name>Dekalb_XL82</Name>
+    <Command>[Phenology].Juvenile.Target = 211</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 0, 472</Command>
+    <Command>[Phenology].FlagLeafToFlowering.Target = 101</Command>
+    <Command>[Phenology].FloweringToGrainFilling.Target = 170</Command>
+    <Command>[Phenology].GrainFilling.Target = 813</Command>
+    <Command>[Phenology].Maturing.Target = 1</Command>
+    <Command>[Phenology].MaturityToHarvestRipe.Target = 1</Command>
+    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
+  </Cultivar>
+
   <OrganArbitrator>
     <Name>Arbitrator</Name>
     <NArbitrationOption>PrioritythenRelativeAllocation</NArbitrationOption>
@@ -28,12 +43,13 @@
     <MultiplyFunction>
       <Name>ThermalTime</Name>
       <PhaseLookup>
+        <Name>PhaseLookup</Name>
         <PhaseLookupValue>
           <Name>SoilTemperature</Name>
-          <Start>Sowing</Start>
-          <End>Germination</End>
           <SoilTemperatureFunction>
             <Name>ThermalTime</Name>
+            <maxt_soil_surface>20</maxt_soil_surface>
+            <mint_soil_surface>10</mint_soil_surface>
             <XYPairs>
               <Name>XYPairs</Name>
               <X>
@@ -48,15 +64,15 @@
                 <double>10</double>
                 <double>18</double>
                 <double>26</double>
-                <double>0</double>
+                <double>44</double>
               </Y>
             </XYPairs>
           </SoilTemperatureFunction>
+          <Start>Sowing</Start>
+          <End>Germination</End>
         </PhaseLookupValue>
         <PhaseLookupValue>
           <Name>AirTemperature</Name>
-          <Start>Germination</Start>
-          <End>HarvestRipe</End>
           <AirTemperatureFunction>
             <Name>ThermalTime</Name>
             <XYPairs>
@@ -73,10 +89,12 @@
                 <double>10</double>
                 <double>18</double>
                 <double>26</double>
-                <double>0</double>
+                <double>44</double>
               </Y>
             </XYPairs>
           </AirTemperatureFunction>
+          <Start>Germination</Start>
+          <End>HarvestRipe</End>
         </PhaseLookupValue>
       </PhaseLookup>
       <AddFunction>
@@ -116,19 +134,17 @@
     </GerminatingPhase>
     <EmergingPhase>
       <Name>Emerging</Name>
-      <Start>Germination</Start>
-      <End>Emergence</End>
-      <ShootLag>55.0</ShootLag>
-      <ShootRate>0.6</ShootRate>
       <VariableReference>
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
       </VariableReference>
+      <Start>Germination</Start>
+      <End>Emergence</End>
+      <ShootLag>55</ShootLag>
+      <ShootRate>0.6</ShootRate>
     </EmergingPhase>
     <GenericPhase>
       <Name>Juvenile</Name>
-      <Start>Emergence</Start>
-      <End>End_Juvenile</End>
       <Constant>
         <Name>Target</Name>
         <Value>200</Value>
@@ -137,11 +153,11 @@
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
       </VariableReference>
+      <Start>Emergence</Start>
+      <End>End_Juvenile</End>
     </GenericPhase>
     <GenericPhase>
       <Name>Photosensitive</Name>
-      <Start>End_Juvenile</Start>
-      <End>Floral_Initiation</End>
       <VariableReference>
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
@@ -163,21 +179,20 @@
           </Y>
         </XYPairs>
       </LinearInterpolationFunction>
+      <Start>End_Juvenile</Start>
+      <End>Floral_Initiation</End>
     </GenericPhase>
     <LeafAppearancePhase>
       <Name>LeafAppearance</Name>
-      <Start>Floral_Initiation</Start>
-      <End>Flag_Leaf</End>
-      <RemainingLeaves>0</RemainingLeaves>
       <VariableReference>
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
       </VariableReference>
+      <Start>Floral_Initiation</Start>
+      <End>Flag_Leaf</End>
     </LeafAppearancePhase>
     <GenericPhase>
       <Name>FlagLeafToFlowering</Name>
-      <Start>Flag_Leaf</Start>
-      <End>Flowering</End>
       <Constant>
         <Name>Target</Name>
         <Value>50</Value>
@@ -186,37 +201,37 @@
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
       </VariableReference>
+      <Start>Flag_Leaf</Start>
+      <End>Flowering</End>
     </GenericPhase>
     <GenericPhase>
       <Name>FloweringToGrainFilling</Name>
-      <Start>Flowering</Start>
-      <End>StartGrainFill</End>
       <Constant>
         <Name>Target</Name>
-        <Value>80</Value>
+        <Value>120</Value>
       </Constant>
       <VariableReference>
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
       </VariableReference>
+      <Start>Flowering</Start>
+      <End>StartGrainFill</End>
     </GenericPhase>
     <GenericPhase>
       <Name>GrainFilling</Name>
-      <Start>StartGrainFill</Start>
-      <End>EndGrainFill</End>
       <Constant>
         <Name>Target</Name>
-        <Value>400</Value>
+        <Value>550</Value>
       </Constant>
       <VariableReference>
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
       </VariableReference>
+      <Start>StartGrainFill</Start>
+      <End>EndGrainFill</End>
     </GenericPhase>
     <GenericPhase>
       <Name>Maturing</Name>
-      <Start>EndGrainFill</Start>
-      <End>Maturity</End>
       <Constant>
         <Name>Target</Name>
         <Value>10</Value>
@@ -225,11 +240,11 @@
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
       </VariableReference>
+      <Start>EndGrainFill</Start>
+      <End>Maturity</End>
     </GenericPhase>
     <GenericPhase>
       <Name>MaturityToHarvestRipe</Name>
-      <Start>Maturity</Start>
-      <End>HarvestRipe</End>
       <Constant>
         <Name>Target</Name>
         <Value>10</Value>
@@ -238,25 +253,26 @@
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
       </VariableReference>
+      <Start>Maturity</Start>
+      <End>HarvestRipe</End>
     </GenericPhase>
     <EndPhase>
       <Name>ReadyForHarvesting</Name>
-      <Start>HarvestRipe</Start>
-      <End>Unused</End>
       <VariableReference>
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
       </VariableReference>
+      <Start>HarvestRipe</Start>
+      <End>Unused</End>
     </EndPhase>
     <PhotoperiodFunction>
       <Name>Photoperiod</Name>
       <Twilight>-6</Twilight>
     </PhotoperiodFunction>
+    <Emerged>false</Emerged>
   </Phenology>
   <Structure>
     <Name>Structure</Name>
-    <PrimaryBudNo>1</PrimaryBudNo>
-    <InitialiseStage>Emergence</InitialiseStage>
     <VariableReference>
       <Name>ThermalTime</Name>
       <VariableName>[Phenology].ThermalTime.Value</VariableName>
@@ -265,8 +281,6 @@
       <Name>MainStemPrimordiaInitiationRate</Name>
       <PhaseLookupValue>
         <Name>Plastochron</Name>
-        <Start>Emergence</Start>
-        <End>Floral_Initiation</End>
         <MultiplyFunction>
           <Name>PlastCalc</Name>
           <VariableReference>
@@ -275,17 +289,17 @@
           </VariableReference>
           <Constant>
             <Name>TipPerPrimordia</Name>
-            <Value>0.50</Value>
+            <Value>0.5</Value>
           </Constant>
         </MultiplyFunction>
+        <Start>Emergence</Start>
+        <End>Floral_Initiation</End>
       </PhaseLookupValue>
     </PhaseLookup>
     <PhaseLookup>
       <Name>MainStemNodeAppearanceRate</Name>
       <PhaseLookupValue>
         <Name>Phyllochron</Name>
-        <Start>Emergence</Start>
-        <End>Flag_Leaf</End>
         <LinearInterpolationFunction>
           <Name>Phyllochron</Name>
           <XProperty>[Structure].MainStemNodeNo</XProperty>
@@ -303,13 +317,13 @@
             </Y>
           </XYPairs>
         </LinearInterpolationFunction>
+        <Start>Emergence</Start>
+        <End>Flag_Leaf</End>
       </PhaseLookupValue>
     </PhaseLookup>
     <MainStemFinalNodeNumberFunction>
       <Name>MainStemFinalNodeNumber</Name>
-      <MaximumMainStemNodeNumber>30</MaximumMainStemNodeNumber>
       <OnEventFunction>
-        <SetEvent>Floral_Initiation</SetEvent>
         <Name>FinalLeafNumber</Name>
         <AddFunction>
           <Name>PreEventValue</Name>
@@ -318,6 +332,7 @@
             <Value>6</Value>
           </Constant>
           <DivideFunction>
+            <Name>DivideFunction</Name>
             <VariableReference>
               <Name>JuvenilePhaseDuration</Name>
               <VariableName>[Phenology].Juvenile.Target.Value</VariableName>
@@ -332,7 +347,10 @@
           <Name>PostEventValue</Name>
           <VariableName>[Structure].MainStemPrimordiaNo</VariableName>
         </VariableReference>
+        <SetEvent>Floral_Initiation</SetEvent>
+        <ReSetEvent />
       </OnEventFunction>
+      <MaximumMainStemNodeNumber>30</MaximumMainStemNodeNumber>
     </MainStemFinalNodeNumberFunction>
     <HeightFunction>
       <Name>HeightModel</Name>
@@ -411,8 +429,7 @@
     <PhaseLookup>
       <Name>ShadeInducedBranchMortality</Name>
       <PhaseLookupValue>
-        <Start>Emergence</Start>
-        <End>StartGrainFill</End>
+        <Name>PhaseLookupValue</Name>
         <LinearInterpolationFunction>
           <Name>ShadeInducedBranchMortality</Name>
           <XProperty>[Leaf].CoverGreen</XProperty>
@@ -432,13 +449,14 @@
             </Y>
           </XYPairs>
         </LinearInterpolationFunction>
+        <Start>Emergence</Start>
+        <End>StartGrainFill</End>
       </PhaseLookupValue>
     </PhaseLookup>
     <PhaseLookup>
       <Name>DroughtInducedBranchMortality</Name>
       <PhaseLookupValue>
-        <Start>Emergence</Start>
-        <End>EndGrainFill</End>
+        <Name>PhaseLookupValue</Name>
         <LinearInterpolationFunction>
           <Name>WaterStress</Name>
           <XProperty>[Maize].WaterSupplyDemandRatio</XProperty>
@@ -454,13 +472,15 @@
             </Y>
           </XYPairs>
         </LinearInterpolationFunction>
+        <Start>Emergence</Start>
+        <End>EndGrainFill</End>
       </PhaseLookupValue>
     </PhaseLookup>
+    <InitialiseStage>Emergence</InitialiseStage>
+    <PrimaryBudNo>1</PrimaryBudNo>
   </Structure>
   <ReproductiveOrgan>
     <Name>Grain</Name>
-    <MaximumSize>0.45</MaximumSize>
-    <RipeStage>Ripe</RipeStage>
     <Biomass>
       <Name>Live</Name>
     </Biomass>
@@ -487,8 +507,6 @@
       <Name>NFillingRate</Name>
       <PhaseLookupValue>
         <Name>EarlyGrainGrowth</Name>
-        <Start>Flowering</Start>
-        <End>Maturity</End>
         <AirTemperatureFunction>
           <Name>Function</Name>
           <XYPairs>
@@ -507,6 +525,8 @@
             </Y>
           </XYPairs>
         </AirTemperatureFunction>
+        <Start>Flowering</Start>
+        <End>Maturity</End>
       </PhaseLookupValue>
     </PhaseLookup>
     <PhaseBasedSwitch>
@@ -531,7 +551,7 @@
           </X>
           <Y>
             <double>0</double>
-            <double>800</double>
+            <double>550</double>
           </Y>
         </XYPairs>
       </LinearInterpolationFunction>
@@ -558,12 +578,13 @@
         </Y>
       </XYPairs>
     </AirTemperatureFunction>
+    <MaximumSize>0.3</MaximumSize>
+    <RipeStage>EndGrainFill</RipeStage>
+    <StartFillStage>StartGrainFill</StartFillStage>
+    <Number>0</Number>
   </ReproductiveOrgan>
   <Root>
-    <InitialDM>0.2</InitialDM>
-    <SpecificRootLength>40000</SpecificRootLength>
-    <KNO3>0.03</KNO3>
-    <KNH4>0.0</KNH4>
+    <Name>Root</Name>
     <CompositeBiomass>
       <Name>Live</Name>
       <Propertys>
@@ -593,7 +614,7 @@
     </LinearInterpolationFunction>
     <Constant>
       <Name>SoilWaterEffect</Name>
-      <Value>1.0</Value>
+      <Value>1</Value>
     </Constant>
     <AirTemperatureFunction>
       <Name>TemperatureEffect</Name>
@@ -617,7 +638,7 @@
     </Constant>
     <Constant>
       <Name>SenescenceRate</Name>
-      <Value>0.0</Value>
+      <Value>0</Value>
     </Constant>
     <Constant>
       <Name>StructuralFraction</Name>
@@ -656,21 +677,21 @@
       <Name>RootFrontVelocity</Name>
       <PhaseLookupValue>
         <Name>PreEmergence</Name>
-        <Start>Germination</Start>
-        <End>Emergence</End>
         <Constant>
           <Name>Function</Name>
           <Value>5</Value>
         </Constant>
+        <Start>Germination</Start>
+        <End>Emergence</End>
       </PhaseLookupValue>
       <PhaseLookupValue>
         <Name>PostEmergence</Name>
-        <Start>Emergence</Start>
-        <End>Maturity</End>
         <Constant>
           <Name>Function</Name>
           <Value>30</Value>
         </Constant>
+        <Start>Emergence</Start>
+        <End>Maturity</End>
       </PhaseLookupValue>
     </PhaseLookup>
     <PhaseBasedSwitch>
@@ -678,14 +699,14 @@
       <Start>Germination</Start>
       <End>Maturity</End>
     </PhaseBasedSwitch>
+    <InitialDM>0.2</InitialDM>
+    <SpecificRootLength>40000</SpecificRootLength>
+    <KNO3>0.03</KNO3>
+    <KNH4>0</KNH4>
+    <NuptakeSupply>0</NuptakeSupply>
   </Root>
   <Leaf>
-    <MaxCover>1.0</MaxCover>
-    <KDead>.03</KDead>
-    <GsMax>0.03</GsMax>
-    <R50>200</R50>
-    <Emissivity>0.96</Emissivity>
-    <Albido>0.26</Albido>
+    <Name>Leaf</Name>
     <LeafCohort>
       <Name>InitialLeaves[1]</Name>
       <Rank>1</Rank>
@@ -743,6 +764,7 @@
       <ArraySize>[Leaf].MaxNodeNo</ArraySize>
     </ArrayBiomass>
     <InitialLeafValues>
+      <Name>InitialLeafValues</Name>
       <BellCurveFunction>
         <Name>MaxArea</Name>
         <MultiplyFunction>
@@ -753,7 +775,7 @@
           </VariableReference>
           <Constant>
             <Name>RelativePositionOfLargestLeaf</Name>
-            <Value>.67</Value>
+            <Value>0.67</Value>
           </Constant>
         </MultiplyFunction>
         <LinearInterpolationFunction>
@@ -773,9 +795,9 @@
               <double>32530</double>
               <double>39259</double>
               <double>49659</double>
-              <double>62814</double>
-              <double>80000</double>
-              <double>100501</double>
+              <double>60000</double>
+              <double>75000</double>
+              <double>90000</double>
             </Y>
           </XYPairs>
         </LinearInterpolationFunction>
@@ -793,7 +815,7 @@
             </X>
             <Y>
               <double>-0.377</double>
-              <double> -0.144</double>
+              <double>-0.144</double>
               <double>-0.059</double>
               <double>-0.027</double>
               <double>-0.016</double>
@@ -807,7 +829,7 @@
       </BellCurveFunction>
       <Constant>
         <Name>NReallocationFactor</Name>
-        <Value>.05</Value>
+        <Value>0.05</Value>
       </Constant>
       <Constant>
         <Name>NRetranslocationFactor</Name>
@@ -815,7 +837,7 @@
       </Constant>
       <Constant>
         <Name>DMRetranslocationFactor</Name>
-        <Value>.5</Value>
+        <Value>0.5</Value>
       </Constant>
       <LinearInterpolationFunction>
         <Name>CellDivisionStress</Name>
@@ -902,23 +924,23 @@
       </LinearInterpolationFunction>
       <Constant>
         <Name>DetachmentLagDuration</Name>
-        <Value>1e6</Value>
+        <Value>1000000</Value>
       </Constant>
       <Constant>
         <Name>DetachmentDuration</Name>
-        <Value>1e6</Value>
+        <Value>1000000</Value>
       </Constant>
       <Constant>
         <Name>MaximumNConc</Name>
-        <Value>.02</Value>
+        <Value>0.02</Value>
       </Constant>
       <Constant>
         <Name>CriticalNConc</Name>
-        <Value>.018</Value>
+        <Value>0.018</Value>
       </Constant>
       <Constant>
         <Name>MinimumNConc</Name>
-        <Value>.01</Value>
+        <Value>0.01</Value>
       </Constant>
       <AddFunction>
         <Name>DroughtInducedSenAcceleration</Name>
@@ -981,7 +1003,7 @@
       </LinearInterpolationFunction>
       <Constant>
         <Name>StructuralFraction</Name>
-        <Value>.7</Value>
+        <Value>0.7</Value>
       </Constant>
       <Constant>
         <Name>NonStructuralFraction</Name>
@@ -1002,9 +1024,9 @@
           <Y>
             <double>0</double>
             <double>0</double>
-            <double>0.00</double>
-            <double>0.00</double>
-            <double>0.00</double>
+            <double>0</double>
+            <double>0</double>
+            <double>0</double>
           </Y>
         </XYPairs>
       </LinearInterpolationFunction>
@@ -1017,7 +1039,7 @@
       <Name>Photosynthesis</Name>
       <Constant>
         <Name>RUE</Name>
-        <Value>2</Value>
+        <Value>1.75</Value>
       </Constant>
       <WeightedTemperatureFunction>
         <Name>FT</Name>
@@ -1146,14 +1168,24 @@
       <Name>ThermalTime</Name>
       <VariableName>[Phenology].ThermalTime.Value</VariableName>
     </VariableReference>
+    <CurrentExpandingLeaf>0</CurrentExpandingLeaf>
+    <StartFractionExpanded>0</StartFractionExpanded>
+    <FractionNextleafExpanded>0</FractionNextleafExpanded>
+    <_ExpandedNodeNo>0</_ExpandedNodeNo>
+    <DeadNodesYesterday>0</DeadNodesYesterday>
+    <MaxCover>1</MaxCover>
+    <PotentialEP>0</PotentialEP>
+    <KDead>0.03</KDead>
+    <GsMax>0.03</GsMax>
+    <R50>200</R50>
+    <Emissivity>0.96</Emissivity>
+    <Albido>0.26</Albido>
+    <FractionDied>0</FractionDied>
   </Leaf>
   <GenericAboveGroundOrgan>
     <Name>Husk</Name>
     <PopulationBasedDemandFunction>
       <Name>DMDemandFunction</Name>
-      <StartStage>5.2</StartStage>
-      <GrowthDuration>120</GrowthDuration>
-      <MaximumOrganWt>0</MaximumOrganWt>
       <VariableReference>
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
@@ -1162,6 +1194,9 @@
         <Name>ExpansionStress</Name>
         <Value>1</Value>
       </Constant>
+      <StartStage>5.2</StartStage>
+      <GrowthDuration>120</GrowthDuration>
+      <MaximumOrganWt>0</MaximumOrganWt>
     </PopulationBasedDemandFunction>
     <Biomass>
       <Name>Live</Name>
@@ -1183,7 +1218,7 @@
     </Constant>
     <Constant>
       <Name>StructuralFraction</Name>
-      <Value>1.0</Value>
+      <Value>1</Value>
     </Constant>
     <Constant>
       <Name>MinimumNConc</Name>
@@ -1216,9 +1251,6 @@
     </DivideFunction>
     <PopulationBasedDemandFunction>
       <Name>DMDemandFunction</Name>
-      <StartStage>5.5</StartStage>
-      <GrowthDuration>300</GrowthDuration>
-      <MaximumOrganWt>25</MaximumOrganWt>
       <VariableReference>
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
@@ -1227,6 +1259,9 @@
         <Name>ExpansionStress</Name>
         <Value>1</Value>
       </Constant>
+      <StartStage>5.5</StartStage>
+      <GrowthDuration>300</GrowthDuration>
+      <MaximumOrganWt>25</MaximumOrganWt>
     </PopulationBasedDemandFunction>
     <Biomass>
       <Name>Live</Name>
@@ -1248,7 +1283,7 @@
     </Constant>
     <Constant>
       <Name>StructuralFraction</Name>
-      <Value>1.0</Value>
+      <Value>1</Value>
     </Constant>
     <Constant>
       <Name>MinimumNConc</Name>
@@ -1274,9 +1309,6 @@
     <Name>Tastle</Name>
     <PopulationBasedDemandFunction>
       <Name>DMDemandFunction</Name>
-      <StartStage>5</StartStage>
-      <GrowthDuration>300</GrowthDuration>
-      <MaximumOrganWt>0</MaximumOrganWt>
       <VariableReference>
         <Name>ThermalTime</Name>
         <VariableName>[Phenology].ThermalTime.Value</VariableName>
@@ -1285,6 +1317,9 @@
         <Name>ExpansionStress</Name>
         <Value>1</Value>
       </Constant>
+      <StartStage>5</StartStage>
+      <GrowthDuration>300</GrowthDuration>
+      <MaximumOrganWt>0</MaximumOrganWt>
     </PopulationBasedDemandFunction>
     <Biomass>
       <Name>Live</Name>
@@ -1306,7 +1341,7 @@
     </Constant>
     <Constant>
       <Name>StructuralFraction</Name>
-      <Value>1.0</Value>
+      <Value>1</Value>
     </Constant>
     <Constant>
       <Name>MinimumNConc</Name>
@@ -1338,7 +1373,7 @@
     </Biomass>
     <Constant>
       <Name>StructuralFraction</Name>
-      <Value>.8</Value>
+      <Value>0.8</Value>
     </Constant>
     <LinearInterpolationFunction>
       <Name>MaximumNConc</Name>
@@ -1372,11 +1407,11 @@
     </Constant>
     <Constant>
       <Name>NRetranslocationFactor</Name>
-      <Value>.5</Value>
+      <Value>0.5</Value>
     </Constant>
     <Constant>
       <Name>DMRetranslocationFactor</Name>
-      <Value>.5</Value>
+      <Value>0.5</Value>
     </Constant>
     <MinimumFunction>
       <Name>DMDemandFunction</Name>
@@ -1532,4 +1567,5 @@
       </Propertys>
     </CompositeBiomass>
   </Summariser>
+  <CropType>Maize</CropType>
 </Plant>
