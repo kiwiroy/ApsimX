@@ -27,6 +27,14 @@
   </DataStore>
   <Folder>
     <Name>Africa</Name>
+    <Memo>
+      <Name>memo</Name>
+      <MemoText><![CDATA[
+<html><body>
+DevelopmentKeating et al (1992).<br/>
+
+</body></html>]]></MemoText>
+    </Memo>
     <Experiment>
       <Name>JMW2Katumani</Name>
       <Memo>
@@ -14492,6 +14500,14 @@ namespace Models
   </Folder>
   <Folder>
     <Name>USA</Name>
+    <Memo>
+      <Name>memo</Name>
+      <MemoText><![CDATA[
+<html><body>
+Testing of APSIM Maize, Soil Water, Soil Nitrogen, Manure, and Soil Temperature Modules in the Midwestern United States was undertaken by Archontoulis <i>et al</i>(2014) using APSIM version 7.4.  A subset of these data has been chosen for testing of the maize model. Datasets involving application of compost have not been included so as to concentrate on tests of maize model performance, rather than overall soil organic matter dynamics.<br/>
+
+</body></html>]]></MemoText>
+    </Memo>
     <Experiment>
       <Name>Ames2011</Name>
       <Memo>
@@ -17326,6 +17342,8 @@ namespace Models
     <Name>References</Name>
     <MemoText><![CDATA[
 <html><body>
+Archontoulis, S.V., Miguez, F.E., Moore, K.J., 2014. Evaluating APSIM Maize, Soil Water, Soil Nitrogen, Manure, and Soil Temperature Modules in the Midwestern United States. Agronomy Journal 106(3) 1025-1040.<br/>
+Keating, B. A., B. M. Wafula, and J. M. Watiki. "Development of a modelling capability for maize in semi-arid eastern Kenya." In ACIAR Proc, vol. 41, pp. 26-33. 1992.<br/>
 
 </body></html>]]></MemoText>
   </Memo>
