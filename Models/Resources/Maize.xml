@@ -32,7 +32,18 @@
     <Command>[Phenology].MaturityToHarvestRipe.Target = 1</Command>
     <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
   </Cultivar>
-
+  <Cultivar>
+    <Name>Laila</Name>
+    <Command>[Phenology].Juvenile.Target = 250</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 0, 0</Command>
+    <Command>[Phenology].FlagLeafToFlowering.Target = 1</Command>
+    <Command>[Phenology].FloweringToGrainFilling.Target = 170</Command>
+    <Command>[Phenology].GrainFilling.Target = 812</Command>
+    <Command>[Phenology].Maturing.Target = 1</Command>
+    <Command>[Phenology].MaturityToHarvestRipe.Target = 1</Command>
+    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
+  </Cultivar>
   <OrganArbitrator>
     <Name>Arbitrator</Name>
     <NArbitrationOption>PrioritythenRelativeAllocation</NArbitrationOption>
