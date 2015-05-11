@@ -51,6 +51,19 @@
   </OrganArbitrator>
   <Phenology>
     <Name>Phenology</Name>
+    <OnEventFunction>
+      <Name>FloweringDAS</Name>
+      <SetEvent>Flowering</SetEvent>
+      <ReSetEvent>never</ReSetEvent>
+      <Constant>
+        <Name>PreEventValue</Name>
+        <Value>0</Value>
+      </Constant>
+      <VariableReference>
+        <Name>PostEventValue</Name>
+        <VariableName>[Phenology].DaysAfterSowing</VariableName>
+      </VariableReference>
+    </OnEventFunction>
     <MultiplyFunction>
       <Name>ThermalTime</Name>
       <PhaseLookup>
