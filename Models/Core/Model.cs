@@ -168,6 +168,7 @@ namespace Models.Core
         [XmlElement(typeof(Models.PMF.Functions.DemandFunctions.PartitionFractionDemandFunction))]
         [XmlElement(typeof(Models.PMF.Functions.DemandFunctions.PopulationBasedDemandFunction))]
         [XmlElement(typeof(Models.PMF.Functions.DemandFunctions.PotentialSizeDemandFunction))]
+        [XmlElement(typeof(Models.PMF.Functions.DemandFunctions.GrainDemandFunction))]
         [XmlElement(typeof(Models.PMF.Functions.DemandFunctions.RelativeGrowthRateDemandFunction))]
         [XmlElement(typeof(Models.PMF.Functions.StructureFunctions.HeightFunction))]
         [XmlElement(typeof(Models.PMF.Functions.StructureFunctions.InPhaseTemperatureFunction))]
