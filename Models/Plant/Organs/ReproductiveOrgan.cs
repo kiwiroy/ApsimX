@@ -30,7 +30,8 @@ namespace Models.PMF.Organs
         IFunction WaterContent = null;
         /// <summary>The filling rate</summary>
         [Link]
-        IFunction FillingRate = null;
+        [Units ("oCd")] 
+        IFunction FillingDuration = null;
         /// <summary>The number function</summary>
         [Link]
         IFunction NumberFunction = null;
@@ -231,9 +232,10 @@ namespace Models.PMF.Organs
                     Number = NumberFunction.Value;
                     if ((Number > 0) && (Phenology.Between(StartFillStage, RipeStage)))
                     {
-                        double demand = Number * FillingRate.Value;
+                        double FillingRate = (MaximumSize / FillingDuration.Value) * Phenology.ThermalTime.Value;
+                         Demand = Number * FillingRate;
                         // Ensure filling does not exceed a maximum size
-                        Demand = Math.Min(demand, (MaximumSize - Live.Wt / Number) * Number);
+                        //Demand = Math.Min(demand, (MaximumSize - Live.Wt / Number) * Number);
                     }
                     else
                         Demand = 0;

@@ -1090,6 +1090,10 @@
           </Structure>
           <ReproductiveOrgan>
             <Name>Grain</Name>
+            <VariableReference>
+              <Name>FillingDuration</Name>
+              <VariableName>[Phenology].GrainFilling.Target.Value</VariableName>
+            </VariableReference>
             <Biomass>
               <Name>Live</Name>
             </Biomass>
@@ -1169,24 +1173,6 @@
                 <Value>1</Value>
               </Constant>
             </MultiplyFunction>
-            <AirTemperatureFunction>
-              <Name>FillingRate</Name>
-              <XYPairs>
-                <Name>XYPairs</Name>
-                <X>
-                  <double>0</double>
-                  <double>26</double>
-                  <double>30</double>
-                  <double>35</double>
-                </X>
-                <Y>
-                  <double>0</double>
-                  <double>0.01</double>
-                  <double>0.01</double>
-                  <double>0.01</double>
-                </Y>
-              </XYPairs>
-            </AirTemperatureFunction>
             <MaximumSize>0.3</MaximumSize>
             <RipeStage>EndGrainFill</RipeStage>
             <StartFillStage>StartGrainFill</StartFillStage>
@@ -1805,7 +1791,7 @@
               </Constant>
               <StartStage>5.2</StartStage>
               <GrowthDuration>120</GrowthDuration>
-              <MaximumOrganWt>0</MaximumOrganWt>
+              <MaximumOrganWt>25</MaximumOrganWt>
             </PopulationBasedDemandFunction>
             <Biomass>
               <Name>Live</Name>
@@ -1827,7 +1813,7 @@
             </Constant>
             <Constant>
               <Name>StructuralFraction</Name>
-              <Value>1</Value>
+              <Value>0.2</Value>
             </Constant>
             <Constant>
               <Name>MinimumNConc</Name>
@@ -1888,7 +1874,7 @@
             </Constant>
             <Constant>
               <Name>MaximumNConc</Name>
-              <Value>0.01</Value>
+              <Value>0.008</Value>
             </Constant>
             <Constant>
               <Name>StructuralFraction</Name>
@@ -1896,7 +1882,7 @@
             </Constant>
             <Constant>
               <Name>MinimumNConc</Name>
-              <Value>0.01</Value>
+              <Value>0.003</Value>
             </Constant>
             <LinearInterpolationFunction>
               <Name>ExpansionStress</Name>
@@ -6990,6 +6976,67 @@ public class Script : Model
           <DisabledSeries />
         </Graph>
       </Folder>
+      <Graph>
+        <Name>HuskWeight</Name>
+        <Axis>
+          <Type>Left</Type>
+          <Title>Leaf Tips (n)</Title>
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Axis>
+          <Type>Bottom</Type>
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Series>
+          <Title>Predicted</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-8388608</ColourArgb>
+          <Marker>None</Marker>
+          <Line>Solid</Line>
+          <X>
+            <TableName>Report</TableName>
+            <FieldName>Clock.Today</FieldName>
+          </X>
+          <Y>
+            <TableName>Report</TableName>
+            <FieldName>Maize.Husk.Live.Wt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>Observed</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>RachisHusk_RainS</TableName>
+            <FieldName>Clock.Today</FieldName>
+          </X>
+          <Y>
+            <TableName>RachisHusk_RainS</TableName>
+            <FieldName>Maize.Husk.Live.Wt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <DisabledSeries />
+      </Graph>
     </Folder>
   </Experiment>
   <Experiment>
