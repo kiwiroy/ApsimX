@@ -5,6 +5,8 @@ using Models.Core;
 using Models.PMF.Functions;
 using Models.PMF.Phen;
 using Models.PMF.Interfaces;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Models.PMF.Organs
 {
@@ -63,6 +65,7 @@ namespace Models.PMF.Organs
         #region Class Properties
 
         /// <summary>The number</summary>
+        [XmlIgnore]
         [Units("/m^2")]
         public double Number = 0;
 

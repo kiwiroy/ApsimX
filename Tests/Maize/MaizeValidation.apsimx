@@ -1097,12 +1097,21 @@
                 <VariableName>[Grain].NumberFunction.Value</VariableName>
               </VariableReference>
               <VariableReference>
-                <Name>FillingDuration</Name>
+                <Name>InitialFillingDuration</Name>
+                <VariableName>[Phenology].FloweringToGrainFilling.Target.Value</VariableName>
+              </VariableReference>
+              <VariableReference>
+                <Name>LinearFillingDuration</Name>
                 <VariableName>[Phenology].GrainFilling.Target.Value</VariableName>
               </VariableReference>
+              <Constant>
+                <Name>InitialGrainProportion</Name>
+                <Value>0.05</Value>
+              </Constant>
               <MaximumSize>0.3</MaximumSize>
               <RipeStage>EndGrainFill</RipeStage>
-              <StartFillStage>StartGrainFill</StartFillStage>
+              <StartInitialFillStage>Flowering</StartInitialFillStage>
+              <StartLinearFillStage>StartGrainFill</StartLinearFillStage>
             </GrainDemandFunction>
             <Biomass>
               <Name>Live</Name>
@@ -1184,7 +1193,6 @@
               </Constant>
             </MultiplyFunction>
             <RipeStage />
-            <Number>0</Number>
           </ReproductiveOrgan>
           <Root>
             <Name>Root</Name>
