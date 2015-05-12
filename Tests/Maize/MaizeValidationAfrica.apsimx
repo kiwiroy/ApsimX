@@ -31,7 +31,7 @@
       <Name>memo</Name>
       <MemoText><![CDATA[
 <html><body>
-DevelopmentKeating et al (1992).<br/>
+A selection of data from Kenya has been included from the work of Keating et al (1992).  These include the trial originally labelled JMW2 by the original authors and was labelled Experiment 6 in Keating et al (1992).  This trial includes maize (cultivar Katumani Composite B) sown at 5 populations (1.1, 2.2, 4.4, 6.6 and 8.8 plants/m2) under low (0 kg N/ha applied) and high (120 kgN/ha) fertiliser conditions during the Long Rains of 1988.  This same experimental design was conducted at two locations, Katumani (1o 35' S, 37o 14' E) and Kiboko (2o 13' S, 37o 43' E). The trial was rainfed at Katumani but fully irrigated at Kiboko.  Yields ranged from 2000 to 5400 kg/ha at Katumani and 1000 to 6000 kg/ha at Kiboko.  There were strong population x nitrogen interactions at both sites.  A second trial refered to as BMW1 or Experiment 1 in Keating et al(1992).  A range of populations (2.0-6.5 plants/m2) and irrigation treatments (6-176 mm) where planted under high (80 kgN/ha) and low (0kgN/ha) fertiliser conditions at Katumani. Individual replicates are modelled separately due to variability in soil (depth to rock), establishment and irrigation application.  Grain yields varied from 1600 to 8000 kg/ha.<br/>
 
 </body></html>]]></MemoText>
     </Memo>
@@ -972,19 +972,6 @@ namespace Models
     </Experiment>
     <Experiment>
       <Name>JMW2Kiboko</Name>
-      <Memo>
-        <Name>Memo</Name>
-        <MemoText><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
- <head>
-  <title></title>
- </head>
- <body>
-  <p>Description of Cultivar trial</p>
- </body>
-</html>]]></MemoText>
-      </Memo>
       <Factors>
         <Name>Factors</Name>
         <Factor>
@@ -1051,11 +1038,6 @@ namespace Models
       </Factors>
       <Simulation>
         <Name>JMW2Kiboko</Name>
-        <Memo>
-          <Name>memo</Name>
-          <MemoText><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">]]></MemoText>
-        </Memo>
         <Weather>
           <Name>Weather</Name>
           <FileName>%root%\Tests\Maize\KIBOKO.MET</FileName>
@@ -1928,19 +1910,6 @@ namespace Models
     </Experiment>
     <Experiment>
       <Name>BMW1</Name>
-      <Memo>
-        <Name>Memo</Name>
-        <MemoText><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
- <head>
-  <title></title>
- </head>
- <body>
-  <p>Description of Cultivar trial</p>
- </body>
-</html>]]></MemoText>
-      </Memo>
       <Factors>
         <Name>Factors</Name>
         <Factor>
@@ -11341,11 +11310,6 @@ namespace Models
       </Factors>
       <Simulation>
         <Name>BMW1</Name>
-        <Memo>
-          <Name>memo</Name>
-          <MemoText><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">]]></MemoText>
-        </Memo>
         <Weather>
           <Name>Weather</Name>
           <FileName>%root%\Tests\Maize\KATUMANI.MET</FileName>
@@ -12391,16 +12355,16 @@ namespace Models
   </Folder>
   <Folder>
     <Name>Australia</Name>
-    <Experiment>
-      <Name>K841</Name>
-      <Memo>
-        <Name>Memo</Name>
-        <MemoText><![CDATA[
+    <Memo>
+      <Name>memo</Name>
+      <MemoText><![CDATA[
 <html><body>
-       Description of Cultivar trial <br/>
+The data for two trials from near Katherine, Northern Territory, Australia, have been included from Carberry and Abrecht (1991).  These include two planting dates for the summer of 1983/1984 (labelled as K841, K842).  At each planting date, cultivar Dekalb XL82 was sown at 4 populations (3, 5, 7, 9 plants/m<sup>2</sup>) under low and high irrigation conditions.  The low irrigation treatments only included preliminary applications to ensure crop establishment.<br/>
 
 </body></html>]]></MemoText>
-      </Memo>
+    </Memo>
+    <Experiment>
+      <Name>K841</Name>
       <Factors>
         <Name>Factors</Name>
         <Factor>
@@ -12504,13 +12468,6 @@ namespace Models
       </Factors>
       <Simulation>
         <Name>K841</Name>
-        <Memo>
-          <Name>memo</Name>
-          <MemoText><![CDATA[
-<html><body>
-
-</body></html>]]></MemoText>
-        </Memo>
         <Weather>
           <Name>Weather</Name>
           <FileName>%root%\Tests\Maize\CLS183.MET</FileName>
@@ -13328,48 +13285,6 @@ namespace Models
         <Area>0</Area>
         <Slope>0</Slope>
       </Simulation>
-      <Graph>
-        <Name>LAI</Name>
-        <Axis>
-          <Type>Bottom</Type>
-          <Title />
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Axis>
-          <Type>Left</Type>
-          <Title />
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Series>
-          <Title>Series1</Title>
-          <Type>Scatter</Type>
-          <XAxis>Bottom</XAxis>
-          <YAxis>Left</YAxis>
-          <ColourArgb>-16776961</ColourArgb>
-          <Marker>None</Marker>
-          <Line>Solid</Line>
-          <X>
-            <TableName>Report</TableName>
-            <FieldName>Clock.Today</FieldName>
-          </X>
-          <Y>
-            <TableName>Report</TableName>
-            <FieldName>Maize.Leaf.LAI</FieldName>
-          </Y>
-          <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>true</ShowInLegend>
-          <Cumulative>false</Cumulative>
-        </Series>
-        <LegendPosition>TopLeft</LegendPosition>
-        <ShowRegressionLine>false</ShowRegressionLine>
-        <DisabledSeries />
-      </Graph>
     </Experiment>
     <Experiment>
       <Name>K842</Name>
@@ -17343,6 +17258,9 @@ namespace Models
     <MemoText><![CDATA[
 <html><body>
 Archontoulis, S.V., Miguez, F.E., Moore, K.J., 2014. Evaluating APSIM Maize, Soil Water, Soil Nitrogen, Manure, and Soil Temperature Modules in the Midwestern United States. Agronomy Journal 106(3) 1025-1040.<br/>
+<br/>
+Carberry, P.S., Abrecht, D.G., 1991. Tailoring crop models to the semi-arid tropics. In: Muchow, R.C., Bellamy, J.A. (Eds.), Climatic Risk in Crop Production: Models and Management for the Semiarid Tropics and Subtropics. CAB International, Wallingford, UK, pp. 157-182.<br/>
+<br/>
 Keating, B. A., B. M. Wafula, and J. M. Watiki. "Development of a modelling capability for maize in semi-arid eastern Kenya." In ACIAR Proc, vol. 41, pp. 26-33. 1992.<br/>
 
 </body></html>]]></MemoText>
