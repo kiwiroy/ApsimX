@@ -91,7 +91,7 @@ namespace Models.PMF.Organs
         /// <summary>Gets the size.</summary>
         /// <value>The size.</value>
         [Units("g")]
-        private double Size
+        public double Size
         {
             get
             {

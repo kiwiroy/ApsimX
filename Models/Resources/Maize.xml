@@ -594,7 +594,7 @@
     <RipeStage>EndGrainFill</RipeStage>
     <StartFillStage>StartGrainFill</StartFillStage>
     <VariableReference>
-      <Name>GrainFillDuration</Name>
+      <Name>FillingDuration</Name>
       <VariableName>[Phenology].GrainFilling.Target.Value</VariableName>
     </VariableReference>
     <Number>0</Number>
