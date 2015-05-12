@@ -1090,6 +1090,10 @@
           </Structure>
           <ReproductiveOrgan>
             <Name>Grain</Name>
+            <VariableReference>
+              <Name>FillingDuration</Name>
+              <VariableName>[Phenology].GrainFilling.Target.Value</VariableName>
+            </VariableReference>
             <Biomass>
               <Name>Live</Name>
             </Biomass>
@@ -1169,24 +1173,6 @@
                 <Value>1</Value>
               </Constant>
             </MultiplyFunction>
-            <AirTemperatureFunction>
-              <Name>FillingRate</Name>
-              <XYPairs>
-                <Name>XYPairs</Name>
-                <X>
-                  <double>0</double>
-                  <double>26</double>
-                  <double>30</double>
-                  <double>35</double>
-                </X>
-                <Y>
-                  <double>0</double>
-                  <double>0.01</double>
-                  <double>0.01</double>
-                  <double>0.01</double>
-                </Y>
-              </XYPairs>
-            </AirTemperatureFunction>
             <MaximumSize>0.3</MaximumSize>
             <RipeStage>EndGrainFill</RipeStage>
             <StartFillStage>StartGrainFill</StartFillStage>
