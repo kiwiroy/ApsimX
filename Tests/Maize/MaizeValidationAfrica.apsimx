@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Simulations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>Simulations</Name>
+  <Memo>
+    <Name>Introduction</Name>
+    <MemoText><![CDATA[
+<html><body>
+The APSIM Maize model has been tested on a range of datasets from around the world to provide tests across a range of environmental conditions.  Tests include ranges in plant population, nitrogen management and irrigation levels, as well as including historical datasets from africa using cultivars developed during the 1960's, through to modern varieties grown in the American mid-West.
+</body></html>]]></MemoText>
+  </Memo>
   <DataStore>
     <Name>DataStore</Name>
     <Model xsi:type="ExcelInput">
