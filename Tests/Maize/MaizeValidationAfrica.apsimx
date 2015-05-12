@@ -16360,7 +16360,7 @@ namespace Models
           <Name>Sowing</Name>
           <Operation>
             <Date>2007-05-17T00:00:00</Date>
-            <Action> [Maize].Sow(population:7.9, cultivar:"Laila", depth:60, rowSpacing:760);</Action>
+            <Action> [Maize].Sow(population:7.9, cultivar:"Laila", depth:40, rowSpacing:760);</Action>
           </Operation>
         </Operations>
         <Operations>

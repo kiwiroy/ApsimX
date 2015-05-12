@@ -38,7 +38,7 @@
   </Cultivar>
   <Cultivar>
     <Name>Laila</Name>
-    <Command>[Phenology].Juvenile.Target.Value = 250</Command>
+    <Command>[Phenology].Juvenile.Target.Value = 211</Command>
     <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
     <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 0, 0</Command>
     <Command>[Phenology].FlagLeafToFlowering.Target.Value = 1</Command>
