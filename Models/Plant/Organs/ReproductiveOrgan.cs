@@ -146,14 +146,11 @@ namespace Models.PMF.Organs
                 Clear();
         }
 
-        /// <summary>Called when crop is being harvested.</summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        [EventSubscribe("Harvesting")]
-        private void OnHarvesting(object sender, EventArgs e)
+        /// <summary>
+        /// Execute harvest logic for reproductive organ
+        /// </summary>
+        public override void DoHarvest()
         {
-            if (sender == Plant)
-            {
                 double YieldDW = (Live.Wt + Dead.Wt);
 
                 Summary.WriteMessage(this, "Harvesting " + Name + " from " + Plant.Name);
@@ -165,7 +162,6 @@ namespace Models.PMF.Organs
                 Dead.Clear();
                 Number = 0;
                 _ReadyForHarvest = false;
-            }
         }
         #endregion
 

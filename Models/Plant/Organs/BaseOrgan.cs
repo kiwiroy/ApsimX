@@ -161,5 +161,11 @@ namespace Models.PMF.Organs
             Live.Clear();
             Dead.Clear();
         }
+
+        /// <summary>
+        /// Do harvest logic for this organ
+        /// </summary>
+        virtual public void DoHarvest() { }
+
     }
 }
