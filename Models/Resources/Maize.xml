@@ -19,6 +19,8 @@
     <Command>[Phenology].Maturing.Target.Value = 1</Command>
     <Command>[Phenology].MaturityToHarvestRipe.Target.Value = 1</Command>
     <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 14</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 405</Command>
   </Cultivar>
   <Cultivar>
     <Name>Dekalb_XL82</Name>
@@ -30,7 +32,9 @@
     <Command>[Phenology].GrainFilling.Target.Value = 813</Command>
     <Command>[Phenology].Maturing.Target.Value = 1</Command>
     <Command>[Phenology].MaturityToHarvestRipe.Target.Value = 1</Command>
-    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
+    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
   </Cultivar>
   <Cultivar>
     <Name>Laila</Name>
@@ -42,7 +46,9 @@
     <Command>[Phenology].GrainFilling.Target.Value = 812</Command>
     <Command>[Phenology].Maturing.Target.Value = 1</Command>
     <Command>[Phenology].MaturityToHarvestRipe.Target.Value = 1</Command>
-    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
+    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 36</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 36</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 720</Command>
   </Cultivar>
   <OrganArbitrator>
     <Name>Arbitrator</Name>
