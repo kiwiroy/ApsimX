@@ -599,22 +599,10 @@
       <Name>SoilWaterEffect</Name>
       <Value>1</Value>
     </Constant>
-    <AirTemperatureFunction>
+    <Constant>
       <Name>TemperatureEffect</Name>
-      <XYPairs>
-        <Name>XYPairs</Name>
-        <X>
-          <double>0</double>
-          <double>26</double>
-          <double>35</double>
-        </X>
-        <Y>
-          <double>1</double>
-          <double>1</double>
-          <double>1</double>
-        </Y>
-      </XYPairs>
-    </AirTemperatureFunction>
+      <Value>1</Value>
+    </Constant>
     <Constant>
       <Name>MaxDailyNUptake</Name>
       <Value>20</Value>
