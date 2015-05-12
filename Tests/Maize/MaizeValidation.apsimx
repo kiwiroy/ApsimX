@@ -2651,11 +2651,9 @@ namespace Models
             <string>[ExtraVariables].Script.MostRecentlyAppearedLeafMaxSize</string>
             <string>[ExtraVariables].Script.LeafExpandedPosition</string>
             <string>[ExtraVariables].Script.MostRecentlyExpandedLeafSize</string>
-<<<<<<< HEAD
             <string>[Maize].Leaf.DeadCohortNo</string>
             <string>[Phenology].ThermalTime.Value</string>
             <string>[Maize].Leaf.SenescingCohortNo</string>
-=======
             <string>[Maize].Stem.MaximumNConc.Value</string>
             <string>[Maize].Stem.MinimumNConc.Value</string>
             <string>[Maize].Stem.Live.NConc</string>
@@ -2664,7 +2662,6 @@ namespace Models
             <string>[Maize].Husk.Live.NConc</string>
             <string>[Maize].Rachis.Live.NConc</string>
             <string>[Maize].Leaf.Dead.NConc</string>
->>>>>>> 57fb1388be4be23adce32abca085b99b659ca1d0
           </VariableNames>
           <EventNames>
             <string>[Clock].DoReport</string>
@@ -6461,7 +6458,6 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
       </Graph>
-<<<<<<< HEAD
       <Graph>
         <Name>SenescedLeaves</Name>
         <Axis>
@@ -6595,7 +6591,7 @@ public class Script : Model
           </X>
           <Y>
             <TableName>StartSenes</TableName>
-            <FieldName>SimName</FieldName>
+            <FieldName>Maize.Leaf.DeadCohortNo</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>false</ShowInLegend>
@@ -6625,7 +6621,6 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
       </Graph>
-=======
       <Folder>
         <Name>OrganNConc</Name>
         <Graph>
@@ -6995,7 +6990,6 @@ public class Script : Model
           <DisabledSeries />
         </Graph>
       </Folder>
->>>>>>> 57fb1388be4be23adce32abca085b99b659ca1d0
     </Folder>
   </Experiment>
   <Experiment>
