@@ -419,43 +419,10 @@
         </XYPairs>
       </LinearInterpolationFunction>
     </HeightFunction>
-    <MultiplyFunction>
+    <Constant>
       <Name>BranchingRate</Name>
-      <LinearInterpolationFunction>
-        <Name>PotentialBranchingRate</Name>
-        <XProperty>[Leaf].AppearedCohortNo</XProperty>
-        <XYPairs>
-          <Name>XYPairs</Name>
-          <X>
-            <double>3</double>
-            <double>4</double>
-            <double>5</double>
-            <double>6</double>
-          </X>
-          <Y>
-            <double>0</double>
-            <double>0</double>
-            <double>0</double>
-            <double>0</double>
-          </Y>
-        </XYPairs>
-      </LinearInterpolationFunction>
-      <LinearInterpolationFunction>
-        <Name>WaterStress</Name>
-        <XProperty>[Maize].WaterSupplyDemandRatio</XProperty>
-        <XYPairs>
-          <Name>XYPairs</Name>
-          <X>
-            <double>0.3</double>
-            <double>1</double>
-          </X>
-          <Y>
-            <double>1</double>
-            <double>1</double>
-          </Y>
-        </XYPairs>
-      </LinearInterpolationFunction>
-    </MultiplyFunction>
+      <Value>0.0</Value>
+    </Constant>
     <PhaseLookup>
       <Name>ShadeInducedBranchMortality</Name>
       <PhaseLookupValue>
@@ -1261,7 +1228,7 @@
         <VariableName>[Rachis].Live.Wt</VariableName>
       </VariableReference>
       <VariableReference>
-        <Name>CobMass</Name>
+        <Name>CobNumber</Name>
         <VariableName>[Rachis].CobNumber.Value</VariableName>
       </VariableReference>
     </DivideFunction>
@@ -1278,64 +1245,6 @@
       <StartStage>5.5</StartStage>
       <GrowthDuration>300</GrowthDuration>
       <MaximumOrganWt>25</MaximumOrganWt>
-    </PopulationBasedDemandFunction>
-    <Biomass>
-      <Name>Live</Name>
-    </Biomass>
-    <Biomass>
-      <Name>Dead</Name>
-    </Biomass>
-    <Constant>
-      <Name>NReallocationFactor</Name>
-      <Value>0</Value>
-    </Constant>
-    <Constant>
-      <Name>NRetranslocationFactor</Name>
-      <Value>0.1</Value>
-    </Constant>
-    <Constant>
-      <Name>MaximumNConc</Name>
-      <Value>0.01</Value>
-    </Constant>
-    <Constant>
-      <Name>StructuralFraction</Name>
-      <Value>1</Value>
-    </Constant>
-    <Constant>
-      <Name>MinimumNConc</Name>
-      <Value>0.01</Value>
-    </Constant>
-    <LinearInterpolationFunction>
-      <Name>ExpansionStress</Name>
-      <XProperty>[Maize].WaterSupplyDemandRatio</XProperty>
-      <XYPairs>
-        <Name>XYPairs</Name>
-        <X>
-          <double>0</double>
-          <double>0.6</double>
-        </X>
-        <Y>
-          <double>1</double>
-          <double>1</double>
-        </Y>
-      </XYPairs>
-    </LinearInterpolationFunction>
-  </GenericAboveGroundOrgan>
-  <GenericAboveGroundOrgan>
-    <Name>Tastle</Name>
-    <PopulationBasedDemandFunction>
-      <Name>DMDemandFunction</Name>
-      <VariableReference>
-        <Name>ThermalTime</Name>
-        <VariableName>[Phenology].ThermalTime.Value</VariableName>
-      </VariableReference>
-      <Constant>
-        <Name>ExpansionStress</Name>
-        <Value>1</Value>
-      </Constant>
-      <StartStage>5</StartStage>
-      <GrowthDuration>300</GrowthDuration>
-      <MaximumOrganWt>0</MaximumOrganWt>
     </PopulationBasedDemandFunction>
     <Biomass>
       <Name>Live</Name>
@@ -1491,8 +1400,6 @@
         <string>[Grain].Dead</string>
         <string>[Rachis].Live</string>
         <string>[Rachis].Dead</string>
-        <string>[Tastle].Live</string>
-        <string>[Tastle].Dead</string>
       </Propertys>
     </CompositeBiomass>
     <CompositeBiomass>
@@ -1515,8 +1422,6 @@
         <string>[Grain].Dead</string>
         <string>[Rachis].Live</string>
         <string>[Rachis].Dead</string>
-        <string>[Tastle].Live</string>
-        <string>[Tastle].Dead</string>
         <string>[Root].Live</string>
         <string>[Root].Dead</string>
       </Propertys>
@@ -1529,7 +1434,6 @@
         <string>[Husk].Live</string>
         <string>[Grain].Live</string>
         <string>[Rachis].Live</string>
-        <string>[Tastle].Live</string>
         <string>[Root].Live</string>
       </Propertys>
     </CompositeBiomass>
@@ -1541,7 +1445,6 @@
         <string>[Husk].Dead</string>
         <string>[Grain].Dead</string>
         <string>[Rachis].Dead</string>
-        <string>[Tastle].Dead</string>
         <string>[Root].Dead</string>
       </Propertys>
     </CompositeBiomass>
@@ -1554,13 +1457,6 @@
       </Propertys>
     </CompositeBiomass>
     <CompositeBiomass>
-      <Name>StemLive</Name>
-      <Propertys>
-        <string>[Stem].Live</string>
-        <string>[Tastle].Live</string>
-      </Propertys>
-    </CompositeBiomass>
-    <CompositeBiomass>
       <Name>AboveGroundLive</Name>
       <Propertys>
         <string>[Leaf].Live</string>
@@ -1568,7 +1464,6 @@
         <string>[Husk].Live</string>
         <string>[Grain].Live</string>
         <string>[Rachis].Live</string>
-        <string>[Tastle].Live</string>
       </Propertys>
     </CompositeBiomass>
     <CompositeBiomass>
@@ -1579,7 +1474,6 @@
         <string>[Husk].Dead</string>
         <string>[Grain].Dead</string>
         <string>[Rachis].Dead</string>
-        <string>[Tastle].Dead</string>
       </Propertys>
     </CompositeBiomass>
   </Summariser>

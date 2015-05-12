@@ -14995,14 +14995,6 @@ Testing of APSIM Maize, Soil Water, Soil Nitrogen, Manure, and Soil Temperature 
     </Memo>
     <Experiment>
       <Name>Ames2011</Name>
-      <Memo>
-        <Name>Memo</Name>
-        <MemoText><![CDATA[
-<html><body>
-       Description of Cultivar trial <br/>
-
-</body></html>]]></MemoText>
-      </Memo>
       <Factors>
         <Name>Factors</Name>
         <Factor>
@@ -16791,7 +16783,7 @@ namespace Models
           <Interval>NaN</Interval>
         </Axis>
         <Series>
-          <Title>Predicted</Title>
+          <Title>PredictedBiomass</Title>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -16807,11 +16799,11 @@ namespace Models
             <FieldName>Maize.Summariser.Total.Wt</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>true</ShowInLegend>
+          <ShowInLegend>false</ShowInLegend>
           <Cumulative>false</Cumulative>
         </Series>
         <Series>
-          <Title>Observed</Title>
+          <Title>ObservedBiomass</Title>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -16827,10 +16819,50 @@ namespace Models
             <FieldName>Biomass</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>PredictedGrain</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-65536</ColourArgb>
+          <Marker>None</Marker>
+          <Line>Solid</Line>
+          <X>
+            <TableName>Report</TableName>
+            <FieldName>Clock.Today</FieldName>
+          </X>
+          <Y>
+            <TableName>Report</TableName>
+            <FieldName>Maize.Grain.Live.Wt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>false</ShowInLegend>
           <Cumulative>false</Cumulative>
         </Series>
-        <LegendPosition>TopRight</LegendPosition>
+        <Series>
+          <Title>ObservedGrain</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-65536</ColourArgb>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>TimeSeriesData</TableName>
+            <FieldName>Date</FieldName>
+          </X>
+          <Y>
+            <TableName>TimeSeriesData</TableName>
+            <FieldName>GrainWt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
       </Graph>
@@ -16932,7 +16964,7 @@ namespace Models
           <Name>Sowing</Name>
           <Operation>
             <Date>2007-05-17T00:00:00</Date>
-            <Action> [Maize].Sow(population:7.9, cultivar:"Laila", depth:40, rowSpacing:760);</Action>
+            <Action> [Maize].Sow(population:7.9, cultivar:"Laila", depth:60, rowSpacing:760);</Action>
           </Operation>
         </Operations>
         <Operations>
@@ -17695,7 +17727,7 @@ namespace Models
           <Interval>NaN</Interval>
         </Axis>
         <Series>
-          <Title>Predicted</Title>
+          <Title>PredictedBiomass</Title>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -17711,11 +17743,11 @@ namespace Models
             <FieldName>Maize.Summariser.Total.Wt</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>true</ShowInLegend>
+          <ShowInLegend>false</ShowInLegend>
           <Cumulative>false</Cumulative>
         </Series>
         <Series>
-          <Title>Observed</Title>
+          <Title>ObservedBiomass</Title>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -17731,10 +17763,50 @@ namespace Models
             <FieldName>Biomass</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>PredictedGrain</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-65536</ColourArgb>
+          <Marker>None</Marker>
+          <Line>Solid</Line>
+          <X>
+            <TableName>Report</TableName>
+            <FieldName>Clock.Today</FieldName>
+          </X>
+          <Y>
+            <TableName>Report</TableName>
+            <FieldName>Maize.Grain.Live.Wt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>false</ShowInLegend>
           <Cumulative>false</Cumulative>
         </Series>
-        <LegendPosition>TopRight</LegendPosition>
+        <Series>
+          <Title>ObservedGrain</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-65536</ColourArgb>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>TimeSeriesData</TableName>
+            <FieldName>Date</FieldName>
+          </X>
+          <Y>
+            <TableName>TimeSeriesData</TableName>
+            <FieldName>GrainWt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
       </Graph>
