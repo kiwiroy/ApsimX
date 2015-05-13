@@ -375,7 +375,7 @@ namespace Models
 			if ((double)zone.Get("Maize.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday) 
 			{
 			LeafAppearedPosition = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
-			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.InitialLeafValues.MaxArea.Value");
+			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.CohortParameters.MaxArea.Value");
 			}
 			//else
 			//LeafAppearedPosition = 0;
@@ -452,7 +452,7 @@ namespace Models
               <string>[Maize].Leaf.CoverDead</string>
               <string>[Maize].Leaf.LAI</string>
               <string>[Maize].Leaf.Height</string>
-              <string>[Maize].Leaf.InitialLeafValues.MaxArea.Value</string>
+              <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
               <string>[Maize].Leaf.Fw</string>
               <string>[Maize].Leaf.Fn</string>
               <string>[Maize].Phenology.CurrentPhaseName</string>
@@ -1437,7 +1437,7 @@ namespace Models
 			if ((double)zone.Get("Maize.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday) 
 			{
 			LeafAppearedPosition = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
-			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.InitialLeafValues.MaxArea.Value");
+			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.CohortParameters.MaxArea.Value");
 			}
 			//else
 			//LeafAppearedPosition = 0;
@@ -1514,7 +1514,7 @@ namespace Models
               <string>[Maize].Leaf.CoverDead</string>
               <string>[Maize].Leaf.LAI</string>
               <string>[Maize].Leaf.Height</string>
-              <string>[Maize].Leaf.InitialLeafValues.MaxArea.Value</string>
+              <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
               <string>[Maize].Leaf.Fw</string>
               <string>[Maize].Leaf.Fn</string>
               <string>[Maize].Phenology.CurrentPhaseName</string>
@@ -11843,7 +11843,7 @@ namespace Models
 			if ((double)zone.Get("Maize.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday) 
 			{
 			LeafAppearedPosition = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
-			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.InitialLeafValues.MaxArea.Value");
+			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.CohortParameters.MaxArea.Value");
 			}
 			//else
 			//LeafAppearedPosition = 0;
@@ -11920,7 +11920,7 @@ namespace Models
               <string>[Maize].Leaf.CoverDead</string>
               <string>[Maize].Leaf.LAI</string>
               <string>[Maize].Leaf.Height</string>
-              <string>[Maize].Leaf.InitialLeafValues.MaxArea.Value</string>
+              <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
               <string>[Maize].Leaf.Fw</string>
               <string>[Maize].Leaf.Fn</string>
               <string>[Maize].Phenology.CurrentPhaseName</string>
@@ -13017,7 +13017,7 @@ namespace Models
 			if ((double)zone.Get("Maize.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday) 
 			{
 			LeafAppearedPosition = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
-			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.InitialLeafValues.MaxArea.Value");
+			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.CohortParameters.MaxArea.Value");
 			}
 			//else
 			//LeafAppearedPosition = 0;
@@ -13094,7 +13094,7 @@ namespace Models
               <string>[Maize].Leaf.CoverDead</string>
               <string>[Maize].Leaf.LAI</string>
               <string>[Maize].Leaf.Height</string>
-              <string>[Maize].Leaf.InitialLeafValues.MaxArea.Value</string>
+              <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
               <string>[Maize].Leaf.Fw</string>
               <string>[Maize].Leaf.Fn</string>
               <string>[Maize].Phenology.CurrentPhaseName</string>
@@ -14100,7 +14100,7 @@ namespace Models
 			if ((double)zone.Get("Maize.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday) 
 			{
 			LeafAppearedPosition = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
-			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.InitialLeafValues.MaxArea.Value");
+			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.CohortParameters.MaxArea.Value");
 			}
 			//else
 			//LeafAppearedPosition = 0;
@@ -14177,7 +14177,7 @@ namespace Models
               <string>[Maize].Leaf.CoverDead</string>
               <string>[Maize].Leaf.LAI</string>
               <string>[Maize].Leaf.Height</string>
-              <string>[Maize].Leaf.InitialLeafValues.MaxArea.Value</string>
+              <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
               <string>[Maize].Leaf.Fw</string>
               <string>[Maize].Leaf.Fn</string>
               <string>[Maize].Phenology.CurrentPhaseName</string>
@@ -15259,7 +15259,7 @@ namespace Models
 			if ((double)zone.Get("Maize.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday) 
 			{
 			LeafAppearedPosition = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
-			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.InitialLeafValues.MaxArea.Value");
+			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.CohortParameters.MaxArea.Value");
 			}
 			//else
 			//LeafAppearedPosition = 0;
@@ -15336,7 +15336,7 @@ namespace Models
               <string>[Maize].Leaf.CoverDead</string>
               <string>[Maize].Leaf.LAI</string>
               <string>[Maize].Leaf.Height</string>
-              <string>[Maize].Leaf.InitialLeafValues.MaxArea.Value</string>
+              <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
               <string>[Maize].Leaf.Fw</string>
               <string>[Maize].Leaf.Fn</string>
               <string>[Maize].Phenology.CurrentPhaseName</string>
@@ -16058,7 +16058,7 @@ namespace Models
 			if ((double)zone.Get("Maize.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday) 
 			{
 			LeafAppearedPosition = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
-			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.InitialLeafValues.MaxArea.Value");
+			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.CohortParameters.MaxArea.Value");
 			}
 			//else
 			//LeafAppearedPosition = 0;
@@ -16135,7 +16135,7 @@ namespace Models
             <string>[Maize].Leaf.CoverDead</string>
             <string>[Maize].Leaf.LAI</string>
             <string>[Maize].Leaf.Height</string>
-            <string>[Maize].Leaf.InitialLeafValues.MaxArea.Value</string>
+            <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
             <string>[Maize].Leaf.Fw</string>
             <string>[Maize].Leaf.Fn</string>
             <string>[Maize].Phenology.CurrentPhaseName</string>
@@ -17061,7 +17061,7 @@ namespace Models
 			if ((double)zone.Get("Maize.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday) 
 			{
 			LeafAppearedPosition = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
-			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.InitialLeafValues.MaxArea.Value");
+			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.CohortParameters.MaxArea.Value");
 			}
 			//else
 			//LeafAppearedPosition = 0;
@@ -17138,7 +17138,7 @@ namespace Models
             <string>[Maize].Leaf.CoverDead</string>
             <string>[Maize].Leaf.LAI</string>
             <string>[Maize].Leaf.Height</string>
-            <string>[Maize].Leaf.InitialLeafValues.MaxArea.Value</string>
+            <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
             <string>[Maize].Leaf.Fw</string>
             <string>[Maize].Leaf.Fn</string>
             <string>[Maize].Phenology.CurrentPhaseName</string>

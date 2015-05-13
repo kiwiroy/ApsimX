@@ -835,8 +835,8 @@
               <XProperty />
             </LinearInterpolationFunction>
           </RUEModel>
-          <InitialLeafValues>
-            <Name>LeafCohortParameters</Name>
+          <LeafCohortParameters>
+            <Name>CohortParameters</Name>
             <LinearInterpolationFunction>
               <Name>MaxArea</Name>
               <XProperty />
@@ -913,7 +913,7 @@
               <Name>StructuralFraction</Name>
               <Value>0</Value>
             </Constant>
-          </InitialLeafValues>
+          </LeafCohortParameters>
           <CurrentExpandingLeaf>0</CurrentExpandingLeaf>
           <StartFractionExpanded>0</StartFractionExpanded>
           <FractionNextleafExpanded>0</FractionNextleafExpanded>

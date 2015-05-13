@@ -124,7 +124,6 @@
     <Compile Include="EventArguments\GridHeaderClickedArgs.cs" />
     <Compile Include="EventArguments\GridCellsChangedArgs.cs" />
     <Compile Include="Interfaces\ISupplementView.cs" />
-    <Compile Include="Presenters\ForestryPresenter.cs" />
     <Compile Include="Presenters\SupplementPresenter.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

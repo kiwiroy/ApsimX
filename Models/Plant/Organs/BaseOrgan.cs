@@ -18,9 +18,9 @@ namespace Models.PMF.Organs
     {
         #region Links to other models or compontnets
         /// <summary>The live</summary>
-        [Link] public Biomass Live = null;
+        [Link] [DoNotDocument] public Biomass Live = null;
         /// <summary>The dead</summary>
-        [Link] public Biomass Dead = null;
+        [Link] [DoNotDocument] public Biomass Dead = null;
         #endregion
 
         /// <summary>The clock</summary>
