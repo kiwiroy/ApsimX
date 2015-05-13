@@ -1159,6 +1159,17 @@ Hammer et al (2009) used a constant extraction front velocity of 2.5cm per day i
     </RUEModel>
     <MultiplyFunction>
       <Name>ExtinctionCoeff</Name>
+      <Memo>
+        <Name>Memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+Extinction coefficient is specified in terms of a potential extinction coefficient which is then discounted during periods of water stress to account for the impact of leaf curling.
+<br/>
+
+</body></html>]]>
+        </MemoText>
+      </Memo>
       <LinearInterpolationFunction>
         <Name>PotentialExtinctionCoeff</Name>
         <XProperty>[Leaf].LAI</XProperty>
@@ -1175,7 +1186,7 @@ Hammer et al (2009) used a constant extraction front velocity of 2.5cm per day i
         </XYPairs>
       </LinearInterpolationFunction>
       <LinearInterpolationFunction>
-        <Name>WaterStress</Name>
+        <Name>WaterStressImpact</Name>
         <XProperty>[Maize].WaterSupplyDemandRatio</XProperty>
         <XYPairs>
           <Name>XYPairs</Name>
@@ -1546,6 +1557,8 @@ Hammer, G.L., Dong, Z., McLean, G., Doherty, A., Messina, C., Schussler, J., Zin
 Jones, C.A. and Kiniry, J.R. (1986) CERES-Maize: a Simulation Model of Maize Growth and Development. Texas A&M University Press, College Station, 194pp.
 
 Meinke, H., Hammer, G.L., Want, P., 1993. POTENTIAL SOIL-WATER EXTRACTION BY SUNFLOWER ON A RANGE OF SOILS. Field Crops Research 32(1-2) 59-81.
+
+Ning, P., Li, S., White, P.J., Li, C., 2015. Maize Varieties Released in Different Eras Have Similar Root Length Density Distributions in the Soil, Which Are Negatively Correlated with Local Concentrations of Soil Mineral Nitrogen. PLoS ONE 10(3) e0121892.
 
 Peake, A.S., Huth, N.I., Kelly, A.M., Bell, K.L., 2013. Variation in water extraction with maize plant density and its impact on model application. Field Crops Research 146(0) 31-37.
 <br/>

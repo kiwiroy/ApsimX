@@ -614,8 +614,6 @@ namespace UserInterface.Classes
             // Export graph to bitmap file.
             Bitmap image = new Bitmap(350, 350);
             graph.Export(image);
-            image.Save(@"C:\Users\hol353\Desktop\temp\temp.gif");
-
             image.Save(GifFileName, System.Drawing.Imaging.ImageFormat.Gif);
         }
 
