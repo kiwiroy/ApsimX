@@ -42,10 +42,6 @@ namespace Models.PMF.Organs
         /// <summary>The n filling rate</summary>
         [Link]
         IFunction NFillingRate = null;
-        //[Link] Function MaxNConcDailyGrowth = null;
-        /// <summary>The nitrogen demand switch</summary>
-        [Link]
-        IFunction NitrogenDemandSwitch = null;
         /// <summary>The maximum n conc</summary>
         [Link]
         IFunction MaximumNConc = null;
@@ -53,7 +49,7 @@ namespace Models.PMF.Organs
         [Link]
         IFunction MinimumNConc = null;
         /// <summary>The dm demand function</summary>
-        [Link(IsOptional=true)]
+        [Link]
         IFunction DMDemandFunction = null;
         #endregion
 
@@ -235,26 +231,7 @@ namespace Models.PMF.Organs
         {
             get
             {
-
-                double Demand = 0;
-                if (DMDemandFunction != null)
-                {
-                    Demand = DMDemandFunction.Value;
-                }
-                else
-                {
-                    //Number = NumberFunction.Value;
-                   // if ((Number > 0) && (Phenology.Between(StartFillStage, RipeStage)))
-                  //  {
-                    //    double FillingRate = (MaximumSize / FillingDuration.Value) * Phenology.ThermalTime.Value;
-                    //     Demand = Number * FillingRate;
-                        // Ensure filling does not exceed a maximum size
-                        //Demand = Math.Min(demand, (MaximumSize - Live.Wt / Number) * Number);
-                   // }
-                   // else
-                        Demand = 0;
-                }
-                return new BiomassPoolType { Structural = Demand };
+                return new BiomassPoolType { Structural = DMDemandFunction.Value };
             }
         }
         /// <summary>Sets the dm potential allocation.</summary>
@@ -282,14 +259,10 @@ namespace Models.PMF.Organs
         {
             get
             {
-                double _NitrogenDemandSwitch = 1;
-                if (NitrogenDemandSwitch != null) //Default of 1 means demand is always turned on!!!!
-                    _NitrogenDemandSwitch = NitrogenDemandSwitch.Value;
-                double demand = Number * NFillingRate.Value;
-                demand = Math.Min(demand, MaximumNConc.Value * PotentialDMAllocation) * _NitrogenDemandSwitch;
+                double demand = NFillingRate.Value;
+                demand = Math.Min(demand, MaximumNConc.Value * PotentialDMAllocation);
                 return new BiomassPoolType { Structural = demand };
             }
-
         }
         /// <summary>Sets the n allocation.</summary>
         /// <value>The n allocation.</value>
