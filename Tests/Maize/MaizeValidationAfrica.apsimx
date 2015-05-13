@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Simulations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>Simulations</Name>
+  <Memo>
+    <Name>Introduction</Name>
+    <MemoText><![CDATA[
+<html><body>
+The APSIM Maize model has been tested on a range of datasets from around the world to provide tests across a range of environmental conditions.  Tests include ranges in plant population, nitrogen management and irrigation levels, as well as including historical datasets from africa using cultivars developed during the 1960's, through to modern varieties grown in the American mid-West.<br/>
+
+</body></html>]]></MemoText>
+  </Memo>
   <DataStore>
     <Name>DataStore</Name>
     <Model xsi:type="ExcelInput">
@@ -37,19 +45,6 @@ A selection of data from Kenya has been included from the work of Keating et al 
     </Memo>
     <Experiment>
       <Name>JMW2Katumani</Name>
-      <Memo>
-        <Name>Memo</Name>
-        <MemoText><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
- <head>
-  <title></title>
- </head>
- <body>
-  <p>Description of Cultivar trial</p>
- </body>
-</html>]]></MemoText>
-      </Memo>
       <Factors>
         <Name>Factors</Name>
         <Factor>
@@ -868,6 +863,7 @@ namespace Models
               <string>[Maize].Summariser.Total.Wt</string>
               <string>max of [Maize].Leaf.LAI from [Maize].Sowing to [Maize].Harvesting as LAImax</string>
               <string>[Maize].Grain.NumberFunction.Value as GPSM</string>
+              <string>[Maize].Grain.Size as GrainSize</string>
               <string>[Maize].Population</string>
               <string>[Maize].Phenology.FloweringDAS.Value as FloweringDAS</string>
             </VariableNames>
@@ -928,7 +924,7 @@ namespace Models
         <Slope>0</Slope>
       </Simulation>
       <Graph>
-        <Name>GrainWt</Name>
+        <Name>GrainWt N Response</Name>
         <Axis>
           <Type>Bottom</Type>
           <Title />
@@ -954,19 +950,163 @@ namespace Models
           <Marker>FilledCircle</Marker>
           <Line>None</Line>
           <X>
-            <TableName>PredictedObserved</TableName>
-            <FieldName>Observed.GrainWt</FieldName>
+            <TableName>HarvestReport</TableName>
+            <FieldName>Maize.Population</FieldName>
           </X>
           <Y>
-            <TableName>PredictedObserved</TableName>
-            <FieldName>Predicted.GrainWt</FieldName>
+            <TableName>HarvestReport</TableName>
+            <FieldName>GrainWt</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
         </Series>
-        <LegendPosition>TopRight</LegendPosition>
-        <ShowRegressionLine>true</ShowRegressionLine>
+        <Series>
+          <Title>Series2</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>Circle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestData</TableName>
+            <FieldName>Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestData</TableName>
+            <FieldName>GrainWt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <DisabledSeries />
+      </Graph>
+      <Graph>
+        <Name>GrainNo N Response</Name>
+        <Axis>
+          <Type>Bottom</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Axis>
+          <Type>Left</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Series>
+          <Title>Series1</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestReport</TableName>
+            <FieldName>Maize.Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestReport</TableName>
+            <FieldName>GPSM</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>Series2</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>Circle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestData</TableName>
+            <FieldName>Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestData</TableName>
+            <FieldName>GPSM</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <DisabledSeries />
+      </Graph>
+      <Graph>
+        <Name>GrainSize N Response</Name>
+        <Axis>
+          <Type>Bottom</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Axis>
+          <Type>Left</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Series>
+          <Title>Series1</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestReport</TableName>
+            <FieldName>Maize.Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestReport</TableName>
+            <FieldName>GrainSize</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>Series2</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>Circle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestData</TableName>
+            <FieldName>Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestData</TableName>
+            <FieldName>GrainSize</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
+        <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
       </Graph>
     </Experiment>
@@ -1806,6 +1946,7 @@ namespace Models
               <string>[Maize].Summariser.Total.Wt</string>
               <string>max of [Maize].Leaf.LAI from [Maize].Sowing to [Maize].Harvesting as LAImax</string>
               <string>[Maize].Grain.NumberFunction.Value as GPSM</string>
+              <string>[Maize].Grain.Size as GrainSize</string>
               <string>[Maize].Population</string>
               <string>[Maize].Phenology.FloweringDAS.Value as FloweringDAS</string>
             </VariableNames>
@@ -1866,7 +2007,7 @@ namespace Models
         <Slope>0</Slope>
       </Simulation>
       <Graph>
-        <Name>LAI</Name>
+        <Name>GrainWt N Response</Name>
         <Axis>
           <Type>Bottom</Type>
           <Title />
@@ -1889,18 +2030,162 @@ namespace Models
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
           <ColourArgb>-16776961</ColourArgb>
-          <Marker>None</Marker>
-          <Line>Solid</Line>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
           <X>
-            <TableName>Report</TableName>
-            <FieldName>Clock.Today</FieldName>
+            <TableName>HarvestReport</TableName>
+            <FieldName>Maize.Population</FieldName>
           </X>
           <Y>
-            <TableName>Report</TableName>
-            <FieldName>Maize.Leaf.LAI</FieldName>
+            <TableName>HarvestReport</TableName>
+            <FieldName>GrainWt</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>Series2</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>Circle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestData</TableName>
+            <FieldName>Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestData</TableName>
+            <FieldName>GrainWt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <DisabledSeries />
+      </Graph>
+      <Graph>
+        <Name>GrainNo N Response</Name>
+        <Axis>
+          <Type>Bottom</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Axis>
+          <Type>Left</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Series>
+          <Title>Series1</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestReport</TableName>
+            <FieldName>Maize.Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestReport</TableName>
+            <FieldName>GPSM</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>Series2</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>Circle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestData</TableName>
+            <FieldName>Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestData</TableName>
+            <FieldName>GPSM</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <DisabledSeries />
+      </Graph>
+      <Graph>
+        <Name>GrainSize N Response</Name>
+        <Axis>
+          <Type>Bottom</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Axis>
+          <Type>Left</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Series>
+          <Title>Series1</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestReport</TableName>
+            <FieldName>Maize.Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestReport</TableName>
+            <FieldName>GrainSize</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>Series2</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>Circle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestData</TableName>
+            <FieldName>Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestData</TableName>
+            <FieldName>GrainSize</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
           <Cumulative>false</Cumulative>
         </Series>
         <LegendPosition>TopLeft</LegendPosition>
@@ -12040,6 +12325,7 @@ namespace Models
               <string>[Maize].Summariser.Total.Wt</string>
               <string>max of [Maize].Leaf.LAI from [Maize].Sowing to [Maize].Harvesting as LAImax</string>
               <string>[Maize].Grain.NumberFunction.Value as GPSM</string>
+              <string>[Maize].Grain.Size as GrainSize</string>
               <string>[Maize].Population</string>
               <string>[Maize].Phenology.FloweringDAS.Value as FloweringDAS</string>
             </VariableNames>
@@ -12099,48 +12385,6 @@ namespace Models
         <Area>0</Area>
         <Slope>0</Slope>
       </Simulation>
-      <Graph>
-        <Name>LAI</Name>
-        <Axis>
-          <Type>Bottom</Type>
-          <Title />
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Axis>
-          <Type>Left</Type>
-          <Title />
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Series>
-          <Title>Series1</Title>
-          <Type>Scatter</Type>
-          <XAxis>Bottom</XAxis>
-          <YAxis>Left</YAxis>
-          <ColourArgb>-16776961</ColourArgb>
-          <Marker>None</Marker>
-          <Line>Solid</Line>
-          <X>
-            <TableName>Report</TableName>
-            <FieldName>Clock.Today</FieldName>
-          </X>
-          <Y>
-            <TableName>Report</TableName>
-            <FieldName>Maize.Leaf.LAI</FieldName>
-          </Y>
-          <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>true</ShowInLegend>
-          <Cumulative>false</Cumulative>
-        </Series>
-        <LegendPosition>TopLeft</LegendPosition>
-        <ShowRegressionLine>false</ShowRegressionLine>
-        <DisabledSeries />
-      </Graph>
     </Experiment>
     <Graph>
       <Name>GrainWt</Name>
@@ -12180,7 +12424,7 @@ namespace Models
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
-      <LegendPosition>TopRight</LegendPosition>
+      <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
     </Graph>
@@ -12222,7 +12466,7 @@ namespace Models
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
-      <LegendPosition>TopRight</LegendPosition>
+      <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
     </Graph>
@@ -12264,7 +12508,7 @@ namespace Models
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
-      <LegendPosition>TopRight</LegendPosition>
+      <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
     </Graph>
@@ -12306,7 +12550,49 @@ namespace Models
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
-      <LegendPosition>TopRight</LegendPosition>
+      <LegendPosition>BottomRight</LegendPosition>
+      <ShowRegressionLine>true</ShowRegressionLine>
+      <DisabledSeries />
+    </Graph>
+    <Graph>
+      <Name>Grain Size</Name>
+      <Axis>
+        <Type>Bottom</Type>
+        <Title />
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Axis>
+        <Type>Left</Type>
+        <Title />
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Series>
+        <Title>Series1</Title>
+        <Type>Scatter</Type>
+        <XAxis>Bottom</XAxis>
+        <YAxis>Left</YAxis>
+        <ColourArgb>-16776961</ColourArgb>
+        <Marker>FilledCircle</Marker>
+        <Line>None</Line>
+        <X>
+          <TableName>PredictedObserved</TableName>
+          <FieldName>Observed.GrainSize</FieldName>
+        </X>
+        <Y>
+          <TableName>PredictedObserved</TableName>
+          <FieldName>Predicted.GrainSize</FieldName>
+        </Y>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <ShowInLegend>true</ShowInLegend>
+        <Cumulative>false</Cumulative>
+      </Series>
+      <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
     </Graph>
@@ -12359,7 +12645,7 @@ namespace Models
       <Name>memo</Name>
       <MemoText><![CDATA[
 <html><body>
-The data for two trials from near Katherine, Northern Territory, Australia, have been included from Carberry and Abrecht (1991).  These include two planting dates for the summer of 1983/1984 (labelled as K841, K842).  At each planting date, cultivar Dekalb XL82 was sown at 4 populations (3, 5, 7, 9 plants/m<sup>2</sup>) under low and high irrigation conditions.  The low irrigation treatments only included preliminary applications to ensure crop establishment.<br/>
+The data for two trials from near Katherine, Northern Territory, Australia, have been included from Carberry et al (1989) and Carberry and Abrecht (1991).  These include two planting dates for the summer of 1983/1984 (labelled as K841, K842).  At each planting date, cultivar Dekalb XL82 was sown at 4 populations (3, 5, 7, 9 plants/m<sup>2</sup>) under low and high irrigation conditions.  The low irrigation treatments only included preliminary applications to ensure crop establishment.<br/>
 
 </body></html>]]></MemoText>
     </Memo>
@@ -13226,6 +13512,7 @@ namespace Models
               <string>[Maize].Summariser.Total.Wt</string>
               <string>max of [Maize].Leaf.LAI from [Maize].Sowing to [Maize].Harvesting as LAImax</string>
               <string>[Maize].Grain.NumberFunction.Value as GPSM</string>
+              <string>[Maize].Grain.Size as GrainSize</string>
               <string>[Maize].Population</string>
               <string>[Maize].Phenology.FloweringDAS.Value as FloweringDAS</string>
             </VariableNames>
@@ -13285,6 +13572,130 @@ namespace Models
         <Area>0</Area>
         <Slope>0</Slope>
       </Simulation>
+      <Graph>
+        <Name>GrainWt N Response</Name>
+        <Axis>
+          <Type>Bottom</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Axis>
+          <Type>Left</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Series>
+          <Title>Series1</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestReport</TableName>
+            <FieldName>Maize.Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestReport</TableName>
+            <FieldName>GrainWt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>Series2</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>Circle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestData</TableName>
+            <FieldName>Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestData</TableName>
+            <FieldName>GrainWt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <DisabledSeries />
+      </Graph>
+      <Graph>
+        <Name>GrainNo N Response</Name>
+        <Axis>
+          <Type>Bottom</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Axis>
+          <Type>Left</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Series>
+          <Title>Series1</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestReport</TableName>
+            <FieldName>Maize.Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestReport</TableName>
+            <FieldName>GPSM</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>Series2</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>Circle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestData</TableName>
+            <FieldName>Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestData</TableName>
+            <FieldName>GPSM</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <DisabledSeries />
+      </Graph>
     </Experiment>
     <Experiment>
       <Name>K842</Name>
@@ -14184,6 +14595,7 @@ namespace Models
               <string>[Maize].Summariser.Total.Wt</string>
               <string>max of [Maize].Leaf.LAI from [Maize].Sowing to [Maize].Harvesting as LAImax</string>
               <string>[Maize].Grain.NumberFunction.Value as GPSM</string>
+              <string>[Maize].Grain.Size as GrainSize</string>
               <string>[Maize].Population</string>
               <string>[Maize].Phenology.FloweringDAS.Value as FloweringDAS</string>
             </VariableNames>
@@ -14244,7 +14656,7 @@ namespace Models
         <Slope>0</Slope>
       </Simulation>
       <Graph>
-        <Name>LAI</Name>
+        <Name>GrainWt N Response</Name>
         <Axis>
           <Type>Bottom</Type>
           <Title />
@@ -14267,18 +14679,100 @@ namespace Models
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
           <ColourArgb>-16776961</ColourArgb>
-          <Marker>None</Marker>
-          <Line>Solid</Line>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
           <X>
-            <TableName>Report</TableName>
-            <FieldName>Clock.Today</FieldName>
+            <TableName>HarvestReport</TableName>
+            <FieldName>Maize.Population</FieldName>
           </X>
           <Y>
-            <TableName>Report</TableName>
-            <FieldName>Maize.Leaf.LAI</FieldName>
+            <TableName>HarvestReport</TableName>
+            <FieldName>GrainWt</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>Series2</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>Circle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestData</TableName>
+            <FieldName>Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestData</TableName>
+            <FieldName>GrainWt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <DisabledSeries />
+      </Graph>
+      <Graph>
+        <Name>GrainNo N Response</Name>
+        <Axis>
+          <Type>Bottom</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Axis>
+          <Type>Left</Type>
+          <Title />
+          <Inverted>false</Inverted>
+          <Minimum>NaN</Minimum>
+          <Maximum>NaN</Maximum>
+          <Interval>NaN</Interval>
+        </Axis>
+        <Series>
+          <Title>Series1</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestReport</TableName>
+            <FieldName>Maize.Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestReport</TableName>
+            <FieldName>GPSM</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>Series2</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-16776961</ColourArgb>
+          <Marker>Circle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>HarvestData</TableName>
+            <FieldName>Population</FieldName>
+          </X>
+          <Y>
+            <TableName>HarvestData</TableName>
+            <FieldName>GPSM</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>false</ShowInLegend>
           <Cumulative>false</Cumulative>
         </Series>
         <LegendPosition>TopLeft</LegendPosition>
@@ -14324,7 +14818,7 @@ namespace Models
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
-      <LegendPosition>TopRight</LegendPosition>
+      <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
     </Graph>
@@ -14366,7 +14860,7 @@ namespace Models
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
       </Series>
-      <LegendPosition>TopRight</LegendPosition>
+      <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
     </Graph>
@@ -14412,6 +14906,48 @@ namespace Models
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
     </Graph>
+    <Graph>
+      <Name>Grain Size</Name>
+      <Axis>
+        <Type>Bottom</Type>
+        <Title />
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Axis>
+        <Type>Left</Type>
+        <Title />
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Series>
+        <Title>Series1</Title>
+        <Type>Scatter</Type>
+        <XAxis>Bottom</XAxis>
+        <YAxis>Left</YAxis>
+        <ColourArgb>-16776961</ColourArgb>
+        <Marker>FilledCircle</Marker>
+        <Line>None</Line>
+        <X>
+          <TableName>PredictedObserved</TableName>
+          <FieldName>Observed.GrainSize</FieldName>
+        </X>
+        <Y>
+          <TableName>PredictedObserved</TableName>
+          <FieldName>Predicted.GrainSize</FieldName>
+        </Y>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <ShowInLegend>true</ShowInLegend>
+        <Cumulative>false</Cumulative>
+      </Series>
+      <LegendPosition>BottomRight</LegendPosition>
+      <ShowRegressionLine>true</ShowRegressionLine>
+      <DisabledSeries />
+    </Graph>
   </Folder>
   <Folder>
     <Name>USA</Name>
@@ -14425,14 +14961,6 @@ Testing of APSIM Maize, Soil Water, Soil Nitrogen, Manure, and Soil Temperature 
     </Memo>
     <Experiment>
       <Name>Ames2011</Name>
-      <Memo>
-        <Name>Memo</Name>
-        <MemoText><![CDATA[
-<html><body>
-       Description of Cultivar trial <br/>
-
-</body></html>]]></MemoText>
-      </Memo>
       <Factors>
         <Name>Factors</Name>
         <Factor>
@@ -15202,6 +15730,7 @@ namespace Models
               <string>[Maize].Summariser.Total.Wt</string>
               <string>max of [Maize].Leaf.LAI from [Maize].Sowing to [Maize].Harvesting as LAImax</string>
               <string>[Maize].Grain.NumberFunction.Value as GPSM</string>
+              <string>[Maize].Grain.Size as GrainSize</string>
               <string>[Maize].Population</string>
             </VariableNames>
             <EventNames>
@@ -15260,48 +15789,6 @@ namespace Models
         <Area>0</Area>
         <Slope>0</Slope>
       </Simulation>
-      <Graph>
-        <Name>LAI</Name>
-        <Axis>
-          <Type>Bottom</Type>
-          <Title />
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Axis>
-          <Type>Left</Type>
-          <Title />
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Series>
-          <Title>Series1</Title>
-          <Type>Scatter</Type>
-          <XAxis>Bottom</XAxis>
-          <YAxis>Left</YAxis>
-          <ColourArgb>-16776961</ColourArgb>
-          <Marker>None</Marker>
-          <Line>Solid</Line>
-          <X>
-            <TableName>Report</TableName>
-            <FieldName>Clock.Today</FieldName>
-          </X>
-          <Y>
-            <TableName>Report</TableName>
-            <FieldName>Maize.Leaf.LAI</FieldName>
-          </Y>
-          <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>true</ShowInLegend>
-          <Cumulative>false</Cumulative>
-        </Series>
-        <LegendPosition>TopLeft</LegendPosition>
-        <ShowRegressionLine>false</ShowRegressionLine>
-        <DisabledSeries />
-      </Graph>
     </Experiment>
     <Simulation>
       <Name>Ames2006</Name>
@@ -16083,6 +16570,7 @@ namespace Models
             <string>[Maize].Summariser.Total.Wt</string>
             <string>max of [Maize].Leaf.LAI from [Maize].Sowing to [Maize].Harvesting as LAImax</string>
             <string>[Maize].Grain.NumberFunction.Value as GPSM</string>
+            <string>[Maize].Grain.Size.Value as GrainSize</string>
             <string>[Maize].Population</string>
           </VariableNames>
           <EventNames>
@@ -16219,7 +16707,7 @@ namespace Models
           <Interval>NaN</Interval>
         </Axis>
         <Series>
-          <Title>Predicted</Title>
+          <Title>PredictedBiomass</Title>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -16235,11 +16723,11 @@ namespace Models
             <FieldName>Maize.Summariser.Total.Wt</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>true</ShowInLegend>
+          <ShowInLegend>false</ShowInLegend>
           <Cumulative>false</Cumulative>
         </Series>
         <Series>
-          <Title>Observed</Title>
+          <Title>ObservedBiomass</Title>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -16255,10 +16743,50 @@ namespace Models
             <FieldName>Biomass</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>PredictedGrain</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-65536</ColourArgb>
+          <Marker>None</Marker>
+          <Line>Solid</Line>
+          <X>
+            <TableName>Report</TableName>
+            <FieldName>Clock.Today</FieldName>
+          </X>
+          <Y>
+            <TableName>Report</TableName>
+            <FieldName>Maize.Grain.Live.Wt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>false</ShowInLegend>
           <Cumulative>false</Cumulative>
         </Series>
-        <LegendPosition>TopRight</LegendPosition>
+        <Series>
+          <Title>ObservedGrain</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-65536</ColourArgb>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>TimeSeriesData</TableName>
+            <FieldName>Date</FieldName>
+          </X>
+          <Y>
+            <TableName>TimeSeriesData</TableName>
+            <FieldName>GrainWt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
       </Graph>
@@ -16986,6 +17514,7 @@ namespace Models
             <string>[Maize].Summariser.Total.Wt</string>
             <string>max of [Maize].Leaf.LAI from [Maize].Sowing to [Maize].Harvesting as LAImax</string>
             <string>[Maize].Grain.NumberFunction.Value as GPSM</string>
+            <string>[Maize].Grain.Size.Value as GrainSize</string>
             <string>[Maize].Population</string>
           </VariableNames>
           <EventNames>
@@ -17122,7 +17651,7 @@ namespace Models
           <Interval>NaN</Interval>
         </Axis>
         <Series>
-          <Title>Predicted</Title>
+          <Title>PredictedBiomass</Title>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -17138,11 +17667,11 @@ namespace Models
             <FieldName>Maize.Summariser.Total.Wt</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>true</ShowInLegend>
+          <ShowInLegend>false</ShowInLegend>
           <Cumulative>false</Cumulative>
         </Series>
         <Series>
-          <Title>Observed</Title>
+          <Title>ObservedBiomass</Title>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -17158,10 +17687,50 @@ namespace Models
             <FieldName>Biomass</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <Series>
+          <Title>PredictedGrain</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-65536</ColourArgb>
+          <Marker>None</Marker>
+          <Line>Solid</Line>
+          <X>
+            <TableName>Report</TableName>
+            <FieldName>Clock.Today</FieldName>
+          </X>
+          <Y>
+            <TableName>Report</TableName>
+            <FieldName>Maize.Grain.Live.Wt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>false</ShowInLegend>
           <Cumulative>false</Cumulative>
         </Series>
-        <LegendPosition>TopRight</LegendPosition>
+        <Series>
+          <Title>ObservedGrain</Title>
+          <Type>Scatter</Type>
+          <XAxis>Bottom</XAxis>
+          <YAxis>Left</YAxis>
+          <ColourArgb>-65536</ColourArgb>
+          <Marker>FilledCircle</Marker>
+          <Line>None</Line>
+          <X>
+            <TableName>TimeSeriesData</TableName>
+            <FieldName>Date</FieldName>
+          </X>
+          <Y>
+            <TableName>TimeSeriesData</TableName>
+            <FieldName>GrainWt</FieldName>
+          </Y>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <ShowInLegend>true</ShowInLegend>
+          <Cumulative>false</Cumulative>
+        </Series>
+        <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
       </Graph>
@@ -17213,6 +17782,8 @@ namespace Models
   </Folder>
   <Graph>
     <Name>GrainWt</Name>
+    <Title />
+    <Caption />
     <Axis>
       <Type>Bottom</Type>
       <Title />
@@ -17249,7 +17820,7 @@ namespace Models
       <ShowInLegend>true</ShowInLegend>
       <Cumulative>false</Cumulative>
     </Series>
-    <LegendPosition>TopRight</LegendPosition>
+    <LegendPosition>BottomRight</LegendPosition>
     <ShowRegressionLine>true</ShowRegressionLine>
     <DisabledSeries />
   </Graph>
@@ -17260,6 +17831,8 @@ namespace Models
 Archontoulis, S.V., Miguez, F.E., Moore, K.J., 2014. Evaluating APSIM Maize, Soil Water, Soil Nitrogen, Manure, and Soil Temperature Modules in the Midwestern United States. Agronomy Journal 106(3) 1025-1040.<br/>
 <br/>
 Carberry, P.S., Abrecht, D.G., 1991. Tailoring crop models to the semi-arid tropics. In: Muchow, R.C., Bellamy, J.A. (Eds.), Climatic Risk in Crop Production: Models and Management for the Semiarid Tropics and Subtropics. CAB International, Wallingford, UK, pp. 157-182.<br/>
+<br/>
+Carberry, P.S., Muchow, R.C., McCown, R.L., 1989. Testing the CERES-Maize simulation model in a semi-arid tropical environment. Field Crops Research 20(4) 297-315.<br/>
 <br/>
 Keating, B. A., B. M. Wafula, and J. M. Watiki. "Development of a modelling capability for maize in semi-arid eastern Kenya." In ACIAR Proc, vol. 41, pp. 26-33. 1992.<br/>
 
