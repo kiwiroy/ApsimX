@@ -273,7 +273,7 @@ namespace Models.PMF.Organs
             get
             {
                 double _NitrogenDemandSwitch = 1;
-                if (NitrogenDemandSwitch != null) //Default of 1 means demand is always truned on!!!!
+                if (NitrogenDemandSwitch != null) //Default of 1 means demand is always turned on!!!!
                     _NitrogenDemandSwitch = NitrogenDemandSwitch.Value;
                 double demand = Number * NFillingRate.Value;
                 demand = Math.Min(demand, MaximumNConc.Value * PotentialDMAllocation) * _NitrogenDemandSwitch;
