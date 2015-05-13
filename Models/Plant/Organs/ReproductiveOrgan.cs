@@ -30,7 +30,11 @@ namespace Models.PMF.Organs
         /// <summary>The water content</summary>
         [Link]
         IFunction WaterContent = null;
-      
+        
+        /// <summary>The Maximum potential size of individual grains</summary>
+        [Link]
+        [Units("g/grain")]
+        IFunction MaximumPotentialGrainSize = null;
         
         /// <summary>The number function</summary>
         [Link]
@@ -68,6 +72,11 @@ namespace Models.PMF.Organs
         [XmlIgnore]
         [Units("/m^2")]
         public double Number = 0;
+
+        /// <summary>The Maximum potential size of grains</summary>
+        [XmlIgnore]
+        [Units("/m^2")]
+        public double MaximumSize = 0;
 
         /// <summary>Gets the live f wt.</summary>
         /// <value>The live f wt.</value>
@@ -139,6 +148,7 @@ namespace Models.PMF.Organs
         protected void OnDoPotentialPlantGrowth(object sender, EventArgs e)
         {
             Number = NumberFunction.Value;
+            MaximumSize = MaximumPotentialGrainSize.Value;
         }
 
         /// <summary>Called when crop is ending</summary>

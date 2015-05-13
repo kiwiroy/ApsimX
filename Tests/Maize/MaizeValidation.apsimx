@@ -1094,6 +1094,10 @@
               <Name>InitialGrainProportion</Name>
               <Value>0.05</Value>
             </Constant>
+            <Constant>
+              <Name>MaximumPotentialGrainSize</Name>
+              <Value>0.3</Value>
+            </Constant>
             <PhaseLookup>
               <Name>DMDemandFunction</Name>
               <PhaseLookupValue>
@@ -1116,11 +1120,11 @@
                     <Name>PotentialSizeIncrement</Name>
                     <VariableReference>
                       <Name>InitialProportion</Name>
-                      <VariableName>[Grain].InitialProportion</VariableName>
+                      <VariableName>[Grain].InitialGrainProportion.Value</VariableName>
                     </VariableReference>
                     <VariableReference>
                       <Name>MaximumSize</Name>
-                      <VariableName>[Grain].MaximumSize</VariableName>
+                      <VariableName>[Grain].MaximumPotentialGrainSize.Value</VariableName>
                     </VariableReference>
                   </MultiplyFunction>
                 </FillingRateFunction>
@@ -1153,12 +1157,12 @@
                       </Constant>
                       <VariableReference>
                         <Name>InitialProportion</Name>
-                        <VariableName>[Grain].InitialProportion</VariableName>
+                        <VariableName>[Grain].InitialGrainProportion.Value</VariableName>
                       </VariableReference>
                     </SubtractFunction>
                     <VariableReference>
                       <Name>MaximumSize</Name>
-                      <VariableName>[Grain].MaximumSize</VariableName>
+                      <VariableName>[Grain].MaximumPotentialGrainSize.Value</VariableName>
                     </VariableReference>
                   </MultiplyFunction>
                 </FillingRateFunction>
@@ -7047,6 +7051,7 @@ public class Script : Model
       </Folder>
       <Graph>
         <Name>HuskWeight</Name>
+        <Caption>Caption can be written</Caption>
         <Axis>
           <Type>Left</Type>
           <Title>Leaf Tips (n)</Title>

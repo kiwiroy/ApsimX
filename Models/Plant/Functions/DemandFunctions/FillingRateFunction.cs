@@ -26,6 +26,7 @@ namespace Models.PMF.Functions.DemandFunctions
         IFunction ThermalTime = null;
 
         /// <summary>The maximum weight or maximum amount of N incremented for individual grains in a given phase</summary>
+        [Link]
         [Units("g/kernal")]
         IFunction PotentialSizeIncrement = null;
 
