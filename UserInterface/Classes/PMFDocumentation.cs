@@ -173,17 +173,23 @@ namespace UserInterface.Classes
             if (memoNode != null)
                 memo = MemoToHTML(memoNode, 0);
 
+            // Get the corresponding model.
+            string desc = string.Empty;
+            IModel modelForNode = GetModelForNode(node);
+            DescriptionAttribute Description = ReflectionUtilities.GetAttribute(modelForNode.GetType(), typeof(DescriptionAttribute), false) as DescriptionAttribute;
+            if (Description != null)
+                desc = Description.ToString();
 
             writer.Write(Header(name + " Phase", NextLevel, null));
             writer.Write("<p>");
-            writer.Write("The "+ name + " phase extends between the " + start + " and " + end+" stages.</br>");
+            writer.Write("The "+ name + " phase extends between the " + start + " and " + end+" stages.  ");
             writer.Write(memo);
+            writer.Write(desc);
             
             writer.WriteLine("</p>");
             foreach (XmlNode child in XmlUtilities.ChildNodes(node, ""))
             {
-                string childName = XmlUtilities.Value(child, "Name");
-                if (childName != string.Empty)
+                if (child.Name != "Start" && child.Name!= "End")
                 {
                     DocumentNode(writer, child, NextLevel + 1);
                 }

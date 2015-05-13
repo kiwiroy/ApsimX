@@ -10,14 +10,22 @@
   </Cultivar>
   <Cultivar>
     <Name>Katumani</Name>
+    <Memo>
+      <Name>memo</Name>
+      <MemoText>
+        <![CDATA[
+<html><body>
+The variety Katumani Composite B was formed in 1966 and released in 1968 as part of the maize breeding work undertaken at the Katumani Research Station in Kenya which started in 1956.  Katumani Composite B was an advanced generation of Katumani Synthetic V X Katumani Synthetic VI.  It has slight photoperiod sensitivity and relatively small potential cob size.
+<br/>
+</body></html>]]>
+      </MemoText>
+    </Memo>
     <Command>[Phenology].Juvenile.Target.Value = 150</Command>
     <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
     <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 115</Command>
     <Command>[Phenology].FlagLeafToFlowering.Target.Value = 10</Command>
     <Command>[Phenology].FloweringToGrainFilling.Target.Value = 120</Command>
     <Command>[Phenology].GrainFilling.Target.Value = 530</Command>
-    <Command>[Phenology].Maturing.Target.Value = 1</Command>
-    <Command>[Phenology].MaturityToHarvestRipe.Target.Value = 1</Command>
     <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
     <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 14</Command>
     <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 405</Command>
@@ -30,8 +38,6 @@
     <Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
     <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
     <Command>[Phenology].GrainFilling.Target.Value = 813</Command>
-    <Command>[Phenology].Maturing.Target.Value = 1</Command>
-    <Command>[Phenology].MaturityToHarvestRipe.Target.Value = 1</Command>
     <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
     <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
     <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
@@ -59,6 +65,16 @@
     <Name>Phenology</Name>
     <OnEventFunction>
       <Name>FloweringDAS</Name>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+A function is used to provide flowering date as days after sowing(DAS).
+<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>      
       <SetEvent>Flowering</SetEvent>
       <ReSetEvent>never</ReSetEvent>
       <Constant>
@@ -128,7 +144,7 @@
         </PhaseLookupValue>
       </PhaseLookup>
       <AddFunction>
-        <Name>DroughtPhenologyAcelleration</Name>
+        <Name>DroughtPhenologyAcceleration</Name>
         <Constant>
           <Name>One</Name>
           <Value>1</Value>
@@ -170,8 +186,8 @@
       </VariableReference>
       <Start>Germination</Start>
       <End>Emergence</End>
-      <ShootLag>55</ShootLag>
-      <ShootRate>0.6</ShootRate>
+        <ShootLag>55</ShootLag>
+        <ShootRate>0.6</ShootRate>
     </EmergingPhase>
     <GenericPhase>
       <Name>Juvenile</Name>
@@ -1532,9 +1548,10 @@ Meinke, H., Hammer, G.L., Want, P., 1993. POTENTIAL SOIL-WATER EXTRACTION BY SUN
 <br/>
 Ning, P., Li, S., White, P.J., Li, C., 2015. Maize Varieties Released in Different Eras Have Similar Root Length Density Distributions in the Soil, Which Are Negatively Correlated with Local Concentrations of Soil Mineral Nitrogen. PLoS ONE 10(3) e0121892.
 <br/>
+Njoroge, K., 1986. Earliness and yield in maize: an evaluation of some Katumani maize varieties. East African Agricultural and Forestry Journal 48(1/4) 40-50.
+<br/>
 Peake, A.S., Huth, N.I., Kelly, A.M., Bell, K.L., 2013. Variation in water extraction with maize plant density and its impact on model application. Field Crops Research 146(0) 31-37.
 <br/>
-
 </body></html>]]>
     </MemoText>
   </Memo>
