@@ -106,7 +106,7 @@ namespace UserInterface.Commands
             }
 
             // Export the validation.
-            index.WriteLine("<H1>Validation</H1>");
+            index.WriteLine("<H1>Model testing</H1>");
             DoExportInternal(index, modelToExport, "", string.Empty, 2);
 
             // Update html for table of contents.
@@ -227,7 +227,7 @@ namespace UserInterface.Commands
                 string heading = html.Substring(posHeading + 4, posEndHeading - posHeading - 4);
                 int headingNumber = Convert.ToInt32(Char.GetNumericValue(html[posHeading+2]));
 
-                if (headingNumber < 4)
+                if (headingNumber > 0 && headingNumber < 4)
                 {
                     // Update levels based on heading number.
                     levels[headingNumber - 1]++;
@@ -260,7 +260,7 @@ namespace UserInterface.Commands
 
                 // Find next heading.
                 posLastHeading = posEndHeading + 5;
-                posHeading = html.IndexOf("<H", posHeading + 1, StringComparison.CurrentCultureIgnoreCase);
+                posHeading = html.IndexOf("<H", posLastHeading, StringComparison.CurrentCultureIgnoreCase);
             }
 
             // write remainder of file.

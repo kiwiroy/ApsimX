@@ -92,27 +92,35 @@ namespace Models.PMF.Organs
         IFunction NitrogenDemandSwitch = null;
         /// <summary>The senescence rate</summary>
         [Link(IsOptional = true)]
+        [Units("/d")]
         IFunction SenescenceRate = null;
         /// <summary>The temperature effect</summary>
         [Link]
+        [Units("0-1")]
         IFunction TemperatureEffect = null;
         /// <summary>The root front velocity</summary>
         [Link]
+        [Units("mm/d")]
         IFunction RootFrontVelocity = null;
         /// <summary>The partition fraction</summary>
         [Link]
+        [Units("0-1")]
         IFunction PartitionFraction = null;
         /// <summary>The maximum n conc</summary>
         [Link]
+        [Units("g/g")]
         IFunction MaximumNConc = null;
         /// <summary>The maximum daily n uptake</summary>
         [Link]
+        [Units("kg N/ha")]
         IFunction MaxDailyNUptake = null;
         /// <summary>The minimum n conc</summary>
         [Link]
+        [Units("g/g")]
         IFunction MinimumNConc = null;
         /// <summary>The kl modifier</summary>
         [Link]
+        [Units("0-1")]
         IFunction KLModifier = null;
         #endregion
 

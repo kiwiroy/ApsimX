@@ -12,7 +12,7 @@
     <Name>Katumani</Name>
     <Command>[Phenology].Juvenile.Target.Value = 150</Command>
     <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 0, 115</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 115</Command>
     <Command>[Phenology].FlagLeafToFlowering.Target.Value = 10</Command>
     <Command>[Phenology].FloweringToGrainFilling.Target.Value = 120</Command>
     <Command>[Phenology].GrainFilling.Target.Value = 530</Command>
@@ -26,7 +26,7 @@
     <Name>Dekalb_XL82</Name>
     <Command>[Phenology].Juvenile.Target.Value = 211</Command>
     <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 0, 472</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 472</Command>
     <Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
     <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
     <Command>[Phenology].GrainFilling.Target.Value = 813</Command>
@@ -40,7 +40,7 @@
     <Name>Laila</Name>
     <Command>[Phenology].Juvenile.Target.Value = 211</Command>
     <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 0, 0</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
     <Command>[Phenology].FlagLeafToFlowering.Target.Value = 1</Command>
     <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
     <Command>[Phenology].GrainFilling.Target.Value = 812</Command>
@@ -73,9 +73,9 @@
     <MultiplyFunction>
       <Name>ThermalTime</Name>
       <PhaseLookup>
-        <Name>PhaseLookup</Name>
+        <Name>TT</Name>
         <PhaseLookupValue>
-          <Name>SoilTemperature</Name>
+          <Name>EarlyTT</Name>
           <SoilTemperatureFunction>
             <Name>ThermalTime</Name>
             <maxt_soil_surface>20</maxt_soil_surface>
@@ -102,7 +102,7 @@
           <End>Germination</End>
         </PhaseLookupValue>
         <PhaseLookupValue>
-          <Name>AirTemperature</Name>
+          <Name>LateTT</Name>
           <AirTemperatureFunction>
             <Name>ThermalTime</Name>
             <XYPairs>
@@ -303,6 +303,17 @@
   </Phenology>
   <Structure>
     <Name>Structure</Name>
+    <Memo>
+      <Name>memo</Name>
+      <MemoText>
+        <![CDATA[
+<html><body>
+Though tillering is common in some maize varieties under certain agronomic conditions, no tillering is accounted for within this model.  Therefore all branching has been parameterised out of the current maize model.
+<br/>
+</body></html>]]>
+      </MemoText>
+    </Memo>
+
     <VariableReference>
       <Name>ThermalTime</Name>
       <VariableName>[Phenology].ThermalTime.Value</VariableName>
@@ -312,13 +323,13 @@
       <PhaseLookupValue>
         <Name>Plastochron</Name>
         <MultiplyFunction>
-          <Name>PlastCalc</Name>
+          <Name>Plastochron</Name>
           <VariableReference>
             <Name>Phyllochron</Name>
             <VariableName>[Structure].MainStemNodeAppearanceRate.Value</VariableName>
           </VariableReference>
           <Constant>
-            <Name>TipPerPrimordia</Name>
+            <Name>LeafTipsPerPrimordia</Name>
             <Value>0.5</Value>
           </Constant>
         </MultiplyFunction>
@@ -362,7 +373,7 @@
             <Value>6</Value>
           </Constant>
           <DivideFunction>
-            <Name>DivideFunction</Name>
+            <Name>PrimordiaDuringJuvenilePhase</Name>
             <VariableReference>
               <Name>JuvenilePhaseDuration</Name>
               <VariableName>[Phenology].Juvenile.Target.Value</VariableName>
@@ -423,56 +434,14 @@
       <Name>BranchingRate</Name>
       <Value>0.0</Value>
     </Constant>
-    <PhaseLookup>
+    <Constant>
       <Name>ShadeInducedBranchMortality</Name>
-      <PhaseLookupValue>
-        <Name>PhaseLookupValue</Name>
-        <LinearInterpolationFunction>
-          <Name>ShadeInducedBranchMortality</Name>
-          <XProperty>[Leaf].CoverGreen</XProperty>
-          <XYPairs>
-            <Name>XYPairs</Name>
-            <X>
-              <double>0</double>
-              <double>0.98</double>
-              <double>0.99</double>
-              <double>1</double>
-            </X>
-            <Y>
-              <double>0</double>
-              <double>0</double>
-              <double>0</double>
-              <double>0</double>
-            </Y>
-          </XYPairs>
-        </LinearInterpolationFunction>
-        <Start>Emergence</Start>
-        <End>StartGrainFill</End>
-      </PhaseLookupValue>
-    </PhaseLookup>
-    <PhaseLookup>
+      <Value>0.0</Value>
+    </Constant>
+    <Constant>
       <Name>DroughtInducedBranchMortality</Name>
-      <PhaseLookupValue>
-        <Name>PhaseLookupValue</Name>
-        <LinearInterpolationFunction>
-          <Name>WaterStress</Name>
-          <XProperty>[Maize].WaterSupplyDemandRatio</XProperty>
-          <XYPairs>
-            <Name>XYPairs</Name>
-            <X>
-              <double>0.1</double>
-              <double>0.6</double>
-            </X>
-            <Y>
-              <double>0</double>
-              <double>0</double>
-            </Y>
-          </XYPairs>
-        </LinearInterpolationFunction>
-        <Start>Emergence</Start>
-        <End>EndGrainFill</End>
-      </PhaseLookupValue>
-    </PhaseLookup>
+      <Value>0.0</Value>
+    </Constant>
     <InitialiseStage>Emergence</InitialiseStage>
     <PrimaryBudNo>1</PrimaryBudNo>
   </Structure>
@@ -603,10 +572,11 @@
         <MemoText>
           <![CDATA[
 <html><body>
-The parameter KL is is described by Meinke et al (1993) to combine elements of soil conductivity (K) with root length (L) in determining root water uptake.  Peake et al (2013) demonstrated that in maize KL varied with plant population through impacts on root length density.  Here we adjust KL linearly with plant population.<br/>
+The parameter KL is is described by Meinke et al (1993) to combine elements of soil conductivity (K) with root length (L) in determining root water uptake.  Peake et al (2013) demonstrated that in maize KL varied with plant population through impacts on root length density.  Here we adjust KL linearly with plant population.
+<br/>
 </body></html>]]>
         </MemoText>
-      </Memo>
+      </Memo>      
       <XProperty>[Maize].Population</XProperty>
       <XYPairs>
         <Name>XYPairs</Name>
@@ -712,7 +682,8 @@ Jones and Kiniry (1986) used a constant root senescence fraction in the CERES-Ma
         <MemoText>
           <![CDATA[
 <html><body>
-Hammer et al (2009) used a constant extraction front velocity of 2.5cm per day in their analysis of historical maize yield trends in the US corn belt.<br/>
+Hammer et al (2009) used a constant extraction front velocity of 2.5cm per day in their analysis of historical maize yield trends in the US corn belt.
+<br/>
 </body></html>]]>
         </MemoText>
       </Memo>      
@@ -804,8 +775,8 @@ Hammer et al (2009) used a constant extraction front velocity of 2.5cm per day i
       </Propertys>
       <ArraySize>[Leaf].MaxNodeNo</ArraySize>
     </ArrayBiomass>
-    <InitialLeafValues>
-      <Name>InitialLeafValues</Name>
+    <LeafCohortParameters>
+      <Name>CohortParameters</Name>
       <BellCurveFunction>
         <Name>MaxArea</Name>
         <MultiplyFunction>
@@ -1075,7 +1046,7 @@ Hammer et al (2009) used a constant extraction front velocity of 2.5cm per day i
         <Name>InitialNConc</Name>
         <Value>0</Value>
       </Constant>
-    </InitialLeafValues>
+    </LeafCohortParameters>
     <RUEModel>
       <Name>Photosynthesis</Name>
       <Constant>
@@ -1552,14 +1523,15 @@ Extinction coefficient is specified in terms of a potential extinction coefficie
     <MemoText>
       <![CDATA[
 <html><body>
+<h2>References</h2>
 Hammer, G.L., Dong, Z., McLean, G., Doherty, A., Messina, C., Schussler, J., Zinselmeier, C., Paszkiewicz, S., Cooper, M., 2009. Can Changes in Canopy and/or Root System Architecture Explain Historical Maize Yield Trends in the U.S. Corn Belt? Crop Science 49(1) 299-312.
-
+<br/>
 Jones, C.A. and Kiniry, J.R. (1986) CERES-Maize: a Simulation Model of Maize Growth and Development. Texas A&M University Press, College Station, 194pp.
-
+<br/>
 Meinke, H., Hammer, G.L., Want, P., 1993. POTENTIAL SOIL-WATER EXTRACTION BY SUNFLOWER ON A RANGE OF SOILS. Field Crops Research 32(1-2) 59-81.
-
+<br/>
 Ning, P., Li, S., White, P.J., Li, C., 2015. Maize Varieties Released in Different Eras Have Similar Root Length Density Distributions in the Soil, Which Are Negatively Correlated with Local Concentrations of Soil Mineral Nitrogen. PLoS ONE 10(3) e0121892.
-
+<br/>
 Peake, A.S., Huth, N.I., Kelly, A.M., Bell, K.L., 2013. Variation in water extraction with maize plant density and its impact on model application. Field Crops Research 146(0) 31-37.
 <br/>
 
