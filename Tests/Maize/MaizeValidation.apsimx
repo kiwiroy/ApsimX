@@ -1178,12 +1178,29 @@
             </Biomass>
             <Constant>
               <Name>MinimumNConc</Name>
-              <Value>0.02</Value>
+              <Value>0.01</Value>
             </Constant>
-            <Constant>
+            <PhaseLookup>
               <Name>MaximumNConc</Name>
-              <Value>0.025</Value>
-            </Constant>
+              <PhaseLookupValue>
+                <Name>InitialPhase</Name>
+                <Constant>
+                  <Name>InitialNconc</Name>
+                  <Value>0.05</Value>
+                </Constant>
+                <Start>Flowering</Start>
+                <End>StartGrainFill</End>
+              </PhaseLookupValue>
+              <PhaseLookupValue>
+                <Name>LinearPhase</Name>
+                <Constant>
+                  <Name>FinalNconc</Name>
+                  <Value>0.012</Value>
+                </Constant>
+                <Start>StartGrainFill</Start>
+                <End>EndGrainFill</End>
+              </PhaseLookupValue>
+            </PhaseLookup>
             <Constant>
               <Name>MaxNConcDailyGrowth</Name>
               <Value>0.03</Value>
@@ -1195,34 +1212,44 @@
             <PhaseLookup>
               <Name>NFillingRate</Name>
               <PhaseLookupValue>
-                <Name>EarlyGrainGrowth</Name>
-                <AirTemperatureFunction>
-                  <Name>Function</Name>
-                  <XYPairs>
-                    <Name>XYPairs</Name>
-                    <X>
-                      <double>0</double>
-                      <double>25</double>
-                      <double>30</double>
-                      <double>35</double>
-                    </X>
-                    <Y>
-                      <double>0</double>
-                      <double>0.0095</double>
-                      <double>0.0095</double>
-                      <double>0.0095</double>
-                    </Y>
-                  </XYPairs>
-                </AirTemperatureFunction>
+                <Name>GrainFilling</Name>
+                <FillingRateFunction>
+                  <Name>FillingRateFunction</Name>
+                  <VariableReference>
+                    <Name>NumberFunction</Name>
+                    <VariableName>[Grain].NumberFunction.Value</VariableName>
+                  </VariableReference>
+                  <AddFunction>
+                    <Name>FillingDuration</Name>
+                    <VariableReference>
+                      <Name>FloweringToGrainFilling</Name>
+                      <VariableName>[Phenology].FloweringToGrainFilling.Target.Value</VariableName>
+                    </VariableReference>
+                    <VariableReference>
+                      <Name>GrainFilling</Name>
+                      <VariableName>[Phenology].GrainFilling.Target.Value</VariableName>
+                    </VariableReference>
+                  </AddFunction>
+                  <VariableReference>
+                    <Name>ThermalTime</Name>
+                    <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                  </VariableReference>
+                  <MultiplyFunction>
+                    <Name>PotentialSizeIncrement</Name>
+                    <Constant>
+                      <Name>MaximumFinalNConc</Name>
+                      <Value>0.012</Value>
+                    </Constant>
+                    <VariableReference>
+                      <Name>MaximumSize</Name>
+                      <VariableName>[Grain].MaximumPotentialGrainSize.Value</VariableName>
+                    </VariableReference>
+                  </MultiplyFunction>
+                </FillingRateFunction>
                 <Start>Flowering</Start>
-                <End>Maturity</End>
+                <End>EndGrainFill</End>
               </PhaseLookupValue>
             </PhaseLookup>
-            <PhaseBasedSwitch>
-              <Name>NitrogenDemandSwitch</Name>
-              <Start>Germination</Start>
-              <End>Maturity</End>
-            </PhaseBasedSwitch>
             <MultiplyFunction>
               <Name>NumberFunction</Name>
               <VariableReference>
