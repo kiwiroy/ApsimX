@@ -1090,10 +1090,29 @@
           </Structure>
           <ReproductiveOrgan>
             <Name>Grain</Name>
-            <VariableReference>
-              <Name>FillingDuration</Name>
-              <VariableName>[Phenology].GrainFilling.Target.Value</VariableName>
-            </VariableReference>
+            <GrainDemandFunction>
+              <Name>DMDemandFunction</Name>
+              <VariableReference>
+                <Name>NumberFunction</Name>
+                <VariableName>[Grain].NumberFunction.Value</VariableName>
+              </VariableReference>
+              <VariableReference>
+                <Name>InitialFillingDuration</Name>
+                <VariableName>[Phenology].FloweringToGrainFilling.Target.Value</VariableName>
+              </VariableReference>
+              <VariableReference>
+                <Name>LinearFillingDuration</Name>
+                <VariableName>[Phenology].GrainFilling.Target.Value</VariableName>
+              </VariableReference>
+              <Constant>
+                <Name>InitialGrainProportion</Name>
+                <Value>0.05</Value>
+              </Constant>
+              <MaximumSize>0.3</MaximumSize>
+              <RipeStage>EndGrainFill</RipeStage>
+              <StartInitialFillStage>Flowering</StartInitialFillStage>
+              <StartLinearFillStage>StartGrainFill</StartLinearFillStage>
+            </GrainDemandFunction>
             <Biomass>
               <Name>Live</Name>
             </Biomass>
@@ -1106,7 +1125,7 @@
             </Constant>
             <Constant>
               <Name>MaximumNConc</Name>
-              <Value>0.01</Value>
+              <Value>0.025</Value>
             </Constant>
             <Constant>
               <Name>MaxNConcDailyGrowth</Name>
@@ -1132,9 +1151,9 @@
                     </X>
                     <Y>
                       <double>0</double>
-                      <double>5.5E-05</double>
-                      <double>5.5E-05</double>
-                      <double>5.5E-05</double>
+                      <double>0.0095</double>
+                      <double>0.0095</double>
+                      <double>0.0095</double>
                     </Y>
                   </XYPairs>
                 </AirTemperatureFunction>
@@ -1173,10 +1192,7 @@
                 <Value>1</Value>
               </Constant>
             </MultiplyFunction>
-            <MaximumSize>0.3</MaximumSize>
-            <RipeStage>EndGrainFill</RipeStage>
-            <StartFillStage>StartGrainFill</StartFillStage>
-            <Number>0</Number>
+            <RipeStage />
           </ReproductiveOrgan>
           <Root>
             <Name>Root</Name>

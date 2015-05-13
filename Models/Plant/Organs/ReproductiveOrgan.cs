@@ -5,6 +5,8 @@ using Models.Core;
 using Models.PMF.Functions;
 using Models.PMF.Phen;
 using Models.PMF.Interfaces;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Models.PMF.Organs
 {
@@ -28,10 +30,8 @@ namespace Models.PMF.Organs
         /// <summary>The water content</summary>
         [Link]
         IFunction WaterContent = null;
-        /// <summary>The filling rate</summary>
-        [Link]
-        [Units ("oCd")] 
-        IFunction FillingDuration = null;
+      
+        
         /// <summary>The number function</summary>
         [Link]
         IFunction NumberFunction = null;
@@ -54,16 +54,10 @@ namespace Models.PMF.Organs
         #endregion
 
         #region Class Fields
-        /// <summary>The maximum size</summary>
-        public double MaximumSize = 0;
         /// <summary>The ripe stage</summary>
         public string RipeStage = "";
-        /// <summary>The stage at which biomass accumulation begins in grains</summary>
-        public string StartFillStage = "";
         /// <summary>The _ ready for harvest</summary>
         protected bool _ReadyForHarvest = false;
-        /// <summary>The daily growth</summary>
-        protected double DailyGrowth = 0;
         /// <summary>The potential dm allocation</summary>
         private double PotentialDMAllocation = 0;
         #endregion
@@ -71,6 +65,7 @@ namespace Models.PMF.Organs
         #region Class Properties
 
         /// <summary>The number</summary>
+        [XmlIgnore]
         [Units("/m^2")]
         public double Number = 0;
 
@@ -136,6 +131,15 @@ namespace Models.PMF.Organs
         #endregion
 
         #region Functions
+
+                /// <summary>Event from sequencer telling us to do our potential growth.</summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        [EventSubscribe("DoPotentialPlantGrowth")]
+        protected void OnDoPotentialPlantGrowth(object sender, EventArgs e)
+        {
+            Number = NumberFunction.Value;
+        }
 
         /// <summary>Called when crop is ending</summary>
         /// <param name="sender">The sender.</param>
@@ -229,15 +233,15 @@ namespace Models.PMF.Organs
                 }
                 else
                 {
-                    Number = NumberFunction.Value;
-                    if ((Number > 0) && (Phenology.Between(StartFillStage, RipeStage)))
-                    {
-                        double FillingRate = (MaximumSize / FillingDuration.Value) * Phenology.ThermalTime.Value;
-                         Demand = Number * FillingRate;
+                    //Number = NumberFunction.Value;
+                   // if ((Number > 0) && (Phenology.Between(StartFillStage, RipeStage)))
+                  //  {
+                    //    double FillingRate = (MaximumSize / FillingDuration.Value) * Phenology.ThermalTime.Value;
+                    //     Demand = Number * FillingRate;
                         // Ensure filling does not exceed a maximum size
                         //Demand = Math.Min(demand, (MaximumSize - Live.Wt / Number) * Number);
-                    }
-                    else
+                   // }
+                   // else
                         Demand = 0;
                 }
                 return new BiomassPoolType { Structural = Demand };
@@ -255,12 +259,13 @@ namespace Models.PMF.Organs
                     else
                         throw new Exception("Invalid allocation of potential DM in" + Name);
                 PotentialDMAllocation = value.Structural;
+                // PotentialDailyGrowth = value.Structural;
             }
         }
         /// <summary>Sets the dm allocation.</summary>
         /// <value>The dm allocation.</value>
         public override BiomassAllocationType DMAllocation
-        { set { Live.StructuralWt += value.Structural; DailyGrowth = value.Structural; } }
+        { set { Live.StructuralWt += value.Structural; } }
         /// <summary>Gets or sets the n demand.</summary>
         /// <value>The n demand.</value>
         public override BiomassPoolType NDemand
@@ -271,7 +276,7 @@ namespace Models.PMF.Organs
                 if (NitrogenDemandSwitch != null) //Default of 1 means demand is always truned on!!!!
                     _NitrogenDemandSwitch = NitrogenDemandSwitch.Value;
                 double demand = Number * NFillingRate.Value;
-                demand = Math.Min(demand, MaximumNConc.Value * DailyGrowth) * _NitrogenDemandSwitch;
+                demand = Math.Min(demand, MaximumNConc.Value * PotentialDMAllocation) * _NitrogenDemandSwitch;
                 return new BiomassPoolType { Structural = demand };
             }
 

@@ -478,6 +478,29 @@
   </Structure>
   <ReproductiveOrgan>
     <Name>Grain</Name>
+    <GrainDemandFunction>
+      <Name>DMDemandFunction</Name>
+      <VariableReference>
+        <Name>NumberFunction</Name>
+        <VariableName>[Grain].NumberFunction.Value</VariableName>
+      </VariableReference>
+      <VariableReference>
+        <Name>InitialFillingDuration</Name>
+        <VariableName>[Phenology].FloweringToGrainFilling.Target.Value</VariableName>
+      </VariableReference>
+      <VariableReference>
+        <Name>LinearFillingDuration</Name>
+        <VariableName>[Phenology].GrainFilling.Target.Value</VariableName>
+      </VariableReference>
+      <Constant>
+        <Name>InitialGrainProportion</Name>
+        <Value>0.05</Value>
+      </Constant>
+      <MaximumSize>0.3</MaximumSize>
+      <RipeStage>EndGrainFill</RipeStage>
+      <StartInitialFillStage>Flowering</StartInitialFillStage>
+      <StartLinearFillStage>StartGrainFill</StartLinearFillStage>
+    </GrainDemandFunction>
     <Biomass>
       <Name>Live</Name>
     </Biomass>
@@ -490,7 +513,7 @@
     </Constant>
     <Constant>
       <Name>MaximumNConc</Name>
-      <Value>0.01</Value>
+      <Value>0.025</Value>
     </Constant>
     <Constant>
       <Name>MaxNConcDailyGrowth</Name>
@@ -516,9 +539,9 @@
             </X>
             <Y>
               <double>0</double>
-              <double>5.5E-05</double>
-              <double>5.5E-05</double>
-              <double>5.5E-05</double>
+              <double>0.0095</double>
+              <double>0.0095</double>
+              <double>0.0095</double>
             </Y>
           </XYPairs>
         </AirTemperatureFunction>
@@ -557,14 +580,7 @@
         <Value>1</Value>
       </Constant>
     </MultiplyFunction>
-    <MaximumSize>0.3</MaximumSize>
-    <RipeStage>EndGrainFill</RipeStage>
-    <StartFillStage>StartGrainFill</StartFillStage>
-    <VariableReference>
-      <Name>FillingDuration</Name>
-      <VariableName>[Phenology].GrainFilling.Target.Value</VariableName>
-    </VariableReference>
-    <Number>0</Number>
+    <RipeStage />
   </ReproductiveOrgan>
   <Root>
     <Name>Root</Name>
@@ -582,12 +598,21 @@
     </CompositeBiomass>
     <LinearInterpolationFunction>
       <Name>KLModifier</Name>
-      <XProperty>[Leaf].LAI</XProperty>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+The parameter KL is is described by Meinke et al (1993) to combine elements of soil conductivity (K) with root length (L) in determining root water uptake.  Peake et al (2013) demonstrated that in maize KL varied with plant population through impacts on root length density.  Here we adjust KL linearly with plant population.<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>
+      <XProperty>[Maize].Population</XProperty>
       <XYPairs>
         <Name>XYPairs</Name>
         <X>
           <double>0</double>
-          <double>3</double>
+          <double>10</double>
         </X>
         <Y>
           <double>1</double>
@@ -597,19 +622,55 @@
     </LinearInterpolationFunction>
     <Constant>
       <Name>SoilWaterEffect</Name>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+No effect of soil water content on root growth is currently captured in the model.<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>      
       <Value>1</Value>
     </Constant>
     <Constant>
       <Name>TemperatureEffect</Name>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+No effect of temperature on root growth is currently captured in the model.<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>
       <Value>1</Value>
     </Constant>
     <Constant>
       <Name>MaxDailyNUptake</Name>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+Maximum daily N uptake is set to an arbitrarily high value.<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>      
       <Value>20</Value>
     </Constant>
     <Constant>
       <Name>SenescenceRate</Name>
-      <Value>0</Value>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+Jones and Kiniry (1986) used a constant root senescence fraction in the CERES-Maize model.<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>
+      <Value>0.005</Value>
     </Constant>
     <Constant>
       <Name>StructuralFraction</Name>
@@ -646,22 +707,31 @@
     </LinearInterpolationFunction>
     <PhaseLookup>
       <Name>RootFrontVelocity</Name>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+Hammer et al (2009) used a constant extraction front velocity of 2.5cm per day in their analysis of historical maize yield trends in the US corn belt.<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>      
       <PhaseLookupValue>
-        <Name>PreEmergence</Name>
+        <Name>PreFlowering</Name>
         <Constant>
           <Name>Function</Name>
-          <Value>5</Value>
+          <Value>25</Value>
         </Constant>
         <Start>Germination</Start>
-        <End>Emergence</End>
+        <End>Flowering</End>
       </PhaseLookupValue>
       <PhaseLookupValue>
-        <Name>PostEmergence</Name>
+        <Name>PostFlowering</Name>
         <Constant>
           <Name>Function</Name>
-          <Value>30</Value>
+          <Value>0</Value>
         </Constant>
-        <Start>Emergence</Start>
+        <Start>Flowering</Start>
         <End>Maturity</End>
       </PhaseLookupValue>
     </PhaseLookup>
@@ -1466,4 +1536,21 @@
     </CompositeBiomass>
   </Summariser>
   <CropType>Maize</CropType>
+  <Memo>
+    <Name>References</Name>
+    <MemoText>
+      <![CDATA[
+<html><body>
+Hammer, G.L., Dong, Z., McLean, G., Doherty, A., Messina, C., Schussler, J., Zinselmeier, C., Paszkiewicz, S., Cooper, M., 2009. Can Changes in Canopy and/or Root System Architecture Explain Historical Maize Yield Trends in the U.S. Corn Belt? Crop Science 49(1) 299-312.
+
+Jones, C.A. and Kiniry, J.R. (1986) CERES-Maize: a Simulation Model of Maize Growth and Development. Texas A&M University Press, College Station, 194pp.
+
+Meinke, H., Hammer, G.L., Want, P., 1993. POTENTIAL SOIL-WATER EXTRACTION BY SUNFLOWER ON A RANGE OF SOILS. Field Crops Research 32(1-2) 59-81.
+
+Peake, A.S., Huth, N.I., Kelly, A.M., Bell, K.L., 2013. Variation in water extraction with maize plant density and its impact on model application. Field Crops Research 146(0) 31-37.
+<br/>
+
+</body></html>]]>
+    </MemoText>
+  </Memo>
 </Plant>
