@@ -1570,7 +1570,18 @@ Extinction coefficient is specified in terms of a potential extinction coefficie
 		<Name>Summariser</Name>
 		<CompositeBiomass>
 			<Name>AboveGround</Name>
-			<Propertys>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+The AboveGround composite biomass object includes all organs occurring above the soil surface to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>
+
+      <Propertys>
 				<string>[Leaf].Live</string>
 				<string>[Leaf].Dead</string>
 				<string>[Stem].Live</string>
@@ -1585,14 +1596,35 @@ Extinction coefficient is specified in terms of a potential extinction coefficie
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>BelowGround</Name>
-			<Propertys>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+The BelowGround composite biomass object includes all root biomass pools to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>
+      <Propertys>
 				<string>[Root].Live</string>
 				<string>[Root].Dead</string>
 			</Propertys>
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>Total</Name>
-			<Propertys>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+The Total composite biomass object includes all organs (above+below ground) to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>
+
+      <Propertys>
 				<string>[Leaf].Live</string>
 				<string>[Leaf].Dead</string>
 				<string>[Stem].Live</string>
@@ -1609,6 +1641,16 @@ Extinction coefficient is specified in terms of a potential extinction coefficie
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>TotalLive</Name>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+The TotalLive composite biomass object includes the Live pools of all organs (above+below ground) to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>      
 			<Propertys>
 				<string>[Leaf].Live</string>
 				<string>[Stem].Live</string>
@@ -1620,7 +1662,18 @@ Extinction coefficient is specified in terms of a potential extinction coefficie
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>TotalDead</Name>
-			<Propertys>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+The TotalDead composite biomass object includes the Dead pools of all organs (above+below ground) to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>
+
+      <Propertys>
 				<string>[Leaf].Dead</string>
 				<string>[Stem].Dead</string>
 				<string>[Husk].Dead</string>
@@ -1631,7 +1684,18 @@ Extinction coefficient is specified in terms of a potential extinction coefficie
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>EarLive</Name>
-			<Propertys>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+The EarLive composite biomass object includes the Live pools of all organs within the Ear to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>
+
+      <Propertys>
 				<string>[Husk].Live</string>
 				<string>[Grain].Live</string>
 				<string>[Rachis].Live</string>
@@ -1639,7 +1703,18 @@ Extinction coefficient is specified in terms of a potential extinction coefficie
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>AboveGroundLive</Name>
-			<Propertys>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+The AboveGroundLive composite biomass object includes the Live pools of all organs occurring above the soil surface to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>
+
+      <Propertys>
 				<string>[Leaf].Live</string>
 				<string>[Stem].Live</string>
 				<string>[Husk].Live</string>
@@ -1649,7 +1724,18 @@ Extinction coefficient is specified in terms of a potential extinction coefficie
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>AboveGroundDead</Name>
-			<Propertys>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+The AboveGroundDead composite biomass object includes the Dead pools of all organs occurring above the soil surface to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>
+
+      <Propertys>
 				<string>[Leaf].Dead</string>
 				<string>[Stem].Dead</string>
 				<string>[Husk].Dead</string>

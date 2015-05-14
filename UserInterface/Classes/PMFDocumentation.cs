@@ -148,6 +148,9 @@ namespace UserInterface.Classes
                     DocumentVariableReference(writer, node, NextLevel);
                 else if (node.Name == "OnEventFunction")
                     DocumentOnEventFunction(writer, node, NextLevel);
+                else if (node.Name == "CompositeBiomass")
+                    DocumentCompositeBiomass(writer, node, NextLevel);
+
                 else if (ourModel is Phase)
                     DocumentPhase(writer, node, NextLevel);
 
@@ -160,6 +163,38 @@ namespace UserInterface.Classes
                     DocumentNodeAndChildren(writer, node, NextLevel);
             }
         }
+
+        private void DocumentCompositeBiomass(TextWriter writer, XmlNode node, int NextLevel)
+        {
+            string name = XmlUtilities.Value(node, "Name");
+
+            // Look for memo
+            string memo = string.Empty;
+            XmlNode memoNode = XmlUtilities.Find(node, "memo");
+            if (memoNode != null)
+                memo = MemoToHTML(memoNode, 0);
+
+            // Get the corresponding model.
+            string desc = string.Empty;
+            IModel modelForNode = GetModelForNode(node);
+            DescriptionAttribute Description = ReflectionUtilities.GetAttribute(modelForNode.GetType(), typeof(DescriptionAttribute), false) as DescriptionAttribute;
+            if (Description != null)
+                desc = Description.ToString();
+
+            writer.Write(Header(name + " Biomass Object", NextLevel, null));
+            writer.Write("<p>");
+            writer.Write(memo);
+            writer.Write(desc);
+            writer.Write("<br/>");
+            writer.Write("The " + name + " composite biomass object includes the following components:");
+
+            writer.WriteLine("</p>");
+            foreach (string s in XmlUtilities.Values(node,"Propertys/string"))
+                    writer.WriteLine(s+"<br/>");
+            
+        }
+
+        
 
         private void DocumentPhase(TextWriter writer, XmlNode node, int NextLevel)
         {
