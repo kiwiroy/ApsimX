@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Plant>
 	<Name>Maize</Name>
-  <Memo>
-    <Name>TitlePage</Name>
-    <MemoText>
-      <![CDATA[
+	<Memo>
+		<Name>TitlePage</Name>
+		<MemoText>
+			<![CDATA[
 <html><body>
 <div><p><H1>The APSIM Maize Model</H1></p></div>
 <p><i>Brown, H.E., Teixeira, E.I., Huth, N.I. and Holzworth, D.P.</i></p>
@@ -13,15 +13,15 @@ The APSIM maize model has been developed using the Plant Modelling Framework (PM
 This new framework provides a library of plant organ and process submodels that can be coupled, at runtime, to construct a model in much the same way that models can be coupled to construct a simulation. This means that dynamic composition of lower level process and organ classes (e.g. photosynthesis, leaf) into larger constructions (e.g. maize, wheat, sorghum) can be achieved by the model developer without additional coding.
 <br/>
 </body></html>]]>
-    </MemoText>
-  </Memo>
-  <CropType>Maize</CropType>
-  <OrganArbitrator>
+		</MemoText>
+	</Memo>
+	<CropType>Maize</CropType>
+	<OrganArbitrator>
 		<Name>Arbitrator</Name>
-    <Memo>
-      <Name>memo</Name>
-      <MemoText>
-        <![CDATA[
+		<Memo>
+			<Name>memo</Name>
+			<MemoText>
+				<![CDATA[
 <html><body>
 There are a number of passes involved in the allocation of Weight (Wt).  <br/>
 	  Wt_Step 1. Set up DM supplies and demands.  Each organ may have a demand for Structural, Metabolic and Non-structural Wt.  Each organ may supply Fresh DM from photosynthesis and/or stored DM from retranslocation of its Non-structural pool.<br/>
@@ -49,27 +49,27 @@ There are a number of passes involved in the allocation of Weight (Wt).  <br/>
 	  Once these steps are complete the Arbitrator finally communicates to each organ its state changes as a result of arbitration.<br/>
 <br/>
 </body></html>]]>
-      </MemoText>
-    </Memo>
+			</MemoText>
+		</Memo>
 
-    <NArbitrationOption>PrioritythenRelativeAllocation</NArbitrationOption>
+		<NArbitrationOption>PrioritythenRelativeAllocation</NArbitrationOption>
 		<DMArbitrationOption>RelativeAllocation</DMArbitrationOption>
 	</OrganArbitrator>
 	<Phenology>
 		<Name>Phenology</Name>
-    <Memo>
-      <Name>memo</Name>
-      <MemoText>
-        <![CDATA[
+		<Memo>
+			<Name>memo</Name>
+			<MemoText>
+				<![CDATA[
 <html><body>
 The phenology model used in the APSIM maize model follows the approach used in earlier maize models(Jones and Kiniry (1986), Carberry and Arbrecht (1991), Carberry et al (1989).  
 The model predicts development of primordia on the apex of the main stem and appearance of individual leaves to predict time to flag leaf.  Other stages use thermal time targets.  
 <br/>
 </body></html>]]>
-      </MemoText>
-    </Memo>
+			</MemoText>
+		</Memo>
 
-    <MultiplyFunction>
+		<MultiplyFunction>
 			<Name>ThermalTime</Name>
 			<PhaseLookup>
 				<Name>TT</Name>
@@ -299,31 +299,31 @@ The model predicts development of primordia on the apex of the main stem and app
 			<Twilight>-6</Twilight>
 		</PhotoperiodFunction>
 		<Emerged>false</Emerged>
-    <OnEventFunction>
-      <Name>FloweringDAS</Name>
-      <Memo>
-        <Name>memo</Name>
-        <MemoText>
-          <![CDATA[
+		<OnEventFunction>
+			<Name>FloweringDAS</Name>
+			<Memo>
+				<Name>memo</Name>
+				<MemoText>
+					<![CDATA[
 <html><body>
 A function is used to provide flowering date as days after sowing(DAS).
 <br/>
 </body></html>]]>
-        </MemoText>
-      </Memo>
-      <SetEvent>Flowering</SetEvent>
-      <ReSetEvent>never</ReSetEvent>
-      <Constant>
-        <Name>PreEventValue</Name>
-        <Value>0</Value>
-      </Constant>
-      <VariableReference>
-        <Name>PostEventValue</Name>
-        <VariableName>[Phenology].DaysAfterSowing</VariableName>
-      </VariableReference>
-    </OnEventFunction>
+				</MemoText>
+			</Memo>
+			<SetEvent>Flowering</SetEvent>
+			<ReSetEvent>never</ReSetEvent>
+			<Constant>
+				<Name>PreEventValue</Name>
+				<Value>0</Value>
+			</Constant>
+			<VariableReference>
+				<Name>PostEventValue</Name>
+				<VariableName>[Phenology].DaysAfterSowing</VariableName>
+			</VariableReference>
+		</OnEventFunction>
 
-  </Phenology>
+	</Phenology>
 	<Structure>
 		<Name>Structure</Name>
 		<Memo>
@@ -614,7 +614,7 @@ Though tillering is common in some maize varieties under certain agronomic condi
 						<Name>PotentialSizeIncrement</Name>
 						<Constant>
 							<Name>MaximumFinalNConc</Name>
-              <Units>g/g</Units>
+							<Units>g/g</Units>
 							<Value>0.013</Value>
 						</Constant>
 						<VariableReference>
@@ -899,20 +899,20 @@ Hammer et al (2009) used a constant extraction front velocity of 2.5cm per day i
 			<Name>CohortParameters</Name>
 			<BellCurveFunction>
 				<Name>MaxArea</Name>
-        <Memo>
-          <Name>Memo</Name>
-          <MemoText>
-            <![CDATA[
+				<Memo>
+					<Name>Memo</Name>
+					<MemoText>
+						<![CDATA[
 <html><body>
 Potential leaf area is calculated from leaf number using the approach of Keating and Wafula (1992).
 Individual leaf size is described using a bell-shaped curve, the parameters of which are derived from final leaf number.
 <br/>
 
 </body></html>]]>
-          </MemoText>
-        </Memo>
+					</MemoText>
+				</Memo>
 
-        <MultiplyFunction>
+				<MultiplyFunction>
 					<Name>LargestLeafPosition</Name>
 					<VariableReference>
 						<Name>FinalLeafNumber</Name>
@@ -1482,23 +1482,23 @@ Extinction coefficient is specified in terms of a potential extinction coefficie
 			<Name>StructuralFraction</Name>
 			<Value>0.8</Value>
 		</Constant>
-			<LinearInterpolationFunction>
-				<Name>MaximumNConc</Name>
-				<XProperty>[Structure].MainStemNodeNo</XProperty>
-				<XYPairs>
-					<Name>XYPairs</Name>
-					<X>
-						<double>1</double>
-						<double>10</double>
-						<double>11</double>
-					</X>
-					<Y>
-						<double>0.03</double>
-						<double>0.03</double>
-						<double>0.005</double>
-					</Y>
-				</XYPairs>
-			</LinearInterpolationFunction>
+		<LinearInterpolationFunction>
+			<Name>MaximumNConc</Name>
+			<XProperty>[Structure].MainStemNodeNo</XProperty>
+			<XYPairs>
+				<Name>XYPairs</Name>
+				<X>
+					<double>1</double>
+					<double>10</double>
+					<double>11</double>
+				</X>
+				<Y>
+					<double>0.03</double>
+					<double>0.03</double>
+					<double>0.005</double>
+				</Y>
+			</XYPairs>
+		</LinearInterpolationFunction>
 		<Constant>
 			<Name>MinimumNConc</Name>
 			<Value>0.006</Value>
@@ -1571,18 +1571,18 @@ Extinction coefficient is specified in terms of a potential extinction coefficie
 		<Name>Summariser</Name>
 		<CompositeBiomass>
 			<Name>AboveGround</Name>
-      <Memo>
-        <Name>memo</Name>
-        <MemoText>
-          <![CDATA[
+			<Memo>
+				<Name>memo</Name>
+				<MemoText>
+					<![CDATA[
 <html><body>
 The AboveGround composite biomass object includes all organs occurring above the soil surface to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
 <br/>
 </body></html>]]>
-        </MemoText>
-      </Memo>
+				</MemoText>
+			</Memo>
 
-      <Propertys>
+			<Propertys>
 				<string>[Leaf].Live</string>
 				<string>[Leaf].Dead</string>
 				<string>[Stem].Live</string>
@@ -1597,35 +1597,35 @@ The AboveGround composite biomass object includes all organs occurring above the
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>BelowGround</Name>
-      <Memo>
-        <Name>memo</Name>
-        <MemoText>
-          <![CDATA[
+			<Memo>
+				<Name>memo</Name>
+				<MemoText>
+					<![CDATA[
 <html><body>
 The BelowGround composite biomass object includes all root biomass pools to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
 <br/>
 </body></html>]]>
-        </MemoText>
-      </Memo>
-      <Propertys>
+				</MemoText>
+			</Memo>
+			<Propertys>
 				<string>[Root].Live</string>
 				<string>[Root].Dead</string>
 			</Propertys>
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>Total</Name>
-      <Memo>
-        <Name>memo</Name>
-        <MemoText>
-          <![CDATA[
+			<Memo>
+				<Name>memo</Name>
+				<MemoText>
+					<![CDATA[
 <html><body>
 The Total composite biomass object includes all organs (above+below ground) to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
 <br/>
 </body></html>]]>
-        </MemoText>
-      </Memo>
+				</MemoText>
+			</Memo>
 
-      <Propertys>
+			<Propertys>
 				<string>[Leaf].Live</string>
 				<string>[Leaf].Dead</string>
 				<string>[Stem].Live</string>
@@ -1642,16 +1642,16 @@ The Total composite biomass object includes all organs (above+below ground) to a
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>TotalLive</Name>
-      <Memo>
-        <Name>memo</Name>
-        <MemoText>
-          <![CDATA[
+			<Memo>
+				<Name>memo</Name>
+				<MemoText>
+					<![CDATA[
 <html><body>
 The TotalLive composite biomass object includes the Live pools of all organs (above+below ground) to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
 <br/>
 </body></html>]]>
-        </MemoText>
-      </Memo>      
+				</MemoText>
+			</Memo>      
 			<Propertys>
 				<string>[Leaf].Live</string>
 				<string>[Stem].Live</string>
@@ -1663,18 +1663,18 @@ The TotalLive composite biomass object includes the Live pools of all organs (ab
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>TotalDead</Name>
-      <Memo>
-        <Name>memo</Name>
-        <MemoText>
-          <![CDATA[
+			<Memo>
+				<Name>memo</Name>
+				<MemoText>
+					<![CDATA[
 <html><body>
 The TotalDead composite biomass object includes the Dead pools of all organs (above+below ground) to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
 <br/>
 </body></html>]]>
-        </MemoText>
-      </Memo>
+				</MemoText>
+			</Memo>
 
-      <Propertys>
+			<Propertys>
 				<string>[Leaf].Dead</string>
 				<string>[Stem].Dead</string>
 				<string>[Husk].Dead</string>
@@ -1685,18 +1685,18 @@ The TotalDead composite biomass object includes the Dead pools of all organs (ab
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>EarLive</Name>
-      <Memo>
-        <Name>memo</Name>
-        <MemoText>
-          <![CDATA[
+			<Memo>
+				<Name>memo</Name>
+				<MemoText>
+					<![CDATA[
 <html><body>
 The EarLive composite biomass object includes the Live pools of all organs within the Ear to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
 <br/>
 </body></html>]]>
-        </MemoText>
-      </Memo>
+				</MemoText>
+			</Memo>
 
-      <Propertys>
+			<Propertys>
 				<string>[Husk].Live</string>
 				<string>[Grain].Live</string>
 				<string>[Rachis].Live</string>
@@ -1704,18 +1704,18 @@ The EarLive composite biomass object includes the Live pools of all organs withi
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>AboveGroundLive</Name>
-      <Memo>
-        <Name>memo</Name>
-        <MemoText>
-          <![CDATA[
+			<Memo>
+				<Name>memo</Name>
+				<MemoText>
+					<![CDATA[
 <html><body>
 The AboveGroundLive composite biomass object includes the Live pools of all organs occurring above the soil surface to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
 <br/>
 </body></html>]]>
-        </MemoText>
-      </Memo>
+				</MemoText>
+			</Memo>
 
-      <Propertys>
+			<Propertys>
 				<string>[Leaf].Live</string>
 				<string>[Stem].Live</string>
 				<string>[Husk].Live</string>
@@ -1725,18 +1725,18 @@ The AboveGroundLive composite biomass object includes the Live pools of all orga
 		</CompositeBiomass>
 		<CompositeBiomass>
 			<Name>AboveGroundDead</Name>
-      <Memo>
-        <Name>memo</Name>
-        <MemoText>
-          <![CDATA[
+			<Memo>
+				<Name>memo</Name>
+				<MemoText>
+					<![CDATA[
 <html><body>
 The AboveGroundDead composite biomass object includes the Dead pools of all organs occurring above the soil surface to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
 <br/>
 </body></html>]]>
-        </MemoText>
-      </Memo>
+				</MemoText>
+			</Memo>
 
-      <Propertys>
+			<Propertys>
 				<string>[Leaf].Dead</string>
 				<string>[Stem].Dead</string>
 				<string>[Husk].Dead</string>
@@ -1745,98 +1745,128 @@ The AboveGroundDead composite biomass object includes the Dead pools of all orga
 			</Propertys>
 		</CompositeBiomass>
 	</Summariser>
-  <Cultivar>
-    <Name>Pioneer_39G12</Name>
-    <Command>[Phenology].GrainFilling.Target.Value = 550</Command>
-  </Cultivar>
-  <Cultivar>
-    <Name>Pioneer_3153</Name>
-  </Cultivar>
-  <Cultivar>
-    <Name>Katumani</Name>
-    <Memo>
-      <Name>memo</Name>
-      <MemoText>
-        <![CDATA[
+	<Cultivar>
+		<Name>Pioneer_39G12</Name>
+		<Command>[Phenology].GrainFilling.Target.Value = 550</Command>
+	</Cultivar>
+	<Cultivar>
+		<Name>Pioneer_3153</Name>
+	</Cultivar>
+	<Cultivar>
+		<Name>Katumani</Name>
+		<Memo>
+			<Name>memo</Name>
+			<MemoText>
+				<![CDATA[
 <html><body>
 The variety Katumani Composite B was formed in 1966 and released in 1968 as part of the maize breeding work undertaken at the Katumani Research Station in Kenya which started in 1956.  Katumani Composite B was an advanced generation of Katumani Synthetic V X Katumani Synthetic VI.  It has slight photoperiod sensitivity and relatively small potential cob size.
 <br/>
 </body></html>]]>
-      </MemoText>
-    </Memo>
-    <Command>[Phenology].Juvenile.Target.Value = 150</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 115</Command>
-    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 10</Command>
-    <Command>[Phenology].FloweringToGrainFilling.Target.Value = 120</Command>
-    <Command>[Phenology].GrainFilling.Target.Value = 530</Command>
-    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
-    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 14</Command>
-    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 405</Command>
-  </Cultivar>
-  <Cultivar>
-    <Name>Dekalb_XL82</Name>
-    <Command>[Phenology].Juvenile.Target.Value = 211</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 472</Command>
-    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
-    <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
-    <Command>[Phenology].GrainFilling.Target.Value = 813</Command>
-    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
-    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
-    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
-  </Cultivar>
-  <Cultivar>
-    <Name>GH_5009</Name>
-    <Command>[Phenology].Juvenile.Target.Value = 250</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
-    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 50</Command>
-    <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
-    <Command>[Phenology].GrainFilling.Target.Value = 713</Command>
-    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
-    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
-    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
-  </Cultivar>
-  <Cultivar>
-    <Name>Hycorn_40</Name>
-    <Command>[Phenology].Juvenile.Target.Value = 200</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
-    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
-    <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
-    <Command>[Phenology].GrainFilling.Target.Value = 813</Command>
-    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
-    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
-    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
-  </Cultivar>
-  <Cultivar>
-    <Name>GH_5019WX</Name>
-    <Command>[Phenology].Juvenile.Target.Value = 250</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 57.5</Command>
-    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
-    <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
-    <Command>[Phenology].GrainFilling.Target.Value = 694</Command>
-    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
-    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
-    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
-  </Cultivar>
-  <Cultivar>
-    <Name>Laila</Name>
-    <Command>[Phenology].Juvenile.Target.Value = 211</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
-    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 1</Command>
-    <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
-    <Command>[Phenology].GrainFilling.Target.Value = 812</Command>
-    <Command>[Phenology].Maturing.Target.Value = 1</Command>
-    <Command>[Phenology].MaturityToHarvestRipe.Target.Value = 1</Command>
-    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 36</Command>
-    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 36</Command>
-    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 720</Command>
-  </Cultivar>
-  <Memo>
+			</MemoText>
+		</Memo>
+		<Command>[Phenology].Juvenile.Target.Value = 150</Command>
+		<Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+		<Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 115</Command>
+		<Command>[Phenology].FlagLeafToFlowering.Target.Value = 10</Command>
+		<Command>[Phenology].FloweringToGrainFilling.Target.Value = 120</Command>
+		<Command>[Phenology].GrainFilling.Target.Value = 530</Command>
+		<Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
+		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 14</Command>
+		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 405</Command>
+	</Cultivar>
+	<Cultivar>
+		<Name>Dekalb_XL82</Name>
+		<Command>[Phenology].Juvenile.Target.Value = 211</Command>
+		<Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+		<Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 472</Command>
+		<Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
+		<Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+		<Command>[Phenology].GrainFilling.Target.Value = 813</Command>
+		<Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
+	</Cultivar>
+	<Cultivar>
+		<Name>GH_5009</Name>
+		<Command>[Phenology].Juvenile.Target.Value = 250</Command>
+		<Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+		<Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
+		<Command>[Phenology].FlagLeafToFlowering.Target.Value = 50</Command>
+		<Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+		<Command>[Phenology].GrainFilling.Target.Value = 713</Command>
+		<Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
+	</Cultivar>
+	<Cultivar>
+		<Name>Hycorn_40</Name>
+		<Command>[Phenology].Juvenile.Target.Value = 200</Command>
+		<Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+		<Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
+		<Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
+		<Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+		<Command>[Phenology].GrainFilling.Target.Value = 813</Command>
+		<Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
+	</Cultivar>
+	<Cultivar>
+		<Name>GH_5019WX</Name>
+		<Command>[Phenology].Juvenile.Target.Value = 250</Command>
+		<Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+		<Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 57.5</Command>
+		<Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
+		<Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+		<Command>[Phenology].GrainFilling.Target.Value = 694</Command>
+		<Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
+	</Cultivar>
+	<Cultivar>
+		<Name>Laila</Name>
+		<Command>[Phenology].Juvenile.Target.Value = 211</Command>
+		<Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+		<Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
+		<Command>[Phenology].FlagLeafToFlowering.Target.Value = 1</Command>
+		<Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+		<Command>[Phenology].GrainFilling.Target.Value = 812</Command>
+		<Command>[Phenology].Maturing.Target.Value = 1</Command>
+		<Command>[Phenology].MaturityToHarvestRipe.Target.Value = 1</Command>
+		<Command>[Rachis].DMDemandFunction.MaximumOrganWt = 36</Command>
+		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 36</Command>
+		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 720</Command>
+	</Cultivar>
+	<Cultivar>
+		<Name>Pioneer_39V43</Name>
+		<Memo>
+			<Name>memo</Name>
+			<MemoText>
+				<![CDATA[
+<html><body>
+VShort duration variety released in New Zealand by Pioneer
+<br/>
+</body></html>]]>
+			</MemoText>
+		</Memo>
+		<Command>[Phenology].Juvenile.Target.Value = 150</Command>
+		<Command>[Phenology].GrainFilling.Target.Value = 550</Command>
+	</Cultivar>
+	<Cultivar>
+		<Name>Pioneer_34K77</Name>
+		<Memo>
+			<Name>memo</Name>
+			<MemoText>
+				<![CDATA[
+<html><body>
+VShort duration variety released in New Zealand by Pioneer
+<br/>
+</body></html>]]>
+			</MemoText>
+		</Memo>
+		<Command>[Phenology].Juvenile.Target.Value = 150</Command>
+		<Command>[Phenology].GrainFilling.Target.Value = 550</Command>
+	</Cultivar>
+	<Memo>
 		<Name>References</Name>
 		<MemoText>
 			<![CDATA[
