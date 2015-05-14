@@ -1848,8 +1848,14 @@ VShort duration variety released in New Zealand by Pioneer
 </body></html>]]>
 			</MemoText>
 		</Memo>
-		<Command>[Phenology].Juvenile.Target.Value = 150</Command>
-		<Command>[Phenology].GrainFilling.Target.Value = 550</Command>
+		<Command>[Phenology].Juvenile.Target.Value = 110</Command>
+		<Command>[Phenology].GrainFilling.Target.Value = 450</Command>
+		<Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+		<Command>[Structure].MainStemNodeAppearanceRate.Phyllochron.Phyllochron.XYPairs.X = 1, 4, 4.2, 10.5, 11</Command>
+		<Command>[Structure].MainStemNodeAppearanceRate.Phyllochron.Phyllochron.XYPairs.Y = 26, 26, 46, 46, 70</Command>
+		<Command>[Rachis].DMDemandFunction.MaximumOrganWt = 18</Command>		
+		<Command>[Structure].HeightModel.PotentialHeight.XYPairs.X = 3, 4, 5, 6</Command>
+		<Command>[Structure].HeightModel.PotentialHeight.XYPairs.Y = 20, 40, 50, 1300</Command>
 	</Cultivar>
 	<Cultivar>
 		<Name>Pioneer_34K77</Name>
