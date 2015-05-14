@@ -1113,6 +1113,13 @@ namespace Models
             <string>[Maize].Rachis.Live.NConc</string>
             <string>[Maize].Leaf.Dead.NConc</string>
             <string>[Maize].Leaf.Photosynthesis.RueAct</string>
+            <string>[Maize].Root.LengthDensity</string>
+            <string>[Maize].Root.DMDemand</string>
+            <string>[Maize].Leaf.DMDemand</string>
+            <string>[Maize].Stem.DMDemand</string>
+            <string>[Maize].Grain.DMDemand</string>
+            <string>[Maize].Rachis.DMDemand</string>
+            <string>[Maize].Husk.DMDemand</string>
           </VariableNames>
           <EventNames>
             <string>[Clock].DoReport</string>
@@ -1298,6 +1305,7 @@ namespace Models
           <LegendPosition>BottomRight</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LeafCohorts</Name>
@@ -1759,6 +1767,7 @@ namespace Models
           <LegendPosition>BottomRight</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>DM Allocation</Name>
@@ -1860,6 +1869,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LeafParameters</Name>
@@ -1961,6 +1971,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Height</Name>
@@ -2002,6 +2013,7 @@ namespace Models
           <LegendPosition>BottomRight</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>StemDMDemand</Name>
@@ -2063,6 +2075,7 @@ namespace Models
           <LegendPosition>BottomRight</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>N balance components</Name>
@@ -2245,6 +2258,7 @@ namespace Models
           <LegendPosition>BottomLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Plant Biomass components</Name>
@@ -2426,6 +2440,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Plant Nitrogen components</Name>
@@ -2567,6 +2582,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LeafParameters1</Name>
@@ -2608,6 +2624,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Manager>
           <Name>ClimateControl</Name>
@@ -2714,6 +2731,7 @@ public class Script : Model
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC40cm</Name>
@@ -2775,6 +2793,7 @@ public class Script : Model
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC60cm</Name>
@@ -2836,6 +2855,7 @@ public class Script : Model
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC80cm</Name>
@@ -2897,6 +2917,7 @@ public class Script : Model
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC100cm</Name>
@@ -2958,6 +2979,7 @@ public class Script : Model
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC120cm</Name>
@@ -3019,6 +3041,7 @@ public class Script : Model
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC140cm</Name>
@@ -3080,6 +3103,7 @@ public class Script : Model
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC1600cm</Name>
@@ -3141,6 +3165,7 @@ public class Script : Model
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
         </Folder>
         <Graph>
@@ -3203,6 +3228,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>StressLeaf</Name>
@@ -3264,6 +3290,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>StemN</Name>
@@ -3345,6 +3372,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Area>1</Area>
         <Slope>0</Slope>
@@ -3414,6 +3442,7 @@ public class Script : Model
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>AboveGroundN</Name>
@@ -3475,6 +3504,7 @@ public class Script : Model
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>Phenology</Name>
@@ -3536,6 +3566,7 @@ public class Script : Model
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>SoilWaterProfile</Name>
@@ -3597,6 +3628,7 @@ public class Script : Model
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Folder>
         <Name>SWCLayers</Name>
@@ -3660,6 +3692,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>SWC40cm</Name>
@@ -3721,6 +3754,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>SWC60cm</Name>
@@ -3782,6 +3816,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>SWC80cm</Name>
@@ -3843,6 +3878,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>SWC100cm</Name>
@@ -3904,6 +3940,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>SWC120cm</Name>
@@ -3965,6 +4002,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>SWC140cm</Name>
@@ -4026,6 +4064,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>SWC1600cm</Name>
@@ -4087,6 +4126,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
       </Folder>
       <Folder>
@@ -4151,6 +4191,7 @@ public class Script : Model
           <LegendPosition>TopRight</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Leaf</Name>
@@ -4212,6 +4253,7 @@ public class Script : Model
           <LegendPosition>TopRight</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Grain</Name>
@@ -4273,6 +4315,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Rachis</Name>
@@ -4334,6 +4377,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Husk</Name>
@@ -4395,6 +4439,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>DeadLeaf</Name>
@@ -4456,6 +4501,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
       </Folder>
       <Folder>
@@ -4520,6 +4566,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>GrainNitrogen</Name>
@@ -4581,6 +4628,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>StemNitrogen</Name>
@@ -4642,6 +4690,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>RachisNitrogen</Name>
@@ -4703,6 +4752,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>HuskNitrogen</Name>
@@ -4764,6 +4814,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
       </Folder>
       <Folder>
@@ -4828,6 +4879,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>StemBiomass</Name>
@@ -4889,6 +4941,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>GrainBiomass</Name>
@@ -4950,6 +5003,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>HuskBiomass</Name>
@@ -5012,6 +5066,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>RachisBiomass</Name>
@@ -5073,6 +5128,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
       </Folder>
       <Folder>
@@ -5117,6 +5173,151 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>RLD</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Root Length Density (mm/mm3)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Layer1</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Root.LengthDensity(1)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>false</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Layer2</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Root.LengthDensity(2)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>false</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Layer3</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Root.LengthDensity(3)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>false</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Layer4</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Root.LengthDensity(4)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>false</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>Root Wt</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>root mass (g/M2)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Root.Live.Wt</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
       </Folder>
       <Folder>
@@ -5181,6 +5382,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Cover</Name>
@@ -5242,6 +5444,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Leaf size</Name>
@@ -5330,6 +5533,7 @@ public class Script : Model
             <string>Lincoln2012NitrogenLowIrrigationNil</string>
             <string>Lincoln2012NitrogenMedIrrigationNil</string>
           </DisabledSeries>
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>StartSenesced</Name>
@@ -5391,6 +5595,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>SenescedLeaves</Name>
@@ -5432,6 +5637,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>FullySenesced</Name>
@@ -5493,6 +5699,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LeafTips</Name>
@@ -5554,6 +5761,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LeafLigules</Name>
@@ -5615,6 +5823,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
       </Folder>
       <Folder>
@@ -5679,6 +5888,7 @@ public class Script : Model
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
       </Folder>
     </Folder>
@@ -6628,30 +6838,35 @@ EAH added observed data and filters for all treatment levels, and treatment/vari
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LAI</Name>
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LeafNo</Name>
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Phenology</Name>
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LightInt</Name>
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Manager>
           <Name>SimCode</Name>
@@ -7031,6 +7246,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>LeafLigules</Name>
@@ -7092,6 +7308,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>AboveGroundWt</Name>
@@ -7153,6 +7370,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>GrainBiomass</Name>
@@ -7214,6 +7432,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>LAI</Name>
@@ -7275,6 +7494,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>LeafBiomass</Name>
@@ -7336,6 +7556,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>Cover</Name>
@@ -7397,6 +7618,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>Phenology</Name>
@@ -7458,6 +7680,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>StemBiomass</Name>
@@ -7519,6 +7742,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>LeafCohorts</Name>
@@ -7740,6 +7964,7 @@ namespace Models
         <LegendPosition>BottomRight</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
     </Folder>
   </Experiment>
@@ -7872,6 +8097,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>LeafLigules</Name>
@@ -7933,6 +8159,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>AboveGroundWt</Name>
@@ -7994,6 +8221,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>GrainBiomass</Name>
@@ -8055,6 +8283,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>LAI</Name>
@@ -8116,6 +8345,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>LeafBiomass</Name>
@@ -8177,6 +8407,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>Cover</Name>
@@ -8238,6 +8469,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>Phenology</Name>
@@ -8299,6 +8531,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>StemBiomass</Name>
@@ -8360,6 +8593,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>LeafCohorts</Name>
@@ -8581,6 +8815,7 @@ namespace Models
         <LegendPosition>BottomRight</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
     </Folder>
     <Simulation>
