@@ -38,18 +38,23 @@ namespace Models.PMF.Organs
         
         /// <summary>The number function</summary>
         [Link]
+        [Units("/m2")]
         IFunction NumberFunction = null;
         /// <summary>The n filling rate</summary>
         [Link]
+        [Units("g/m2/d")]
         IFunction NFillingRate = null;
         /// <summary>The maximum n conc</summary>
         [Link]
+        [Units("g/g")]
         IFunction MaximumNConc = null;
         /// <summary>The minimum n conc</summary>
         [Link]
+        [Units("g/g")]
         IFunction MinimumNConc = null;
         /// <summary>The dm demand function</summary>
         [Link]
+        [Units("g/m2/d")]
         IFunction DMDemandFunction = null;
         #endregion
 

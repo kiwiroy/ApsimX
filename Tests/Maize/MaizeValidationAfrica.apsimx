@@ -38,6 +38,20 @@ The APSIM Maize model has been tested on a range of datasets from around the wor
         <string>observed</string>
       </SheetNames>
     </Model>
+    <Model xsi:type="ExcelInput">
+      <Name>RainShelterN</Name>
+      <FileName>%root%\Tests\Maize\Observations\obsDataMaize_DB.xlsx</FileName>
+      <SheetNames>
+        <string>RainShelterNitrogen</string>
+      </SheetNames>
+    </Model>
+    <Model xsi:type="ExcelInput">
+      <Name>RainShelterN1</Name>
+      <FileName>%root%\Tests\Maize\Observations\SoilWater.xlsx</FileName>
+      <SheetNames>
+        <string>SoilWater</string>
+      </SheetNames>
+    </Model>
     <AutoExport>false</AutoExport>
   </DataStore>
   <Folder>
@@ -12440,7 +12454,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
-      <IncludeInDocumentation>false</IncludeInDocumentation>
+      <IncludeInDocumentation>true</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>Biomass</Name>
@@ -12483,7 +12497,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
-      <IncludeInDocumentation>false</IncludeInDocumentation>
+      <IncludeInDocumentation>true</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>LAIMax</Name>
@@ -12526,7 +12540,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
-      <IncludeInDocumentation>false</IncludeInDocumentation>
+      <IncludeInDocumentation>true</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>GPSM</Name>
@@ -12569,7 +12583,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
-      <IncludeInDocumentation>false</IncludeInDocumentation>
+      <IncludeInDocumentation>true</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>Grain Size</Name>
@@ -13720,14 +13734,6 @@ namespace Models
     </Experiment>
     <Experiment>
       <Name>K842</Name>
-      <Memo>
-        <Name>Memo</Name>
-        <MemoText><![CDATA[
-<html><body>
-       Description of Cultivar trial <br/>
-
-</body></html>]]></MemoText>
-      </Memo>
       <Factors>
         <Name>Factors</Name>
         <Factor>
@@ -14844,7 +14850,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
-      <IncludeInDocumentation>false</IncludeInDocumentation>
+      <IncludeInDocumentation>true</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>Biomass</Name>
@@ -14887,7 +14893,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
-      <IncludeInDocumentation>false</IncludeInDocumentation>
+      <IncludeInDocumentation>true</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>FloweringDAS</Name>
@@ -15819,13 +15825,6 @@ namespace Models
     </Experiment>
     <Simulation>
       <Name>Ames2006</Name>
-      <Memo>
-        <Name>memo</Name>
-        <MemoText><![CDATA[
-<html><body>
-
-</body></html>]]></MemoText>
-      </Memo>
       <Weather>
         <Name>Weather</Name>
         <FileName>%root%\Tests\Maize\Ames2.met</FileName>
@@ -16817,20 +16816,13 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
-        <IncludeInDocumentation>false</IncludeInDocumentation>
+        <IncludeInDocumentation>true</IncludeInDocumentation>
       </Graph>
       <Area>0</Area>
       <Slope>0</Slope>
     </Simulation>
     <Simulation>
       <Name>Ames2007</Name>
-      <Memo>
-        <Name>memo</Name>
-        <MemoText><![CDATA[
-<html><body>
-
-</body></html>]]></MemoText>
-      </Memo>
       <Weather>
         <Name>Weather</Name>
         <FileName>%root%\Tests\Maize\Ames2.met</FileName>
@@ -17660,7 +17652,7 @@ namespace Models
         <LegendPosition>TopRight</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
-        <IncludeInDocumentation>false</IncludeInDocumentation>
+        <IncludeInDocumentation>true</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>Biomass</Name>
@@ -17763,7 +17755,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
-        <IncludeInDocumentation>false</IncludeInDocumentation>
+        <IncludeInDocumentation>true</IncludeInDocumentation>
       </Graph>
       <Area>0</Area>
       <Slope>0</Slope>
@@ -17814,6 +17806,14 @@ namespace Models
   </Folder>
   <Folder>
     <Name>NewZealand</Name>
+    <Memo>
+      <Name>memo</Name>
+      <MemoText><![CDATA[
+<html><body>
+Testing of APSIM Maize under New Zealand conditions was undertaken using the data of Teixeira <i>et al</i>(2014).  This dataset includes the impact of three N (0 to 250 kg/ha N) and two water regimes (dryland and fully irrigated) using a rain-shelter structure.  Observations include biomass growth and nitrogen content of individual organs, soil water contents, leaf area index, phenology and yield components. Total biomass ranged from 8000 kg/ha for dryland nil N crops to up to 28000kg/ha for fully irrigated and N fertilised crops.  Dryland crops recovered 25 percent less N from applied fertilizer than irrigated crops.<br/>
+
+</body></html>]]></MemoText>
+    </Memo>
     <Experiment>
       <Name>Lincoln2012</Name>
       <Memo>
@@ -21216,7 +21216,7 @@ namespace Models
               <FieldName>Maize.Summariser.AboveGroundLive.Wt</FieldName>
             </Y>
             <ShowRegressionLine>false</ShowRegressionLine>
-            <ShowInLegend>true</ShowInLegend>
+            <ShowInLegend>false</ShowInLegend>
             <Cumulative>false</Cumulative>
           </Series>
           <Series>
@@ -21242,7 +21242,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
-          <IncludeInDocumentation>false</IncludeInDocumentation>
+          <IncludeInDocumentation>true</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>AboveGroundN</Name>
@@ -21278,7 +21278,7 @@ namespace Models
               <FieldName>Maize.Summariser.AboveGroundLive.N</FieldName>
             </Y>
             <ShowRegressionLine>false</ShowRegressionLine>
-            <ShowInLegend>true</ShowInLegend>
+            <ShowInLegend>false</ShowInLegend>
             <Cumulative>false</Cumulative>
           </Series>
           <Series>
@@ -21304,7 +21304,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
-          <IncludeInDocumentation>false</IncludeInDocumentation>
+          <IncludeInDocumentation>true</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Phenology</Name>
@@ -23553,16 +23553,11 @@ namespace Models
       <Name>Lincoln2010</Name>
       <Memo>
         <Name>Memo</Name>
-        <MemoText><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
- <head>
-  <title></title>
- </head>
- <body>
-  <p>Description of Cultivar trial</p>
- </body>
-</html>]]></MemoText>
+        <MemoText><![CDATA[
+<html><body>
+       Description of Cultivar trial <br/>
+
+</body></html>]]></MemoText>
       </Memo>
       <Factors>
         <Name>Factors</Name>
@@ -27834,6 +27829,15 @@ namespace Models
       <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
   </Folder>
+  <Memo>
+    <Name>Combined Results</Name>
+    <MemoText><![CDATA[
+<html><body>
+<h3>Combined Results</h3>
+Simulation results for the combined datasets from the various countries are shown in the following graphs.  The model is able to adequately capture the influence of growing conditions (soil, climate) and management (population, Nitrogen, irrigation, sowing date).<br/>
+
+</body></html>]]></MemoText>
+  </Memo>
   <Graph>
     <Name>GrainWt</Name>
     <Title />
@@ -27877,7 +27881,7 @@ namespace Models
     <LegendPosition>BottomRight</LegendPosition>
     <ShowRegressionLine>true</ShowRegressionLine>
     <DisabledSeries />
-    <IncludeInDocumentation>false</IncludeInDocumentation>
+    <IncludeInDocumentation>true</IncludeInDocumentation>
   </Graph>
   <Graph>
     <Name>Biomass</Name>
@@ -27922,7 +27926,7 @@ namespace Models
     <LegendPosition>BottomRight</LegendPosition>
     <ShowRegressionLine>true</ShowRegressionLine>
     <DisabledSeries />
-    <IncludeInDocumentation>false</IncludeInDocumentation>
+    <IncludeInDocumentation>true</IncludeInDocumentation>
   </Graph>
   <Graph>
     <Name>Maximum LAI</Name>
@@ -27967,19 +27971,69 @@ namespace Models
     <LegendPosition>BottomRight</LegendPosition>
     <ShowRegressionLine>true</ShowRegressionLine>
     <DisabledSeries />
-    <IncludeInDocumentation>false</IncludeInDocumentation>
+    <IncludeInDocumentation>true</IncludeInDocumentation>
+  </Graph>
+  <Graph>
+    <Name>Grain Number</Name>
+    <Title />
+    <Caption />
+    <Axis>
+      <Type>Bottom</Type>
+      <Title />
+      <Inverted>false</Inverted>
+      <Minimum>NaN</Minimum>
+      <Maximum>NaN</Maximum>
+      <Interval>NaN</Interval>
+    </Axis>
+    <Axis>
+      <Type>Left</Type>
+      <Title />
+      <Inverted>false</Inverted>
+      <Minimum>NaN</Minimum>
+      <Maximum>NaN</Maximum>
+      <Interval>NaN</Interval>
+    </Axis>
+    <Series>
+      <Title>Series1</Title>
+      <Type>Scatter</Type>
+      <XAxis>Bottom</XAxis>
+      <YAxis>Left</YAxis>
+      <ColourArgb>-16776961</ColourArgb>
+      <Marker>FilledCircle</Marker>
+      <Line>None</Line>
+      <X>
+        <TableName>PredictedObserved</TableName>
+        <FieldName>Observed.GPSM</FieldName>
+      </X>
+      <Y>
+        <TableName>PredictedObserved</TableName>
+        <FieldName>Predicted.GPSM</FieldName>
+      </Y>
+      <ShowRegressionLine>false</ShowRegressionLine>
+      <ShowInLegend>true</ShowInLegend>
+      <Cumulative>false</Cumulative>
+    </Series>
+    <LegendPosition>BottomRight</LegendPosition>
+    <ShowRegressionLine>true</ShowRegressionLine>
+    <DisabledSeries />
+    <IncludeInDocumentation>true</IncludeInDocumentation>
   </Graph>
   <Memo>
     <Name>References</Name>
     <MemoText><![CDATA[
 <html><body>
+<h3>References</h3>
 Archontoulis, S.V., Miguez, F.E., Moore, K.J., 2014. Evaluating APSIM Maize, Soil Water, Soil Nitrogen, Manure, and Soil Temperature Modules in the Midwestern United States. Agronomy Journal 106(3) 1025-1040.<br/>
+<br/>
+Brown, H.E., Huth, N.I., Holzworth, D.P., Teixeira, E.I., Zyskowski, R.F., Hargreaves, J.N., Moot, D.J., 2014. Plant modelling framework: software for building and running crop models on the APSIM platform. Environmental Modelling and Software 62 385-398.<br/>
 <br/>
 Carberry, P.S., Abrecht, D.G., 1991. Tailoring crop models to the semi-arid tropics. In: Muchow, R.C., Bellamy, J.A. (Eds.), Climatic Risk in Crop Production: Models and Management for the Semiarid Tropics and Subtropics. CAB International, Wallingford, UK, pp. 157-182.<br/>
 <br/>
 Carberry, P.S., Muchow, R.C., McCown, R.L., 1989. Testing the CERES-Maize simulation model in a semi-arid tropical environment. Field Crops Research 20(4) 297-315.<br/>
 <br/>
 Keating, B. A., B. M. Wafula, and J. M. Watiki. "Development of a modelling capability for maize in semi-arid eastern Kenya." In ACIAR Proc, vol. 41, pp. 26-33. 1992.<br/>
+<br/>
+Teixeira, E.I., George, M., Herreman, T., Brown, H., Fletcher, A., Chakwizira, E., de Ruiter, J., Maley, S., Noble, A., 2014. The impact of water and nitrogen limitation on maize biomass and resource-use efficiencies for radiation, water and nitrogen. Field Crops Research 168(0) 109-118.<br/>
 
 </body></html>]]></MemoText>
   </Memo>
