@@ -10,7 +10,7 @@ namespace Models.PMF.Functions.DemandFunctions
     /// Calculates the (actual or potential?) daily demand of biomass to the grain
     /// </summary>
     [Serializable]
-    [Description("This must be renamed DMDemandFunction for the source code to recoginise it!!!!.  This function returns the specified proportion of total DM supply.  The organ may not get this proportion if the sum of demands from other organs exceeds DM supply")]
+    [Description("")]
     public class GrainDemandFunction : Model, IFunction
     {
         /// <summary>The filling rate</summary>

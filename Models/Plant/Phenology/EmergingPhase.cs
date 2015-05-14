@@ -30,6 +30,7 @@ namespace Models.PMF.Phen
     /// \f]
     /// </remarks>
     [Serializable]
+    [Description("This phase simulates time to emergence as a function of sowing depth.  Thermal time to emergence = Sowing Depth x Shoot Rate + Shoot Lag.")]
     public class EmergingPhase : GenericPhase
     {
         /// <summary>The plant</summary>

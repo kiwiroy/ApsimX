@@ -29,6 +29,8 @@ namespace Models.PMF.Organs
         protected Phenology Phenology = null;
         /// <summary>The water content</summary>
         [Link]
+        [Units("g/g")]
+        [Description("Water content used to calculate a fresh weight.")]
         IFunction WaterContent = null;
         
         /// <summary>The Maximum potential size of individual grains</summary>

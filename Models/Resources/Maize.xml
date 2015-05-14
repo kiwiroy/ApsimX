@@ -1,62 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Plant>
 	<Name>Maize</Name>
-	<Cultivar>
-		<Name>Pioneer_39G12</Name>
-		<Command>[Phenology].GrainFilling.Target.Value = 550</Command>
-	</Cultivar>
-	<Cultivar>
-		<Name>Pioneer_3153</Name>
-	</Cultivar>
-	<Cultivar>
-		<Name>Katumani</Name>
-		<Memo>
-			<Name>memo</Name>
-			<MemoText>
-				<![CDATA[
+  <Memo>
+    <Name>TitlePage</Name>
+    <MemoText>
+      <![CDATA[
 <html><body>
-The variety Katumani Composite B was formed in 1966 and released in 1968 as part of the maize breeding work undertaken at the Katumani Research Station in Kenya which started in 1956.  Katumani Composite B was an advanced generation of Katumani Synthetic V X Katumani Synthetic VI.  It has slight photoperiod sensitivity and relatively small potential cob size.
+<div><p><H1>The APSIM Maize Model</H1></p></div>
+<p><i>Brown, H.E., Teixeira, E.I., Huth, N.I. and Holzworth, D.P.</i></p>
+<br/>
+The APSIM maize model has been developed using the Plant Modelling Framework (PMF) of Brown <i>et al</i>(2014).
+This new framework provides a library of plant organ and process submodels that can be coupled, at runtime, to construct a model in much the same way that models can be coupled to construct a simulation. This means that dynamic composition of lower level process and organ classes (e.g. photosynthesis, leaf) into larger constructions (e.g. maize, wheat, sorghum) can be achieved by the model developer without additional coding.
 <br/>
 </body></html>]]>
-			</MemoText>
-		</Memo>
-		<Command>[Phenology].Juvenile.Target.Value = 150</Command>
-		<Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-		<Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 115</Command>
-		<Command>[Phenology].FlagLeafToFlowering.Target.Value = 10</Command>
-		<Command>[Phenology].FloweringToGrainFilling.Target.Value = 120</Command>
-		<Command>[Phenology].GrainFilling.Target.Value = 530</Command>
-		<Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
-		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 14</Command>
-		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 405</Command>
-	</Cultivar>
-	<Cultivar>
-		<Name>Dekalb_XL82</Name>
-		<Command>[Phenology].Juvenile.Target.Value = 211</Command>
-		<Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-		<Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 472</Command>
-		<Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
-		<Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
-		<Command>[Phenology].GrainFilling.Target.Value = 813</Command>
-		<Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
-		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
-		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
-	</Cultivar>
-	<Cultivar>
-		<Name>Laila</Name>
-		<Command>[Phenology].Juvenile.Target.Value = 211</Command>
-		<Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-		<Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
-		<Command>[Phenology].FlagLeafToFlowering.Target.Value = 1</Command>
-		<Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
-		<Command>[Phenology].GrainFilling.Target.Value = 812</Command>
-		<Command>[Phenology].Maturing.Target.Value = 1</Command>
-		<Command>[Phenology].MaturityToHarvestRipe.Target.Value = 1</Command>
-		<Command>[Rachis].DMDemandFunction.MaximumOrganWt = 36</Command>
-		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 36</Command>
-		<Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 720</Command>
-	</Cultivar>
-	<OrganArbitrator>
+    </MemoText>
+  </Memo>
+  <CropType>Maize</CropType>
+  <OrganArbitrator>
 		<Name>Arbitrator</Name>
     <Memo>
       <Name>memo</Name>
@@ -97,30 +57,19 @@ There are a number of passes involved in the allocation of Weight (Wt).  <br/>
 	</OrganArbitrator>
 	<Phenology>
 		<Name>Phenology</Name>
-		<OnEventFunction>
-			<Name>FloweringDAS</Name>
-			<Memo>
-				<Name>memo</Name>
-				<MemoText>
-					<![CDATA[
+    <Memo>
+      <Name>memo</Name>
+      <MemoText>
+        <![CDATA[
 <html><body>
-A function is used to provide flowering date as days after sowing(DAS).
+The phenology model used in the APSIM maize model follows the approach used in earlier maize models(Jones and Kiniry (1986), Carberry and Arbrecht (1991), Carberry et al (1989).  
+The model predicts development of primordia on the apex of the main stem and appearance of individual leaves to predict time to flag leaf.  Other stages use thermal time targets.  
 <br/>
 </body></html>]]>
-				</MemoText>
-			</Memo>      
-			<SetEvent>Flowering</SetEvent>
-			<ReSetEvent>never</ReSetEvent>
-			<Constant>
-				<Name>PreEventValue</Name>
-				<Value>0</Value>
-			</Constant>
-			<VariableReference>
-				<Name>PostEventValue</Name>
-				<VariableName>[Phenology].DaysAfterSowing</VariableName>
-			</VariableReference>
-		</OnEventFunction>
-		<MultiplyFunction>
+      </MemoText>
+    </Memo>
+
+    <MultiplyFunction>
 			<Name>ThermalTime</Name>
 			<PhaseLookup>
 				<Name>TT</Name>
@@ -350,7 +299,31 @@ A function is used to provide flowering date as days after sowing(DAS).
 			<Twilight>-6</Twilight>
 		</PhotoperiodFunction>
 		<Emerged>false</Emerged>
-	</Phenology>
+    <OnEventFunction>
+      <Name>FloweringDAS</Name>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+A function is used to provide flowering date as days after sowing(DAS).
+<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>
+      <SetEvent>Flowering</SetEvent>
+      <ReSetEvent>never</ReSetEvent>
+      <Constant>
+        <Name>PreEventValue</Name>
+        <Value>0</Value>
+      </Constant>
+      <VariableReference>
+        <Name>PostEventValue</Name>
+        <VariableName>[Phenology].DaysAfterSowing</VariableName>
+      </VariableReference>
+    </OnEventFunction>
+
+  </Phenology>
 	<Structure>
 		<Name>Structure</Name>
 		<Memo>
@@ -641,6 +614,7 @@ Though tillering is common in some maize varieties under certain agronomic condi
 						<Name>PotentialSizeIncrement</Name>
 						<Constant>
 							<Name>MaximumFinalNConc</Name>
+              <Units>g/g</Units>
 							<Value>0.013</Value>
 						</Constant>
 						<VariableReference>
@@ -909,7 +883,20 @@ Hammer et al (2009) used a constant extraction front velocity of 2.5cm per day i
 			<Name>CohortParameters</Name>
 			<BellCurveFunction>
 				<Name>MaxArea</Name>
-				<MultiplyFunction>
+        <Memo>
+          <Name>Memo</Name>
+          <MemoText>
+            <![CDATA[
+<html><body>
+Potential leaf area is calculated from leaf number using the approach of Keating and Wafula (1992).
+Individual leaf size is described using a bell-shaped curve, the parameters of which are derived from final leaf number.
+<br/>
+
+</body></html>]]>
+          </MemoText>
+        </Memo>
+
+        <MultiplyFunction>
 					<Name>LargestLeafPosition</Name>
 					<VariableReference>
 						<Name>FinalLeafNumber</Name>
@@ -1744,8 +1731,62 @@ The AboveGroundDead composite biomass object includes the Dead pools of all orga
 			</Propertys>
 		</CompositeBiomass>
 	</Summariser>
-	<CropType>Maize</CropType>
-	<Memo>
+  <Cultivar>
+    <Name>Pioneer_39G12</Name>
+    <Command>[Phenology].GrainFilling.Target.Value = 550</Command>
+  </Cultivar>
+  <Cultivar>
+    <Name>Pioneer_3153</Name>
+  </Cultivar>
+  <Cultivar>
+    <Name>Katumani</Name>
+    <Memo>
+      <Name>memo</Name>
+      <MemoText>
+        <![CDATA[
+<html><body>
+The variety Katumani Composite B was formed in 1966 and released in 1968 as part of the maize breeding work undertaken at the Katumani Research Station in Kenya which started in 1956.  Katumani Composite B was an advanced generation of Katumani Synthetic V X Katumani Synthetic VI.  It has slight photoperiod sensitivity and relatively small potential cob size.
+<br/>
+</body></html>]]>
+      </MemoText>
+    </Memo>
+    <Command>[Phenology].Juvenile.Target.Value = 150</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 115</Command>
+    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 10</Command>
+    <Command>[Phenology].FloweringToGrainFilling.Target.Value = 120</Command>
+    <Command>[Phenology].GrainFilling.Target.Value = 530</Command>
+    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 14</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 405</Command>
+  </Cultivar>
+  <Cultivar>
+    <Name>Dekalb_XL82</Name>
+    <Command>[Phenology].Juvenile.Target.Value = 211</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 472</Command>
+    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
+    <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+    <Command>[Phenology].GrainFilling.Target.Value = 813</Command>
+    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
+  </Cultivar>
+  <Cultivar>
+    <Name>Laila</Name>
+    <Command>[Phenology].Juvenile.Target.Value = 211</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
+    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 1</Command>
+    <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+    <Command>[Phenology].GrainFilling.Target.Value = 812</Command>
+    <Command>[Phenology].Maturing.Target.Value = 1</Command>
+    <Command>[Phenology].MaturityToHarvestRipe.Target.Value = 1</Command>
+    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 36</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 36</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 720</Command>
+  </Cultivar>
+  <Memo>
 		<Name>References</Name>
 		<MemoText>
 			<![CDATA[
@@ -1757,6 +1798,8 @@ Brown, H.E., Huth, N.I., Holzworth, D.P., Teixeira, E.I., Zyskowski, R.F., Hargr
 Hammer, G.L., Dong, Z., McLean, G., Doherty, A., Messina, C., Schussler, J., Zinselmeier, C., Paszkiewicz, S., Cooper, M., 2009. Can Changes in Canopy and/or Root System Architecture Explain Historical Maize Yield Trends in the U.S. Corn Belt? Crop Science 49(1) 299-312.
 <br/><br/>
 Jones, C.A. and Kiniry, J.R. (1986) CERES-Maize: a Simulation Model of Maize Growth and Development. Texas A&M University Press, College Station, 194pp.
+<br/><br/>
+B.A. Keating and Wafula, B.M. (1992) Modelling the fully expanded leaf area of maize leaves.  Field Crops Research, 29, 163–176.
 <br/><br/>
 Meinke, H., Hammer, G.L., Want, P., 1993. POTENTIAL SOIL-WATER EXTRACTION BY SUNFLOWER ON A RANGE OF SOILS. Field Crops Research 32(1-2) 59-81.
 <br/><br/>

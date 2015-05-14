@@ -46,10 +46,17 @@ The APSIM Maize model has been tested on a range of datasets from around the wor
       </SheetNames>
     </Model>
     <Model xsi:type="ExcelInput">
-      <Name>RainShelterN1</Name>
+      <Name>RainShelterSW</Name>
       <FileName>%root%\Tests\Maize\Observations\SoilWater.xlsx</FileName>
       <SheetNames>
         <string>SoilWater</string>
+      </SheetNames>
+    </Model>
+    <Model xsi:type="ExcelInput">
+      <Name>RainShelterCob</Name>
+      <FileName>%root%\Tests\Maize\Observations\obsDataMaize_DB.xlsx</FileName>
+      <SheetNames>
+        <string>RachisHusk_RainS</string>
       </SheetNames>
     </Model>
     <AutoExport>false</AutoExport>
@@ -17816,14 +17823,6 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
     </Memo>
     <Experiment>
       <Name>Lincoln2012</Name>
-      <Memo>
-        <Name>Description</Name>
-        <MemoText><![CDATA[
-<html><body>
-       Description of Cultivar trial <br/>
-
-</body></html>]]></MemoText>
-      </Memo>
       <Factors>
         <Name>Factors</Name>
         <Factor>
@@ -18028,13 +18027,6 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
       </Factors>
       <Simulation>
         <Name>Lincoln2012</Name>
-        <Memo>
-          <Name>memo</Name>
-          <MemoText><![CDATA[
-<html><body>
-
-</body></html>]]></MemoText>
-        </Memo>
         <Weather>
           <Name>Weather</Name>
           <FileName>%root%\Tests\Maize\lincoln.met</FileName>
@@ -23551,14 +23543,6 @@ namespace Models
     </Experiment>
     <Experiment>
       <Name>Lincoln2010</Name>
-      <Memo>
-        <Name>Memo</Name>
-        <MemoText><![CDATA[
-<html><body>
-       Description of Cultivar trial <br/>
-
-</body></html>]]></MemoText>
-      </Memo>
       <Factors>
         <Name>Factors</Name>
         <Factor>
@@ -23604,50 +23588,6 @@ namespace Models
         <Summary>
           <Name>summaryfile</Name>
         </Summary>
-        <Memo>
-          <Name>memo</Name>
-          <MemoText><![CDATA[TODO:
-
-1) Parameterise phenology of hybrid P39V43
-2) Add initial soil nitrogen to soil
-
-Mikes notes:
-Applied 350kg Cropzeal 15p which has 13.5% N as a base fertiliser to whole trial area. http://www.ballance.co.nz/products/key+products/cropzeal  . For Manager folder>>fertil_applic I just kept this as urea_N
-SurfaceOrganicMatter - Changed to fieldpea and changed C:N ratio to 40 (slightly educated guess) http://panhandlenotill.org/index.php/brown-revolution-part-3/
-
-
-TREATMENTS:
-Nitrogen
-NilN = 0 kg/ha
-MedN = 200 kg/ha
-
-VARIABLES:
-Biomass
-- AboveDM
-- StemDM
-- LeafDM
-- RachisDM --> still need simulated data
-- HuskDM --> still need simulated data
-- GrainDM
-- SenesDM --> still need simulated data
-
-LAI
-
-LeafNo
-- LeafTips
-- LeafLigules
-
-Phenology
-- Emerge
-- Silk
-- Tassel
-
-LightInt --> still need simulated data
-
-
-
-EAH added observed data and filters for all treatment levels, and treatment/variable info into memo]]></MemoText>
-        </Memo>
         <SoilArbitrator>
           <Name>Soil Arbitrator</Name>
         </SoilArbitrator>
