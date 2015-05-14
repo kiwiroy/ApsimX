@@ -568,7 +568,7 @@ Though tillering is common in some maize varieties under certain agronomic condi
 				<Name>LinearPhase</Name>
 				<Constant>
 					<Name>FinalNconc</Name>
-					<Value>0.012</Value>
+					<Value>0.013</Value>
 				</Constant>
 				<Start>StartGrainFill</Start>
 				<End>EndGrainFill</End>
@@ -941,7 +941,7 @@ Hammer et al (2009) used a constant extraction front velocity of 2.5cm per day i
 			</Constant>
 			<Constant>
 				<Name>NRetranslocationFactor</Name>
-				<Value>0.1</Value>
+				<Value>0.03</Value>
 			</Constant>
 			<Constant>
 				<Name>DMRetranslocationFactor</Name>
