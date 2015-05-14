@@ -9,6 +9,36 @@
 		<Name>Pioneer_3153</Name>
 	</Cultivar>
 	<Cultivar>
+		<Name>Pioneer_39V43</Name>
+	      <Memo>
+			<Name>memo</Name>
+			<MemoText>
+				<![CDATA[
+<html><body>
+VShort duration variety released in New Zealand by Pioneer
+<br/>
+</body></html>]]>
+			</MemoText>
+		</Memo>
+		<Command>[Phenology].Juvenile.Target.Value = 150</Command>
+	    <Command>[Phenology].GrainFilling.Target.Value = 550</Command>
+	</Cultivar>
+	<Cultivar>
+		<Name>Pioneer_34K77</Name>
+	      <Memo>
+			<Name>memo</Name>
+			<MemoText>
+				<![CDATA[
+<html><body>
+VShort duration variety released in New Zealand by Pioneer
+<br/>
+</body></html>]]>
+			</MemoText>
+		</Memo>
+		<Command>[Phenology].Juvenile.Target.Value = 150</Command>
+	    <Command>[Phenology].GrainFilling.Target.Value = 550</Command>
+	</Cultivar>
+	<Cultivar>
 		<Name>Katumani</Name>
 		<Memo>
 			<Name>memo</Name>
