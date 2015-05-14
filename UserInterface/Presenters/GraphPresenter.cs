@@ -408,7 +408,7 @@ namespace UserInterface.Presenters
         /// </summary>
         public string ConvertToHtml(string folder)
         {
-            Rectangle r = new Rectangle(0, 0, 900, 600);
+            Rectangle r = new Rectangle(0, 0, 800, 500);
             Bitmap img = new Bitmap(r.Width, r.Height);
 
             GraphView.Export(img);
