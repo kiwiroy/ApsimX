@@ -1058,7 +1058,7 @@ namespace Models
             <string>[Maize].Leaf.CoverDead</string>
             <string>[Maize].Leaf.LAI</string>
             <string>[Maize].Leaf.Height</string>
-            <string>[Maize].Leaf.InitialLeafValues.MaxArea.Value</string>
+            <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
             <string>[Maize].Leaf.Fw</string>
             <string>[Maize].Leaf.Photosynthesis.FVPD.Value</string>
             <string>[Maize].Leaf.Photosynthesis.FT.Value</string>
@@ -1080,17 +1080,17 @@ namespace Models
             <string>[Maize].Structure.MainStemPrimordiaNo</string>
             <string>[Maize].Leaf.CohortArea[1:30]</string>
             <string>[Maize].Leaf.CohortSLA[1:30]</string>
-            <string>[Maize].Leaf.InitialLeafValues.SpecificLeafAreaMax.Value</string>
-            <string>[Maize].Leaf.InitialLeafValues.SpecificLeafAreaMin.Value</string>
+            <string>[Maize].Leaf.CohortParameters.SpecificLeafAreaMax.Value</string>
+            <string>[Maize].Leaf.CohortParameters.SpecificLeafAreaMin.Value</string>
             <string>[Maize].Arbitrator.NDemand</string>
             <string>[Maize].Arbitrator.DMSupply</string>
             <string>[Maize].Arbitrator.DMDemand</string>
             <string>[Maize].Arbitrator.DMAllocated</string>
             <string>[Maize].Arbitrator.DMSinkLimitation</string>
             <string>[Maize].Arbitrator.DMNutrientLimitation</string>
-            <string>[Maize].Leaf.InitialLeafValues.GrowthDuration.Value</string>
-            <string>[Maize].Leaf.InitialLeafValues.LagDuration.Value</string>
-            <string>[Maize].Leaf.InitialLeafValues.SenescenceDuration.Value</string>
+            <string>[Maize].Leaf.CohortParameters.GrowthDuration.Value</string>
+            <string>[Maize].Leaf.CohortParameters.LagDuration.Value</string>
+            <string>[Maize].Leaf.CohortParameters.SenescenceDuration.Value</string>
             <string>[Maize].Structure.MainStemNodeAppearanceRate.Value</string>
             <string>[Maize].Structure.Height</string>
             <string>[Maize].Stem.DMDemandFunction.PotentialDMAccumulation.Value</string>
@@ -1892,7 +1892,7 @@ namespace Models
             </X>
             <Y>
               <TableName>Report</TableName>
-              <FieldName>Maize.Leaf.InitialLeafValues.GrowthDuration.Value</FieldName>
+              <FieldName>Maize.Leaf.CohortParameters.GrowthDuration.Value</FieldName>
             </Y>
             <ShowRegressionLine>false</ShowRegressionLine>
             <ShowInLegend>true</ShowInLegend>
@@ -1912,7 +1912,7 @@ namespace Models
             </X>
             <Y>
               <TableName>Report</TableName>
-              <FieldName>Maize.Leaf.InitialLeafValues.LagDuration.Value</FieldName>
+              <FieldName>Maize.Leaf.CohortParameters.LagDuration.Value</FieldName>
             </Y>
             <ShowRegressionLine>false</ShowRegressionLine>
             <ShowInLegend>true</ShowInLegend>
@@ -1932,7 +1932,7 @@ namespace Models
             </X>
             <Y>
               <TableName>Report</TableName>
-              <FieldName>Maize.Leaf.InitialLeafValues.SenescenceDuration.Value</FieldName>
+              <FieldName>Maize.Leaf.CohortParameters.SenescenceDuration.Value</FieldName>
             </Y>
             <ShowRegressionLine>false</ShowRegressionLine>
             <ShowInLegend>true</ShowInLegend>
@@ -6868,7 +6868,7 @@ namespace Models
 			if ((double)zone.Get("Maize.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday) 
 			{
 			LeafAppearedPosition = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
-			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.InitialLeafValues.MaxArea.Value");
+			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.CohortParameters.MaxArea.Value");
 			}
 			//else
 			//LeafAppearedPosition = 0;
@@ -6940,7 +6940,7 @@ namespace Models
             <string>[Maize].Leaf.CoverDead</string>
             <string>[Maize].Leaf.LAI</string>
             <string>[Maize].Leaf.Height</string>
-            <string>[Maize].Leaf.InitialLeafValues.MaxArea.Value</string>
+            <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
             <string>[Maize].Leaf.Fw</string>
             <string>[Maize].Leaf.Fn</string>
             <string>[Maize].Phenology.CurrentPhaseName</string>
@@ -9540,7 +9540,7 @@ namespace Models
             <string>[Maize].Leaf.CoverDead</string>
             <string>[Maize].Leaf.LAI</string>
             <string>[Maize].Leaf.Height</string>
-            <string>[Maize].Leaf.InitialLeafValues.MaxArea.Value</string>
+            <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
             <string>[Maize].Leaf.Fw</string>
             <string>[Maize].Leaf.Fn</string>
             <string>[Maize].Phenology.CurrentPhaseName</string>
@@ -9726,7 +9726,7 @@ namespace Models
 			if ((double)zone.Get("Maize.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday) 
 			{
 			LeafAppearedPosition = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
-			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.InitialLeafValues.MaxArea.Value");
+			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.CohortParameters.MaxArea.Value");
 			}
 			//else
 			//LeafAppearedPosition = 0;
