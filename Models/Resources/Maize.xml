@@ -1045,17 +1045,17 @@ Hammer et al (2009) used a constant extraction front velocity of 2.5cm per day i
 					<Name>XYPairs</Name>
 					<X>
 						<double>1</double>
-						<double>6</double>
+						<double>10</double>
 					</X>
 					<Y>
-						<double>0.06</double>
-						<double>0.03</double>
+						<double>0.04</double>
+						<double>0.02</double>
 					</Y>
 				</XYPairs>
 			</LinearInterpolationFunction>
 			<Constant>
 				<Name>CriticalNConc</Name>
-				<Value>0.018</Value>
+				<Value>0.015</Value>
 			</Constant>
 			<Constant>
 				<Name>MinimumNConc</Name>
@@ -1447,23 +1447,23 @@ Extinction coefficient is specified in terms of a potential extinction coefficie
 			<Name>StructuralFraction</Name>
 			<Value>0.8</Value>
 		</Constant>
-		<LinearInterpolationFunction>
-			<Name>MaximumNConc</Name>
-			<XProperty>[Phenology].Stage</XProperty>
-			<XYPairs>
-				<Name>XYPairs</Name>
-				<X>
-					<double>3</double>
-					<double>5</double>
-					<double>5.5</double>
-				</X>
-				<Y>
-					<double>0.04</double>
-					<double>0.04</double>
-					<double>0.005</double>
-				</Y>
-			</XYPairs>
-		</LinearInterpolationFunction>
+			<LinearInterpolationFunction>
+				<Name>MaximumNConc</Name>
+				<XProperty>[Structure].MainStemNodeNo</XProperty>
+				<XYPairs>
+					<Name>XYPairs</Name>
+					<X>
+						<double>1</double>
+						<double>10</double>
+						<double>11</double>
+					</X>
+					<Y>
+						<double>0.03</double>
+						<double>0.03</double>
+						<double>0.005</double>
+					</Y>
+				</XYPairs>
+			</LinearInterpolationFunction>
 		<Constant>
 			<Name>MinimumNConc</Name>
 			<Value>0.006</Value>
