@@ -1773,6 +1773,42 @@ The variety Katumani Composite B was formed in 1966 and released in 1968 as part
     <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
   </Cultivar>
   <Cultivar>
+    <Name>GH_5009</Name>
+    <Command>[Phenology].Juvenile.Target.Value = 250</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
+    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 50</Command>
+    <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+    <Command>[Phenology].GrainFilling.Target.Value = 713</Command>
+    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
+  </Cultivar>
+  <Cultivar>
+    <Name>Hycorn_40</Name>
+    <Command>[Phenology].Juvenile.Target.Value = 200</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
+    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
+    <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+    <Command>[Phenology].GrainFilling.Target.Value = 813</Command>
+    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
+  </Cultivar>
+  <Cultivar>
+    <Name>GH_5019WX</Name>
+    <Command>[Phenology].Juvenile.Target.Value = 250</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 57.5</Command>
+    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
+    <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+    <Command>[Phenology].GrainFilling.Target.Value = 694</Command>
+    <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+    <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
+  </Cultivar>
+  <Cultivar>
     <Name>Laila</Name>
     <Command>[Phenology].Juvenile.Target.Value = 211</Command>
     <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
