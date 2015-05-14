@@ -991,6 +991,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>GrainNo N Response</Name>
@@ -1053,6 +1054,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>GrainSize N Response</Name>
@@ -1115,6 +1117,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
     </Experiment>
     <Experiment>
@@ -2074,6 +2077,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>GrainNo N Response</Name>
@@ -2136,6 +2140,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>GrainSize N Response</Name>
@@ -2198,6 +2203,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
     </Experiment>
     <Experiment>
@@ -12434,6 +12440,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>Biomass</Name>
@@ -12476,6 +12483,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>LAIMax</Name>
@@ -12518,6 +12526,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>GPSM</Name>
@@ -12560,6 +12569,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>Grain Size</Name>
@@ -12602,6 +12612,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>FloweringDAS</Name>
@@ -12644,6 +12655,7 @@ namespace Models
       <LegendPosition>TopRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
   </Folder>
   <Folder>
@@ -13640,6 +13652,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>GrainNo N Response</Name>
@@ -13702,6 +13715,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
     </Experiment>
     <Experiment>
@@ -14723,6 +14737,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>GrainNo N Response</Name>
@@ -14785,6 +14800,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
     </Experiment>
     <Graph>
@@ -14828,6 +14844,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>Biomass</Name>
@@ -14870,6 +14887,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>FloweringDAS</Name>
@@ -14912,6 +14930,7 @@ namespace Models
       <LegendPosition>TopRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
     <Graph>
       <Name>Grain Size</Name>
@@ -14954,6 +14973,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
   </Folder>
   <Folder>
@@ -16694,6 +16714,7 @@ namespace Models
         <LegendPosition>TopRight</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>Biomass</Name>
@@ -16796,6 +16817,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Area>0</Area>
       <Slope>0</Slope>
@@ -17638,6 +17660,7 @@ namespace Models
         <LegendPosition>TopRight</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Graph>
         <Name>Biomass</Name>
@@ -17740,6 +17763,7 @@ namespace Models
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
         <DisabledSeries />
+        <IncludeInDocumentation>false</IncludeInDocumentation>
       </Graph>
       <Area>0</Area>
       <Slope>0</Slope>
@@ -17785,6 +17809,7 @@ namespace Models
       <LegendPosition>TopRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
   </Folder>
   <Folder>
@@ -19034,6 +19059,7 @@ namespace Models
             <LegendPosition>BottomRight</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>LeafCohorts</Name>
@@ -19495,6 +19521,7 @@ namespace Models
             <LegendPosition>BottomRight</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>DM Allocation</Name>
@@ -19596,6 +19623,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>LeafParameters</Name>
@@ -19697,6 +19725,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>Height</Name>
@@ -19738,6 +19767,7 @@ namespace Models
             <LegendPosition>BottomRight</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>StemDMDemand</Name>
@@ -19799,6 +19829,7 @@ namespace Models
             <LegendPosition>BottomRight</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>N balance components</Name>
@@ -19981,6 +20012,7 @@ namespace Models
             <LegendPosition>BottomLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>Plant Biomass components</Name>
@@ -20162,6 +20194,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>Plant Nitrogen components</Name>
@@ -20303,6 +20336,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>LeafParameters1</Name>
@@ -20344,6 +20378,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Manager>
             <Name>ClimateControl</Name>
@@ -20450,6 +20485,7 @@ public class Script : Model
               <LegendPosition>TopLeft</LegendPosition>
               <ShowRegressionLine>false</ShowRegressionLine>
               <DisabledSeries />
+              <IncludeInDocumentation>false</IncludeInDocumentation>
             </Graph>
             <Graph>
               <Name>SWC40cm</Name>
@@ -20511,6 +20547,7 @@ public class Script : Model
               <LegendPosition>TopLeft</LegendPosition>
               <ShowRegressionLine>false</ShowRegressionLine>
               <DisabledSeries />
+              <IncludeInDocumentation>false</IncludeInDocumentation>
             </Graph>
             <Graph>
               <Name>SWC60cm</Name>
@@ -20572,6 +20609,7 @@ public class Script : Model
               <LegendPosition>TopLeft</LegendPosition>
               <ShowRegressionLine>false</ShowRegressionLine>
               <DisabledSeries />
+              <IncludeInDocumentation>false</IncludeInDocumentation>
             </Graph>
             <Graph>
               <Name>SWC80cm</Name>
@@ -20633,6 +20671,7 @@ public class Script : Model
               <LegendPosition>TopLeft</LegendPosition>
               <ShowRegressionLine>false</ShowRegressionLine>
               <DisabledSeries />
+              <IncludeInDocumentation>false</IncludeInDocumentation>
             </Graph>
             <Graph>
               <Name>SWC100cm</Name>
@@ -20694,6 +20733,7 @@ public class Script : Model
               <LegendPosition>TopLeft</LegendPosition>
               <ShowRegressionLine>false</ShowRegressionLine>
               <DisabledSeries />
+              <IncludeInDocumentation>false</IncludeInDocumentation>
             </Graph>
             <Graph>
               <Name>SWC120cm</Name>
@@ -20755,6 +20795,7 @@ public class Script : Model
               <LegendPosition>TopLeft</LegendPosition>
               <ShowRegressionLine>false</ShowRegressionLine>
               <DisabledSeries />
+              <IncludeInDocumentation>false</IncludeInDocumentation>
             </Graph>
             <Graph>
               <Name>SWC140cm</Name>
@@ -20816,6 +20857,7 @@ public class Script : Model
               <LegendPosition>TopLeft</LegendPosition>
               <ShowRegressionLine>false</ShowRegressionLine>
               <DisabledSeries />
+              <IncludeInDocumentation>false</IncludeInDocumentation>
             </Graph>
             <Graph>
               <Name>SWC1600cm</Name>
@@ -20877,6 +20919,7 @@ public class Script : Model
               <LegendPosition>TopLeft</LegendPosition>
               <ShowRegressionLine>false</ShowRegressionLine>
               <DisabledSeries />
+              <IncludeInDocumentation>false</IncludeInDocumentation>
             </Graph>
           </Folder>
           <Graph>
@@ -20939,6 +20982,7 @@ public class Script : Model
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>StressLeaf</Name>
@@ -21000,6 +21044,7 @@ public class Script : Model
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>StemN</Name>
@@ -21081,6 +21126,7 @@ public class Script : Model
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Manager>
             <Name>Harvesting</Name>
@@ -21196,6 +21242,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>AboveGroundN</Name>
@@ -21257,6 +21304,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Phenology</Name>
@@ -21318,6 +21366,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>SoilWaterProfile</Name>
@@ -21379,6 +21428,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Folder>
           <Name>SWCLayers</Name>
@@ -21442,6 +21492,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC40cm</Name>
@@ -21503,6 +21554,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC60cm</Name>
@@ -21564,6 +21616,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC80cm</Name>
@@ -21625,6 +21678,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC100cm</Name>
@@ -21686,6 +21740,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC120cm</Name>
@@ -21747,6 +21802,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC140cm</Name>
@@ -21808,6 +21864,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SWC1600cm</Name>
@@ -21869,6 +21926,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
         </Folder>
         <Folder>
@@ -21933,6 +21991,7 @@ namespace Models
             <LegendPosition>TopRight</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>Leaf</Name>
@@ -21994,6 +22053,7 @@ namespace Models
             <LegendPosition>TopRight</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>Grain</Name>
@@ -22055,6 +22115,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>Rachis</Name>
@@ -22116,6 +22177,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>Husk</Name>
@@ -22177,6 +22239,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>DeadLeaf</Name>
@@ -22238,6 +22301,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
         </Folder>
         <Folder>
@@ -22302,6 +22366,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>GrainNitrogen</Name>
@@ -22363,6 +22428,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>StemNitrogen</Name>
@@ -22424,6 +22490,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>RachisNitrogen</Name>
@@ -22485,6 +22552,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>HuskNitrogen</Name>
@@ -22546,6 +22614,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
         </Folder>
         <Folder>
@@ -22610,6 +22679,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>StemBiomass</Name>
@@ -22671,6 +22741,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>GrainBiomass</Name>
@@ -22732,6 +22803,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>HuskBiomass</Name>
@@ -22794,6 +22866,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>RachisBiomass</Name>
@@ -22855,6 +22928,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
         </Folder>
         <Folder>
@@ -22899,6 +22973,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
         </Folder>
         <Folder>
@@ -22963,6 +23038,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>Cover</Name>
@@ -23024,6 +23100,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>Leaf size</Name>
@@ -23112,6 +23189,7 @@ namespace Models
               <string>Lincoln2012NitrogenLowIrrigationNil</string>
               <string>Lincoln2012NitrogenMedIrrigationNil</string>
             </DisabledSeries>
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>StartSenesced</Name>
@@ -23173,6 +23251,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>SenescedLeaves</Name>
@@ -23214,6 +23293,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>FullySenesced</Name>
@@ -23275,6 +23355,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>LeafTips</Name>
@@ -23336,6 +23417,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>LeafLigules</Name>
@@ -23397,6 +23479,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
         </Folder>
         <Folder>
@@ -23461,6 +23544,7 @@ namespace Models
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
         </Folder>
       </Folder>
@@ -24410,30 +24494,35 @@ EAH added observed data and filters for all treatment levels, and treatment/vari
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>LAI</Name>
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>LeafNo</Name>
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>Phenology</Name>
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Graph>
             <Name>LightInt</Name>
             <LegendPosition>TopLeft</LegendPosition>
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
           </Graph>
           <Manager>
             <Name>SimCode</Name>
@@ -24890,6 +24979,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LeafLigules</Name>
@@ -24951,6 +25041,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>AboveGroundWt</Name>
@@ -25012,6 +25103,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>GrainBiomass</Name>
@@ -25073,6 +25165,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LAI</Name>
@@ -25134,6 +25227,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LeafBiomass</Name>
@@ -25195,6 +25289,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Cover</Name>
@@ -25256,6 +25351,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Phenology</Name>
@@ -25317,6 +25413,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>StemBiomass</Name>
@@ -25378,6 +25475,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LeafCohorts</Name>
@@ -25599,6 +25697,7 @@ namespace Models
           <LegendPosition>BottomRight</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
       </Folder>
     </Experiment>
@@ -25731,6 +25830,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LeafLigules</Name>
@@ -25792,6 +25892,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>AboveGroundWt</Name>
@@ -25853,6 +25954,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>GrainBiomass</Name>
@@ -25914,6 +26016,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LAI</Name>
@@ -25975,6 +26078,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LeafBiomass</Name>
@@ -26036,6 +26140,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Cover</Name>
@@ -26097,6 +26202,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>Phenology</Name>
@@ -26158,6 +26264,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>StemBiomass</Name>
@@ -26219,6 +26326,7 @@ namespace Models
           <LegendPosition>TopLeft</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
           <Name>LeafCohorts</Name>
@@ -26440,6 +26548,7 @@ namespace Models
           <LegendPosition>BottomRight</LegendPosition>
           <ShowRegressionLine>false</ShowRegressionLine>
           <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
       </Folder>
       <Simulation>
@@ -27722,6 +27831,7 @@ namespace Models
       <LegendPosition>BottomRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
   </Folder>
   <Graph>
@@ -27767,6 +27877,7 @@ namespace Models
     <LegendPosition>BottomRight</LegendPosition>
     <ShowRegressionLine>true</ShowRegressionLine>
     <DisabledSeries />
+    <IncludeInDocumentation>false</IncludeInDocumentation>
   </Graph>
   <Graph>
     <Name>Biomass</Name>
@@ -27811,6 +27922,52 @@ namespace Models
     <LegendPosition>BottomRight</LegendPosition>
     <ShowRegressionLine>true</ShowRegressionLine>
     <DisabledSeries />
+    <IncludeInDocumentation>false</IncludeInDocumentation>
+  </Graph>
+  <Graph>
+    <Name>Maximum LAI</Name>
+    <Title />
+    <Caption />
+    <Axis>
+      <Type>Bottom</Type>
+      <Title />
+      <Inverted>false</Inverted>
+      <Minimum>NaN</Minimum>
+      <Maximum>NaN</Maximum>
+      <Interval>NaN</Interval>
+    </Axis>
+    <Axis>
+      <Type>Left</Type>
+      <Title />
+      <Inverted>false</Inverted>
+      <Minimum>NaN</Minimum>
+      <Maximum>NaN</Maximum>
+      <Interval>NaN</Interval>
+    </Axis>
+    <Series>
+      <Title>Series1</Title>
+      <Type>Scatter</Type>
+      <XAxis>Bottom</XAxis>
+      <YAxis>Left</YAxis>
+      <ColourArgb>-16776961</ColourArgb>
+      <Marker>FilledCircle</Marker>
+      <Line>None</Line>
+      <X>
+        <TableName>PredictedObserved</TableName>
+        <FieldName>Observed.LAImax</FieldName>
+      </X>
+      <Y>
+        <TableName>PredictedObserved</TableName>
+        <FieldName>Predicted.LAImax</FieldName>
+      </Y>
+      <ShowRegressionLine>false</ShowRegressionLine>
+      <ShowInLegend>true</ShowInLegend>
+      <Cumulative>false</Cumulative>
+    </Series>
+    <LegendPosition>BottomRight</LegendPosition>
+    <ShowRegressionLine>true</ShowRegressionLine>
+    <DisabledSeries />
+    <IncludeInDocumentation>false</IncludeInDocumentation>
   </Graph>
   <Memo>
     <Name>References</Name>
