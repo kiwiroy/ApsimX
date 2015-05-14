@@ -18017,7 +18017,7 @@ namespace Models
         <Clock>
           <Name>clock</Name>
           <StartDate>2012-10-01T00:00:00</StartDate>
-          <EndDate>2013-04-15T00:00:00</EndDate>
+          <EndDate>2013-04-25T00:00:00</EndDate>
         </Clock>
         <Summary>
           <Name>summaryfile</Name>
@@ -18821,6 +18821,37 @@ namespace Models
             </VariableNames>
             <EventNames>
               <string>[Clock].DoReport</string>
+            </EventNames>
+          </Report>
+          <Report>
+            <Name>HarvestReport</Name>
+            <VariableNames>
+              <string>[Clock].Today</string>
+              <string>[Maize].Phenology.CurrentStageName as Stage</string>
+              <string>[Maize].Grain.Live.Wt as GrainWt</string>
+              <string>[Maize].Stem.Live.Wt</string>
+              <string>[Maize].Summariser.EarLive.Wt</string>
+              <string>[Maize].Leaf.Live.Wt</string>
+              <string>[Maize].Root.Live.Wt</string>
+              <string>[Maize].Husk.Live.Wt</string>
+              <string>[Maize].Rachis.Live.Wt</string>
+              <string>[Maize].Summariser.EarLive.N</string>
+              <string>[Maize].Grain.Live.N</string>
+              <string>[Maize].Stem.Live.N</string>
+              <string>[Maize].Leaf.Live.N</string>
+              <string>[Maize].Root.Live.N</string>
+              <string>[Maize].Root.Depth</string>
+              <string>[Maize].Summariser.AboveGround.N</string>
+              <string>[Maize].Summariser.AboveGround.Wt as Biomass</string>
+              <string>[Maize].Summariser.Total.N</string>
+              <string>[Maize].Summariser.Total.Wt</string>
+              <string>max of [Maize].Leaf.LAI from [Maize].Sowing to [Maize].Harvesting as LAImax</string>
+              <string>[Maize].Grain.NumberFunction.Value as GPSM</string>
+              <string>[Maize].Grain.Size.Value as GrainSize</string>
+              <string>[Maize].Population</string>
+            </VariableNames>
+            <EventNames>
+              <string>[Maize].Harvesting</string>
             </EventNames>
           </Report>
           <Graph>
@@ -21051,6 +21082,52 @@ public class Script : Model
             <ShowRegressionLine>false</ShowRegressionLine>
             <DisabledSeries />
           </Graph>
+          <Manager>
+            <Name>Harvesting</Name>
+            <Script />
+            <Code><![CDATA[using System;
+using Models.Core;
+using System.Collections.Generic;
+using System.Text;
+using Models.Soils;
+using Models.PMF;
+using Models;
+using System.Xml.Serialization;
+using APSIM.Shared.Utilities;
+
+namespace Models
+{
+	[Serializable] 
+	public class Script : Model
+	{      
+		[Link] Plant Maize;          
+		[Link] Zone zone;			
+					
+        
+        [EventSubscribe("Commencing")]
+        private void OnSimulationCommencing(object sender, EventArgs e)
+        {
+		}	   
+		
+		[EventSubscribe("DoManagement")]
+		private void OnDoManagement(object sender, EventArgs e)
+		{
+        if (Maize.Phenology.CurrentPhaseName=="ReadyForHarvesting")
+           {
+           Maize.Harvest();
+           Maize.EndCrop();
+           }
+		}
+		
+		[EventSubscribe("DoManagementCalculations")]
+		private void OnDoManagementCalculations(object sender, EventArgs e)
+		{
+			
+		}
+	}
+}
+	   ]]></Code>
+          </Manager>
           <Area>1</Area>
           <Slope>0</Slope>
         </Zone>
@@ -23443,7 +23520,7 @@ public class Script : Model
         <Clock>
           <Name>clock</Name>
           <StartDate>2010-10-01T00:00:00</StartDate>
-          <EndDate>2011-04-15T00:00:00</EndDate>
+          <EndDate>2011-04-20T00:00:00</EndDate>
         </Clock>
         <Summary>
           <Name>summaryfile</Name>
@@ -24668,6 +24745,83 @@ namespace Models
               <string>[Clock].DoReport</string>
             </EventNames>
           </Report>
+          <Report>
+            <Name>HarvestReport</Name>
+            <VariableNames>
+              <string>[Clock].Today</string>
+              <string>[Maize].Phenology.CurrentStageName as Stage</string>
+              <string>[Maize].Grain.Live.Wt as GrainWt</string>
+              <string>[Maize].Stem.Live.Wt</string>
+              <string>[Maize].Summariser.EarLive.Wt</string>
+              <string>[Maize].Leaf.Live.Wt</string>
+              <string>[Maize].Root.Live.Wt</string>
+              <string>[Maize].Husk.Live.Wt</string>
+              <string>[Maize].Rachis.Live.Wt</string>
+              <string>[Maize].Summariser.EarLive.N</string>
+              <string>[Maize].Grain.Live.N</string>
+              <string>[Maize].Stem.Live.N</string>
+              <string>[Maize].Leaf.Live.N</string>
+              <string>[Maize].Root.Live.N</string>
+              <string>[Maize].Root.Depth</string>
+              <string>[Maize].Summariser.AboveGround.N</string>
+              <string>[Maize].Summariser.AboveGround.Wt as Biomass</string>
+              <string>[Maize].Summariser.Total.N</string>
+              <string>[Maize].Summariser.Total.Wt</string>
+              <string>max of [Maize].Leaf.LAI from [Maize].Sowing to [Maize].Harvesting as LAImax</string>
+              <string>[Maize].Grain.NumberFunction.Value as GPSM</string>
+              <string>[Maize].Grain.Size.Value as GrainSize</string>
+              <string>[Maize].Population</string>
+            </VariableNames>
+            <EventNames>
+              <string>[Maize].Harvesting</string>
+            </EventNames>
+          </Report>
+          <Manager>
+            <Name>Harvesting</Name>
+            <Script />
+            <Code><![CDATA[using System;
+using Models.Core;
+using System.Collections.Generic;
+using System.Text;
+using Models.Soils;
+using Models.PMF;
+using Models;
+using System.Xml.Serialization;
+using APSIM.Shared.Utilities;
+
+namespace Models
+{
+	[Serializable] 
+	public class Script : Model
+	{      
+		[Link] Plant Maize;          
+		[Link] Zone zone;			
+					
+        
+        [EventSubscribe("Commencing")]
+        private void OnSimulationCommencing(object sender, EventArgs e)
+        {
+		}	   
+		
+		[EventSubscribe("DoManagement")]
+		private void OnDoManagement(object sender, EventArgs e)
+		{
+        if (Maize.Phenology.CurrentPhaseName=="ReadyForHarvesting")
+           {
+           Maize.Harvest();
+           Maize.EndCrop();
+           }
+		}
+		
+		[EventSubscribe("DoManagementCalculations")]
+		private void OnDoManagementCalculations(object sender, EventArgs e)
+		{
+			
+		}
+	}
+}
+	   ]]></Code>
+          </Manager>
           <Area>1</Area>
           <Slope>0</Slope>
         </Zone>
@@ -27268,6 +27422,37 @@ namespace Models
               <string>[Clock].DoReport</string>
             </EventNames>
           </Report>
+          <Report>
+            <Name>HarvestReport</Name>
+            <VariableNames>
+              <string>[Clock].Today</string>
+              <string>[Maize].Phenology.CurrentStageName as Stage</string>
+              <string>[Maize].Grain.Live.Wt as GrainWt</string>
+              <string>[Maize].Stem.Live.Wt</string>
+              <string>[Maize].Summariser.EarLive.Wt</string>
+              <string>[Maize].Leaf.Live.Wt</string>
+              <string>[Maize].Root.Live.Wt</string>
+              <string>[Maize].Husk.Live.Wt</string>
+              <string>[Maize].Rachis.Live.Wt</string>
+              <string>[Maize].Summariser.EarLive.N</string>
+              <string>[Maize].Grain.Live.N</string>
+              <string>[Maize].Stem.Live.N</string>
+              <string>[Maize].Leaf.Live.N</string>
+              <string>[Maize].Root.Live.N</string>
+              <string>[Maize].Root.Depth</string>
+              <string>[Maize].Summariser.AboveGround.N</string>
+              <string>[Maize].Summariser.AboveGround.Wt as Biomass</string>
+              <string>[Maize].Summariser.Total.N</string>
+              <string>[Maize].Summariser.Total.Wt</string>
+              <string>max of [Maize].Leaf.LAI from [Maize].Sowing to [Maize].Harvesting as LAImax</string>
+              <string>[Maize].Grain.NumberFunction.Value as GPSM</string>
+              <string>[Maize].Grain.Size.Value as GrainSize</string>
+              <string>[Maize].Population</string>
+            </VariableNames>
+            <EventNames>
+              <string>[Maize].Harvesting</string>
+            </EventNames>
+          </Report>
           <Manager>
             <Name>ExtraVariables</Name>
             <Script />
@@ -27441,6 +27626,52 @@ namespace Models
 }
 	   ]]></Code>
           </Manager>
+          <Manager>
+            <Name>Harvesting</Name>
+            <Script />
+            <Code><![CDATA[using System;
+using Models.Core;
+using System.Collections.Generic;
+using System.Text;
+using Models.Soils;
+using Models.PMF;
+using Models;
+using System.Xml.Serialization;
+using APSIM.Shared.Utilities;
+
+namespace Models
+{
+	[Serializable] 
+	public class Script : Model
+	{      
+		[Link] Plant Maize;          
+		[Link] Zone zone;			
+					
+        
+        [EventSubscribe("Commencing")]
+        private void OnSimulationCommencing(object sender, EventArgs e)
+        {
+		}	   
+		
+		[EventSubscribe("DoManagement")]
+		private void OnDoManagement(object sender, EventArgs e)
+		{
+        if (Maize.Phenology.CurrentPhaseName=="ReadyForHarvesting")
+           {
+           Maize.Harvest();
+           Maize.EndCrop();
+           }
+		}
+		
+		[EventSubscribe("DoManagementCalculations")]
+		private void OnDoManagementCalculations(object sender, EventArgs e)
+		{
+			
+		}
+	}
+}
+	   ]]></Code>
+          </Manager>
           <Area>1</Area>
           <Slope>0</Slope>
         </Zone>
@@ -27448,6 +27679,50 @@ namespace Models
         <Slope>0</Slope>
       </Simulation>
     </Experiment>
+    <Graph>
+      <Name>GrainWt</Name>
+      <Title />
+      <Caption />
+      <Axis>
+        <Type>Bottom</Type>
+        <Title />
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Axis>
+        <Type>Left</Type>
+        <Title />
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Series>
+        <Title>Series1</Title>
+        <Type>Scatter</Type>
+        <XAxis>Bottom</XAxis>
+        <YAxis>Left</YAxis>
+        <ColourArgb>-16776961</ColourArgb>
+        <Marker>FilledCircle</Marker>
+        <Line>None</Line>
+        <X>
+          <TableName>PredictedObserved</TableName>
+          <FieldName>Observed.GrainWt</FieldName>
+        </X>
+        <Y>
+          <TableName>PredictedObserved</TableName>
+          <FieldName>Predicted.GrainWt</FieldName>
+        </Y>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <ShowInLegend>true</ShowInLegend>
+        <Cumulative>false</Cumulative>
+      </Series>
+      <LegendPosition>BottomRight</LegendPosition>
+      <ShowRegressionLine>true</ShowRegressionLine>
+      <DisabledSeries />
+    </Graph>
   </Folder>
   <Graph>
     <Name>GrainWt</Name>
@@ -27484,6 +27759,50 @@ namespace Models
       <Y>
         <TableName>PredictedObserved</TableName>
         <FieldName>Predicted.GrainWt</FieldName>
+      </Y>
+      <ShowRegressionLine>false</ShowRegressionLine>
+      <ShowInLegend>true</ShowInLegend>
+      <Cumulative>false</Cumulative>
+    </Series>
+    <LegendPosition>BottomRight</LegendPosition>
+    <ShowRegressionLine>true</ShowRegressionLine>
+    <DisabledSeries />
+  </Graph>
+  <Graph>
+    <Name>Biomass</Name>
+    <Title />
+    <Caption />
+    <Axis>
+      <Type>Bottom</Type>
+      <Title />
+      <Inverted>false</Inverted>
+      <Minimum>NaN</Minimum>
+      <Maximum>NaN</Maximum>
+      <Interval>NaN</Interval>
+    </Axis>
+    <Axis>
+      <Type>Left</Type>
+      <Title />
+      <Inverted>false</Inverted>
+      <Minimum>NaN</Minimum>
+      <Maximum>NaN</Maximum>
+      <Interval>NaN</Interval>
+    </Axis>
+    <Series>
+      <Title>Series1</Title>
+      <Type>Scatter</Type>
+      <XAxis>Bottom</XAxis>
+      <YAxis>Left</YAxis>
+      <ColourArgb>-16776961</ColourArgb>
+      <Marker>FilledCircle</Marker>
+      <Line>None</Line>
+      <X>
+        <TableName>PredictedObserved</TableName>
+        <FieldName>Observed.Biomass</FieldName>
+      </X>
+      <Y>
+        <TableName>PredictedObserved</TableName>
+        <FieldName>Predicted.Biomass</FieldName>
       </Y>
       <ShowRegressionLine>false</ShowRegressionLine>
       <ShowInLegend>true</ShowInLegend>
