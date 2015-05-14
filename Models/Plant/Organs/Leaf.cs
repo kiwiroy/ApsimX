@@ -126,6 +126,7 @@ namespace Models.PMF.Organs
         public double FRGR { get { return Photosynthesis.FRGR; } }
         
         /// <summary>Sets the potential evapotranspiration. Set by MICROCLIMATE.</summary>
+        [Units("mm")]
         public double PotentialEP { get;  set; }
 
         /// <summary>Sets the light profile. Set by MICROCLIMATE.</summary>

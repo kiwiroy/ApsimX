@@ -190,8 +190,6 @@ namespace UserInterface.Commands
         /// <param name="index"></param>
         private void DoExportModel(Model modelToExport, string folderPath,TextWriter index)
         {
-            // Select the node in the tree.
-            ExplorerPresenter.SelectNode(Apsim.FullPath(modelToExport));
 
             // If this is a graph then only included it if it has been flagged as 'to be included'
             if (modelToExport is Graph)
@@ -200,6 +198,9 @@ namespace UserInterface.Commands
                 if (!graph.IncludeInDocumentation)
                     return;
             }
+
+            // Select the node in the tree.
+            ExplorerPresenter.SelectNode(Apsim.FullPath(modelToExport));
 
             // If the presenter is exportable then simply export this child.
             // Otherwise, if it is one of a folder, simulation, experiment or zone then

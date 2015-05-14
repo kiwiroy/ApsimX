@@ -205,9 +205,15 @@ namespace UserInterface.Classes
         {
             if (model != null)
             {
-                MemberInfo field = model.GetType().GetField(fieldName);
+                string name = "";
+                if (fieldName.Contains("["))
+                    name = fieldName.Substring(0, fieldName.IndexOf("["));
+                else
+                    name = fieldName;
+
+                MemberInfo field = model.GetType().GetField(name, BindingFlags.Instance| BindingFlags.NonPublic|BindingFlags.Public);
                 if (field == null)
-                    field = model.GetType().GetProperty(fieldName);
+                    field = model.GetType().GetProperty(name);
 
                 if (field != null)
                 {
@@ -714,8 +720,8 @@ namespace UserInterface.Classes
         private void CreateGraph(TextWriter OutputFile, XmlNode node, int NextLevel)
         {
             string name = XmlUtilities.Value(node.ParentNode, "Name");
-            OutputFile.WriteLine(name + " is calculated as follows:");
-            OutputFile.Write("</br>");
+            //OutputFile.WriteLine(name + " is calculated as follows:");
+            //OutputFile.Write("</br>");
             string InstanceName = XmlUtilities.Value(node.OwnerDocument.DocumentElement, "Name");
             string GraphName;
             if (node.Name == "XYPairs")
