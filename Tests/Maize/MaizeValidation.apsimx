@@ -753,15 +753,15 @@ namespace Models
                 <double>0.01</double>
               </FBiom>
               <FInert>
-                <double>0.6</double>
-                <double>0.65</double>
-                <double>0.7</double>
-                <double>0.75</double>
-                <double>0.8</double>
-                <double>0.85</double>
-                <double>0.93</double>
-                <double>0.93</double>
-                <double>0.93</double>
+                <double>0.42</double>
+                <double>0.5</double>
+                <double>0.58</double>
+                <double>0.55</double>
+                <double>0.86</double>
+                <double>0.9</double>
+                <double>0.95</double>
+                <double>0.95</double>
+                <double>0.95</double>
               </FInert>
               <OCUnits>Total</OCUnits>
             </SoilOrganicMatter>
@@ -1623,12 +1623,12 @@ namespace Models
                 <double>1.35</double>
                 <double>1.35</double>
                 <double>1.35</double>
-                <double>1.4</double>
-                <double>1.4</double>
-                <double>1.4</double>
-                <double>1.4</double>
-                <double>1.4</double>
-                <double>1.4</double>
+                <double>1.35</double>
+                <double>1.35</double>
+                <double>1.35</double>
+                <double>1.35</double>
+                <double>1.35</double>
+                <double>1.35</double>
               </BD>
               <AirDry>
                 <double>0.04</double>
@@ -1802,7 +1802,7 @@ namespace Models
               </OC>
               <FBiom>
                 <double>0.02</double>
-                <double>0.01</double>
+                <double>0.015</double>
                 <double>0.01</double>
                 <double>0.01</double>
                 <double>0.01</double>
@@ -1812,15 +1812,15 @@ namespace Models
                 <double>0.01</double>
               </FBiom>
               <FInert>
-                <double>0.6</double>
-                <double>0.65</double>
-                <double>0.7</double>
-                <double>0.75</double>
+                <double>0.4</double>
+                <double>0.4</double>
+                <double>0.5</double>
+                <double>0.66</double>
+                <double>0.66</double>
                 <double>0.8</double>
-                <double>0.85</double>
-                <double>0.93</double>
-                <double>0.93</double>
-                <double>0.93</double>
+                <double>0.9</double>
+                <double>0.95</double>
+                <double>0.95</double>
               </FInert>
               <OCUnits>Total</OCUnits>
             </SoilOrganicMatter>
@@ -15085,179 +15085,6 @@ namespace Models
           <Operations>
             <Name>NRate</Name>
           </Operations>
-          <Manager>
-            <Name>ExtraVariables</Name>
-            <Script />
-            <Code><![CDATA[using System;
-using Models.Core;
-using System.Collections.Generic;
-using System.Text;
-using Models.Soils;
-using Models.PMF;
-using Models;
-using System.Xml.Serialization;
-using APSIM.Shared.Utilities;
-
-namespace Models
-{
-	[Serializable] 
-	public class Script : Model
-	{      
-		[Link] Clock Clock;
-		[Link] Soils.Soil Soil;
-		[Link] Models.SurfaceOM.SurfaceOrganicMatter SOM;
-		[Link] Weather Met;   
-		[Link] Fertiliser Fert;
-		[Link] Irrigation Irrig;  
-		[Link] Plant Maize;          
-		[Link] Zone zone;			
-					
-		[XmlIgnore] public bool InitialDay { get; set; }
-		
-		[XmlIgnore] public double AccumPlantN { get; set; }
-		[XmlIgnore] public double AccumMineralisation { get; set; }
-		[XmlIgnore] public double AccumDenit { get; set; }
-		[XmlIgnore] public double AccumFert { get; set; }
-		[XmlIgnore] public double AccumLeach { get; set; }
-		[XmlIgnore] public double AccumDetach { get; set; }
-		[XmlIgnore] public double DeltaSoilOMN { get; set; }
-		[XmlIgnore] public double DeltaSurfaceOMN { get; set; }
-		[XmlIgnore] public double DeltaSoilMineralN { get; set; }
-		[XmlIgnore] public double SoilNitrogenContent { get; set; }
-		
-		[XmlIgnore] public double AccumEO { get; set; }
-		[XmlIgnore] public double AccumEP { get; set; }
-		[XmlIgnore] public double AccumES { get; set; }
-		[XmlIgnore] public double AccumDrainage { get; set; }
-		[XmlIgnore] public double AccumRunoff { get; set; }
-		[XmlIgnore] public double AccumOutflowLat { get; set; }
-		[XmlIgnore] public double AccumIrrigation { get; set; }
-		[XmlIgnore] public double AccumRainfall { get; set; }
-		[XmlIgnore] public double SoilWaterDeficit { get; set; }
-	
-		[XmlIgnore] public double  InitialSoilOMN { get; set; }
-		[XmlIgnore] public double  InitialSurfaceOMN { get; set; }
-		[XmlIgnore] public double  InitialMineralN { get; set; }
-		
-		[XmlIgnore] public double SWC { get; set; }
-		[XmlIgnore] public double DUL { get; set; }
-		[XmlIgnore] public double OutFlowLat { get; set; }
-
-		[XmlIgnore] public double FomN { get; set; }
-		[XmlIgnore] public double BiomN { get; set; }
-		[XmlIgnore] public double HumN { get; set; }
-		[XmlIgnore] public double OrganicN { get; set; }
-		[XmlIgnore] public double NO3N { get; set; }
-		[XmlIgnore] public double NH4N { get; set; }
-		[XmlIgnore] public double UreaN { get; set; }
-		[XmlIgnore] public double MineralN { get; set; }
-		[XmlIgnore] public double DltNMinRes { get; set; }
-		[XmlIgnore] public double DltNMinTot { get; set; }
-		
-		[XmlIgnore] public double LeafExpandedPosition {get; set;}
-        [XmlIgnore] public double LeafAppearedPosition {get; set;}
-        [XmlIgnore] public double ExpandedLeafNoYesterday {get; set;}
-        [XmlIgnore] public double AppearedLeafNoYesterday {get; set;}
-        [XmlIgnore] public double MostRecentlyExpandedLeafSize {get; set;}
-        [XmlIgnore] public double MostRecentlyAppearedLeafMaxSize {get; set;}
-        
-        [EventSubscribe("Commencing")]
-        private void OnSimulationCommencing(object sender, EventArgs e)
-        {
-			InitialDay = true;
-			LeafExpandedPosition = 0;
-			LeafAppearedPosition = 0;
-			ExpandedLeafNoYesterday = 0;
-			AppearedLeafNoYesterday = 0;
-			MostRecentlyExpandedLeafSize = 0;
-			MostRecentlyAppearedLeafMaxSize = 0;
-		}	   
-		
-		[EventSubscribe("DoManagement")]
-		private void OnDoManagement(object sender, EventArgs e)
-		{
-			//!!!!!! Nitrogen balance components !!!!!!
-			//!!!!!!^^^^^^^^^^^^^^^^^^^^^^^^^^^^^!!!!!!
-           	FomN = MathUtilities.Sum(Soil.SoilNitrogen.FOMN);
-			HumN = MathUtilities.Sum(Soil.SoilNitrogen.HumicN);
-		    BiomN = MathUtilities.Sum(Soil.SoilNitrogen.MicrobialN);
-			OrganicN = FomN + HumN + BiomN;
-			NO3N = MathUtilities.Sum(Soil.NO3N);
-			NH4N = MathUtilities.Sum(Soil.NH4N);
-			UreaN = MathUtilities.Sum(Soil.SoilNitrogen.urea);
-			MineralN = NO3N + NH4N + UreaN; 
-			DltNMinRes = MathUtilities.Sum(Soil.SoilNitrogen.dlt_n_min_res);
-			DltNMinTot = MathUtilities.Sum(Soil.SoilNitrogen.MineralisedN);
-            int layers = Soil.Thickness.Length;
-			if (InitialDay == true)
-			{
-				InitialSurfaceOMN = SOM.N;
-				InitialSoilOMN = OrganicN;
-				InitialMineralN = MineralN;
-				InitialDay = false;
-			}
-			AccumFert += Fert.NitrogenApplied;
-			DeltaSurfaceOMN = SOM.N - InitialSurfaceOMN;
-			AccumLeach = AccumLeach - Soil.SoilWater.LeachNH4 - Soil.SoilWater.LeachNO3 - Soil.SoilWater.LeachUrea; //Fails
-            AccumMineralisation += MathUtilities.Sum(Soil.SoilNitrogen.MineralisedN);
-            AccumDenit -= MathUtilities.Sum(Soil.SoilNitrogen.Denitrification);
-			AccumPlantN -= (double)zone.Get("Maize.Root.NUptake");
-			DeltaSoilOMN = OrganicN - InitialSoilOMN;
-			DeltaSoilMineralN = MineralN - InitialMineralN;
-			SoilNitrogenContent = MineralN;
-			
-			//!!!!!! Water balance components !!!!!!
-			//!!!!!!^^^^^^^^^^^^^^^^^^^^^^^^^^!!!!!!
-
-			AccumIrrigation += Irrig.IrrigationApplied;
-			AccumRainfall += Met.Rain;
-			//AccumEP -= (double)zone.Get("[Maize].Leaf.Transpiration");
-            AccumEP -= (double)zone.Get("Maize.Root.WaterUptake");
-			SoilWaterDeficit =  (SWC - DUL);
-			double OutFlowLat = MathUtilities.Sum(Soil.SoilWater.outflow_lat);
-			AccumOutflowLat -= OutFlowLat;
-			
-			//Leaf number variable
-			ExpandedLeafNoYesterday = (double)zone.Get("Maize.Leaf.ExpandedCohortNo");
-			AppearedLeafNoYesterday = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
-		}
-		
-		[EventSubscribe("DoManagementCalculations")]
-		private void OnDoManagementCalculations(object sender, EventArgs e)
-		{
-			FomN = MathUtilities.Sum(Soil.SoilNitrogen.FOMN);
-			HumN = MathUtilities.Sum(Soil.SoilNitrogen.HumicN);
-		    BiomN = MathUtilities.Sum(Soil.SoilNitrogen.MicrobialN);
-			
-			
-			AccumEO -= Soil.SoilWater.Eo;
-			AccumES -= Soil.SoilWater.Es; 
-			AccumDrainage -= Soil.SoilWater.Drainage;
-			AccumRunoff -= Soil.SoilWater.Runoff;
-			SWC = MathUtilities.Sum(Soil.SoilWater.SWmm);
-			DUL = MathUtilities.Sum(Soil.SoilWater.DULmm);
-			
-			if ((double)zone.Get("Maize.Leaf.ExpandedCohortNo") > ExpandedLeafNoYesterday)
-			{
-			LeafExpandedPosition = (double)zone.Get("Maize.Leaf.ExpandedCohortNo");
-			MostRecentlyExpandedLeafSize = (double)zone.Get("Maize.Leaf.CohortSize["+(int)LeafExpandedPosition+"]");
-			}
-			else
-			LeafExpandedPosition = 0;
-			
-			if ((double)zone.Get("Maize.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday) 
-			{
-			LeafAppearedPosition = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
-			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.CohortParameters.MaxArea.Value");
-			}
-			//else
-			//LeafAppearedPosition = 0;
-			
-		}
-	}
-}
-	   ]]></Code>
-          </Manager>
           <Arbitrator>
             <Name>Arbitrator</Name>
             <ArbitrationMethod>Old</ArbitrationMethod>
@@ -15267,44 +15094,10 @@ namespace Models
             <Name>Report</Name>
             <VariableNames>
               <string>[Clock].Today</string>
-              <string>[ExtraVariables].Script.AccumPlantN</string>
-              <string>[ExtraVariables].Script.AccumMineralisation</string>
-              <string>[ExtraVariables].Script.AccumDenit</string>
-              <string>[ExtraVariables].Script.AccumFert</string>
-              <string>[ExtraVariables].Script.AccumLeach</string>
-              <string>[ExtraVariables].Script.AccumDetach</string>
-              <string>[ExtraVariables].Script.DeltaSoilOMN</string>
-              <string>[ExtraVariables].Script.DeltaSurfaceOMN</string>
-              <string>[ExtraVariables].Script.DeltaSoilMineralN</string>
-              <string>[ExtraVariables].Script.SWC</string>
-              <string>[ExtraVariables].Script.DUL</string>
-              <string>[ExtraVariables].Script.OutFlowLat</string>
-              <string>[ExtraVariables].Script.AccumEO</string>
-              <string>[ExtraVariables].Script.AccumEP</string>
-              <string>[ExtraVariables].Script.AccumES</string>
-              <string>[ExtraVariables].Script.AccumDrainage</string>
-              <string>[ExtraVariables].Script.AccumRunoff</string>
-              <string>[ExtraVariables].Script.AccumRainfall</string>
-              <string>[ExtraVariables].Script.AccumIrrigation</string>
-              <string>[ExtraVariables].Script.AccumOutflowLat</string>
-              <string>[ExtraVariables].Script.SoilWaterDeficit</string>
-              <string>[ExtraVariables].Script.SoilNitrogenContent</string>
-              <string>[ExtraVariables].Script.FomN</string>
-              <string>[ExtraVariables].Script.HumN</string>
-              <string>[ExtraVariables].Script.BiomN</string>
-              <string>[ExtraVariables].Script.DltNMinRes</string>
-              <string>[ExtraVariables].Script.DltNMinTot</string>
-              <string>[Soil].SoilWater.SW</string>
-              <string>[Soil].SoilWater.Eo</string>
-              <string>[Soil].SoilWater.Es</string>
               <string>[Soil].SoilWater.Drainage</string>
               <string>[Soil].SoilWater.Runoff</string>
-              <string>[Soil].SoilWater.pond</string>
               <string>sum([Soil].SoilWater.SWmm) as ProfileWater</string>
               <string>[Soil].NO3N</string>
-              <string>[MicroClimate].net_radn</string>
-              <string>[MicroClimate].peta</string>
-              <string>[MicroClimate].petr</string>
               <string>[Maize].Grain.Live.Wt</string>
               <string>[Maize].Stem.Live.Wt</string>
               <string>[Maize].Summariser.EarLive.Wt</string>
@@ -15338,11 +15131,7 @@ namespace Models
               <string>[Maize].Phenology.Stage</string>
               <string>[Maize].Leaf.ExpandedCohortNo</string>
               <string>[Maize].Leaf.AppearedCohortNo</string>
-              <string>[Maize].Leaf.CohortArea[1:30]</string>
-              <string>[ExtraVariables].Script.LeafAppearedPosition</string>
-              <string>[ExtraVariables].Script.MostRecentlyAppearedLeafMaxSize</string>
-              <string>[ExtraVariables].Script.LeafExpandedPosition</string>
-              <string>[ExtraVariables].Script.MostRecentlyExpandedLeafSize</string>
+              <string>[Maize].Structure.MainStemPrimordiaNo</string>
             </VariableNames>
             <EventNames>
               <string>[Clock].DoReport</string>
@@ -15706,6 +15495,7 @@ namespace Models
               <string>[Maize].Grain.Size as GrainSize</string>
               <string>[Maize].Population</string>
               <string>[Maize].Phenology.FloweringDAS.Value as FloweringDAS</string>
+              <string>[Maize].Phenology.MaturityDAS.Value as MaturityDAS</string>
             </VariableNames>
             <EventNames>
               <string>[Maize].Harvesting</string>
@@ -15812,7 +15602,7 @@ namespace Models
         <Slope>0</Slope>
       </Simulation>
       <Graph>
-        <Name>GrainWt N Response</Name>
+        <Name>LeafNo</Name>
         <Axis>
           <Type>Bottom</Type>
           <Title />
@@ -15835,98 +15625,15 @@ namespace Models
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
           <ColourArgb>-16776961</ColourArgb>
-          <Marker>FilledCircle</Marker>
-          <Line>None</Line>
+          <Marker>None</Marker>
+          <Line>Solid</Line>
           <X>
-            <TableName>HarvestReport</TableName>
-            <FieldName>Maize.Population</FieldName>
+            <TableName>Report</TableName>
+            <FieldName>Clock.Today</FieldName>
           </X>
           <Y>
-            <TableName>HarvestReport</TableName>
-            <FieldName>GrainWt</FieldName>
-          </Y>
-          <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>true</ShowInLegend>
-          <Cumulative>false</Cumulative>
-        </Series>
-        <Series>
-          <Title>Series2</Title>
-          <Type>Scatter</Type>
-          <XAxis>Bottom</XAxis>
-          <YAxis>Left</YAxis>
-          <ColourArgb>-16776961</ColourArgb>
-          <Marker>Circle</Marker>
-          <Line>None</Line>
-          <X>
-            <TableName>HarvestData</TableName>
-            <FieldName>Population</FieldName>
-          </X>
-          <Y>
-            <TableName>HarvestData</TableName>
-            <FieldName>GrainWt</FieldName>
-          </Y>
-          <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>false</ShowInLegend>
-          <Cumulative>false</Cumulative>
-        </Series>
-        <LegendPosition>TopLeft</LegendPosition>
-        <ShowRegressionLine>false</ShowRegressionLine>
-        <DisabledSeries />
-        <IncludeInDocumentation>false</IncludeInDocumentation>
-      </Graph>
-      <Graph>
-        <Name>GrainNo N Response</Name>
-        <Axis>
-          <Type>Bottom</Type>
-          <Title />
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Axis>
-          <Type>Left</Type>
-          <Title />
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Series>
-          <Title>Series1</Title>
-          <Type>Scatter</Type>
-          <XAxis>Bottom</XAxis>
-          <YAxis>Left</YAxis>
-          <ColourArgb>-16776961</ColourArgb>
-          <Marker>FilledCircle</Marker>
-          <Line>None</Line>
-          <X>
-            <TableName>HarvestReport</TableName>
-            <FieldName>Maize.Population</FieldName>
-          </X>
-          <Y>
-            <TableName>HarvestReport</TableName>
-            <FieldName>GPSM</FieldName>
-          </Y>
-          <ShowRegressionLine>false</ShowRegressionLine>
-          <ShowInLegend>true</ShowInLegend>
-          <Cumulative>false</Cumulative>
-        </Series>
-        <Series>
-          <Title>Series2</Title>
-          <Type>Scatter</Type>
-          <XAxis>Bottom</XAxis>
-          <YAxis>Left</YAxis>
-          <ColourArgb>-16776961</ColourArgb>
-          <Marker>Circle</Marker>
-          <Line>None</Line>
-          <X>
-            <TableName>HarvestData</TableName>
-            <FieldName>Population</FieldName>
-          </X>
-          <Y>
-            <TableName>HarvestData</TableName>
-            <FieldName>GPSM</FieldName>
+            <TableName>Report</TableName>
+            <FieldName>Maize.Leaf.AppearedCohortNo</FieldName>
           </Y>
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>false</ShowInLegend>
@@ -16069,6 +15776,50 @@ namespace Models
       <IncludeInDocumentation>false</IncludeInDocumentation>
     </Graph>
     <Graph>
+      <Name>MaturityDAS</Name>
+      <Caption />
+      <Axis>
+        <Type>Bottom</Type>
+        <Title />
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Axis>
+        <Type>Left</Type>
+        <Title />
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Series>
+        <Title>Series1</Title>
+        <Type>Scatter</Type>
+        <XAxis>Bottom</XAxis>
+        <YAxis>Left</YAxis>
+        <ColourArgb>-16776961</ColourArgb>
+        <Marker>FilledCircle</Marker>
+        <Line>None</Line>
+        <X>
+          <TableName>PredictedObserved</TableName>
+          <FieldName>Observed.MaturityDAS</FieldName>
+        </X>
+        <Y>
+          <TableName>PredictedObserved</TableName>
+          <FieldName>Predicted.MaturityDAS</FieldName>
+        </Y>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <ShowInLegend>true</ShowInLegend>
+        <Cumulative>false</Cumulative>
+      </Series>
+      <LegendPosition>TopRight</LegendPosition>
+      <ShowRegressionLine>true</ShowRegressionLine>
+      <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
+    </Graph>
+    <Graph>
       <Name>Grain Size</Name>
       <Axis>
         <Type>Bottom</Type>
@@ -16107,6 +15858,50 @@ namespace Models
         <Cumulative>false</Cumulative>
       </Series>
       <LegendPosition>BottomRight</LegendPosition>
+      <ShowRegressionLine>true</ShowRegressionLine>
+      <DisabledSeries />
+      <IncludeInDocumentation>false</IncludeInDocumentation>
+    </Graph>
+    <Graph>
+      <Name>Maximum LAI</Name>
+      <Caption />
+      <Axis>
+        <Type>Bottom</Type>
+        <Title />
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Axis>
+        <Type>Left</Type>
+        <Title />
+        <Inverted>false</Inverted>
+        <Minimum>NaN</Minimum>
+        <Maximum>NaN</Maximum>
+        <Interval>NaN</Interval>
+      </Axis>
+      <Series>
+        <Title>Series1</Title>
+        <Type>Scatter</Type>
+        <XAxis>Bottom</XAxis>
+        <YAxis>Left</YAxis>
+        <ColourArgb>-16776961</ColourArgb>
+        <Marker>FilledCircle</Marker>
+        <Line>None</Line>
+        <X>
+          <TableName>PredictedObserved</TableName>
+          <FieldName>Observed.LAImax</FieldName>
+        </X>
+        <Y>
+          <TableName>PredictedObserved</TableName>
+          <FieldName>Predicted.LAImax</FieldName>
+        </Y>
+        <ShowRegressionLine>false</ShowRegressionLine>
+        <ShowInLegend>true</ShowInLegend>
+        <Cumulative>false</Cumulative>
+      </Series>
+      <LegendPosition>TopRight</LegendPosition>
       <ShowRegressionLine>true</ShowRegressionLine>
       <DisabledSeries />
       <IncludeInDocumentation>false</IncludeInDocumentation>

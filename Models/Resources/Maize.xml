@@ -118,7 +118,7 @@ The model predicts development of primordia on the apex of the main stem and app
 								<double>10</double>
 								<double>18</double>
 								<double>26</double>
-								<double>44</double>
+								<double>0</double>
 							</Y>
 						</XYPairs>
 					</AirTemperatureFunction>
@@ -322,7 +322,29 @@ A function is used to provide flowering date as days after sowing(DAS).
         <VariableName>[Phenology].DaysAfterSowing</VariableName>
       </VariableReference>
     </OnEventFunction>
-
+    <OnEventFunction>
+      <Name>MaturityDAS</Name>
+      <Memo>
+        <Name>memo</Name>
+        <MemoText>
+          <![CDATA[
+<html><body>
+A function is used to provide maturity date as days after sowing(DAS).
+<br/>
+</body></html>]]>
+        </MemoText>
+      </Memo>
+      <SetEvent>Maturity</SetEvent>
+      <ReSetEvent>never</ReSetEvent>
+      <Constant>
+        <Name>PreEventValue</Name>
+        <Value>0</Value>
+      </Constant>
+      <VariableReference>
+        <Name>PostEventValue</Name>
+        <VariableName>[Phenology].DaysAfterSowing</VariableName>
+      </VariableReference>
+    </OnEventFunction>
   </Phenology>
 	<Structure>
 		<Name>Structure</Name>
@@ -1788,7 +1810,7 @@ The variety Katumani Composite B was formed in 1966 and released in 1968 as part
   </Cultivar>
   <Cultivar>
     <Name>GH_5009</Name>
-    <Command>[Phenology].Juvenile.Target.Value = 250</Command>
+    <Command>[Phenology].Juvenile.Target.Value = 260</Command>
     <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
     <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
     <Command>[Phenology].FlagLeafToFlowering.Target.Value = 50</Command>
@@ -1800,21 +1822,21 @@ The variety Katumani Composite B was formed in 1966 and released in 1968 as part
   </Cultivar>
   <Cultivar>
     <Name>Hycorn_40</Name>
-    <Command>[Phenology].Juvenile.Target.Value = 200</Command>
+    <Command>[Phenology].Juvenile.Target.Value = 235</Command>
     <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
     <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
-    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
+    <Command>[Phenology].FlagLeafToFlowering.Target.Value = 50</Command>
     <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
-    <Command>[Phenology].GrainFilling.Target.Value = 813</Command>
+    <Command>[Phenology].GrainFilling.Target.Value = 713</Command>
     <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
     <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
     <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
   </Cultivar>
   <Cultivar>
     <Name>GH_5019WX</Name>
-    <Command>[Phenology].Juvenile.Target.Value = 250</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
-    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 57.5</Command>
+    <Command>[Phenology].Juvenile.Target.Value = 245</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12, 24</Command>
+    <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
     <Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
     <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
     <Command>[Phenology].GrainFilling.Target.Value = 694</Command>
