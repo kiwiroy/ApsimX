@@ -26766,31 +26766,31 @@ namespace Models
         <Factor>
           <Name>Sow</Name>
           <Operations>
-            <Name>Late39G12</Name>
-            <Operation>
-              <Date>2008-08-27T00:00:00</Date>
-              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_3153", depth:50, rowSpacing:800);</Action>
-            </Operation>
-          </Operations>
-          <Operations>
             <Name>Early39G12</Name>
             <Operation>
               <Date>2008-09-17T00:00:00</Date>
-              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_3153", depth:50, rowSpacing:800);</Action>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_39G12", depth:50, rowSpacing:800);</Action>
             </Operation>
           </Operations>
           <Operations>
-            <Name>Late34K77</Name>
+            <Name>Late39G12</Name>
             <Operation>
-              <Date>2008-08-27T00:00:00</Date>
-              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_3153", depth:50, rowSpacing:800);</Action>
+              <Date>2008-11-12T00:00:00</Date>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_39G12", depth:50, rowSpacing:800);</Action>
             </Operation>
           </Operations>
           <Operations>
             <Name>Early34K77</Name>
             <Operation>
               <Date>2008-09-17T00:00:00</Date>
-              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_3153", depth:50, rowSpacing:800);</Action>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_34K77", depth:50, rowSpacing:800);</Action>
+            </Operation>
+          </Operations>
+          <Operations>
+            <Name>Late34K77</Name>
+            <Operation>
+              <Date>2008-11-12T00:00:00</Date>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_34K77", depth:50, rowSpacing:800);</Action>
             </Operation>
           </Operations>
           <Specifications>
@@ -26801,17 +26801,6 @@ namespace Models
           <Name>Cover</Name>
           <Operations>
             <Name>Bare</Name>
-            <Operation>
-              <Date>2008-09-16T00:00:00</Date>
-              <Action>[Fertiliser].Apply(140.5, Fertiliser.Types.UreaN, 10);</Action>
-            </Operation>
-            <Operation>
-              <Date>2008-12-17T00:00:00</Date>
-              <Action>[Fertiliser].Apply(161, Fertiliser.Types.UreaN, 10);</Action>
-            </Operation>
-          </Operations>
-          <Operations>
-            <Name>Plastic</Name>
             <Operation>
               <Date>2008-09-16T00:00:00</Date>
               <Action>[Fertiliser].Apply(140.5, Fertiliser.Types.UreaN, 10);</Action>
@@ -27308,11 +27297,11 @@ namespace Models
             <Marker>FilledCircle</Marker>
             <Line>None</Line>
             <X>
-              <TableName>observed</TableName>
+              <TableName>phenologySimple_RainS</TableName>
               <FieldName>Clock.Today</FieldName>
             </X>
             <Y>
-              <TableName>observed</TableName>
+              <TableName>phenologySimple_RainS</TableName>
               <FieldName>Phenology.StageCode.Value</FieldName>
             </Y>
             <ShowRegressionLine>false</ShowRegressionLine>
@@ -28552,11 +28541,15 @@ namespace Models
               <string>[Maize].Leaf.Live.Wt</string>
               <string>[Maize].Root.Live.Wt</string>
               <string>[Maize].Husk.Live.Wt</string>
+              <string>[Maize].Rachis.Live.Wt</string>
+              <string>[Maize].Tastle.Live.Wt</string>
               <string>[Maize].Summariser.EarLive.N</string>
               <string>[Maize].Grain.Live.N</string>
               <string>[Maize].Stem.Live.N</string>
               <string>[Maize].Leaf.Live.N</string>
               <string>[Maize].Root.Live.N</string>
+              <string>[Maize].Rachis.Live.N</string>
+              <string>[Maize].Husk.Live.N</string>
               <string>[Maize].Root.WaterSupply</string>
               <string>[Maize].Root.WaterUptake</string>
               <string>[Maize].Leaf.Transpiration</string>
@@ -28568,6 +28561,8 @@ namespace Models
               <string>[Maize].Leaf.Height</string>
               <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
               <string>[Maize].Leaf.Fw</string>
+              <string>[Maize].Leaf.Photosynthesis.FVPD.Value</string>
+              <string>[Maize].Leaf.Photosynthesis.FT.Value</string>
               <string>[Maize].Leaf.Fn</string>
               <string>[Maize].Phenology.CurrentPhaseName</string>
               <string>[Maize].Phenology.Stage</string>
@@ -28579,11 +28574,46 @@ namespace Models
               <string>[Maize].Phenology.Stage</string>
               <string>[Maize].Leaf.ExpandedCohortNo</string>
               <string>[Maize].Leaf.AppearedCohortNo</string>
+              <string>[Maize].Leaf.DeadCohortNo</string>
+              <string>[Maize].Leaf.InitialisedCohortNo</string>
+              <string>[Maize].Structure.MainStemFinalNodeNo</string>
+              <string>[Maize].Structure.MainStemNodeNo</string>
+              <string>[Maize].Structure.MainStemPrimordiaNo</string>
               <string>[Maize].Leaf.CohortArea[1:30]</string>
+              <string>[Maize].Leaf.CohortSLA[1:30]</string>
+              <string>[Maize].Leaf.CohortParameters.SpecificLeafAreaMax.Value</string>
+              <string>[Maize].Leaf.CohortParameters.SpecificLeafAreaMin.Value</string>
+              <string>[Maize].Arbitrator.NDemand</string>
+              <string>[Maize].Arbitrator.DMSupply</string>
+              <string>[Maize].Arbitrator.DMDemand</string>
+              <string>[Maize].Arbitrator.DMAllocated</string>
+              <string>[Maize].Arbitrator.DMSinkLimitation</string>
+              <string>[Maize].Arbitrator.DMNutrientLimitation</string>
+              <string>[Maize].Leaf.CohortParameters.GrowthDuration.Value</string>
+              <string>[Maize].Leaf.CohortParameters.LagDuration.Value</string>
+              <string>[Maize].Leaf.CohortParameters.SenescenceDuration.Value</string>
+              <string>[Maize].Structure.MainStemNodeAppearanceRate.Value</string>
+              <string>[Maize].Structure.Height</string>
+              <string>[Maize].Stem.DMDemandFunction.PotentialDMAccumulation.Value</string>
+              <string>[Maize].Stem.DMDemandFunction.HightLimitedDMAccumulation.Value</string>
+              <string>[Maize].Structure.MainStemPrimordiaNo</string>
+              <string>[Maize].Grain.NumberFunction.Value</string>
               <string>[ExtraVariables].Script.LeafAppearedPosition</string>
               <string>[ExtraVariables].Script.MostRecentlyAppearedLeafMaxSize</string>
               <string>[ExtraVariables].Script.LeafExpandedPosition</string>
               <string>[ExtraVariables].Script.MostRecentlyExpandedLeafSize</string>
+              <string>[Maize].Leaf.DeadCohortNo</string>
+              <string>[Phenology].ThermalTime.Value</string>
+              <string>[Maize].Leaf.SenescingCohortNo</string>
+              <string>[Maize].Stem.MaximumNConc.Value</string>
+              <string>[Maize].Stem.MinimumNConc.Value</string>
+              <string>[Maize].Stem.Live.NConc</string>
+              <string>[Maize].Leaf.Live.NConc</string>
+              <string>[Maize].Grain.Live.NConc</string>
+              <string>[Maize].Husk.Live.NConc</string>
+              <string>[Maize].Rachis.Live.NConc</string>
+              <string>[Maize].Leaf.Dead.NConc</string>
+              <string>[Maize].Leaf.Photosynthesis.RueAct</string>
             </VariableNames>
             <EventNames>
               <string>[Clock].DoReport</string>

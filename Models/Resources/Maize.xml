@@ -1863,7 +1863,7 @@ VShort duration variety released in New Zealand by Pioneer
 </body></html>]]>
 			</MemoText>
 		</Memo>
-		<Command>[Phenology].Juvenile.Target.Value = 150</Command>
+		<Command>[Phenology].Juvenile.Target.Value = 280</Command>
 		<Command>[Phenology].GrainFilling.Target.Value = 550</Command>
 	</Cultivar>
 	<Memo>
