@@ -30609,6 +30609,4050 @@ namespace Models
         <Slope>0</Slope>
       </Simulation>
     </Experiment>
+    <Experiment>
+      <Name>HawksBay2010</Name>
+      <Factors>
+        <Name>Factors</Name>
+        <Factor>
+          <Name>HybSow</Name>
+          <Operations>
+            <Name>39V43EarlySow</Name>
+            <Operation>
+              <Date>2010-10-04T00:00:00</Date>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_39V43", depth:50, rowSpacing:800);</Action>
+            </Operation>
+            <Operation>
+              <Date>2010-09-29T00:00:00</Date>
+              <Action>Fertiliser.Apply(87.5, Fertiliser.Types.UreaN, 10);</Action>
+            </Operation>
+            <Operation>
+              <Date>2010-11-16T00:00:00</Date>
+              <Action>[Irrigation].Apply(60);</Action>
+            </Operation>
+            <Operation>
+              <Date>2010-12-06T00:00:00</Date>
+              <Action>[Irrigation].Apply(40);</Action>
+            </Operation>
+            <Operation>
+              <Date>2011-01-20T00:00:00</Date>
+              <Action>[Irrigation].Apply(40);</Action>
+            </Operation>
+          </Operations>
+          <Operations>
+            <Name>39V43MidSow</Name>
+            <Operation>
+              <Date>2010-11-01T00:00:00</Date>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_39V43", depth:50, rowSpacing:800);</Action>
+            </Operation>
+          </Operations>
+          <Operations>
+            <Name>39V43LateSow</Name>
+            <Operation>
+              <Date>2010-12-01T00:00:00</Date>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_39V43", depth:50, rowSpacing:800);</Action>
+            </Operation>
+          </Operations>
+          <Operations>
+            <Name>38H20EarlySow</Name>
+            <Operation>
+              <Date>2010-10-04T00:00:00</Date>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_38H20", depth:50, rowSpacing:800);</Action>
+            </Operation>
+            <Operation>
+              <Date>2010-09-29T00:00:00</Date>
+              <Action>Fertiliser.Apply(87.5, Fertiliser.Types.UreaN, 10);</Action>
+            </Operation>
+            <Operation>
+              <Date>2010-11-16T00:00:00</Date>
+              <Action>[Irrigation].Apply(60);</Action>
+            </Operation>
+            <Operation>
+              <Date>2010-12-06T00:00:00</Date>
+              <Action>[Irrigation].Apply(40);</Action>
+            </Operation>
+            <Operation>
+              <Date>2011-01-20T00:00:00</Date>
+              <Action>[Irrigation].Apply(40);</Action>
+            </Operation>
+          </Operations>
+          <Operations>
+            <Name>38H20MidSow</Name>
+            <Operation>
+              <Date>2010-11-01T00:00:00</Date>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_38H20", depth:50, rowSpacing:800);</Action>
+            </Operation>
+          </Operations>
+          <Operations>
+            <Name>38H20LateSow</Name>
+            <Operation>
+              <Date>2010-12-01T00:00:00</Date>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_38H20", depth:50, rowSpacing:800);</Action>
+            </Operation>
+          </Operations>
+          <Operations>
+            <Name>33M54EarlySow</Name>
+            <Operation>
+              <Date>2010-10-04T00:00:00</Date>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_33M54", depth:50, rowSpacing:800);</Action>
+            </Operation>
+            <Operation>
+              <Date>2010-09-29T00:00:00</Date>
+              <Action>Fertiliser.Apply(87.5, Fertiliser.Types.UreaN, 10);</Action>
+            </Operation>
+            <Operation>
+              <Date>2010-11-16T00:00:00</Date>
+              <Action>[Irrigation].Apply(60);</Action>
+            </Operation>
+            <Operation>
+              <Date>2010-12-06T00:00:00</Date>
+              <Action>[Irrigation].Apply(40);</Action>
+            </Operation>
+            <Operation>
+              <Date>2011-01-20T00:00:00</Date>
+              <Action>[Irrigation].Apply(40);</Action>
+            </Operation>
+          </Operations>
+          <Operations>
+            <Name>33M54MidSow</Name>
+            <Operation>
+              <Date>2010-11-01T00:00:00</Date>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_33M54", depth:50, rowSpacing:800);</Action>
+            </Operation>
+          </Operations>
+          <Operations>
+            <Name>33M54LateSow</Name>
+            <Operation>
+              <Date>2010-12-01T00:00:00</Date>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_33M54", depth:50, rowSpacing:800);</Action>
+            </Operation>
+          </Operations>
+          <Specifications>
+            <string>[SowDate]</string>
+          </Specifications>
+        </Factor>
+      </Factors>
+      <Simulation>
+        <Name>HawksBay2010</Name>
+        <Weather>
+          <Name>Weather</Name>
+          <FileName>%root%\Tests\Maize\HawkesBay.met</FileName>
+        </Weather>
+        <Clock>
+          <Name>clock</Name>
+          <StartDate>2010-10-01T00:00:00</StartDate>
+          <EndDate>2011-06-15T00:00:00</EndDate>
+        </Clock>
+        <Summary>
+          <Name>summaryfile</Name>
+        </Summary>
+        <SoilArbitrator>
+          <Name>Soil Arbitrator</Name>
+        </SoilArbitrator>
+        <Zone>
+          <Name>Field</Name>
+          <Soil>
+            <Name>paparoa_silt_loam</Name>
+            <InitialWater>
+              <Name>Initial water</Name>
+              <PercentMethod>EvenlyDistributed</PercentMethod>
+              <FractionFull>0.8</FractionFull>
+              <DepthWetSoil>NaN</DepthWetSoil>
+            </InitialWater>
+            <Water>
+              <Name>Water</Name>
+              <SoilCrop>
+                <Name>Barley</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.088</double>
+                  <double>0.088</double>
+                  <double>0.07</double>
+                  <double>0.066</double>
+                  <double>0.066</double>
+                  <double>0.066</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>Canola</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.075</double>
+                  <double>0.075</double>
+                  <double>0.06</double>
+                  <double>0.049</double>
+                  <double>0.049</double>
+                  <double>0.049</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.51</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>Cloverseed</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.05</double>
+                  <double>0.05</double>
+                  <double>0.04</double>
+                  <double>0.016</double>
+                  <double>0.016</double>
+                  <double>0.016</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.73</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>Fieldpea</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.1</double>
+                  <double>0.1</double>
+                  <double>0.054</double>
+                  <double>0.009</double>
+                  <double>0.009</double>
+                  <double>0.009</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.3</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>Fababean</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.1</double>
+                  <double>0.1</double>
+                  <double>0.08</double>
+                  <double>0.1</double>
+                  <double>0.1</double>
+                  <double>0.1</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.51</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>Foragebrassica</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.075</double>
+                  <double>0.075</double>
+                  <double>0.06</double>
+                  <double>0.049</double>
+                  <double>0.049</double>
+                  <double>0.049</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.51</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>Itallian_ryegrass</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.075</double>
+                  <double>0.075</double>
+                  <double>0.06</double>
+                  <double>0.057</double>
+                  <double>0.057</double>
+                  <double>0.057</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.51</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>Lucerne</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.038</double>
+                  <double>0.038</double>
+                  <double>0.03</double>
+                  <double>0.019</double>
+                  <double>0.019</double>
+                  <double>0.019</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>MaizeSoil</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.075</double>
+                  <double>0.075</double>
+                  <double>0.06</double>
+                  <double>0.049</double>
+                  <double>0.049</double>
+                  <double>0.049</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.51</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>Oats</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.075</double>
+                  <double>0.075</double>
+                  <double>0.06</double>
+                  <double>0.049</double>
+                  <double>0.049</double>
+                  <double>0.049</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.73</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>Potato</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.1</double>
+                  <double>0.057</double>
+                  <double>0.023</double>
+                  <double>0.002</double>
+                  <double>0.002</double>
+                  <double>0.002</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.3</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>Grassseed</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.05</double>
+                  <double>0.05</double>
+                  <double>0.025</double>
+                  <double>0.003</double>
+                  <double>0.003</double>
+                  <double>0.003</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.51</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>Wheat</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.075</double>
+                  <double>0.075</double>
+                  <double>0.06</double>
+                  <double>0.049</double>
+                  <double>0.049</double>
+                  <double>0.049</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.73</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>ryegrass_whiteclover</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.05</double>
+                  <double>0.05</double>
+                  <double>0.025</double>
+                  <double>0.003</double>
+                  <double>0.003</double>
+                  <double>0.003</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.51</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>ryegrass</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.05</double>
+                  <double>0.05</double>
+                  <double>0.025</double>
+                  <double>0.003</double>
+                  <double>0.003</double>
+                  <double>0.003</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.51</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>whiteclover</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.1</double>
+                  <double>0.1</double>
+                  <double>0.054</double>
+                  <double>0.009</double>
+                  <double>0.009</double>
+                  <double>0.009</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.3</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>kale</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <SoilCrop>
+                <Name>triticale</Name>
+                <LL>
+                  <double>0.154</double>
+                  <double>0.152</double>
+                  <double>0.162</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                  <double>0.06</double>
+                </LL>
+                <KL>
+                  <double>0.088</double>
+                  <double>0.088</double>
+                  <double>0.07</double>
+                  <double>0.05</double>
+                  <double>0.05</double>
+                  <double>0.05</double>
+                </KL>
+                <XF>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>0.73</double>
+                  <double>1</double>
+                  <double>1</double>
+                  <double>1</double>
+                </XF>
+              </SoilCrop>
+              <Thickness>
+                <double>200</double>
+                <double>200</double>
+                <double>200</double>
+                <double>300</double>
+                <double>300</double>
+                <double>300</double>
+              </Thickness>
+              <BD>
+                <double>1.311</double>
+                <double>1.474</double>
+                <double>1.601</double>
+                <double>1.68</double>
+                <double>1.68</double>
+                <double>1.68</double>
+              </BD>
+              <AirDry>
+                <double>0.077</double>
+                <double>0.152</double>
+                <double>0.162</double>
+                <double>0.06</double>
+                <double>0.06</double>
+                <double>0.06</double>
+              </AirDry>
+              <LL15>
+                <double>0.154</double>
+                <double>0.152</double>
+                <double>0.162</double>
+                <double>0.06</double>
+                <double>0.06</double>
+                <double>0.06</double>
+              </LL15>
+              <DUL>
+                <double>0.374</double>
+                <double>0.32</double>
+                <double>0.325</double>
+                <double>0.15</double>
+                <double>0.15</double>
+                <double>0.15</double>
+              </DUL>
+              <SAT>
+                <double>0.456</double>
+                <double>0.413</double>
+                <double>0.376</double>
+                <double>0.3</double>
+                <double>0.3</double>
+                <double>0.3</double>
+              </SAT>
+            </Water>
+            <SoilWater>
+              <Name>SoilWater</Name>
+              <residueinterception>0</residueinterception>
+              <SummerDate>1-Nov</SummerDate>
+              <SummerU>9</SummerU>
+              <SummerCona>4.4</SummerCona>
+              <WinterDate>1-Apr</WinterDate>
+              <WinterU>6</WinterU>
+              <WinterCona>3</WinterCona>
+              <DiffusConst>88</DiffusConst>
+              <DiffusSlope>35</DiffusSlope>
+              <Salb>0.13</Salb>
+              <CN2Bare>73</CN2Bare>
+              <CNRed>20</CNRed>
+              <CNCov>0.8</CNCov>
+              <slope>NaN</slope>
+              <discharge_width>NaN</discharge_width>
+              <catchment_area>NaN</catchment_area>
+              <max_pond>0</max_pond>
+              <Thickness>
+                <double>200</double>
+                <double>200</double>
+                <double>200</double>
+                <double>300</double>
+                <double>300</double>
+                <double>300</double>
+              </Thickness>
+              <SWCON>
+                <double>0.5</double>
+                <double>0.56</double>
+                <double>0.31</double>
+                <double>0.7</double>
+                <double>0.7</double>
+                <double>0.7</double>
+              </SWCON>
+            </SoilWater>
+            <SoilNitrogen>
+              <Name>SoilNitrogen</Name>
+              <fom_type>
+                <string>default</string>
+                <string>manure</string>
+                <string>mucuna</string>
+                <string>lablab</string>
+                <string>shemp</string>
+                <string>stable</string>
+              </fom_type>
+              <fract_carb>
+                <double>0.2</double>
+                <double>0.3</double>
+                <double>0.54</double>
+                <double>0.57</double>
+                <double>0.45</double>
+                <double>0</double>
+              </fract_carb>
+              <fract_cell>
+                <double>0.7</double>
+                <double>0.3</double>
+                <double>0.37</double>
+                <double>0.37</double>
+                <double>0.47</double>
+                <double>0.1</double>
+              </fract_cell>
+              <fract_lign>
+                <double>0.1</double>
+                <double>0.4</double>
+                <double>0.09</double>
+                <double>0.06</double>
+                <double>0.08</double>
+                <double>0.9</double>
+              </fract_lign>
+              <wfpsN2N2O_x>
+                <double>22</double>
+                <double>88</double>
+              </wfpsN2N2O_x>
+              <wfpsN2N2O_y>
+                <double>0.1</double>
+                <double>1</double>
+              </wfpsN2N2O_y>
+            </SoilNitrogen>
+            <SoilOrganicMatter>
+              <Name>SoilOrganicMatter</Name>
+              <RootCN>16</RootCN>
+              <RootWt>6000</RootWt>
+              <SoilCN>11</SoilCN>
+              <EnrACoeff>7.4</EnrACoeff>
+              <EnrBCoeff>0.2</EnrBCoeff>
+              <Thickness>
+                <double>200</double>
+                <double>200</double>
+                <double>200</double>
+                <double>300</double>
+                <double>300</double>
+                <double>300</double>
+              </Thickness>
+              <Depth>
+                <string>0-20</string>
+                <string>20-40</string>
+                <string>40-60</string>
+                <string>60-90</string>
+                <string>90-120</string>
+                <string>120-150</string>
+              </Depth>
+              <OC>
+                <double>1.8</double>
+                <double>0.97</double>
+                <double>0.42</double>
+                <double>0.23</double>
+                <double>0.23</double>
+                <double>0.23</double>
+              </OC>
+              <FBiom>
+                <double>0.03</double>
+                <double>0.02</double>
+                <double>0.01</double>
+                <double>0.01</double>
+                <double>0.01</double>
+                <double>0.01</double>
+              </FBiom>
+              <FInert>
+                <double>0.4</double>
+                <double>0.6</double>
+                <double>0.8</double>
+                <double>0.9</double>
+                <double>0.9</double>
+                <double>0.9</double>
+              </FInert>
+              <OCUnits>Total</OCUnits>
+            </SoilOrganicMatter>
+            <Analysis>
+              <Name>Analysis</Name>
+              <Thickness>
+                <double>200</double>
+                <double>200</double>
+                <double>200</double>
+                <double>300</double>
+                <double>300</double>
+                <double>300</double>
+              </Thickness>
+              <PH>
+                <double>6</double>
+                <double>6</double>
+                <double>6</double>
+                <double>6</double>
+                <double>6</double>
+                <double>6</double>
+              </PH>
+              <PHUnits>Water</PHUnits>
+              <BoronUnits>HotWater</BoronUnits>
+            </Analysis>
+            <Sample>
+              <Name>Initial nitrogen</Name>
+              <Thickness>
+                <double>200</double>
+                <double>200</double>
+                <double>200</double>
+                <double>300</double>
+                <double>300</double>
+                <double>300</double>
+              </Thickness>
+              <NO3>
+                <double>6.18993135011442</double>
+                <double>3.64993215739484</double>
+                <double>2.44534665833854</double>
+                <double>1.35912698412698</double>
+                <double>0.968253968253968</double>
+                <double>0.345238095238095</double>
+              </NO3>
+              <NH4>
+                <double>0.34324942791762</double>
+                <double>0.990502035278155</double>
+                <double>0.178013741411618</double>
+                <double>0.194444444444444</double>
+                <double>0.166666666666667</double>
+                <double>0.107142857142857</double>
+              </NH4>
+              <NO3Units>ppm</NO3Units>
+              <NH4Units>ppm</NH4Units>
+              <SWUnits>Volumetric</SWUnits>
+              <OCUnits>Total</OCUnits>
+              <PHUnits>Water</PHUnits>
+            </Sample>
+            <RecordNumber>0</RecordNumber>
+            <SoilType>lignin_FOM</SoilType>
+            <Region>Generic soil types</Region>
+            <State>Canterbury</State>
+            <Latitude>999999</Latitude>
+            <Longitude>999999</Longitude>
+            <DataSource>Profile descriptions provided by Trevor Webb and data for functional horizions based on SWAMP project results</DataSource>
+          </Soil>
+          <Irrigation>
+            <Name>Irrigation</Name>
+          </Irrigation>
+          <SurfaceOrganicMatter>
+            <Name>SurfaceOrganicMatter</Name>
+            <ResidueTypes>
+              <Name>ResidueTypesList</Name>
+              <LoadFromResource>ResidueTypes</LoadFromResource>
+            </ResidueTypes>
+            <Pools>
+              <Pool>
+                <PoolName>fieldpea</PoolName>
+                <ResidueType>fieldpea</ResidueType>
+                <Mass>0</Mass>
+                <CNRatio>40</CNRatio>
+                <CPRatio>NaN</CPRatio>
+                <StandingFraction>0</StandingFraction>
+              </Pool>
+            </Pools>
+            <PoolName>fieldpea</PoolName>
+            <type>fieldpea</type>
+            <mass>0</mass>
+            <standing_fraction>0</standing_fraction>
+            <cpr />
+            <cnr>40</cnr>
+            <CriticalResidueWeight>2000</CriticalResidueWeight>
+            <OptimumDecompTemp>20</OptimumDecompTemp>
+            <MaxCumulativeEOS>20</MaxCumulativeEOS>
+            <CNRatioDecompCoeff>0.277</CNRatioDecompCoeff>
+            <CNRatioDecompThreshold>25</CNRatioDecompThreshold>
+            <TotalLeachRain>25</TotalLeachRain>
+            <MinRainToLeach>10</MinRainToLeach>
+            <CriticalMinimumOrganicC>0.004</CriticalMinimumOrganicC>
+            <DefaultCPRatio>0</DefaultCPRatio>
+            <DefaultStandingFraction>0</DefaultStandingFraction>
+            <StandingExtinctCoeff>0.5</StandingExtinctCoeff>
+            <FractionFaecesAdded>0.5</FractionFaecesAdded>
+          </SurfaceOrganicMatter>
+          <Fertiliser>
+            <Name>Fertiliser</Name>
+          </Fertiliser>
+          <MicroClimate>
+            <Name>MicroClimate</Name>
+            <air_pressure>1010</air_pressure>
+            <soil_emissivity>0.96</soil_emissivity>
+            <sun_angle>15</sun_angle>
+            <soil_heat_flux_fraction>0.4</soil_heat_flux_fraction>
+            <night_interception_fraction>0.5</night_interception_fraction>
+            <windspeed_default>3</windspeed_default>
+            <refheight>2</refheight>
+            <albedo>0.15</albedo>
+            <emissivity>0.96</emissivity>
+            <gsmax>0.01</gsmax>
+            <r50>200</r50>
+            <a_interception>0</a_interception>
+            <b_interception>1</b_interception>
+            <c_interception>0</c_interception>
+            <d_interception>0</d_interception>
+            <soil_albedo>0.23</soil_albedo>
+          </MicroClimate>
+          <Plant>
+            <Name>Maize</Name>
+            <Memo>
+              <Name>TitlePage</Name>
+              <MemoText><![CDATA[
+<html><body>
+<div><p><H1>The APSIM Maize Model</H1></p></div>
+<p><i>Brown, H.E., Teixeira, E.I., Huth, N.I. and Holzworth, D.P.</i></p>
+<br/>
+The APSIM maize model has been developed using the Plant Modelling Framework (PMF) of Brown <i>et al</i>(2014).
+This new framework provides a library of plant organ and process submodels that can be coupled, at runtime, to construct a model in much the same way that models can be coupled to construct a simulation. This means that dynamic composition of lower level process and organ classes (e.g. photosynthesis, leaf) into larger constructions (e.g. maize, wheat, sorghum) can be achieved by the model developer without additional coding.
+<br/>
+</body></html>]]></MemoText>
+            </Memo>
+            <OrganArbitrator>
+              <Name>Arbitrator</Name>
+              <Memo>
+                <Name>memo</Name>
+                <MemoText><![CDATA[
+<html><body>
+There are a number of passes involved in the allocation of Weight (Wt).  <br/>
+  Wt_Step 1. Set up DM supplies and demands.  Each organ may have a demand for Structural, Metabolic and Non-structural Wt.  Each organ may supply Fresh DM from photosynthesis and/or stored DM from retranslocation of its Non-structural pool.<br/>
+  Wt_Step 2. In this step freshly fixed Wt is partitioned to organs based on their relative Structural and Metabolic demands such that if there is not enough freshly fixed Wt to meet these demands the organs with the highest demands get the greatest share of the photosynthesis.<br/>
+  Wt_Step 3. In the second step any freshly fixed DM that was surplus to Structural and Metabolic demands is partitioned to sink organs.  An organ will be a sink if it is parameterised to have a Non-structural (mobile) component and the capacity of each organ to receive excess DM depends on its structural fraction (which determines the Non-structural Fraction and subsequent sink capacity).  If there is still fresh DM unallocated after the second pass this remains unallocated with the assumption that in this case the plant would down regulate photosynthesis due to lack of sink capacity.<br/>
+  Wt_Step 4. In this step, Non-structural DM is reallocated from Non-Structural pools if there was insufficient DM to meet the structural and metabolic DM demands of organs.<br/>
+  The arbitrator then sends a potential DM allocation to each organ that they use to calculate their N demands and then steps through N partitioning routines.  The final pass in biomass partitioning comes after N partitioning<br/>
+  <br/>
+  N_Step 1. Set up N supplies and demands.  Each organ may (or may not) supply N in a number of ways.  Each organ has (potentially) a structural, metabolic and Non-structural N Demand.  The structural N demand is that required to grow immobile biomass components, Metabolic N is that required to produce working biomass such as the photosynthetic mechanism in the leaves.  The Non-structural N demand is considered to be the luxury uptake and storage of highly mobile N compounds such as nitrate.<br/>
+      Each of the following 4 steps have a number of processes in common; Firstly the arbitrator determines each organs current N demand (that outstanding after previous N partitioning steps), then it allocates N to each demanding organ (There are three ways that N can be allocated, see below), then it sets for each supplying organ the amount of N that was taken up.<br/>
+  N_Step 2. NReallocation.  This is the supply of N within the plant by the reallocation of sensing and/or Non-structural N which is the lowest energy form of N available to the plant so is partitioned first.<br/>
+  N_Step 3. NUptake.  This is the supply of mineral N from the environment (typically by roots from the soil). In this step the arbitrator partitions the potential N uptake supply to satisfy all organs N demands (Structural, Metabolic and Non-structural).  If supply is sufficient this will replenish all Non-structural N that was reallocated in the previous step.  If not the N conc of organs with a Non-structural N component will begin to fall.  If total N demand is less than the uptake supply the crop will leave the surplus mineral N in the soil.<br/>
+  N_Step 4. NFixation.  This is the supply of symbiotically fixed N and is redundant for Non-fixers!  The arbitrator will asks all N fixing organs (typically nodules) for their potential N fixation supply and then partition this to meet the Structural and Metabolic N demands of organs.  The arbitrator will not fix N to meet Non-structural N demands to minimise the biomass cost of fixation which is metabolically expensive.  Fixation follows uptake to enable the arbitrator to capture the "Lazy" N fixing behaviour of some legumes.  Once fixation is calculated the arbitrator determines the DM cost of this fixation.<br/>
+  N_Step 5. NRetranslocation.  This is only invoked under sever N shortage when NReallocation and Uptake (and fixation if appropriate) cannot meet structural and metabolic N demands.  It this step the arbitrator will remove Metabolic N from older leaf cohorts to meet the N demand of new leaves and reproductive organs.<br/>
+<br/>
+<br/>
+      In all of these N partitioning steps there are three options the developer may chose for determining the allocation of N between demanding organs.<br/>
+  1. RelativeAllocation.  If this option is used all N is partitioned to organs relative to their demand so that the organs with the larger N demand get a larger share of a limited N supply.<br/>
+  2. PriorityAllocation.  If this option is used the arbitrator steps through all organs in order of priority (set by the order they appear in the IDE) allocating N to meet all of the first organs structural and metabolic N demands before partitioning any to the next organ in the hierarchy.  Once it has stepped through all organs and allocated their minimum (structural and metabolic) N demands it will then step through them again and allocate their luxury (Non-structural) N demands in the same way.<br/>
+  3. PrioritythenRelativeAllocation.  If this option is used the arbitrator steps through all organs in order of priority allocating N to meet minimum N demands.  However on the second pass it allocated N relative to the organs outstanding demands such that the organ with the greatest luxury N demand will get the greatest share of the N allocation.<br/>
+  <br/>
+  Wt_Step 5. Once N is allocated the arbitrator then reduces the Wt allocation of each organ to account for the metabolic cost of N fixation.  The Wt reduction is spread around all organs and an organ will only have its Wt allocation limited until it reaches maximum N conc.<br/>
+  Wt_Step 6. Then the arbitrator determines if the N allocated to each organ is sufficient for that organ to reach its minimum N concentration.  If not the arbitrator will constrain the biomass growth of that organ and discards the surplus biomass.  This assume that under sever N stress photosynthesis would be down regulated due to N inadequacy limiting sink strength.  <br/>
+      <br/>
+  Once these steps are complete the Arbitrator finally communicates to each organ its state changes as a result of arbitration.<br/>
+<br/>
+
+</body></html>]]></MemoText>
+              </Memo>
+              <NArbitrationOption>PrioritythenRelativeAllocation</NArbitrationOption>
+              <DMArbitrationOption>RelativeAllocation</DMArbitrationOption>
+            </OrganArbitrator>
+            <Phenology>
+              <Name>Phenology</Name>
+              <Memo>
+                <Name>memo</Name>
+                <MemoText><![CDATA[
+<html><body>
+The phenology model used in the APSIM maize model follows the approach used in earlier maize models(Jones and Kiniry (1986), Carberry and Arbrecht (1991), Carberry et al (1989).  
+The model predicts development of primordia on the apex of the main stem and appearance of individual leaves to predict time to flag leaf.  Other stages use thermal time targets.  
+<br/>
+</body></html>]]></MemoText>
+              </Memo>
+              <MultiplyFunction>
+                <Name>ThermalTime</Name>
+                <PhaseLookup>
+                  <Name>TT</Name>
+                  <PhaseLookupValue>
+                    <Name>EarlyTT</Name>
+                    <SoilTemperatureFunction>
+                      <Name>ThermalTime</Name>
+                      <maxt_soil_surface>20</maxt_soil_surface>
+                      <mint_soil_surface>10</mint_soil_surface>
+                      <XYPairs>
+                        <Name>XYPairs</Name>
+                        <X>
+                          <double>0</double>
+                          <double>18</double>
+                          <double>26</double>
+                          <double>34</double>
+                          <double>44</double>
+                        </X>
+                        <Y>
+                          <double>0</double>
+                          <double>10</double>
+                          <double>18</double>
+                          <double>26</double>
+                          <double>44</double>
+                        </Y>
+                      </XYPairs>
+                    </SoilTemperatureFunction>
+                    <Start>Sowing</Start>
+                    <End>Germination</End>
+                  </PhaseLookupValue>
+                  <PhaseLookupValue>
+                    <Name>LateTT</Name>
+                    <AirTemperatureFunction>
+                      <Name>ThermalTime</Name>
+                      <XYPairs>
+                        <Name>XYPairs</Name>
+                        <X>
+                          <double>0</double>
+                          <double>18</double>
+                          <double>26</double>
+                          <double>34</double>
+                          <double>44</double>
+                        </X>
+                        <Y>
+                          <double>0</double>
+                          <double>10</double>
+                          <double>18</double>
+                          <double>26</double>
+                          <double>0</double>
+                        </Y>
+                      </XYPairs>
+                    </AirTemperatureFunction>
+                    <Start>Germination</Start>
+                    <End>HarvestRipe</End>
+                  </PhaseLookupValue>
+                </PhaseLookup>
+                <AddFunction>
+                  <Name>DroughtPhenologyAcceleration</Name>
+                  <Constant>
+                    <Name>One</Name>
+                    <Value>1</Value>
+                  </Constant>
+                  <MultiplyFunction>
+                    <Name>Stress</Name>
+                    <Constant>
+                      <Name>StressResponseCoefficient</Name>
+                      <Value>2</Value>
+                    </Constant>
+                    <LinearInterpolationFunction>
+                      <Name>StressFactor</Name>
+                      <XProperty>[Maize].WaterSupplyDemandRatio</XProperty>
+                      <XYPairs>
+                        <Name>XYPairs</Name>
+                        <X>
+                          <double>0</double>
+                          <double>1</double>
+                        </X>
+                        <Y>
+                          <double>0</double>
+                          <double>0</double>
+                        </Y>
+                      </XYPairs>
+                    </LinearInterpolationFunction>
+                  </MultiplyFunction>
+                </AddFunction>
+              </MultiplyFunction>
+              <GerminatingPhase>
+                <Name>Germinating</Name>
+                <Start>Sowing</Start>
+                <End>Germination</End>
+              </GerminatingPhase>
+              <EmergingPhase>
+                <Name>Emerging</Name>
+                <VariableReference>
+                  <Name>ThermalTime</Name>
+                  <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                </VariableReference>
+                <Start>Germination</Start>
+                <End>Emergence</End>
+                <ShootLag>55</ShootLag>
+                <ShootRate>0.6</ShootRate>
+              </EmergingPhase>
+              <GenericPhase>
+                <Name>Juvenile</Name>
+                <Constant>
+                  <Name>Target</Name>
+                  <Value>200</Value>
+                </Constant>
+                <VariableReference>
+                  <Name>ThermalTime</Name>
+                  <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                </VariableReference>
+                <Start>Emergence</Start>
+                <End>End_Juvenile</End>
+              </GenericPhase>
+              <GenericPhase>
+                <Name>Photosensitive</Name>
+                <VariableReference>
+                  <Name>ThermalTime</Name>
+                  <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                </VariableReference>
+                <LinearInterpolationFunction>
+                  <Name>Target</Name>
+                  <XProperty>[Phenology].Photoperiod.Value</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0</double>
+                      <double>12.5</double>
+                      <double>24</double>
+                    </X>
+                    <Y>
+                      <double>0</double>
+                      <double>0</double>
+                      <double>10</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <Start>End_Juvenile</Start>
+                <End>Floral_Initiation</End>
+              </GenericPhase>
+              <LeafAppearancePhase>
+                <Name>LeafAppearance</Name>
+                <VariableReference>
+                  <Name>ThermalTime</Name>
+                  <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                </VariableReference>
+                <Start>Floral_Initiation</Start>
+                <End>Flag_Leaf</End>
+              </LeafAppearancePhase>
+              <GenericPhase>
+                <Name>FlagLeafToFlowering</Name>
+                <Constant>
+                  <Name>Target</Name>
+                  <Value>50</Value>
+                </Constant>
+                <VariableReference>
+                  <Name>ThermalTime</Name>
+                  <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                </VariableReference>
+                <Start>Flag_Leaf</Start>
+                <End>Flowering</End>
+              </GenericPhase>
+              <GenericPhase>
+                <Name>FloweringToGrainFilling</Name>
+                <Constant>
+                  <Name>Target</Name>
+                  <Value>120</Value>
+                </Constant>
+                <VariableReference>
+                  <Name>ThermalTime</Name>
+                  <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                </VariableReference>
+                <Start>Flowering</Start>
+                <End>StartGrainFill</End>
+              </GenericPhase>
+              <GenericPhase>
+                <Name>GrainFilling</Name>
+                <Constant>
+                  <Name>Target</Name>
+                  <Value>550</Value>
+                </Constant>
+                <VariableReference>
+                  <Name>ThermalTime</Name>
+                  <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                </VariableReference>
+                <Start>StartGrainFill</Start>
+                <End>EndGrainFill</End>
+              </GenericPhase>
+              <GenericPhase>
+                <Name>Maturing</Name>
+                <Constant>
+                  <Name>Target</Name>
+                  <Value>10</Value>
+                </Constant>
+                <VariableReference>
+                  <Name>ThermalTime</Name>
+                  <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                </VariableReference>
+                <Start>EndGrainFill</Start>
+                <End>Maturity</End>
+              </GenericPhase>
+              <GenericPhase>
+                <Name>MaturityToHarvestRipe</Name>
+                <Constant>
+                  <Name>Target</Name>
+                  <Value>10</Value>
+                </Constant>
+                <VariableReference>
+                  <Name>ThermalTime</Name>
+                  <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                </VariableReference>
+                <Start>Maturity</Start>
+                <End>HarvestRipe</End>
+              </GenericPhase>
+              <EndPhase>
+                <Name>ReadyForHarvesting</Name>
+                <VariableReference>
+                  <Name>ThermalTime</Name>
+                  <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                </VariableReference>
+                <Start>HarvestRipe</Start>
+                <End>Unused</End>
+              </EndPhase>
+              <PhotoperiodFunction>
+                <Name>Photoperiod</Name>
+                <Twilight>-6</Twilight>
+              </PhotoperiodFunction>
+              <OnEventFunction>
+                <Name>FloweringDAS</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+A function is used to provide flowering date as days after sowing(DAS).<br/>
+
+</body></html>]]></MemoText>
+                </Memo>
+                <Constant>
+                  <Name>PreEventValue</Name>
+                  <Value>0</Value>
+                </Constant>
+                <VariableReference>
+                  <Name>PostEventValue</Name>
+                  <VariableName>[Phenology].DaysAfterSowing</VariableName>
+                </VariableReference>
+                <SetEvent>Flowering</SetEvent>
+                <ReSetEvent>never</ReSetEvent>
+              </OnEventFunction>
+              <OnEventFunction>
+                <Name>MaturityDAS</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+A function is used to provide maturity date as days after sowing(DAS).
+<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Constant>
+                  <Name>PreEventValue</Name>
+                  <Value>0</Value>
+                </Constant>
+                <VariableReference>
+                  <Name>PostEventValue</Name>
+                  <VariableName>[Phenology].DaysAfterSowing</VariableName>
+                </VariableReference>
+                <SetEvent>Maturity</SetEvent>
+                <ReSetEvent>never</ReSetEvent>
+              </OnEventFunction>
+              <Emerged>false</Emerged>
+            </Phenology>
+            <Structure>
+              <Name>Structure</Name>
+              <Memo>
+                <Name>memo</Name>
+                <MemoText><![CDATA[
+<html><body>
+Though tillering is common in some maize varieties under certain agronomic conditions, no tillering is accounted for within this model.  Therefore all branching has been parameterised out of the current maize model.
+<br/>
+</body></html>]]></MemoText>
+              </Memo>
+              <VariableReference>
+                <Name>ThermalTime</Name>
+                <VariableName>[Phenology].ThermalTime.Value</VariableName>
+              </VariableReference>
+              <PhaseLookup>
+                <Name>MainStemPrimordiaInitiationRate</Name>
+                <PhaseLookupValue>
+                  <Name>Plastochron</Name>
+                  <MultiplyFunction>
+                    <Name>Plastochron</Name>
+                    <VariableReference>
+                      <Name>Phyllochron</Name>
+                      <VariableName>[Structure].MainStemNodeAppearanceRate.Value</VariableName>
+                    </VariableReference>
+                    <Constant>
+                      <Name>LeafTipsPerPrimordia</Name>
+                      <Value>0.5</Value>
+                    </Constant>
+                  </MultiplyFunction>
+                  <Start>Emergence</Start>
+                  <End>Floral_Initiation</End>
+                </PhaseLookupValue>
+              </PhaseLookup>
+              <PhaseLookup>
+                <Name>MainStemNodeAppearanceRate</Name>
+                <PhaseLookupValue>
+                  <Name>Phyllochron</Name>
+                  <LinearInterpolationFunction>
+                    <Name>Phyllochron</Name>
+                    <XProperty>[Structure].MainStemNodeNo</XProperty>
+                    <XYPairs>
+                      <Name>XYPairs</Name>
+                      <X>
+                        <double>1</double>
+                        <double>3.4</double>
+                        <double>4</double>
+                      </X>
+                      <Y>
+                        <double>30</double>
+                        <double>30</double>
+                        <double>42</double>
+                      </Y>
+                    </XYPairs>
+                  </LinearInterpolationFunction>
+                  <Start>Emergence</Start>
+                  <End>Flag_Leaf</End>
+                </PhaseLookupValue>
+              </PhaseLookup>
+              <MainStemFinalNodeNumberFunction>
+                <Name>MainStemFinalNodeNumber</Name>
+                <OnEventFunction>
+                  <Name>FinalLeafNumber</Name>
+                  <AddFunction>
+                    <Name>PreEventValue</Name>
+                    <Constant>
+                      <Name>PrimordiaAtEmergence</Name>
+                      <Value>6</Value>
+                    </Constant>
+                    <DivideFunction>
+                      <Name>PrimordiaDuringJuvenilePhase</Name>
+                      <VariableReference>
+                        <Name>JuvenilePhaseDuration</Name>
+                        <VariableName>[Phenology].Juvenile.Target.Value</VariableName>
+                      </VariableReference>
+                      <Constant>
+                        <Name>ApproximatePlastochron</Name>
+                        <Value>15</Value>
+                      </Constant>
+                    </DivideFunction>
+                  </AddFunction>
+                  <VariableReference>
+                    <Name>PostEventValue</Name>
+                    <VariableName>[Structure].MainStemPrimordiaNo</VariableName>
+                  </VariableReference>
+                  <SetEvent>Floral_Initiation</SetEvent>
+                  <ReSetEvent />
+                </OnEventFunction>
+                <MaximumMainStemNodeNumber>30</MaximumMainStemNodeNumber>
+              </MainStemFinalNodeNumberFunction>
+              <HeightFunction>
+                <Name>HeightModel</Name>
+                <LinearInterpolationFunction>
+                  <Name>PotentialHeight</Name>
+                  <XProperty>[Phenology].Stage</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>3</double>
+                      <double>4</double>
+                      <double>5</double>
+                      <double>6</double>
+                    </X>
+                    <Y>
+                      <double>20</double>
+                      <double>50</double>
+                      <double>60</double>
+                      <double>1700</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <LinearInterpolationFunction>
+                  <Name>WaterStress</Name>
+                  <XProperty>[Maize].WaterSupplyDemandRatio</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0.3</double>
+                      <double>1</double>
+                    </X>
+                    <Y>
+                      <double>1</double>
+                      <double>1</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+              </HeightFunction>
+              <Constant>
+                <Name>BranchingRate</Name>
+                <Value>0</Value>
+              </Constant>
+              <Constant>
+                <Name>ShadeInducedBranchMortality</Name>
+                <Value>0</Value>
+              </Constant>
+              <Constant>
+                <Name>DroughtInducedBranchMortality</Name>
+                <Value>0</Value>
+              </Constant>
+              <InitialiseStage>Emergence</InitialiseStage>
+              <PrimaryBudNo>1</PrimaryBudNo>
+            </Structure>
+            <ReproductiveOrgan>
+              <Name>Grain</Name>
+              <Constant>
+                <Name>InitialGrainProportion</Name>
+                <Value>0.05</Value>
+              </Constant>
+              <Constant>
+                <Name>MaximumPotentialGrainSize</Name>
+                <Value>0.3</Value>
+              </Constant>
+              <PhaseLookup>
+                <Name>DMDemandFunction</Name>
+                <PhaseLookupValue>
+                  <Name>InitialPhase</Name>
+                  <FillingRateFunction>
+                    <Name>FillingRateFunction</Name>
+                    <VariableReference>
+                      <Name>NumberFunction</Name>
+                      <VariableName>[Grain].NumberFunction.Value</VariableName>
+                    </VariableReference>
+                    <VariableReference>
+                      <Name>FillingDuration</Name>
+                      <VariableName>[Phenology].FloweringToGrainFilling.Target.Value</VariableName>
+                    </VariableReference>
+                    <VariableReference>
+                      <Name>ThermalTime</Name>
+                      <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                    </VariableReference>
+                    <MultiplyFunction>
+                      <Name>PotentialSizeIncrement</Name>
+                      <VariableReference>
+                        <Name>InitialProportion</Name>
+                        <VariableName>[Grain].InitialGrainProportion.Value</VariableName>
+                      </VariableReference>
+                      <VariableReference>
+                        <Name>MaximumSize</Name>
+                        <VariableName>[Grain].MaximumPotentialGrainSize.Value</VariableName>
+                      </VariableReference>
+                    </MultiplyFunction>
+                  </FillingRateFunction>
+                  <Start>Flowering</Start>
+                  <End>StartGrainFill</End>
+                </PhaseLookupValue>
+                <PhaseLookupValue>
+                  <Name>LinearPhase</Name>
+                  <FillingRateFunction>
+                    <Name>FillingRateFunction</Name>
+                    <VariableReference>
+                      <Name>NumberFunction</Name>
+                      <VariableName>[Grain].NumberFunction.Value</VariableName>
+                    </VariableReference>
+                    <VariableReference>
+                      <Name>FillingDuration</Name>
+                      <VariableName>[Phenology].GrainFilling.Target.Value</VariableName>
+                    </VariableReference>
+                    <VariableReference>
+                      <Name>ThermalTime</Name>
+                      <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                    </VariableReference>
+                    <MultiplyFunction>
+                      <Name>PotentialSizeIncrement</Name>
+                      <SubtractFunction>
+                        <Name>ProportionLinearPhase</Name>
+                        <Constant>
+                          <Name>One</Name>
+                          <Value>1</Value>
+                        </Constant>
+                        <VariableReference>
+                          <Name>InitialProportion</Name>
+                          <VariableName>[Grain].InitialGrainProportion.Value</VariableName>
+                        </VariableReference>
+                      </SubtractFunction>
+                      <VariableReference>
+                        <Name>MaximumSize</Name>
+                        <VariableName>[Grain].MaximumPotentialGrainSize.Value</VariableName>
+                      </VariableReference>
+                    </MultiplyFunction>
+                  </FillingRateFunction>
+                  <Start>StartGrainFill</Start>
+                  <End>EndGrainFill</End>
+                </PhaseLookupValue>
+              </PhaseLookup>
+              <Biomass>
+                <Name>Live</Name>
+              </Biomass>
+              <Biomass>
+                <Name>Dead</Name>
+              </Biomass>
+              <Constant>
+                <Name>MinimumNConc</Name>
+                <Value>0.008</Value>
+              </Constant>
+              <PhaseLookup>
+                <Name>MaximumNConc</Name>
+                <PhaseLookupValue>
+                  <Name>InitialPhase</Name>
+                  <Constant>
+                    <Name>InitialNconc</Name>
+                    <Value>0.05</Value>
+                  </Constant>
+                  <Start>Flowering</Start>
+                  <End>StartGrainFill</End>
+                </PhaseLookupValue>
+                <PhaseLookupValue>
+                  <Name>LinearPhase</Name>
+                  <Constant>
+                    <Name>FinalNconc</Name>
+                    <Value>0.013</Value>
+                  </Constant>
+                  <Start>StartGrainFill</Start>
+                  <End>EndGrainFill</End>
+                </PhaseLookupValue>
+              </PhaseLookup>
+              <Constant>
+                <Name>WaterContent</Name>
+                <Value>0.12</Value>
+              </Constant>
+              <PhaseLookup>
+                <Name>NFillingRate</Name>
+                <PhaseLookupValue>
+                  <Name>GrainFilling</Name>
+                  <FillingRateFunction>
+                    <Name>FillingRateFunction</Name>
+                    <VariableReference>
+                      <Name>NumberFunction</Name>
+                      <VariableName>[Grain].NumberFunction.Value</VariableName>
+                    </VariableReference>
+                    <AddFunction>
+                      <Name>FillingDuration</Name>
+                      <VariableReference>
+                        <Name>FloweringToGrainFilling</Name>
+                        <VariableName>[Phenology].FloweringToGrainFilling.Target.Value</VariableName>
+                      </VariableReference>
+                      <VariableReference>
+                        <Name>GrainFilling</Name>
+                        <VariableName>[Phenology].GrainFilling.Target.Value</VariableName>
+                      </VariableReference>
+                    </AddFunction>
+                    <VariableReference>
+                      <Name>ThermalTime</Name>
+                      <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                    </VariableReference>
+                    <MultiplyFunction>
+                      <Name>PotentialSizeIncrement</Name>
+                      <Constant>
+                        <Name>MaximumFinalNConc</Name>
+                        <Value>0.013</Value>
+                      </Constant>
+                      <VariableReference>
+                        <Name>MaximumSize</Name>
+                        <VariableName>[Grain].MaximumPotentialGrainSize.Value</VariableName>
+                      </VariableReference>
+                    </MultiplyFunction>
+                  </FillingRateFunction>
+                  <Start>Flowering</Start>
+                  <End>EndGrainFill</End>
+                </PhaseLookupValue>
+              </PhaseLookup>
+              <MultiplyFunction>
+                <Name>NumberFunction</Name>
+                <VariableReference>
+                  <Name>CobNumber</Name>
+                  <VariableName>[Rachis].CobNumber.Value</VariableName>
+                </VariableReference>
+                <LinearInterpolationFunction>
+                  <Name>KernalsPerCob</Name>
+                  <XProperty>[Rachis].CobSize.Value</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0</double>
+                      <double>25</double>
+                    </X>
+                    <Y>
+                      <double>0</double>
+                      <double>550</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <Constant>
+                  <Name>GrainPerKernal</Name>
+                  <Value>1</Value>
+                </Constant>
+              </MultiplyFunction>
+              <RipeStage />
+            </ReproductiveOrgan>
+            <Root>
+              <Name>Root</Name>
+              <CompositeBiomass>
+                <Name>Live</Name>
+                <Propertys>
+                  <string>[Root].LayerLive</string>
+                </Propertys>
+              </CompositeBiomass>
+              <CompositeBiomass>
+                <Name>Dead</Name>
+                <Propertys>
+                  <string>[Root].LayerDead</string>
+                </Propertys>
+              </CompositeBiomass>
+              <LinearInterpolationFunction>
+                <Name>KLModifier</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+The parameter KL is is described by Meinke et al (1993) to combine elements of soil conductivity (K) with root length (L) in determining root water uptake.  Peake et al (2013) demonstrated that in maize KL varied with plant population through impacts on root length density.  Here we adjust KL linearly with plant population.
+<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <XProperty>[Maize].Population</XProperty>
+                <XYPairs>
+                  <Name>XYPairs</Name>
+                  <X>
+                    <double>0</double>
+                    <double>10</double>
+                  </X>
+                  <Y>
+                    <double>1</double>
+                    <double>1</double>
+                  </Y>
+                </XYPairs>
+              </LinearInterpolationFunction>
+              <Constant>
+                <Name>SoilWaterEffect</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+No effect of soil water content on root growth is currently captured in the model.<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Value>1</Value>
+              </Constant>
+              <Constant>
+                <Name>TemperatureEffect</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+No effect of temperature on root growth is currently captured in the model.<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Value>1</Value>
+              </Constant>
+              <Constant>
+                <Name>MaxDailyNUptake</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+Maximum daily N uptake is set to an arbitrarily high value.<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Value>20</Value>
+              </Constant>
+              <Constant>
+                <Name>SenescenceRate</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+Jones and Kiniry (1986) used a constant root senescence fraction in the CERES-Maize model.<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Value>0.005</Value>
+              </Constant>
+              <Constant>
+                <Name>StructuralFraction</Name>
+                <Value>1</Value>
+              </Constant>
+              <Constant>
+                <Name>MaximumNConc</Name>
+                <Value>0.01</Value>
+              </Constant>
+              <Constant>
+                <Name>MinimumNConc</Name>
+                <Value>0.01</Value>
+              </Constant>
+              <LinearInterpolationFunction>
+                <Name>PartitionFraction</Name>
+                <XProperty>[Phenology].Stage</XProperty>
+                <XYPairs>
+                  <Name>XYPairs</Name>
+                  <X>
+                    <double>0</double>
+                    <double>2.99</double>
+                    <double>3</double>
+                    <double>6</double>
+                    <double>7</double>
+                  </X>
+                  <Y>
+                    <double>0</double>
+                    <double>0</double>
+                    <double>0.2</double>
+                    <double>0.2</double>
+                    <double>0</double>
+                  </Y>
+                </XYPairs>
+              </LinearInterpolationFunction>
+              <PhaseLookup>
+                <Name>RootFrontVelocity</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+Hammer et al (2009) used a constant extraction front velocity of 2.5cm per day in their analysis of historical maize yield trends in the US corn belt.
+<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <PhaseLookupValue>
+                  <Name>PreFlowering</Name>
+                  <Constant>
+                    <Name>Function</Name>
+                    <Value>25</Value>
+                  </Constant>
+                  <Start>Germination</Start>
+                  <End>Flowering</End>
+                </PhaseLookupValue>
+                <PhaseLookupValue>
+                  <Name>PostFlowering</Name>
+                  <Constant>
+                    <Name>Function</Name>
+                    <Value>0</Value>
+                  </Constant>
+                  <Start>Flowering</Start>
+                  <End>Maturity</End>
+                </PhaseLookupValue>
+              </PhaseLookup>
+              <PhaseBasedSwitch>
+                <Name>NitrogenDemandSwitch</Name>
+                <Start>Germination</Start>
+                <End>Maturity</End>
+              </PhaseBasedSwitch>
+              <InitialDM>0.2</InitialDM>
+              <SpecificRootLength>40000</SpecificRootLength>
+              <KNO3_yProperty>
+                <double>0</double>
+                <double>0.03</double>
+              </KNO3_yProperty>
+              <KNO3_xRootLength>
+                <double>0</double>
+                <double>0.003</double>
+              </KNO3_xRootLength>
+              <KNH4_yProperty>
+                <double>0</double>
+                <double>0.0003</double>
+              </KNH4_yProperty>
+              <KNH4_xRootLength>
+                <double>0</double>
+                <double>0.003</double>
+              </KNH4_xRootLength>
+              <NuptakeSupply>0</NuptakeSupply>
+            </Root>
+            <Leaf>
+              <Name>Leaf</Name>
+              <LeafCohort>
+                <Name>InitialLeaves[1]</Name>
+                <Rank>1</Rank>
+                <Area>380</Area>
+              </LeafCohort>
+              <LeafCohort>
+                <Name>InitialLeaves[2]</Name>
+                <Rank>2</Rank>
+                <Area>0</Area>
+              </LeafCohort>
+              <LeafCohort>
+                <Name>InitialLeaves[3]</Name>
+                <Rank>3</Rank>
+                <Area>0</Area>
+              </LeafCohort>
+              <LeafCohort>
+                <Name>InitialLeaves[4]</Name>
+                <Rank>4</Rank>
+                <Area>0</Area>
+              </LeafCohort>
+              <LeafCohort>
+                <Name>InitialLeaves[5]</Name>
+                <Rank>5</Rank>
+                <Area>0</Area>
+              </LeafCohort>
+              <LeafCohort>
+                <Name>InitialLeaves[6]</Name>
+                <Rank>6</Rank>
+                <Area>0</Area>
+              </LeafCohort>
+              <CompositeBiomass>
+                <Name>Live</Name>
+                <Propertys>
+                  <string>[Leaf].CohortLive</string>
+                </Propertys>
+              </CompositeBiomass>
+              <CompositeBiomass>
+                <Name>Dead</Name>
+                <Propertys>
+                  <string>[Leaf].CohortDead</string>
+                </Propertys>
+              </CompositeBiomass>
+              <ArrayBiomass>
+                <Name>CohortArrayLive</Name>
+                <Propertys>
+                  <string>[Leaf].Live</string>
+                </Propertys>
+                <ArraySize>[Leaf].MaxNodeNo</ArraySize>
+              </ArrayBiomass>
+              <ArrayBiomass>
+                <Name>CohortArrayDead</Name>
+                <Propertys>
+                  <string>[Leaf].Dead</string>
+                </Propertys>
+                <ArraySize>[Leaf].MaxNodeNo</ArraySize>
+              </ArrayBiomass>
+              <LeafCohortParameters>
+                <Name>CohortParameters</Name>
+                <BellCurveFunction>
+                  <Name>MaxArea</Name>
+                  <Memo>
+                    <Name>Memo</Name>
+                    <MemoText><![CDATA[
+<html><body>
+Potential leaf area is calculated from leaf number using the approach of Keating and Wafula (1992).
+Individual leaf size is described using a bell-shaped curve, the parameters of which are derived from final leaf number.
+<br/>
+
+</body></html>]]></MemoText>
+                  </Memo>
+                  <MultiplyFunction>
+                    <Name>LargestLeafPosition</Name>
+                    <VariableReference>
+                      <Name>FinalLeafNumber</Name>
+                      <VariableName>[Structure].MainStemFinalNodeNumber.Value</VariableName>
+                    </VariableReference>
+                    <Constant>
+                      <Name>RelativePositionOfLargestLeaf</Name>
+                      <Value>0.67</Value>
+                    </Constant>
+                  </MultiplyFunction>
+                  <LinearInterpolationFunction>
+                    <Name>AreaMax</Name>
+                    <XProperty>[Structure].MainStemFinalNodeNumber.Value</XProperty>
+                    <XYPairs>
+                      <Name>XYPairs</Name>
+                      <X>
+                        <double>1</double>
+                        <double>5</double>
+                        <double>10</double>
+                        <double>15</double>
+                        <double>20</double>
+                        <double>25</double>
+                      </X>
+                      <Y>
+                        <double>32530</double>
+                        <double>39259</double>
+                        <double>49659</double>
+                        <double>60000</double>
+                        <double>75000</double>
+                        <double>90000</double>
+                      </Y>
+                    </XYPairs>
+                  </LinearInterpolationFunction>
+                  <LinearInterpolationFunction>
+                    <Name>Breadth</Name>
+                    <XProperty>[Structure].MainStemFinalNodeNumber.Value</XProperty>
+                    <XYPairs>
+                      <Name>XYPairs</Name>
+                      <X>
+                        <double>5</double>
+                        <double>10</double>
+                        <double>15</double>
+                        <double>20</double>
+                        <double>25</double>
+                      </X>
+                      <Y>
+                        <double>-0.377</double>
+                        <double>-0.144</double>
+                        <double>-0.059</double>
+                        <double>-0.027</double>
+                        <double>-0.016</double>
+                      </Y>
+                    </XYPairs>
+                  </LinearInterpolationFunction>
+                  <Constant>
+                    <Name>Skewness</Name>
+                    <Value>0.00025</Value>
+                  </Constant>
+                </BellCurveFunction>
+                <Constant>
+                  <Name>NReallocationFactor</Name>
+                  <Value>0.1</Value>
+                </Constant>
+                <Constant>
+                  <Name>NRetranslocationFactor</Name>
+                  <Value>0.03</Value>
+                </Constant>
+                <Constant>
+                  <Name>DMRetranslocationFactor</Name>
+                  <Value>0.5</Value>
+                </Constant>
+                <LinearInterpolationFunction>
+                  <Name>CellDivisionStress</Name>
+                  <XProperty>[Maize].WaterSupplyDemandRatio</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0.9</double>
+                      <double>1</double>
+                    </X>
+                    <Y>
+                      <double>1</double>
+                      <double>1</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <LinearInterpolationFunction>
+                  <Name>ExpansionStress</Name>
+                  <XProperty>[Maize].WaterSupplyDemandRatio</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0.3</double>
+                      <double>1</double>
+                    </X>
+                    <Y>
+                      <double>0.1</double>
+                      <double>1</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <LinearInterpolationFunction>
+                  <Name>GrowthDuration</Name>
+                  <XProperty>[Structure].RelativeNodeApperance</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0</double>
+                      <double>0.3</double>
+                      <double>0.5</double>
+                      <double>1</double>
+                    </X>
+                    <Y>
+                      <double>0</double>
+                      <double>200</double>
+                      <double>250</double>
+                      <double>100</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <LinearInterpolationFunction>
+                  <Name>LagDuration</Name>
+                  <XProperty>[Structure].RelativeNodeApperance</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0</double>
+                      <double>0.5</double>
+                      <double>1</double>
+                    </X>
+                    <Y>
+                      <double>350</double>
+                      <double>650</double>
+                      <double>600</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <LinearInterpolationFunction>
+                  <Name>SenescenceDuration</Name>
+                  <XProperty>[Structure].RelativeNodeApperance</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0</double>
+                      <double>11</double>
+                      <double>20</double>
+                    </X>
+                    <Y>
+                      <double>359</double>
+                      <double>350</double>
+                      <double>350</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <Constant>
+                  <Name>DetachmentLagDuration</Name>
+                  <Value>1000000</Value>
+                </Constant>
+                <Constant>
+                  <Name>DetachmentDuration</Name>
+                  <Value>1000000</Value>
+                </Constant>
+                <LinearInterpolationFunction>
+                  <Name>MaximumNConc</Name>
+                  <XProperty>[Structure].MainStemNodeNo</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>1</double>
+                      <double>10</double>
+                    </X>
+                    <Y>
+                      <double>0.04</double>
+                      <double>0.02</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <Constant>
+                  <Name>CriticalNConc</Name>
+                  <Value>0.015</Value>
+                </Constant>
+                <Constant>
+                  <Name>MinimumNConc</Name>
+                  <Value>0.008</Value>
+                </Constant>
+                <AddFunction>
+                  <Name>DroughtInducedSenAcceleration</Name>
+                  <Constant>
+                    <Name>One</Name>
+                    <Value>1</Value>
+                  </Constant>
+                  <MultiplyFunction>
+                    <Name>Stress</Name>
+                    <Constant>
+                      <Name>StressResponseCoefficient</Name>
+                      <Value>1</Value>
+                    </Constant>
+                    <LinearInterpolationFunction>
+                      <Name>StressFactor</Name>
+                      <XProperty>[Maize].WaterSupplyDemandRatio</XProperty>
+                      <XYPairs>
+                        <Name>XYPairs</Name>
+                        <X>
+                          <double>0</double>
+                          <double>0.7</double>
+                        </X>
+                        <Y>
+                          <double>0</double>
+                          <double>0</double>
+                        </Y>
+                      </XYPairs>
+                    </LinearInterpolationFunction>
+                  </MultiplyFunction>
+                </AddFunction>
+                <LinearInterpolationFunction>
+                  <Name>SpecificLeafAreaMax</Name>
+                  <XProperty>[Structure].MainStemNodeNo</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>1</double>
+                      <double>9</double>
+                    </X>
+                    <Y>
+                      <double>60000</double>
+                      <double>30000</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <LinearInterpolationFunction>
+                  <Name>SpecificLeafAreaMin</Name>
+                  <XProperty>[Structure].MainStemNodeNo</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>1</double>
+                      <double>9</double>
+                    </X>
+                    <Y>
+                      <double>6000</double>
+                      <double>6000</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <Constant>
+                  <Name>StructuralFraction</Name>
+                  <Value>0.7</Value>
+                </Constant>
+                <Constant>
+                  <Name>NonStructuralFraction</Name>
+                  <Value>0</Value>
+                </Constant>
+                <LinearInterpolationFunction>
+                  <Name>ShadeInducedSenescenceRate</Name>
+                  <XProperty>[Leaf].CohortCurrentRankCoverAbove</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0</double>
+                      <double>0.7</double>
+                      <double>0.8</double>
+                      <double>0.96</double>
+                      <double>0.99</double>
+                    </X>
+                    <Y>
+                      <double>0</double>
+                      <double>0</double>
+                      <double>0</double>
+                      <double>0</double>
+                      <double>0</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <Constant>
+                  <Name>InitialNConc</Name>
+                  <Value>0</Value>
+                </Constant>
+              </LeafCohortParameters>
+              <RUEModel>
+                <Name>Photosynthesis</Name>
+                <Constant>
+                  <Name>RUE</Name>
+                  <Value>1.75</Value>
+                </Constant>
+                <WeightedTemperatureFunction>
+                  <Name>FT</Name>
+                  <MaximumTemperatureWeighting>0.75</MaximumTemperatureWeighting>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0</double>
+                      <double>8</double>
+                      <double>15</double>
+                      <double>35</double>
+                      <double>50</double>
+                    </X>
+                    <Y>
+                      <double>0</double>
+                      <double>0</double>
+                      <double>1</double>
+                      <double>1</double>
+                      <double>0</double>
+                    </Y>
+                  </XYPairs>
+                </WeightedTemperatureFunction>
+                <LinearInterpolationFunction>
+                  <Name>FVPD</Name>
+                  <XProperty>[Leaf].Photosynthesis.VPD</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0</double>
+                      <double>10</double>
+                      <double>50</double>
+                    </X>
+                    <Y>
+                      <double>1</double>
+                      <double>1</double>
+                      <double>1</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <LinearInterpolationFunction>
+                  <Name>FN</Name>
+                  <XProperty>[Leaf].Fn</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0</double>
+                      <double>1</double>
+                    </X>
+                    <Y>
+                      <double>0.3</double>
+                      <double>1</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <LinearInterpolationFunction>
+                  <Name>FW</Name>
+                  <XProperty>[Leaf].Fw</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0</double>
+                      <double>0.3</double>
+                    </X>
+                    <Y>
+                      <double>0</double>
+                      <double>1</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <RUECO2Function>
+                  <Name>FCO2</Name>
+                  <PhotosyntheticPathway>C4</PhotosyntheticPathway>
+                </RUECO2Function>
+              </RUEModel>
+              <MultiplyFunction>
+                <Name>ExtinctionCoeff</Name>
+                <Memo>
+                  <Name>Memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+Extinction coefficient is specified in terms of a potential extinction coefficient which is then discounted during periods of water stress to account for the impact of leaf curling.
+<br/>
+
+</body></html>]]></MemoText>
+                </Memo>
+                <LinearInterpolationFunction>
+                  <Name>PotentialExtinctionCoeff</Name>
+                  <XProperty>[Leaf].LAI</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0</double>
+                      <double>0.45</double>
+                    </X>
+                    <Y>
+                      <double>0.65</double>
+                      <double>0.65</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+                <LinearInterpolationFunction>
+                  <Name>WaterStressImpact</Name>
+                  <XProperty>[Maize].WaterSupplyDemandRatio</XProperty>
+                  <XYPairs>
+                    <Name>XYPairs</Name>
+                    <X>
+                      <double>0</double>
+                      <double>0.7</double>
+                    </X>
+                    <Y>
+                      <double>0.5</double>
+                      <double>1</double>
+                    </Y>
+                  </XYPairs>
+                </LinearInterpolationFunction>
+              </MultiplyFunction>
+              <LinearInterpolationFunction>
+                <Name>FrostFraction</Name>
+                <XProperty>[Weather].MinT</XProperty>
+                <XYPairs>
+                  <Name>XYPairs</Name>
+                  <X>
+                    <double>-10</double>
+                    <double>-9</double>
+                  </X>
+                  <Y>
+                    <double>1</double>
+                    <double>0</double>
+                  </Y>
+                </XYPairs>
+              </LinearInterpolationFunction>
+              <VariableReference>
+                <Name>ThermalTime</Name>
+                <VariableName>[Phenology].ThermalTime.Value</VariableName>
+              </VariableReference>
+              <CurrentExpandingLeaf>0</CurrentExpandingLeaf>
+              <StartFractionExpanded>0</StartFractionExpanded>
+              <FractionNextleafExpanded>0</FractionNextleafExpanded>
+              <_ExpandedNodeNo>0</_ExpandedNodeNo>
+              <DeadNodesYesterday>0</DeadNodesYesterday>
+              <MaxCover>1</MaxCover>
+              <PotentialEP>0</PotentialEP>
+              <KDead>0.03</KDead>
+              <GsMax>0.03</GsMax>
+              <R50>200</R50>
+              <Emissivity>0.96</Emissivity>
+              <Albido>0.26</Albido>
+              <FractionDied>0</FractionDied>
+            </Leaf>
+            <GenericAboveGroundOrgan>
+              <Name>Husk</Name>
+              <PopulationBasedDemandFunction>
+                <Name>DMDemandFunction</Name>
+                <VariableReference>
+                  <Name>ThermalTime</Name>
+                  <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                </VariableReference>
+                <Constant>
+                  <Name>ExpansionStress</Name>
+                  <Value>1</Value>
+                </Constant>
+                <StartStage>5.2</StartStage>
+                <GrowthDuration>120</GrowthDuration>
+                <MaximumOrganWt>25</MaximumOrganWt>
+              </PopulationBasedDemandFunction>
+              <Biomass>
+                <Name>Live</Name>
+              </Biomass>
+              <Biomass>
+                <Name>Dead</Name>
+              </Biomass>
+              <Constant>
+                <Name>NReallocationFactor</Name>
+                <Value>0</Value>
+              </Constant>
+              <Constant>
+                <Name>NRetranslocationFactor</Name>
+                <Value>0.1</Value>
+              </Constant>
+              <Constant>
+                <Name>MaximumNConc</Name>
+                <Value>0.01</Value>
+              </Constant>
+              <Constant>
+                <Name>StructuralFraction</Name>
+                <Value>0.2</Value>
+              </Constant>
+              <Constant>
+                <Name>MinimumNConc</Name>
+                <Value>0.01</Value>
+              </Constant>
+            </GenericAboveGroundOrgan>
+            <GenericAboveGroundOrgan>
+              <Name>Rachis</Name>
+              <MultiplyFunction>
+                <Name>CobNumber</Name>
+                <VariableReference>
+                  <Name>StemNumber</Name>
+                  <VariableName>[Structure].TotalStemPopn</VariableName>
+                </VariableReference>
+                <Constant>
+                  <Name>CobsPerStem</Name>
+                  <Value>1.1</Value>
+                </Constant>
+              </MultiplyFunction>
+              <DivideFunction>
+                <Name>CobSize</Name>
+                <VariableReference>
+                  <Name>CobMass</Name>
+                  <VariableName>[Rachis].Live.Wt</VariableName>
+                </VariableReference>
+                <VariableReference>
+                  <Name>CobNumber</Name>
+                  <VariableName>[Rachis].CobNumber.Value</VariableName>
+                </VariableReference>
+              </DivideFunction>
+              <PopulationBasedDemandFunction>
+                <Name>DMDemandFunction</Name>
+                <VariableReference>
+                  <Name>ThermalTime</Name>
+                  <VariableName>[Phenology].ThermalTime.Value</VariableName>
+                </VariableReference>
+                <Constant>
+                  <Name>ExpansionStress</Name>
+                  <Value>1</Value>
+                </Constant>
+                <StartStage>5.5</StartStage>
+                <GrowthDuration>300</GrowthDuration>
+                <MaximumOrganWt>25</MaximumOrganWt>
+              </PopulationBasedDemandFunction>
+              <Biomass>
+                <Name>Live</Name>
+              </Biomass>
+              <Biomass>
+                <Name>Dead</Name>
+              </Biomass>
+              <Constant>
+                <Name>NReallocationFactor</Name>
+                <Value>0</Value>
+              </Constant>
+              <Constant>
+                <Name>NRetranslocationFactor</Name>
+                <Value>0.1</Value>
+              </Constant>
+              <Constant>
+                <Name>MaximumNConc</Name>
+                <Value>0.008</Value>
+              </Constant>
+              <Constant>
+                <Name>StructuralFraction</Name>
+                <Value>1</Value>
+              </Constant>
+              <Constant>
+                <Name>MinimumNConc</Name>
+                <Value>0.003</Value>
+              </Constant>
+              <LinearInterpolationFunction>
+                <Name>ExpansionStress</Name>
+                <XProperty>[Maize].WaterSupplyDemandRatio</XProperty>
+                <XYPairs>
+                  <Name>XYPairs</Name>
+                  <X>
+                    <double>0</double>
+                    <double>0.6</double>
+                  </X>
+                  <Y>
+                    <double>1</double>
+                    <double>1</double>
+                  </Y>
+                </XYPairs>
+              </LinearInterpolationFunction>
+            </GenericAboveGroundOrgan>
+            <GenericAboveGroundOrgan>
+              <Name>Stem</Name>
+              <Biomass>
+                <Name>Live</Name>
+              </Biomass>
+              <Biomass>
+                <Name>Dead</Name>
+              </Biomass>
+              <Constant>
+                <Name>StructuralFraction</Name>
+                <Value>0.8</Value>
+              </Constant>
+              <LinearInterpolationFunction>
+                <Name>MaximumNConc</Name>
+                <XProperty>[Structure].MainStemNodeNo</XProperty>
+                <XYPairs>
+                  <Name>XYPairs</Name>
+                  <X>
+                    <double>1</double>
+                    <double>10</double>
+                    <double>11</double>
+                  </X>
+                  <Y>
+                    <double>0.03</double>
+                    <double>0.03</double>
+                    <double>0.005</double>
+                  </Y>
+                </XYPairs>
+              </LinearInterpolationFunction>
+              <Constant>
+                <Name>MinimumNConc</Name>
+                <Value>0.006</Value>
+              </Constant>
+              <PhaseBasedSwitch>
+                <Name>NitrogenDemandSwitch</Name>
+                <Start>Emergence</Start>
+                <End>StartGrainFill</End>
+              </PhaseBasedSwitch>
+              <Constant>
+                <Name>NReallocationFactor</Name>
+                <Value>0</Value>
+              </Constant>
+              <Constant>
+                <Name>NRetranslocationFactor</Name>
+                <Value>0.5</Value>
+              </Constant>
+              <Constant>
+                <Name>DMRetranslocationFactor</Name>
+                <Value>0.5</Value>
+              </Constant>
+              <MinimumFunction>
+                <Name>DMDemandFunction</Name>
+                <MultiplyFunction>
+                  <Name>PotentialDMAccumulation</Name>
+                  <VariableReference>
+                    <Name>NodesAppearing</Name>
+                    <VariableName>[Structure].DeltaNodeNumber</VariableName>
+                  </VariableReference>
+                  <VariableReference>
+                    <Name>Branches</Name>
+                    <VariableName>[Structure].TotalStemPopn</VariableName>
+                  </VariableReference>
+                  <LinearInterpolationFunction>
+                    <Name>PotentialInternodeWt</Name>
+                    <XProperty>[Structure].RelativeNodeApperance</XProperty>
+                    <XYPairs>
+                      <Name>XYPairs</Name>
+                      <X>
+                        <double>0</double>
+                        <double>0.5</double>
+                        <double>1</double>
+                      </X>
+                      <Y>
+                        <double>0</double>
+                        <double>0.2</double>
+                        <double>16</double>
+                      </Y>
+                    </XYPairs>
+                  </LinearInterpolationFunction>
+                </MultiplyFunction>
+                <MultiplyFunction>
+                  <Name>HightLimitedDMAccumulation</Name>
+                  <Constant>
+                    <Name>SpecificStemLengthMax</Name>
+                    <Value>500</Value>
+                  </Constant>
+                  <VariableReference>
+                    <Name>Branches</Name>
+                    <VariableName>[Structure].TotalStemPopn</VariableName>
+                  </VariableReference>
+                  <VariableReference>
+                    <Name>DeltaHeight</Name>
+                    <VariableName>[Structure].HeightModel.DeltaHeight</VariableName>
+                  </VariableReference>
+                </MultiplyFunction>
+              </MinimumFunction>
+            </GenericAboveGroundOrgan>
+            <Summariser>
+              <Name>Summariser</Name>
+              <CompositeBiomass>
+                <Name>AboveGround</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+The AboveGround composite biomass object includes all organs occurring above the soil surface to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Propertys>
+                  <string>[Leaf].Live</string>
+                  <string>[Leaf].Dead</string>
+                  <string>[Stem].Live</string>
+                  <string>[Stem].Dead</string>
+                  <string>[Husk].Live</string>
+                  <string>[Husk].Dead</string>
+                  <string>[Grain].Live</string>
+                  <string>[Grain].Dead</string>
+                  <string>[Rachis].Live</string>
+                  <string>[Rachis].Dead</string>
+                </Propertys>
+              </CompositeBiomass>
+              <CompositeBiomass>
+                <Name>BelowGround</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+The BelowGround composite biomass object includes all root biomass pools to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Propertys>
+                  <string>[Root].Live</string>
+                  <string>[Root].Dead</string>
+                </Propertys>
+              </CompositeBiomass>
+              <CompositeBiomass>
+                <Name>Total</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+The Total composite biomass object includes all organs (above+below ground) to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Propertys>
+                  <string>[Leaf].Live</string>
+                  <string>[Leaf].Dead</string>
+                  <string>[Stem].Live</string>
+                  <string>[Stem].Dead</string>
+                  <string>[Husk].Live</string>
+                  <string>[Husk].Dead</string>
+                  <string>[Grain].Live</string>
+                  <string>[Grain].Dead</string>
+                  <string>[Rachis].Live</string>
+                  <string>[Rachis].Dead</string>
+                  <string>[Root].Live</string>
+                  <string>[Root].Dead</string>
+                </Propertys>
+              </CompositeBiomass>
+              <CompositeBiomass>
+                <Name>TotalLive</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+The TotalLive composite biomass object includes the Live pools of all organs (above+below ground) to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Propertys>
+                  <string>[Leaf].Live</string>
+                  <string>[Stem].Live</string>
+                  <string>[Husk].Live</string>
+                  <string>[Grain].Live</string>
+                  <string>[Rachis].Live</string>
+                  <string>[Root].Live</string>
+                </Propertys>
+              </CompositeBiomass>
+              <CompositeBiomass>
+                <Name>TotalDead</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+The TotalDead composite biomass object includes the Dead pools of all organs (above+below ground) to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Propertys>
+                  <string>[Leaf].Dead</string>
+                  <string>[Stem].Dead</string>
+                  <string>[Husk].Dead</string>
+                  <string>[Grain].Dead</string>
+                  <string>[Rachis].Dead</string>
+                  <string>[Root].Dead</string>
+                </Propertys>
+              </CompositeBiomass>
+              <CompositeBiomass>
+                <Name>EarLive</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+The EarLive composite biomass object includes the Live pools of all organs within the Ear to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Propertys>
+                  <string>[Husk].Live</string>
+                  <string>[Grain].Live</string>
+                  <string>[Rachis].Live</string>
+                </Propertys>
+              </CompositeBiomass>
+              <CompositeBiomass>
+                <Name>AboveGroundLive</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+The AboveGroundLive composite biomass object includes the Live pools of all organs occurring above the soil surface to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Propertys>
+                  <string>[Leaf].Live</string>
+                  <string>[Stem].Live</string>
+                  <string>[Husk].Live</string>
+                  <string>[Grain].Live</string>
+                  <string>[Rachis].Live</string>
+                </Propertys>
+              </CompositeBiomass>
+              <CompositeBiomass>
+                <Name>AboveGroundDead</Name>
+                <Memo>
+                  <Name>memo</Name>
+                  <MemoText><![CDATA[
+<html><body>
+The AboveGroundDead composite biomass object includes the Dead pools of all organs occurring above the soil surface to allow output for total dry matter and Nutrient contents, including total structural, non-structural and metabolic pools.
+<br/>
+</body></html>]]></MemoText>
+                </Memo>
+                <Propertys>
+                  <string>[Leaf].Dead</string>
+                  <string>[Stem].Dead</string>
+                  <string>[Husk].Dead</string>
+                  <string>[Grain].Dead</string>
+                  <string>[Rachis].Dead</string>
+                </Propertys>
+              </CompositeBiomass>
+            </Summariser>
+            <Cultivar>
+              <Name>Pioneer_39G12</Name>
+              <Command>[Phenology].GrainFilling.Target.Value = 550</Command>
+            </Cultivar>
+            <Cultivar>
+              <Name>Pioneer_3153</Name>
+            </Cultivar>
+            <Cultivar>
+              <Name>Katumani</Name>
+              <Memo>
+                <Name>memo</Name>
+                <MemoText><![CDATA[
+<html><body>
+The variety Katumani Composite B was formed in 1966 and released in 1968 as part of the maize breeding work undertaken at the Katumani Research Station in Kenya which started in 1956.  Katumani Composite B was an advanced generation of Katumani Synthetic V X Katumani Synthetic VI.  It has slight photoperiod sensitivity and relatively small potential cob size.
+<br/>
+</body></html>]]></MemoText>
+              </Memo>
+              <Command>[Phenology].Juvenile.Target.Value = 150</Command>
+              <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+              <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 115</Command>
+              <Command>[Phenology].FlagLeafToFlowering.Target.Value = 10</Command>
+              <Command>[Phenology].FloweringToGrainFilling.Target.Value = 120</Command>
+              <Command>[Phenology].GrainFilling.Target.Value = 530</Command>
+              <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 14</Command>
+              <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 14</Command>
+              <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 405</Command>
+            </Cultivar>
+            <Cultivar>
+              <Name>Dekalb_XL82</Name>
+              <Command>[Phenology].Juvenile.Target.Value = 211</Command>
+              <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+              <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 472</Command>
+              <Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
+              <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+              <Command>[Phenology].GrainFilling.Target.Value = 813</Command>
+              <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+              <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+              <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
+            </Cultivar>
+            <Cultivar>
+              <Name>GH_5009</Name>
+              <Command>[Phenology].Juvenile.Target.Value = 260</Command>
+              <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+              <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
+              <Command>[Phenology].FlagLeafToFlowering.Target.Value = 50</Command>
+              <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+              <Command>[Phenology].GrainFilling.Target.Value = 713</Command>
+              <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+              <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+              <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
+            </Cultivar>
+            <Cultivar>
+              <Name>Hycorn_40</Name>
+              <Command>[Phenology].Juvenile.Target.Value = 235</Command>
+              <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+              <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
+              <Command>[Phenology].FlagLeafToFlowering.Target.Value = 50</Command>
+              <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+              <Command>[Phenology].GrainFilling.Target.Value = 713</Command>
+              <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+              <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+              <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
+            </Cultivar>
+            <Cultivar>
+              <Name>GH_5019WX</Name>
+              <Command>[Phenology].Juvenile.Target.Value = 245</Command>
+              <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12, 24</Command>
+              <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
+              <Command>[Phenology].FlagLeafToFlowering.Target.Value = 101</Command>
+              <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+              <Command>[Phenology].GrainFilling.Target.Value = 694</Command>
+              <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 25</Command>
+              <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 25</Command>
+              <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 550</Command>
+            </Cultivar>
+            <Cultivar>
+              <Name>Laila</Name>
+              <Command>[Phenology].Juvenile.Target.Value = 211</Command>
+              <Command>[Phenology].Photosensitive.Target.XYPairs.X = 0, 12.5, 24</Command>
+              <Command>[Phenology].Photosensitive.Target.XYPairs.Y = 0, 0, 0</Command>
+              <Command>[Phenology].FlagLeafToFlowering.Target.Value = 1</Command>
+              <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+              <Command>[Phenology].GrainFilling.Target.Value = 812</Command>
+              <Command>[Phenology].Maturing.Target.Value = 1</Command>
+              <Command>[Phenology].MaturityToHarvestRipe.Target.Value = 1</Command>
+              <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 36</Command>
+              <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.X = 0, 36</Command>
+              <Command>[Grain].NumberFunction.KernalsPerCob.XYPairs.Y = 0, 720</Command>
+            </Cultivar>
+            <Cultivar>
+              <Name>Pioneer_39V43</Name>
+              <Memo>
+                <Name>memo</Name>
+                <MemoText><![CDATA[
+<html><body>
+VShort duration variety released in New Zealand by Pioneer
+<br/>
+</body></html>]]></MemoText>
+              </Memo>
+              <Command>[Phenology].Juvenile.Target.Value = 110</Command>
+              <Command>[Phenology].GrainFilling.Target.Value = 450</Command>
+              <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
+              <Command>[Structure].MainStemNodeAppearanceRate.Phyllochron.Phyllochron.XYPairs.X = 1, 4, 4.2, 10.5, 11</Command>
+              <Command>[Structure].MainStemNodeAppearanceRate.Phyllochron.Phyllochron.XYPairs.Y = 26, 26, 46, 46, 70</Command>
+              <Command>[Rachis].DMDemandFunction.MaximumOrganWt = 18</Command>
+              <Command>[Structure].HeightModel.PotentialHeight.XYPairs.X = 3, 4, 5, 6</Command>
+              <Command>[Structure].HeightModel.PotentialHeight.XYPairs.Y = 20, 40, 50, 1300</Command>
+              <Command>[Stem].DMDemandFunction.PotentialDMAccumulation.PotentialInternodeWt.XYPairs.Y = 0, 0.15, 10</Command>
+            </Cultivar>
+            <Cultivar>
+              <Name>Pioneer_34K77</Name>
+              <Memo>
+                <Name>memo</Name>
+                <MemoText><![CDATA[
+<html><body>
+VShort duration variety released in New Zealand by Pioneer
+<br/>
+</body></html>]]></MemoText>
+              </Memo>
+              <Command>[Phenology].Juvenile.Target.Value = 280</Command>
+              <Command>[Phenology].GrainFilling.Target.Value = 550</Command>
+            </Cultivar>
+            <Memo>
+              <Name>References</Name>
+              <MemoText><![CDATA[
+<html><body>
+<h2>References</h2>
+<br/>
+Brown, H.E., Huth, N.I., Holzworth, D.P., Teixeira, E.I., Zyskowski, R.F., Hargreaves, J.N., Moot, D.J., 2014. Plant modelling framework: software for building and running crop models on the APSIM platform. Environmental Modelling & Software 62 385-398.
+<br/><br/>
+Hammer, G.L., Dong, Z., McLean, G., Doherty, A., Messina, C., Schussler, J., Zinselmeier, C., Paszkiewicz, S., Cooper, M., 2009. Can Changes in Canopy and/or Root System Architecture Explain Historical Maize Yield Trends in the U.S. Corn Belt? Crop Science 49(1) 299-312.
+<br/><br/>
+Jones, C.A. and Kiniry, J.R. (1986) CERES-Maize: a Simulation Model of Maize Growth and Development. Texas A&M University Press, College Station, 194pp.
+<br/><br/>
+<br/><br/>
+Meinke, H., Hammer, G.L., Want, P., 1993. POTENTIAL SOIL-WATER EXTRACTION BY SUNFLOWER ON A RANGE OF SOILS. Field Crops Research 32(1-2) 59-81.
+<br/><br/>
+Ning, P., Li, S., White, P.J., Li, C., 2015. Maize Varieties Released in Different Eras Have Similar Root Length Density Distributions in the Soil, Which Are Negatively Correlated with Local Concentrations of Soil Mineral Nitrogen. PLoS ONE 10(3) e0121892.
+<br/><br/>
+Njoroge, K., 1986. Earliness and yield in maize: an evaluation of some Katumani maize varieties. East African Agricultural and Forestry Journal 48(1/4) 40-50.
+<br/><br/>
+Peake, A.S., Huth, N.I., Kelly, A.M., Bell, K.L., 2013. Variation in water extraction with maize plant density and its impact on model application. Field Crops Research 146(0) 31-37.
+<br/><br/>
+</body></html>]]></MemoText>
+            </Memo>
+            <Cultivar>
+              <Name>Pioneer_38H20</Name>
+              <Command>[Phenology].GrainFilling.Target.Value = 550</Command>
+            </Cultivar>
+            <Cultivar>
+              <Name>Pioneer_33M54</Name>
+              <Command>[Phenology].GrainFilling.Target.Value = 550</Command>
+            </Cultivar>
+            <CropType>Maize</CropType>
+          </Plant>
+          <Operations>
+            <Name>Fert</Name>
+            <Operation>
+              <Date>2008-09-16T00:00:00</Date>
+              <Action>[Fertiliser].Apply(140.5, Fertiliser.Types.UreaN, 10);</Action>
+            </Operation>
+            <Operation>
+              <Date>2008-12-17T00:00:00</Date>
+              <Action>[Fertiliser].Apply(161, Fertiliser.Types.UreaN, 10);</Action>
+            </Operation>
+          </Operations>
+          <Operations>
+            <Name>Irrig</Name>
+            <Operation>
+              <Date>2008-10-21T00:00:00</Date>
+              <Action>[Irrigation].Apply(15);</Action>
+            </Operation>
+            <Operation>
+              <Date>2008-10-29T00:00:00</Date>
+              <Action>[Irrigation].Apply(10);</Action>
+            </Operation>
+            <Operation>
+              <Date>2008-11-18T00:00:00</Date>
+              <Action>[Irrigation].Apply(10);</Action>
+            </Operation>
+            <Operation>
+              <Date>2008-11-27T00:00:00</Date>
+              <Action>[Irrigation].Apply(30);</Action>
+            </Operation>
+            <Operation>
+              <Date>2008-12-02T00:00:00</Date>
+              <Action>[Irrigation].Apply(25);</Action>
+            </Operation>
+            <Operation>
+              <Date>2008-12-09T00:00:00</Date>
+              <Action>[Irrigation].Apply(25);</Action>
+            </Operation>
+            <Operation>
+              <Date>2008-12-30T00:00:00</Date>
+              <Action>[Irrigation].Apply(30);</Action>
+            </Operation>
+            <Operation>
+              <Date>2009-01-06T00:00:00</Date>
+              <Action>[Irrigation].Apply(25);</Action>
+            </Operation>
+            <Operation>
+              <Date>2009-01-13T00:00:00</Date>
+              <Action>[Irrigation].Apply(10);</Action>
+            </Operation>
+            <Operation>
+              <Date>2009-01-26T00:00:00</Date>
+              <Action>[Irrigation].Apply(25);</Action>
+            </Operation>
+            <Operation>
+              <Date>2009-01-29T00:00:00</Date>
+              <Action>[Irrigation].Apply(25);</Action>
+            </Operation>
+            <Operation>
+              <Date>2009-02-04T00:00:00</Date>
+              <Action>[Irrigation].Apply(20);</Action>
+            </Operation>
+            <Operation>
+              <Date>2009-02-10T00:00:00</Date>
+              <Action>[Irrigation].Apply(25);</Action>
+            </Operation>
+            <Operation>
+              <Date>2009-03-18T00:00:00</Date>
+              <Action>[Irrigation].Apply(30);</Action>
+            </Operation>
+          </Operations>
+          <Operations>
+            <Name>SowDate</Name>
+            <Operation>
+              <Date>2008-09-17T00:00:00</Date>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_3153", depth:50, rowSpacing:800);</Action>
+            </Operation>
+          </Operations>
+          <Report>
+            <Name>Report</Name>
+            <VariableNames>
+              <string>[Clock].Today</string>
+              <string>[ExtraVariables].Script.AccumPlantN</string>
+              <string>[ExtraVariables].Script.AccumMineralisation</string>
+              <string>[ExtraVariables].Script.AccumDenit</string>
+              <string>[ExtraVariables].Script.AccumFert</string>
+              <string>[ExtraVariables].Script.AccumLeach</string>
+              <string>[ExtraVariables].Script.AccumDetach</string>
+              <string>[ExtraVariables].Script.DeltaSoilOMN</string>
+              <string>[ExtraVariables].Script.DeltaSurfaceOMN</string>
+              <string>[ExtraVariables].Script.DeltaSoilMineralN</string>
+              <string>[ExtraVariables].Script.SWC</string>
+              <string>[ExtraVariables].Script.DUL</string>
+              <string>[ExtraVariables].Script.OutFlowLat</string>
+              <string>[ExtraVariables].Script.AccumEO</string>
+              <string>[ExtraVariables].Script.AccumEP</string>
+              <string>[ExtraVariables].Script.AccumES</string>
+              <string>[ExtraVariables].Script.AccumDrainage</string>
+              <string>[ExtraVariables].Script.AccumRunoff</string>
+              <string>[ExtraVariables].Script.AccumRainfall</string>
+              <string>[ExtraVariables].Script.AccumIrrigation</string>
+              <string>[ExtraVariables].Script.AccumOutflowLat</string>
+              <string>[ExtraVariables].Script.SoilWaterDeficit</string>
+              <string>[ExtraVariables].Script.SoilNitrogenContent</string>
+              <string>[ExtraVariables].Script.FomN</string>
+              <string>[ExtraVariables].Script.HumN</string>
+              <string>[ExtraVariables].Script.BiomN</string>
+              <string>[ExtraVariables].Script.DltNMinRes</string>
+              <string>[ExtraVariables].Script.DltNMinTot</string>
+              <string>[Soil].SoilWater.SW</string>
+              <string>[Soil].SoilWater.Eo</string>
+              <string>[Soil].SoilWater.Es</string>
+              <string>[Soil].SoilWater.Drainage</string>
+              <string>[Soil].SoilWater.Runoff</string>
+              <string>[Soil].SoilWater.pond</string>
+              <string>sum([Soil].SoilWater.SWmm) as ProfileWater</string>
+              <string>[Soil].NO3N</string>
+              <string>[MicroClimate].net_radn</string>
+              <string>[MicroClimate].peta</string>
+              <string>[MicroClimate].petr</string>
+              <string>[Maize].Grain.Live.Wt</string>
+              <string>[Maize].Stem.Live.Wt</string>
+              <string>[Maize].Summariser.EarLive.Wt</string>
+              <string>[Maize].Leaf.Live.Wt</string>
+              <string>[Maize].Root.Live.Wt</string>
+              <string>[Maize].Husk.Live.Wt</string>
+              <string>[Maize].Rachis.Live.Wt</string>
+              <string>[Maize].Tastle.Live.Wt</string>
+              <string>[Maize].Summariser.EarLive.N</string>
+              <string>[Maize].Grain.Live.N</string>
+              <string>[Maize].Stem.Live.N</string>
+              <string>[Maize].Leaf.Live.N</string>
+              <string>[Maize].Root.Live.N</string>
+              <string>[Maize].Rachis.Live.N</string>
+              <string>[Maize].Husk.Live.N</string>
+              <string>[Maize].Root.WaterSupply</string>
+              <string>[Maize].Root.WaterUptake</string>
+              <string>[Maize].Leaf.Transpiration</string>
+              <string>[Maize].Leaf.WaterDemand</string>
+              <string>[Maize].Root.Depth</string>
+              <string>[Maize].Leaf.CoverTotal</string>
+              <string>[Maize].Leaf.CoverDead</string>
+              <string>[Maize].Leaf.LAI</string>
+              <string>[Maize].Leaf.Height</string>
+              <string>[Maize].Leaf.CohortParameters.MaxArea.Value</string>
+              <string>[Maize].Leaf.Fw</string>
+              <string>[Maize].Leaf.Photosynthesis.FVPD.Value</string>
+              <string>[Maize].Leaf.Photosynthesis.FT.Value</string>
+              <string>[Maize].Leaf.Fn</string>
+              <string>[Maize].Phenology.CurrentPhaseName</string>
+              <string>[Maize].Phenology.Stage</string>
+              <string>[Maize].Summariser.AboveGroundLive.N</string>
+              <string>[Maize].Summariser.AboveGroundLive.Wt</string>
+              <string>[Maize].Summariser.Total.N</string>
+              <string>[Maize].Summariser.Total.Wt</string>
+              <string>[Maize].Arbitrator.NDemand</string>
+              <string>[Maize].Phenology.Stage</string>
+              <string>[Maize].Leaf.ExpandedCohortNo</string>
+              <string>[Maize].Leaf.AppearedCohortNo</string>
+              <string>[Maize].Leaf.DeadCohortNo</string>
+              <string>[Maize].Leaf.InitialisedCohortNo</string>
+              <string>[Maize].Structure.MainStemFinalNodeNo</string>
+              <string>[Maize].Structure.MainStemNodeNo</string>
+              <string>[Maize].Structure.MainStemPrimordiaNo</string>
+              <string>[Maize].Leaf.CohortArea[1:30]</string>
+              <string>[Maize].Leaf.CohortSLA[1:30]</string>
+              <string>[Maize].Leaf.CohortParameters.SpecificLeafAreaMax.Value</string>
+              <string>[Maize].Leaf.CohortParameters.SpecificLeafAreaMin.Value</string>
+              <string>[Maize].Arbitrator.NDemand</string>
+              <string>[Maize].Arbitrator.DMSupply</string>
+              <string>[Maize].Arbitrator.DMDemand</string>
+              <string>[Maize].Arbitrator.DMAllocated</string>
+              <string>[Maize].Arbitrator.DMSinkLimitation</string>
+              <string>[Maize].Arbitrator.DMNutrientLimitation</string>
+              <string>[Maize].Leaf.CohortParameters.GrowthDuration.Value</string>
+              <string>[Maize].Leaf.CohortParameters.LagDuration.Value</string>
+              <string>[Maize].Leaf.CohortParameters.SenescenceDuration.Value</string>
+              <string>[Maize].Structure.MainStemNodeAppearanceRate.Value</string>
+              <string>[Maize].Structure.Height</string>
+              <string>[Maize].Stem.DMDemandFunction.PotentialDMAccumulation.Value</string>
+              <string>[Maize].Stem.DMDemandFunction.HightLimitedDMAccumulation.Value</string>
+              <string>[Maize].Structure.MainStemPrimordiaNo</string>
+              <string>[Maize].Grain.NumberFunction.Value</string>
+              <string>[ExtraVariables].Script.LeafAppearedPosition</string>
+              <string>[ExtraVariables].Script.MostRecentlyAppearedLeafMaxSize</string>
+              <string>[ExtraVariables].Script.LeafExpandedPosition</string>
+              <string>[ExtraVariables].Script.MostRecentlyExpandedLeafSize</string>
+              <string>[Maize].Leaf.DeadCohortNo</string>
+              <string>[Phenology].ThermalTime.Value</string>
+              <string>[Maize].Leaf.SenescingCohortNo</string>
+              <string>[Maize].Stem.MaximumNConc.Value</string>
+              <string>[Maize].Stem.MinimumNConc.Value</string>
+              <string>[Maize].Stem.Live.NConc</string>
+              <string>[Maize].Leaf.Live.NConc</string>
+              <string>[Maize].Grain.Live.NConc</string>
+              <string>[Maize].Husk.Live.NConc</string>
+              <string>[Maize].Rachis.Live.NConc</string>
+              <string>[Maize].Leaf.Dead.NConc</string>
+              <string>[Maize].Leaf.Photosynthesis.RueAct</string>
+            </VariableNames>
+            <EventNames>
+              <string>[Clock].DoReport</string>
+            </EventNames>
+          </Report>
+          <Report>
+            <Name>HarvestReport</Name>
+            <VariableNames>
+              <string>[Clock].Today</string>
+              <string>[Maize].Phenology.CurrentStageName as Stage</string>
+              <string>[Maize].Grain.Live.Wt as GrainWt</string>
+              <string>[Maize].Stem.Live.Wt</string>
+              <string>[Maize].Summariser.EarLive.Wt</string>
+              <string>[Maize].Leaf.Live.Wt</string>
+              <string>[Maize].Root.Live.Wt</string>
+              <string>[Maize].Husk.Live.Wt</string>
+              <string>[Maize].Rachis.Live.Wt</string>
+              <string>[Maize].Summariser.EarLive.N</string>
+              <string>[Maize].Grain.Live.N</string>
+              <string>[Maize].Stem.Live.N</string>
+              <string>[Maize].Leaf.Live.N</string>
+              <string>[Maize].Root.Live.N</string>
+              <string>[Maize].Root.Depth</string>
+              <string>[Maize].Summariser.AboveGround.N</string>
+              <string>[Maize].Summariser.AboveGround.Wt as Biomass</string>
+              <string>[Maize].Summariser.Total.N</string>
+              <string>[Maize].Summariser.Total.Wt</string>
+              <string>max of [Maize].Leaf.LAI from [Maize].Sowing to [Maize].Harvesting as LAImax</string>
+              <string>[Maize].Grain.NumberFunction.Value as GPSM</string>
+              <string>[Maize].Grain.Size.Value as GrainSize</string>
+              <string>[Maize].Population</string>
+            </VariableNames>
+            <EventNames>
+              <string>[Maize].Harvesting</string>
+            </EventNames>
+          </Report>
+          <Manager>
+            <Name>ExtraVariables</Name>
+            <Script />
+            <Code><![CDATA[using System;
+using Models.Core;
+using System.Collections.Generic;
+using System.Text;
+using Models.Soils;
+using Models.PMF;
+using Models;
+using System.Xml.Serialization;
+using APSIM.Shared.Utilities;
+
+namespace Models
+{
+	[Serializable] 
+	public class Script : Model
+	{      
+		[Link] Clock Clock;
+		[Link] Soils.Soil Soil;
+		[Link] Models.SurfaceOM.SurfaceOrganicMatter SOM;
+		[Link] Weather Met;   
+		[Link] Fertiliser Fert;
+		[Link] Irrigation Irrig;  
+		[Link] Plant Maize;          
+		[Link] Zone zone;			
+					
+		[XmlIgnore] public bool InitialDay { get; set; }
+		
+		[XmlIgnore] public double AccumPlantN { get; set; }
+		[XmlIgnore] public double AccumMineralisation { get; set; }
+		[XmlIgnore] public double AccumDenit { get; set; }
+		[XmlIgnore] public double AccumFert { get; set; }
+		[XmlIgnore] public double AccumLeach { get; set; }
+		[XmlIgnore] public double AccumDetach { get; set; }
+		[XmlIgnore] public double DeltaSoilOMN { get; set; }
+		[XmlIgnore] public double DeltaSurfaceOMN { get; set; }
+		[XmlIgnore] public double DeltaSoilMineralN { get; set; }
+		[XmlIgnore] public double SoilNitrogenContent { get; set; }
+		
+		[XmlIgnore] public double AccumEO { get; set; }
+		[XmlIgnore] public double AccumEP { get; set; }
+		[XmlIgnore] public double AccumES { get; set; }
+		[XmlIgnore] public double AccumDrainage { get; set; }
+		[XmlIgnore] public double AccumRunoff { get; set; }
+		[XmlIgnore] public double AccumOutflowLat { get; set; }
+		[XmlIgnore] public double AccumIrrigation { get; set; }
+		[XmlIgnore] public double AccumRainfall { get; set; }
+		[XmlIgnore] public double SoilWaterDeficit { get; set; }
+	
+		[XmlIgnore] public double  InitialSoilOMN { get; set; }
+		[XmlIgnore] public double  InitialSurfaceOMN { get; set; }
+		[XmlIgnore] public double  InitialMineralN { get; set; }
+		
+		[XmlIgnore] public double SWC { get; set; }
+		[XmlIgnore] public double DUL { get; set; }
+		[XmlIgnore] public double OutFlowLat { get; set; }
+
+		[XmlIgnore] public double FomN { get; set; }
+		[XmlIgnore] public double BiomN { get; set; }
+		[XmlIgnore] public double HumN { get; set; }
+		[XmlIgnore] public double OrganicN { get; set; }
+		[XmlIgnore] public double NO3N { get; set; }
+		[XmlIgnore] public double NH4N { get; set; }
+		[XmlIgnore] public double UreaN { get; set; }
+		[XmlIgnore] public double MineralN { get; set; }
+		[XmlIgnore] public double DltNMinRes { get; set; }
+		[XmlIgnore] public double DltNMinTot { get; set; }
+		
+		[XmlIgnore] public double LeafExpandedPosition {get; set;}
+        [XmlIgnore] public double LeafAppearedPosition {get; set;}
+        [XmlIgnore] public double ExpandedLeafNoYesterday {get; set;}
+        [XmlIgnore] public double AppearedLeafNoYesterday {get; set;}
+        [XmlIgnore] public double MostRecentlyExpandedLeafSize {get; set;}
+        [XmlIgnore] public double MostRecentlyAppearedLeafMaxSize {get; set;}
+        
+        [EventSubscribe("Commencing")]
+        private void OnSimulationCommencing(object sender, EventArgs e)
+        {
+			InitialDay = true;
+			LeafExpandedPosition = 0;
+			LeafAppearedPosition = 0;
+			ExpandedLeafNoYesterday = 0;
+			AppearedLeafNoYesterday = 0;
+			MostRecentlyExpandedLeafSize = 0;
+			MostRecentlyAppearedLeafMaxSize = 0;
+		}	   
+		
+		[EventSubscribe("DoManagement")]
+		private void OnDoManagement(object sender, EventArgs e)
+		{
+			//!!!!!! Nitrogen balance components !!!!!!
+			//!!!!!!^^^^^^^^^^^^^^^^^^^^^^^^^^^^^!!!!!!
+           	FomN = MathUtilities.Sum(Soil.SoilNitrogen.FOMN);
+			HumN = MathUtilities.Sum(Soil.SoilNitrogen.HumicN);
+		    BiomN = MathUtilities.Sum(Soil.SoilNitrogen.MicrobialN);
+			OrganicN = FomN + HumN + BiomN;
+			NO3N = MathUtilities.Sum(Soil.NO3N);
+			NH4N = MathUtilities.Sum(Soil.NH4N);
+			UreaN = MathUtilities.Sum(Soil.SoilNitrogen.urea);
+			MineralN = NO3N + NH4N + UreaN; 
+			DltNMinRes = MathUtilities.Sum(Soil.SoilNitrogen.dlt_n_min_res);
+			DltNMinTot = MathUtilities.Sum(Soil.SoilNitrogen.MineralisedN);
+            int layers = Soil.Thickness.Length;
+			if (InitialDay == true)
+			{
+				InitialSurfaceOMN = SOM.N;
+				InitialSoilOMN = OrganicN;
+				InitialMineralN = MineralN;
+				InitialDay = false;
+			}
+			AccumFert += Fert.NitrogenApplied;
+			DeltaSurfaceOMN = SOM.N - InitialSurfaceOMN;
+			AccumLeach = AccumLeach - Soil.SoilWater.LeachNH4 - Soil.SoilWater.LeachNO3 - Soil.SoilWater.LeachUrea; //Fails
+            AccumMineralisation += MathUtilities.Sum(Soil.SoilNitrogen.MineralisedN);
+            AccumDenit -= MathUtilities.Sum(Soil.SoilNitrogen.Denitrification);
+			AccumPlantN -= (double)zone.Get("Maize.Root.NUptake");
+			DeltaSoilOMN = OrganicN - InitialSoilOMN;
+			DeltaSoilMineralN = MineralN - InitialMineralN;
+			SoilNitrogenContent = MineralN;
+			
+			//!!!!!! Water balance components !!!!!!
+			//!!!!!!^^^^^^^^^^^^^^^^^^^^^^^^^^!!!!!!
+
+			AccumIrrigation += Irrig.IrrigationApplied;
+			AccumRainfall += Met.Rain;
+			//AccumEP -= (double)zone.Get("[Maize].Leaf.Transpiration");
+            AccumEP -= (double)zone.Get("Maize.Root.WaterUptake");
+			SoilWaterDeficit =  (SWC - DUL);
+			double OutFlowLat = MathUtilities.Sum(Soil.SoilWater.outflow_lat);
+			AccumOutflowLat -= OutFlowLat;
+			
+			//Leaf number variable
+			ExpandedLeafNoYesterday = (double)zone.Get("Maize.Leaf.ExpandedCohortNo");
+			AppearedLeafNoYesterday = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
+		}
+		
+		[EventSubscribe("DoManagementCalculations")]
+		private void OnDoManagementCalculations(object sender, EventArgs e)
+		{
+			FomN = MathUtilities.Sum(Soil.SoilNitrogen.FOMN);
+			HumN = MathUtilities.Sum(Soil.SoilNitrogen.HumicN);
+		    BiomN = MathUtilities.Sum(Soil.SoilNitrogen.MicrobialN);
+			
+			
+			AccumEO -= Soil.SoilWater.Eo;
+			AccumES -= Soil.SoilWater.Es; 
+			AccumDrainage -= Soil.SoilWater.Drainage;
+			AccumRunoff -= Soil.SoilWater.Runoff;
+			SWC = MathUtilities.Sum(Soil.SoilWater.SWmm);
+			DUL = MathUtilities.Sum(Soil.SoilWater.DULmm);
+			
+			if ((double)zone.Get("Maize.Leaf.ExpandedCohortNo") > ExpandedLeafNoYesterday)
+			{
+			LeafExpandedPosition = (double)zone.Get("Maize.Leaf.ExpandedCohortNo");
+			MostRecentlyExpandedLeafSize = (double)zone.Get("Maize.Leaf.CohortSize["+(int)LeafExpandedPosition+"]");
+			}
+			else
+			LeafExpandedPosition = 0;
+			
+			if ((double)zone.Get("Maize.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday) 
+			{
+			LeafAppearedPosition = (double)zone.Get("Maize.Leaf.AppearedCohortNo");
+			MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Maize.Leaf.CohortParameters.MaxArea.Value");
+			}
+			//else
+			//LeafAppearedPosition = 0;
+			
+		}
+	}
+}
+	   ]]></Code>
+          </Manager>
+          <Manager>
+            <Name>Harvesting</Name>
+            <Script />
+            <Code><![CDATA[using System;
+using Models.Core;
+using System.Collections.Generic;
+using System.Text;
+using Models.Soils;
+using Models.PMF;
+using Models;
+using System.Xml.Serialization;
+using APSIM.Shared.Utilities;
+
+namespace Models
+{
+	[Serializable] 
+	public class Script : Model
+	{      
+		[Link] Plant Maize;          
+		[Link] Zone zone;			
+					
+        
+        [EventSubscribe("Commencing")]
+        private void OnSimulationCommencing(object sender, EventArgs e)
+        {
+		}	   
+		
+		[EventSubscribe("DoManagement")]
+		private void OnDoManagement(object sender, EventArgs e)
+		{
+        if (Maize.Phenology.CurrentPhaseName=="ReadyForHarvesting")
+           {
+           Maize.Harvest();
+           Maize.EndCrop();
+           }
+		}
+		
+		[EventSubscribe("DoManagementCalculations")]
+		private void OnDoManagementCalculations(object sender, EventArgs e)
+		{
+			
+		}
+	}
+}
+	   ]]></Code>
+          </Manager>
+          <Area>1</Area>
+          <Slope>0</Slope>
+        </Zone>
+        <Area>0</Area>
+        <Slope>0</Slope>
+      </Simulation>
+      <Folder>
+        <Name>Graphs</Name>
+        <Graph>
+          <Name>LeafTips</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Leaf Tips (n)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.AppearedCohortNo</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Observed</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>FilledCircle</Marker>
+            <Line>None</Line>
+            <X>
+              <TableName>observed</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>observed</TableName>
+              <FieldName>Leaf.AppearedCohortNo</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>LeafLigules</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Leaf Ligules (n)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.ExpandedCohortNo</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Observed</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>FilledCircle</Marker>
+            <Line>None</Line>
+            <X>
+              <TableName>observed</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>observed</TableName>
+              <FieldName>Leaf.ExpandedCohortNo</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>AboveGroundWt</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Above Ground Biomass (g/m2)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Summariser.AboveGroundLive.Wt</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Observed</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>FilledCircle</Marker>
+            <Line>None</Line>
+            <X>
+              <TableName>observed</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>observed</TableName>
+              <FieldName>Maize.Summariser.AboveGround.Wt</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>GrainBiomass</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Grain Biomass (g/m2)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Grain.Live.Wt</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Observed</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>FilledCircle</Marker>
+            <Line>None</Line>
+            <X>
+              <TableName>observed</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>observed</TableName>
+              <FieldName>Maize.Grain.Live.Wt</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>LAI</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Leaf Area Index (m2/m2)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.LAI</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Observed</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>FilledCircle</Marker>
+            <Line>None</Line>
+            <X>
+              <TableName>observed</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>observed</TableName>
+              <FieldName>Maize.Leaf.LAI</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>LeafBiomass</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Leaf Biomass (g/m2)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.Live.Wt</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Observed</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>FilledCircle</Marker>
+            <Line>None</Line>
+            <X>
+              <TableName>observed</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>observed</TableName>
+              <FieldName>Leaf.Live.Wt</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>Cover</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Leaf Tips (n)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.CoverTotal</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Observed</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>FilledCircle</Marker>
+            <Line>None</Line>
+            <X>
+              <TableName>observed</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>observed</TableName>
+              <FieldName>Leaf.CoverTotal</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>Phenology</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Stage (n)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Phenology.Stage</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Observed</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>FilledCircle</Marker>
+            <Line>None</Line>
+            <X>
+              <TableName>phenologySimple_RainS</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>phenologySimple_RainS</TableName>
+              <FieldName>Phenology.StageCode.Value</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>StemBiomass</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Stem Biomass (g/m2)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Stem.Live.Wt</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Observed</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>FilledCircle</Marker>
+            <Line>None</Line>
+            <X>
+              <TableName>observed</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>observed</TableName>
+              <FieldName>Stem.Live.Wt</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>LeafCohorts</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Stem Biomass (g/m2)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>1</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.CohortArea1:10(1)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>2</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.CohortArea1:10(2)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>3</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.CohortArea1:10(3)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>4</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.CohortArea1:10(4)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>5</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.CohortArea1:10(5)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>6</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.CohortArea1:10(6)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>7</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.CohortArea1:10(7)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>8</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.CohortArea1:10(8)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>9</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.CohortArea1:10(9)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>10</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.CohortArea1:10(10)</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>BottomRight</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+      </Folder>
+    </Experiment>
     <Graph>
       <Name>GrainWt</Name>
       <Title />
