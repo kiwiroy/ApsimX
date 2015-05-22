@@ -63,6 +63,13 @@ The APSIM Maize model has been tested on a range of datasets from around the wor
       <Name>TimeSeriesStats</Name>
       <TableName>PredictedObserved</TableName>
     </TimeSeriesStats>
+    <Model xsi:type="ExcelInput">
+      <Name>PhenologySimple</Name>
+      <FileName>%root%\Tests\Maize\Observations\obsDataMaize_DB.xlsx</FileName>
+      <SheetNames>
+        <string>PhenologySimple</string>
+      </SheetNames>
+    </Model>
     <AutoExport>false</AutoExport>
   </DataStore>
   <Tests>
@@ -33354,7 +33361,7 @@ VShort duration variety released in New Zealand by Pioneer
 <br/>
 </body></html>]]></MemoText>
               </Memo>
-              <Command>[Phenology].Juvenile.Target.Value = 110</Command>
+              <Command>[Phenology].Juvenile.Target.Value = 80</Command>
               <Command>[Phenology].GrainFilling.Target.Value = 450</Command>
               <Command>[Phenology].FloweringToGrainFilling.Target.Value = 170</Command>
               <Command>[Structure].MainStemNodeAppearanceRate.Phyllochron.Phyllochron.XYPairs.X = 1, 4, 4.2, 10.5, 11</Command>
@@ -33402,6 +33409,7 @@ Peake, A.S., Huth, N.I., Kelly, A.M., Bell, K.L., 2013. Variation in water extra
             </Memo>
             <Cultivar>
               <Name>Pioneer_38H20</Name>
+              <Command>[Phenology].Juvenile.Target.Value = 150</Command>
               <Command>[Phenology].GrainFilling.Target.Value = 550</Command>
             </Cultivar>
             <Cultivar>
@@ -33917,11 +33925,11 @@ namespace Models
             <Marker>FilledCircle</Marker>
             <Line>None</Line>
             <X>
-              <TableName>phenologySimple_RainS</TableName>
+              <TableName>PhenologySimple</TableName>
               <FieldName>Clock.Today</FieldName>
             </X>
             <Y>
-              <TableName>phenologySimple_RainS</TableName>
+              <TableName>PhenologySimple</TableName>
               <FieldName>Phenology.StageCode.Value</FieldName>
             </Y>
             <ShowRegressionLine>false</ShowRegressionLine>
