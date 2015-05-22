@@ -30614,7 +30614,7 @@ namespace Models
       <Factors>
         <Name>Factors</Name>
         <Factor>
-          <Name>HybSow</Name>
+          <Name>SowDate</Name>
           <Operations>
             <Name>39V43EarlySow</Name>
             <Operation>
@@ -30723,7 +30723,7 @@ namespace Models
             <Name>33M54LateSow</Name>
             <Operation>
               <Date>2010-12-01T00:00:00</Date>
-              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_33M54", depth:50, rowSpacing:800);</Action>
+              <Action>[Maize].Sow(population:10.52, cultivar:"Pioneer_38H20", depth:50, rowSpacing:800);</Action>
             </Operation>
           </Operations>
           <Specifications>
@@ -33872,6 +33872,68 @@ namespace Models
       <Folder>
         <Name>Graphs</Name>
         <Graph>
+          <Name>Phenology</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Stage (n)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Phenology.Stage</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Observed</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>FilledCircle</Marker>
+            <Line>None</Line>
+            <X>
+              <TableName>phenologySimple_RainS</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>phenologySimple_RainS</TableName>
+              <FieldName>Phenology.StageCode.Value</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
           <Name>LeafTips</Name>
           <Axis>
             <Type>Left</Type>
@@ -33985,6 +34047,130 @@ namespace Models
             <Y>
               <TableName>observed</TableName>
               <FieldName>Leaf.ExpandedCohortNo</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>LAI</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Leaf Area Index (m2/m2)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.LAI</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Observed</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>FilledCircle</Marker>
+            <Line>None</Line>
+            <X>
+              <TableName>observed</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>observed</TableName>
+              <FieldName>Maize.Leaf.LAI</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <LegendPosition>TopLeft</LegendPosition>
+          <ShowRegressionLine>false</ShowRegressionLine>
+          <DisabledSeries />
+          <IncludeInDocumentation>false</IncludeInDocumentation>
+        </Graph>
+        <Graph>
+          <Name>Cover</Name>
+          <Axis>
+            <Type>Left</Type>
+            <Title>Leaf Tips (n)</Title>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Axis>
+            <Type>Bottom</Type>
+            <Inverted>false</Inverted>
+            <Minimum>NaN</Minimum>
+            <Maximum>NaN</Maximum>
+            <Interval>NaN</Interval>
+          </Axis>
+          <Series>
+            <Title>Predicted</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-8388608</ColourArgb>
+            <Marker>None</Marker>
+            <Line>Solid</Line>
+            <X>
+              <TableName>Report</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>Report</TableName>
+              <FieldName>Maize.Leaf.CoverTotal</FieldName>
+            </Y>
+            <ShowRegressionLine>false</ShowRegressionLine>
+            <ShowInLegend>true</ShowInLegend>
+            <Cumulative>false</Cumulative>
+          </Series>
+          <Series>
+            <Title>Observed</Title>
+            <Type>Scatter</Type>
+            <XAxis>Bottom</XAxis>
+            <YAxis>Left</YAxis>
+            <ColourArgb>-16776961</ColourArgb>
+            <Marker>FilledCircle</Marker>
+            <Line>None</Line>
+            <X>
+              <TableName>observed</TableName>
+              <FieldName>Clock.Today</FieldName>
+            </X>
+            <Y>
+              <TableName>observed</TableName>
+              <FieldName>Leaf.CoverTotal</FieldName>
             </Y>
             <ShowRegressionLine>false</ShowRegressionLine>
             <ShowInLegend>true</ShowInLegend>
@@ -34120,68 +34306,6 @@ namespace Models
           <IncludeInDocumentation>false</IncludeInDocumentation>
         </Graph>
         <Graph>
-          <Name>LAI</Name>
-          <Axis>
-            <Type>Left</Type>
-            <Title>Leaf Area Index (m2/m2)</Title>
-            <Inverted>false</Inverted>
-            <Minimum>NaN</Minimum>
-            <Maximum>NaN</Maximum>
-            <Interval>NaN</Interval>
-          </Axis>
-          <Axis>
-            <Type>Bottom</Type>
-            <Inverted>false</Inverted>
-            <Minimum>NaN</Minimum>
-            <Maximum>NaN</Maximum>
-            <Interval>NaN</Interval>
-          </Axis>
-          <Series>
-            <Title>Predicted</Title>
-            <Type>Scatter</Type>
-            <XAxis>Bottom</XAxis>
-            <YAxis>Left</YAxis>
-            <ColourArgb>-8388608</ColourArgb>
-            <Marker>None</Marker>
-            <Line>Solid</Line>
-            <X>
-              <TableName>Report</TableName>
-              <FieldName>Clock.Today</FieldName>
-            </X>
-            <Y>
-              <TableName>Report</TableName>
-              <FieldName>Maize.Leaf.LAI</FieldName>
-            </Y>
-            <ShowRegressionLine>false</ShowRegressionLine>
-            <ShowInLegend>true</ShowInLegend>
-            <Cumulative>false</Cumulative>
-          </Series>
-          <Series>
-            <Title>Observed</Title>
-            <Type>Scatter</Type>
-            <XAxis>Bottom</XAxis>
-            <YAxis>Left</YAxis>
-            <ColourArgb>-16776961</ColourArgb>
-            <Marker>FilledCircle</Marker>
-            <Line>None</Line>
-            <X>
-              <TableName>observed</TableName>
-              <FieldName>Clock.Today</FieldName>
-            </X>
-            <Y>
-              <TableName>observed</TableName>
-              <FieldName>Maize.Leaf.LAI</FieldName>
-            </Y>
-            <ShowRegressionLine>false</ShowRegressionLine>
-            <ShowInLegend>true</ShowInLegend>
-            <Cumulative>false</Cumulative>
-          </Series>
-          <LegendPosition>TopLeft</LegendPosition>
-          <ShowRegressionLine>false</ShowRegressionLine>
-          <DisabledSeries />
-          <IncludeInDocumentation>false</IncludeInDocumentation>
-        </Graph>
-        <Graph>
           <Name>LeafBiomass</Name>
           <Axis>
             <Type>Left</Type>
@@ -34233,130 +34357,6 @@ namespace Models
             <Y>
               <TableName>observed</TableName>
               <FieldName>Leaf.Live.Wt</FieldName>
-            </Y>
-            <ShowRegressionLine>false</ShowRegressionLine>
-            <ShowInLegend>true</ShowInLegend>
-            <Cumulative>false</Cumulative>
-          </Series>
-          <LegendPosition>TopLeft</LegendPosition>
-          <ShowRegressionLine>false</ShowRegressionLine>
-          <DisabledSeries />
-          <IncludeInDocumentation>false</IncludeInDocumentation>
-        </Graph>
-        <Graph>
-          <Name>Cover</Name>
-          <Axis>
-            <Type>Left</Type>
-            <Title>Leaf Tips (n)</Title>
-            <Inverted>false</Inverted>
-            <Minimum>NaN</Minimum>
-            <Maximum>NaN</Maximum>
-            <Interval>NaN</Interval>
-          </Axis>
-          <Axis>
-            <Type>Bottom</Type>
-            <Inverted>false</Inverted>
-            <Minimum>NaN</Minimum>
-            <Maximum>NaN</Maximum>
-            <Interval>NaN</Interval>
-          </Axis>
-          <Series>
-            <Title>Predicted</Title>
-            <Type>Scatter</Type>
-            <XAxis>Bottom</XAxis>
-            <YAxis>Left</YAxis>
-            <ColourArgb>-8388608</ColourArgb>
-            <Marker>None</Marker>
-            <Line>Solid</Line>
-            <X>
-              <TableName>Report</TableName>
-              <FieldName>Clock.Today</FieldName>
-            </X>
-            <Y>
-              <TableName>Report</TableName>
-              <FieldName>Maize.Leaf.CoverTotal</FieldName>
-            </Y>
-            <ShowRegressionLine>false</ShowRegressionLine>
-            <ShowInLegend>true</ShowInLegend>
-            <Cumulative>false</Cumulative>
-          </Series>
-          <Series>
-            <Title>Observed</Title>
-            <Type>Scatter</Type>
-            <XAxis>Bottom</XAxis>
-            <YAxis>Left</YAxis>
-            <ColourArgb>-16776961</ColourArgb>
-            <Marker>FilledCircle</Marker>
-            <Line>None</Line>
-            <X>
-              <TableName>observed</TableName>
-              <FieldName>Clock.Today</FieldName>
-            </X>
-            <Y>
-              <TableName>observed</TableName>
-              <FieldName>Leaf.CoverTotal</FieldName>
-            </Y>
-            <ShowRegressionLine>false</ShowRegressionLine>
-            <ShowInLegend>true</ShowInLegend>
-            <Cumulative>false</Cumulative>
-          </Series>
-          <LegendPosition>TopLeft</LegendPosition>
-          <ShowRegressionLine>false</ShowRegressionLine>
-          <DisabledSeries />
-          <IncludeInDocumentation>false</IncludeInDocumentation>
-        </Graph>
-        <Graph>
-          <Name>Phenology</Name>
-          <Axis>
-            <Type>Left</Type>
-            <Title>Stage (n)</Title>
-            <Inverted>false</Inverted>
-            <Minimum>NaN</Minimum>
-            <Maximum>NaN</Maximum>
-            <Interval>NaN</Interval>
-          </Axis>
-          <Axis>
-            <Type>Bottom</Type>
-            <Inverted>false</Inverted>
-            <Minimum>NaN</Minimum>
-            <Maximum>NaN</Maximum>
-            <Interval>NaN</Interval>
-          </Axis>
-          <Series>
-            <Title>Predicted</Title>
-            <Type>Scatter</Type>
-            <XAxis>Bottom</XAxis>
-            <YAxis>Left</YAxis>
-            <ColourArgb>-8388608</ColourArgb>
-            <Marker>None</Marker>
-            <Line>Solid</Line>
-            <X>
-              <TableName>Report</TableName>
-              <FieldName>Clock.Today</FieldName>
-            </X>
-            <Y>
-              <TableName>Report</TableName>
-              <FieldName>Maize.Phenology.Stage</FieldName>
-            </Y>
-            <ShowRegressionLine>false</ShowRegressionLine>
-            <ShowInLegend>true</ShowInLegend>
-            <Cumulative>false</Cumulative>
-          </Series>
-          <Series>
-            <Title>Observed</Title>
-            <Type>Scatter</Type>
-            <XAxis>Bottom</XAxis>
-            <YAxis>Left</YAxis>
-            <ColourArgb>-16776961</ColourArgb>
-            <Marker>FilledCircle</Marker>
-            <Line>None</Line>
-            <X>
-              <TableName>phenologySimple_RainS</TableName>
-              <FieldName>Clock.Today</FieldName>
-            </X>
-            <Y>
-              <TableName>phenologySimple_RainS</TableName>
-              <FieldName>Phenology.StageCode.Value</FieldName>
             </Y>
             <ShowRegressionLine>false</ShowRegressionLine>
             <ShowInLegend>true</ShowInLegend>
