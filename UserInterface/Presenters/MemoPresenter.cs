@@ -12,6 +12,8 @@ namespace UserInterface.Presenters
     using System.Text;
     using Models;
     using Views;
+    using APSIM.Shared.Utilities;
+    using System.Xml;
 
     /// <summary>
     /// Presents the text from a memo component.
@@ -45,7 +47,8 @@ namespace UserInterface.Presenters
             this.memoViewer = view as HTMLView;
             this.explorerPresenter = explorerPresenter;
 
-            this.memoViewer.MemoText = this.memoModel.MemoText;
+            this.memoViewer.ImagePath = Path.GetDirectoryName(explorerPresenter.ApsimXFile.FileName);
+            this.memoViewer.SetContents(this.memoModel.MemoText, true);
         }
 
         /// <summary>
@@ -53,27 +56,19 @@ namespace UserInterface.Presenters
         /// </summary>
         public void Detach()
         {
-            this.Update(null, null);
-        }
-
-        /// <summary>
-        /// Handles the event from the view to update the memo component text.
-        /// </summary>
-        /// <param name="sender">Sending object</param>
-        /// <param name="e">Event arguments</param>
-        public void Update(object sender, EventArgs e)
-        {
-            this.explorerPresenter.CommandHistory.Add(new Commands.ChangeProperty(this.memoModel, "MemoText", this.memoViewer.MemoText));
+            string markdown = this.memoViewer.GetMarkdown();
+            if (markdown != memoModel.MemoText)
+                this.explorerPresenter.CommandHistory.Add(new Commands.ChangeProperty(this.memoModel, "MemoText", markdown));
         }
 
         /// <summary>
         /// The model has changed so update our view.
         /// </summary>
         /// <param name="changedModel">The model object that has changed</param>
-        public void CommandHistory_ModelChanged(object changedModel)
+        public void OnModelChanged(object changedModel)
         {
             if (changedModel == this.memoModel)
-                this.memoViewer.MemoText = ((Memo)changedModel).MemoText;
+                this.memoViewer.SetContents(((Memo)changedModel).MemoText, true);
         }
 
         /// <summary>
@@ -83,7 +78,10 @@ namespace UserInterface.Presenters
         /// <returns>The text from the memo</returns>
         public string ConvertToHtml(string folder)
         {
-            return this.memoViewer.MemoText;
+            System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+            doc.LoadXml(this.memoModel.MemoText);
+            XmlNode bodyNode = XmlUtilities.Find(doc.DocumentElement, "body");
+            return bodyNode.InnerXml;
         }
     }
 }

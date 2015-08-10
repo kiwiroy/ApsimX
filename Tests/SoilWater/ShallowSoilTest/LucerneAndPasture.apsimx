@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Simulations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Simulations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1">
   <Name>Simulations</Name>
   <DataStore>
     <Name>DataStore</Name>
@@ -2278,7 +2278,7 @@ public class Script : Model
           <Interval>NaN</Interval>
         </Axis>
         <Series>
-          <Title>AccumPlantN</Title>
+          <Name>AccumPlantN</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2296,9 +2296,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumPlantN</YFieldName>
         </Series>
         <Series>
-          <Title>AccumMineralisation</Title>
+          <Name>AccumMineralisation</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2316,9 +2319,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumMineralisation</YFieldName>
         </Series>
         <Series>
-          <Title>AccumDenit</Title>
+          <Name>AccumDenit</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2336,9 +2342,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumDenit</YFieldName>
         </Series>
         <Series>
-          <Title>AccumFert</Title>
+          <Name>AccumFert</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2356,9 +2365,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumFert</YFieldName>
         </Series>
         <Series>
-          <Title>AccumLeach</Title>
+          <Name>AccumLeach</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2376,9 +2388,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumLeach</YFieldName>
         </Series>
         <Series>
-          <Title>DeltaSoilOMN</Title>
+          <Name>DeltaSoilOMN</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2396,9 +2411,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.DeltaSoilOMN</YFieldName>
         </Series>
         <Series>
-          <Title>DeltaSurfaceOMN</Title>
+          <Name>DeltaSurfaceOMN</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2416,9 +2434,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.DeltaSurfaceOMN</YFieldName>
         </Series>
         <Series>
-          <Title>DeltaSoilMineralN</Title>
+          <Name>DeltaSoilMineralN</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2436,6 +2457,9 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.DeltaSoilMineralN</YFieldName>
         </Series>
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
@@ -2459,7 +2483,7 @@ public class Script : Model
           <Interval>NaN</Interval>
         </Axis>
         <Series>
-          <Title>Pond</Title>
+          <Name>Pond</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2477,9 +2501,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>SoilWater.pond</YFieldName>
         </Series>
         <Series>
-          <Title>AccumEO</Title>
+          <Name>AccumEO</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2497,9 +2524,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumEO</YFieldName>
         </Series>
         <Series>
-          <Title>AccumEP</Title>
+          <Name>AccumEP</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2517,9 +2547,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumEP</YFieldName>
         </Series>
         <Series>
-          <Title>AccumES</Title>
+          <Name>AccumES</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2537,9 +2570,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumES</YFieldName>
         </Series>
         <Series>
-          <Title>AccumDrainage</Title>
+          <Name>AccumDrainage</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2557,9 +2593,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumDrainage</YFieldName>
         </Series>
         <Series>
-          <Title>AccumRunoff</Title>
+          <Name>AccumRunoff</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2577,9 +2616,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumRunoff</YFieldName>
         </Series>
         <Series>
-          <Title>AccumRainfall</Title>
+          <Name>AccumRainfall</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2597,9 +2639,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumRainfall</YFieldName>
         </Series>
         <Series>
-          <Title>AccumIrrigation</Title>
+          <Name>AccumIrrigation</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2617,9 +2662,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumIrrigation</YFieldName>
         </Series>
         <Series>
-          <Title>AccumLatOutFlow</Title>
+          <Name>AccumLatOutFlow</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2637,9 +2685,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.AccumOutflowLat</YFieldName>
         </Series>
         <Series>
-          <Title>SoilWaterDeficit</Title>
+          <Name>SoilWaterDeficit</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2657,6 +2708,9 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ExtraVariables.Script.SoilWaterDeficit</YFieldName>
         </Series>
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
@@ -2680,7 +2734,7 @@ public class Script : Model
           <Interval>NaN</Interval>
         </Axis>
         <Series>
-          <Title>Leaf</Title>
+          <Name>Leaf</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2698,9 +2752,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Leaf.Live.Wt</YFieldName>
         </Series>
         <Series>
-          <Title>Stem</Title>
+          <Name>Stem</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2718,9 +2775,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Stem.Live.Wt</YFieldName>
         </Series>
         <Series>
-          <Title>Tuber</Title>
+          <Name>Tuber</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2738,9 +2798,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Tuber.Live.Wt</YFieldName>
         </Series>
         <Series>
-          <Title>Root</Title>
+          <Name>Root</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2758,9 +2821,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Root.Live.Wt</YFieldName>
         </Series>
         <Series>
-          <Title>Dead Leaf</Title>
+          <Name>Dead Leaf</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2778,9 +2844,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Leaf.Dead.Wt</YFieldName>
         </Series>
         <Series>
-          <Title>Dead Step</Title>
+          <Name>Dead Step</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2798,9 +2867,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Stem.Dead.Wt</YFieldName>
         </Series>
         <Series>
-          <Title>Dead Tuber</Title>
+          <Name>Dead Tuber</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2818,9 +2890,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Tuber.Dead.Wt</YFieldName>
         </Series>
         <Series>
-          <Title>Root Dead</Title>
+          <Name>Root Dead</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2838,9 +2913,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Root.Dead.Wt</YFieldName>
         </Series>
         <Series>
-          <Title>Above Ground Wt</Title>
+          <Name>Above Ground Wt</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2858,9 +2936,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Summariser.AboveGround.Wt</YFieldName>
         </Series>
         <Series>
-          <Title>Below Ground Wt</Title>
+          <Name>Below Ground Wt</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2878,9 +2959,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Summariser.BelowGround.Wt</YFieldName>
         </Series>
         <Series>
-          <Title>Total Wt</Title>
+          <Name>Total Wt</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2898,6 +2982,9 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Summariser.Total.Wt</YFieldName>
         </Series>
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
@@ -2921,7 +3008,7 @@ public class Script : Model
           <Interval>NaN</Interval>
         </Axis>
         <Series>
-          <Title>Leaf</Title>
+          <Name>Leaf</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2939,9 +3026,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Leaf.Live.N</YFieldName>
         </Series>
         <Series>
-          <Title>Stem</Title>
+          <Name>Stem</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2959,9 +3049,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Stem.Live.N</YFieldName>
         </Series>
         <Series>
-          <Title>Tuber</Title>
+          <Name>Tuber</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2979,9 +3072,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Tuber.Live.N</YFieldName>
         </Series>
         <Series>
-          <Title>Root</Title>
+          <Name>Root</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -2999,9 +3095,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Root.Live.N</YFieldName>
         </Series>
         <Series>
-          <Title>Dead Leaf</Title>
+          <Name>Dead Leaf</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3019,9 +3118,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Leaf.Dead.N</YFieldName>
         </Series>
         <Series>
-          <Title>Dead Step</Title>
+          <Name>Dead Step</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3039,9 +3141,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Stem.Dead.N</YFieldName>
         </Series>
         <Series>
-          <Title>Dead Tuber</Title>
+          <Name>Dead Tuber</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3059,9 +3164,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Tuber.Dead.N</YFieldName>
         </Series>
         <Series>
-          <Title>Root Dead</Title>
+          <Name>Root Dead</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3079,9 +3187,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Root.Dead.N</YFieldName>
         </Series>
         <Series>
-          <Title>Above Ground Wt</Title>
+          <Name>Above Ground Wt</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3099,9 +3210,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Summariser.AboveGround.N</YFieldName>
         </Series>
         <Series>
-          <Title>Below Ground Wt</Title>
+          <Name>Below Ground Wt</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3119,9 +3233,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Summariser.BelowGround.N</YFieldName>
         </Series>
         <Series>
-          <Title>Total Wt</Title>
+          <Name>Total Wt</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3139,9 +3256,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Summariser.Total.N</YFieldName>
         </Series>
         <Series>
-          <Title>Total Live N</Title>
+          <Name>Total Live N</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3159,6 +3279,9 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Summariser.TotalLive.N</YFieldName>
         </Series>
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
@@ -3190,7 +3313,7 @@ public class Script : Model
           <Interval>NaN</Interval>
         </Axis>
         <Series>
-          <Title>Supply</Title>
+          <Name>Supply</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3208,9 +3331,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Root.WaterSupply</YFieldName>
         </Series>
         <Series>
-          <Title>Uptake</Title>
+          <Name>Uptake</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3228,9 +3354,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Root.WaterUptake</YFieldName>
         </Series>
         <Series>
-          <Title>Demand</Title>
+          <Name>Demand</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3248,9 +3377,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Leaf.WaterDemand</YFieldName>
         </Series>
         <Series>
-          <Title>Transpiration</Title>
+          <Name>Transpiration</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3268,9 +3400,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Leaf.Transpiration</YFieldName>
         </Series>
         <Series>
-          <Title>Potential</Title>
+          <Name>Potential</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3288,9 +3423,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>Soil.SoilWater.Eo</YFieldName>
         </Series>
         <Series>
-          <Title>Root Depth</Title>
+          <Name>Root Depth</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Right</YAxis>
@@ -3308,9 +3446,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Root.Depth</YFieldName>
         </Series>
         <Series>
-          <Title>Canopy Height</Title>
+          <Name>Canopy Height</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Right</YAxis>
@@ -3328,6 +3469,9 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Leaf.Height</YFieldName>
         </Series>
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
@@ -3358,7 +3502,7 @@ public class Script : Model
           <Interval>NaN</Interval>
         </Axis>
         <Series>
-          <Title>Cover Dead</Title>
+          <Name>Cover Dead</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3376,9 +3520,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Leaf.CoverDead</YFieldName>
         </Series>
         <Series>
-          <Title>Cover Green</Title>
+          <Name>Cover Green</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3396,9 +3543,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Leaf.CoverGreen</YFieldName>
         </Series>
         <Series>
-          <Title>CoverTotal</Title>
+          <Name>CoverTotal</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3416,9 +3566,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Leaf.CoverTotal</YFieldName>
         </Series>
         <Series>
-          <Title>LAI</Title>
+          <Name>LAI</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3436,9 +3589,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Leaf.LAI</YFieldName>
         </Series>
         <Series>
-          <Title>LAI Dead</Title>
+          <Name>LAI Dead</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3456,9 +3612,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Leaf.LAIDead</YFieldName>
         </Series>
         <Series>
-          <Title>Root depth</Title>
+          <Name>Root depth</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Right</YAxis>
@@ -3476,6 +3635,9 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Root.Depth</YFieldName>
         </Series>
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
@@ -3507,7 +3669,7 @@ public class Script : Model
           <Interval>NaN</Interval>
         </Axis>
         <Series>
-          <Title>Series 0</Title>
+          <Name>Series 0</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3525,9 +3687,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Arbitrator.NDemand</YFieldName>
         </Series>
         <Series>
-          <Title>Series2</Title>
+          <Name>Series2</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3545,6 +3710,9 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>PMFSlurp.Root.NSupply.Uptake</YFieldName>
         </Series>
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
@@ -3576,7 +3744,7 @@ public class Script : Model
           <Interval>NaN</Interval>
         </Axis>
         <Series>
-          <Title>Series 0</Title>
+          <Name>Series 0</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3594,9 +3762,12 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ReadExternalFile.Script.CoverToday</YFieldName>
         </Series>
         <Series>
-          <Title>Series2</Title>
+          <Name>Series2</Name>
           <Type>Scatter</Type>
           <XAxis>Bottom</XAxis>
           <YAxis>Left</YAxis>
@@ -3614,6 +3785,9 @@ public class Script : Model
           <ShowRegressionLine>false</ShowRegressionLine>
           <ShowInLegend>true</ShowInLegend>
           <Cumulative>false</Cumulative>
+          <TableName>Report</TableName>
+          <XFieldName>Clock.Today</XFieldName>
+          <YFieldName>ReadExternalFile.Script.leaflai</YFieldName>
         </Series>
         <LegendPosition>TopLeft</LegendPosition>
         <ShowRegressionLine>false</ShowRegressionLine>
@@ -3640,7 +3814,7 @@ public class Script : Model
         <Interval>NaN</Interval>
       </Axis>
       <Series>
-        <Title>Predicted</Title>
+        <Name>Predicted</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -3658,9 +3832,12 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Report</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>PMFSlurp.Leaf.CoverTotal</YFieldName>
       </Series>
       <Series>
-        <Title>Observed</Title>
+        <Name>Observed</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -3678,6 +3855,9 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Cover</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>SLURP.Leaf.CoverTotal</YFieldName>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>
@@ -3708,7 +3888,7 @@ public class Script : Model
         <Interval>NaN</Interval>
       </Axis>
       <Series>
-        <Title>Predicted</Title>
+        <Name>Predicted</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -3726,9 +3906,12 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Report</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>PMFSlurp.Leaf.CoverTotal</YFieldName>
       </Series>
       <Series>
-        <Title>Observed</Title>
+        <Name>Observed</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -3746,6 +3929,9 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Cover</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>SLURP.Leaf.CoverTotal</YFieldName>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>
@@ -3776,7 +3962,7 @@ public class Script : Model
         <Interval>NaN</Interval>
       </Axis>
       <Series>
-        <Title>Predicted</Title>
+        <Name>Predicted</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -3794,9 +3980,12 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Report</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>ExtraVariables.Script.SWC</YFieldName>
       </Series>
       <Series>
-        <Title>Observed</Title>
+        <Name>Observed</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -3814,6 +4003,9 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>ProfileSWC</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>ExtraVariables.Script.SWC</YFieldName>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>
@@ -3842,7 +4034,7 @@ public class Script : Model
         <Interval>NaN</Interval>
       </Axis>
       <Series>
-        <Title>Predicted</Title>
+        <Name>Predicted</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -3860,9 +4052,12 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Report</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(1)</YFieldName>
       </Series>
       <Series>
-        <Title>Observed</Title>
+        <Name>Observed</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -3880,6 +4075,9 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>LayerSWC</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(1)</YFieldName>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>
@@ -3908,7 +4106,7 @@ public class Script : Model
         <Interval>NaN</Interval>
       </Axis>
       <Series>
-        <Title>Predicted</Title>
+        <Name>Predicted</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -3926,9 +4124,12 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Report</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(2)</YFieldName>
       </Series>
       <Series>
-        <Title>Observed</Title>
+        <Name>Observed</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -3946,6 +4147,9 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>LayerSWC</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(2)</YFieldName>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>
@@ -3974,7 +4178,7 @@ public class Script : Model
         <Interval>NaN</Interval>
       </Axis>
       <Series>
-        <Title>Predicted</Title>
+        <Name>Predicted</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -3992,9 +4196,12 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Report</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(3)</YFieldName>
       </Series>
       <Series>
-        <Title>Observed</Title>
+        <Name>Observed</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4012,6 +4219,9 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>LayerSWC</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(3)</YFieldName>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>
@@ -4040,7 +4250,7 @@ public class Script : Model
         <Interval>NaN</Interval>
       </Axis>
       <Series>
-        <Title>Predicted</Title>
+        <Name>Predicted</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4058,9 +4268,12 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Report</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(4)</YFieldName>
       </Series>
       <Series>
-        <Title>Observed</Title>
+        <Name>Observed</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4078,6 +4291,9 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>LayerSWC</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(4)</YFieldName>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>
@@ -4106,7 +4322,7 @@ public class Script : Model
         <Interval>NaN</Interval>
       </Axis>
       <Series>
-        <Title>Predicted</Title>
+        <Name>Predicted</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4124,9 +4340,12 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Report</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(5)</YFieldName>
       </Series>
       <Series>
-        <Title>Observed</Title>
+        <Name>Observed</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4144,6 +4363,9 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>LayerSWC</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(5)</YFieldName>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>
@@ -4172,7 +4394,7 @@ public class Script : Model
         <Interval>NaN</Interval>
       </Axis>
       <Series>
-        <Title>Predicted</Title>
+        <Name>Predicted</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4190,9 +4412,12 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Report</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(6)</YFieldName>
       </Series>
       <Series>
-        <Title>Observed</Title>
+        <Name>Observed</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4210,6 +4435,9 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>LayerSWC</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(6)</YFieldName>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>
@@ -4238,7 +4466,7 @@ public class Script : Model
         <Interval>NaN</Interval>
       </Axis>
       <Series>
-        <Title>Predicted</Title>
+        <Name>Predicted</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4256,9 +4484,12 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Report</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(7)</YFieldName>
       </Series>
       <Series>
-        <Title>Observed</Title>
+        <Name>Observed</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4276,6 +4507,9 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>LayerSWC</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(7)</YFieldName>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>
@@ -4304,7 +4538,7 @@ public class Script : Model
         <Interval>NaN</Interval>
       </Axis>
       <Series>
-        <Title>Predicted</Title>
+        <Name>Predicted</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4322,9 +4556,12 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Report</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(8)</YFieldName>
       </Series>
       <Series>
-        <Title>Observed</Title>
+        <Name>Observed</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4342,6 +4579,9 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>LayerSWC</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(8)</YFieldName>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>
@@ -4370,7 +4610,7 @@ public class Script : Model
         <Interval>NaN</Interval>
       </Axis>
       <Series>
-        <Title>Predicted</Title>
+        <Name>Predicted</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4388,9 +4628,12 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>true</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>Report</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(9)</YFieldName>
       </Series>
       <Series>
-        <Title>Observed</Title>
+        <Name>Observed</Name>
         <Type>Scatter</Type>
         <XAxis>Bottom</XAxis>
         <YAxis>Left</YAxis>
@@ -4408,6 +4651,9 @@ public class Script : Model
         <ShowRegressionLine>false</ShowRegressionLine>
         <ShowInLegend>false</ShowInLegend>
         <Cumulative>false</Cumulative>
+        <TableName>LayerSWC</TableName>
+        <XFieldName>Clock.Today</XFieldName>
+        <YFieldName>Soil.SoilWater.SW(9)</YFieldName>
       </Series>
       <LegendPosition>TopLeft</LegendPosition>
       <ShowRegressionLine>false</ShowRegressionLine>

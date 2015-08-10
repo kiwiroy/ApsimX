@@ -1,0 +1,5 @@
+C:\ApsimX\bin\ApServer.exe
+C:\ApsimX\bin\ApServer.pdb
+C:\ApsimX\ApServer\obj\x86\Debug\ApServer.csprojResolveAssemblyReference.cache
+C:\ApsimX\ApServer\obj\x86\Debug\ApServer.exe
+C:\ApsimX\ApServer\obj\x86\Debug\ApServer.pdb

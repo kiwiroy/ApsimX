@@ -1,0 +1,471 @@
+.MCSPTESTBASE
+-------------
+Simulation name:   MCSPTestBase
+
+<br/>
+WEATHER
+-------
+Weather file name:   %root%\Tests\WeatherFiles\lincoln.met
+
+<br/>
+CLOCK
+-----
+The start date of the simulation:   1998-10-14
+  The end date of the simulation:   1999-05-01
+
+<br/>
+FIELD.SOIL
+----------
+    Record number:       0
+ Latitude (WGS84):   0.000
+Longitude (WGS84):   0.000
+
+<br/>
+FIELD.SOIL.ANALYSIS
+-------------------
+Depth (cm)  PH (1:5 water)
+      0-10             6.6
+     10-30             6.2
+     30-60             5.7
+     60-90             5.5
+    90-120             5.5
+   120-150             5.5
+
+<br/>
+FIELD.SOIL.INITIAL WATER
+------------------------
+        Fraction full:          1.000
+    Depth of wet soil:            NaN
+Plant available water:   180.000 (mm)
+
+<br/>
+FIELD.SOIL.WATER
+----------------
+Depth (cm)  BD (g/cc)  Air dry (mm/mm)  LL15 (mm/mm)  DUL (mm/mm)  SAT (mm/mm)
+      0-10       1.20             0.08          0.13         0.33         0.50
+     10-30       1.20             0.13          0.13         0.33         0.50
+     30-60       1.20             0.10          0.10         0.31         0.44
+     60-90       1.20             0.06          0.06         0.15         0.46
+    90-120       1.20             0.04          0.04         0.10         0.44
+   120-150       1.20             0.02          0.02         0.06         0.44
+
+<br/>
+FIELD.SOIL.WATER.MCSPSOIL
+-------------------------
+MCSP Depth (cm)  MCSP LL (mm/mm)  MCSP PAWC (mm)  MCSP KL (mm/mm)  MCSP XF (mm/mm)
+           0-10             0.13            20.0             0.06              1.0
+          10-30             0.13            40.0             0.06              1.0
+          30-60              0.1            63.0             0.06              1.0
+          60-90             0.08            21.0             0.06              1.0
+         90-120             0.11             0.0             0.06              1.0
+        120-150             0.11             0.0             0.06              1.0
+                                           144.0                                  
+
+<br/>
+FIELD.SOIL.WATER.POTATOSOIL
+---------------------------
+Potato Depth (cm)  Potato LL (mm/mm)  Potato PAWC (mm)  Potato KL (mm/mm)  Potato XF (mm/mm)
+             0-10               0.13              20.0               0.10                1.0
+            10-30               0.13              40.0               0.06                1.0
+            30-60               0.27              12.0               0.03                0.1
+            60-90               0.27               0.0               0.01                0.0
+           90-120                0.3               0.0               0.00                0.0
+          120-150                0.3               0.0               0.00                0.0
+                                                  72.0                                      
+
+<br/>
+FIELD.SOIL.SOILORGANICMATTER
+----------------------------
+                  Root C:N ratio:     30.000
+             Root Weight (kg/ha):   3000.000
+                  Soil C:N ratio:     11.500
+Erosion enrichment coefficient A:      7.400
+Erosion enrichment coefficient B:      0.200
+
+Depth (cm)  OC (Total %)  FBiom (0-1)  FInert (0-1)
+      0-10          1.82        0.025           0.3
+     10-30          1.47        0.025           0.4
+     30-60          1.20        0.015          0.75
+     60-90          1.03         0.01           0.9
+    90-120          0.47         0.01          0.96
+   120-150          0.47         0.01          0.96
+
+<br/>
+FIELD.SOIL.INITIAL NITROGEN
+---------------------------
+Depth (cm)  NO3kgha  NH4kgha
+      0-10    270.0      0.0
+     10-30     30.0      0.0
+     30-60      5.0      0.0
+     60-90      5.0      0.0
+    90-120      0.0      0.0
+   120-150      0.0      0.0
+
+<br/>
+FIELD.MCSPSOWINGRULE
+--------------------
+
+        using System;
+        using Models.Core;
+        using Models.PMF;
+        namespace Models
+        {
+           [Serializable] 
+           [System.Xml.Serialization.XmlInclude(typeof(Model))]
+            public class Script : Model
+            {      
+               [Link] Plant MCSP;
+               [Link] Clock Clock;
+
+               [Description("Cultivar")]
+               public string CultivarName { get; set; }
+               [Description("Initial Root Depth")]
+               public double InitialRootDepth { get; set; }
+               [Description("Sowing Date")]
+               public DateTime SowingDate { get; set; }
+
+               
+               [EventSubscribe("DoManagement")]
+               private void OnDoManagement(object sender, EventArgs e)
+               {
+                if (Clock.Today.Date == SowingDate)
+                    MCSP.Sow(cultivar:CultivarName, population:1, depth:InitialRootDepth, rowSpacing:150);
+                //PMFCrop.Sow(... Contains the following arguements:
+                //Population  double  Optional  Seeds sowing/m2.  Default is zero
+                //Cultivar    string  Required  "NameOfCultivar"
+                //Depth       double  Optional  Depth (mm) seed sown.   Default is 100mm 
+                //MaxCover    double  Optional  Proportion (0-1) of the ground row crop will cover.   Default is 1.0
+                //BudNumber   double  Optional  Number of mainstems per seed sown.  Default is 1.0
+                //RowSpacing  double  Optional  Spaceing (mm) between drill rows when crop is sown.  Default is 150mm
+                //CropClass   string  Optional  Crop class to instantiate when crop is sown.  Default is "Plant"
+               }
+            }
+        }
+                
+<br/>
+FIELD.EXTRAVARIABLES
+--------------------
+using System;
+using Models.Core;
+using System.Collections.Generic;
+using System.Text;
+using Models.Soils;
+using Models.PMF;
+using Models;
+using System.Xml.Serialization;
+namespace Models
+{
+    [Serializable] 
+    public class Script : Model
+    {      
+        [Link] Clock Clock;
+        [Link] Soils.Soil Soil;
+        [Link] Models.SurfaceOM.SurfaceOrganicMatter SOM;
+        [Link] Weather Met;   
+        [Link] Fertiliser Fert;
+        [Link] Irrigation Irrig;  
+        [Link] Plant MCSP;
+        [Link] Zone zone;
+                    
+        [XmlIgnore] public bool InitialDay { get; set; }
+        
+        [XmlIgnore] public double AccumPlantN { get; set; }
+        [XmlIgnore] public double AccumMineralisation { get; set; }
+        [XmlIgnore] public double AccumDenit { get; set; }
+        [XmlIgnore] public double AccumFert { get; set; }
+        [XmlIgnore] public double AccumLeach { get; set; }
+        [XmlIgnore] public double AccumDetach { get; set; }
+        [XmlIgnore] public double DeltaSoilOMN { get; set; }
+        [XmlIgnore] public double DeltaSurfaceOMN { get; set; }
+        [XmlIgnore] public double DeltaSoilMineralN { get; set; }
+        [XmlIgnore] public double SoilNitrogenContent { get; set; }
+        
+        [XmlIgnore] public double AccumEO { get; set; }
+        [XmlIgnore] public double AccumEP { get; set; }
+        [XmlIgnore] public double AccumES { get; set; }
+        [XmlIgnore] public double AccumDrainage { get; set; }
+        [XmlIgnore] public double AccumRunoff { get; set; }
+        [XmlIgnore] public double AccumOutflowLat { get; set; }
+        [XmlIgnore] public double AccumIrrigation { get; set; }
+        [XmlIgnore] public double AccumRainfall { get; set; }
+        [XmlIgnore] public double SoilWaterDeficit { get; set; }
+    
+        [XmlIgnore] public double  InitialSoilOMN { get; set; }
+        [XmlIgnore] public double  InitialSurfaceOMN { get; set; }
+        [XmlIgnore] public double  InitialMineralN { get; set; }
+        
+        [XmlIgnore] public double SWC { get; set; }
+        [XmlIgnore] public double DUL { get; set; }
+        [XmlIgnore] public double OutFlowLat { get; set; }
+
+        [XmlIgnore] public double FomN { get; set; }
+        [XmlIgnore] public double BiomN { get; set; }
+        [XmlIgnore] public double HumN { get; set; }
+        [XmlIgnore] public double OrganicN { get; set; }
+        [XmlIgnore] public double NO3N { get; set; }
+        [XmlIgnore] public double NH4N { get; set; }
+        [XmlIgnore] public double UreaN { get; set; }
+        [XmlIgnore] public double MineralN { get; set; }
+        [XmlIgnore] public double DltNMinRes { get; set; }
+        [XmlIgnore] public double DltNMinTot { get; set; }
+        
+        [EventSubscribe("Commencing")]
+        private void OnSimulationCommencing(object sender, EventArgs e)
+        {
+            InitialDay = true;
+        }       
+        
+        [EventSubscribe("DoManagement")]
+        private void OnDoManagement(object sender, EventArgs e)
+        {
+            //!!!!!! Nitrogen balance components !!!!!!
+            //!!!!!!^^^^^^^^^^^^^^^^^^^^^^^^^^^^^!!!!!!
+               FomN = Utility.Math.Sum(Soil.SoilNitrogen.FOMN);
+            HumN = Utility.Math.Sum(Soil.SoilNitrogen.HumicN);
+            BiomN = Utility.Math.Sum(Soil.SoilNitrogen.MicrobialN);
+            OrganicN = FomN + HumN + BiomN;
+            NO3N = Utility.Math.Sum(Soil.NO3N);
+            NH4N = Utility.Math.Sum(Soil.NH4N);
+            UreaN = Utility.Math.Sum(Soil.SoilNitrogen.urea);
+            MineralN = NO3N + NH4N + UreaN; 
+            DltNMinRes = Utility.Math.Sum(Soil.SoilNitrogen.dlt_n_min_res);
+            DltNMinTot = Utility.Math.Sum(Soil.SoilNitrogen.MineralisedN);
+            int layers = Soil.Thickness.Length;
+            if (InitialDay == true)
+            {
+                InitialSurfaceOMN = SOM.N;
+                InitialSoilOMN = OrganicN;
+                InitialMineralN = MineralN;
+                InitialDay = false;
+            }
+            DeltaSurfaceOMN = SOM.N - InitialSurfaceOMN;
+            AccumLeach = AccumLeach - Soil.SoilWater.LeachNH4 - Soil.SoilWater.LeachNO3 - Soil.SoilWater.LeachUrea; //Fails
+            AccumMineralisation += Utility.Math.Sum(Soil.SoilNitrogen.MineralisedN);
+            AccumDenit -= Utility.Math.Sum(Soil.SoilNitrogen.Denitrification);
+            AccumPlantN -= (double)zone.Get("MCSP.Root.NUptake");
+            DeltaSoilOMN = OrganicN - InitialSoilOMN;
+            DeltaSoilMineralN = MineralN - InitialMineralN;
+            SoilNitrogenContent = MineralN;
+            
+            //!!!!!! Water balance components !!!!!!
+            //!!!!!!^^^^^^^^^^^^^^^^^^^^^^^^^^!!!!!!
+
+            AccumRainfall += Met.Rain;
+            //AccumEP -= (double)zone.Get("[MCSP].Leaf.Transpiration");
+            AccumEP -= (double)zone.Get("MCSP.Root.WaterUptake");
+            SoilWaterDeficit =  (SWC - DUL);
+            double OutFlowLat = Utility.Math.Sum(Soil.SoilWater.outflow_lat);
+            AccumOutflowLat -= OutFlowLat;
+        }
+        
+        [EventSubscribe("DoManagementCalculations")]
+        private void OnDoManagementCalculations(object sender, EventArgs e)
+        {
+            FomN = Utility.Math.Sum(Soil.SoilNitrogen.FOMN);
+            HumN = Utility.Math.Sum(Soil.SoilNitrogen.HumicN);
+            BiomN = Utility.Math.Sum(Soil.SoilNitrogen.MicrobialN);
+            AccumFert += Fert.NitrogenApplied;
+            AccumIrrigation += Irrig.IrrigationApplied;
+            
+            
+            AccumEO -= Soil.SoilWater.Eo;
+            AccumES -= Soil.SoilWater.Es; 
+            AccumDrainage -= Soil.SoilWater.Drainage;
+            AccumRunoff -= Soil.SoilWater.Runoff;
+            SWC = Utility.Math.Sum(Soil.SoilWater.SWmm);
+            DUL = Utility.Math.Sum(Soil.SoilWater.DULmm);
+        }
+    }
+}
+       
+<br/>
+FIELD.SURFACE ORGANIC MATTER
+----------------------------
+Surface organic matter pool name:             wheat
+Surface organic matter pool type:             wheat
+ Mass of surface residue (kg/ha):      2000 (kg/ha)
+         Standing fraction (0-1):           0 (0-1)
+     Carbon:Nitrogen ratio (g/g):          80 (g/g)
+                  Carbon content:   800.000 (kg/ha)
+                Nitrogen content:    10.000 (kg/ha)
+              Phosphorus content:     0.000 (kg/ha)
+
+<br/>
+FIELD.REPORT
+------------
+                             Output variables  Output frequency
+                                [Clock].Today  [Clock].DoReport
+          [ExtraVariables].Script.AccumPlantN                  
+  [ExtraVariables].Script.AccumMineralisation                  
+           [ExtraVariables].Script.AccumDenit                  
+            [ExtraVariables].Script.AccumFert                  
+           [ExtraVariables].Script.AccumLeach                  
+          [ExtraVariables].Script.AccumDetach                  
+         [ExtraVariables].Script.DeltaSoilOMN                  
+      [ExtraVariables].Script.DeltaSurfaceOMN                  
+    [ExtraVariables].Script.DeltaSoilMineralN                  
+                  [ExtraVariables].Script.SWC                  
+                  [ExtraVariables].Script.DUL                  
+           [ExtraVariables].Script.OutFlowLat                  
+              [ExtraVariables].Script.AccumEO                  
+              [ExtraVariables].Script.AccumEP                  
+              [ExtraVariables].Script.AccumES                  
+        [ExtraVariables].Script.AccumDrainage                  
+          [ExtraVariables].Script.AccumRunoff                  
+        [ExtraVariables].Script.AccumRainfall                  
+      [ExtraVariables].Script.AccumIrrigation                  
+      [ExtraVariables].Script.AccumOutflowLat                  
+     [ExtraVariables].Script.SoilWaterDeficit                  
+  [ExtraVariables].Script.SoilNitrogenContent                  
+                 [ExtraVariables].Script.FomN                  
+                 [ExtraVariables].Script.HumN                  
+                [ExtraVariables].Script.BiomN                  
+           [ExtraVariables].Script.DltNMinRes                  
+           [ExtraVariables].Script.DltNMinTot                  
+                      [MicroClimate].net_radn                  
+                          [MicroClimate].peta                  
+                          [MicroClimate].petr                  
+                    [Soil].SoilWater.Drainage                  
+                      [Soil].SoilWater.Runoff                  
+                          [Soil].SoilWater.Eo                  
+                          [Soil].SoilWater.Es                  
+                        [Soil].SoilWater.pond                  
+                        [Soil].SoilWater.SWmm                  
+                                  [Soil].NO3N                  
+                          [MCSP].Leaf.Live.Wt                  
+                          [MCSP].Root.Live.Wt                  
+                       [MCSP].Product.Live.Wt                  
+                           [MCSP].Leaf.Live.N                  
+                           [MCSP].Root.Live.N                  
+                        [MCSP].Product.Live.N                  
+                       [MCSP].Leaf.Live.NConc                  
+                       [MCSP].Root.Live.NConc                  
+                    [MCSP].Product.Live.NConc                  
+                      [MCSP].Root.WaterSupply                  
+                      [MCSP].Root.WaterUptake                  
+                    [MCSP].Leaf.Transpiration                  
+                      [MCSP].Leaf.WaterDemand                  
+                            [MCSP].Root.Depth                  
+                       [MCSP].Leaf.CoverTotal                  
+                        [MCSP].Leaf.CoverDead                  
+                              [MCSP].Leaf.LAI                  
+                           [MCSP].Leaf.Height                  
+           [MCSP].Leaf.PotentialBiomass.Value                  
+                       [MCSP].Product.LiveFWt                  
+               [MCSP].OrganArbitrator.NDemand                  
+               [MCSP].OrganArbitrator.NSupply                  
+                               [MCSP].Leaf.Fw                  
+                               [MCSP].Leaf.Fn                  
+                   [MCSP].Summariser.Total.Wt                  
+                   [MCSP].ExpectedYield.Value                  
+                        [MCSP].DryYield.Value                  
+ [MCSP].TotalBiomassAtStartReproductive.Value                  
+   [MCSP].TotalBiomassAtStartSenescence.Value                  
+                            [MCSP].Ymax.Value                  
+                    [MCSP].Summariser.Total.N                  
+              [MCSP].OrganArbitrator.DMSupply                  
+              [MCSP].OrganArbitrator.DMDemand                  
+[MCSP].Phenology.AccumulatedThermalTime.Value                  
+
+<br/>
+SIMULATION LOG:
+---------------
+
+
+1998-10-14 Field.MCSP
+    A crop of MCSP (cultivar = Barley_Spring) was sown today at a population of 1 plants/m2 with 1 buds per plant at a row spacing of 150 and a depth of 10 mm
+    
+
+
+1998-10-15 Field.Fertiliser
+    50 kg/ha of UreaN added at depth 10 layer 1
+    
+
+
+1998-10-15 Field.MCSP.Summariser
+    Germination
+    
+    
+
+
+1998-10-16 Field.MCSP.Summariser
+    Emergence
+    
+    
+
+
+1998-10-26 Field.Irrigation
+    70.0 mm of water added at depth 0
+    
+
+
+1998-12-15 Field.Irrigation
+    70.0 mm of water added at depth 0
+    
+
+
+1998-12-29 Field.Irrigation
+    10.0 mm of water added at depth 0
+    
+
+
+1998-12-29 Field.MCSP.Summariser
+    StartReproductive
+    
+    
+
+
+1998-12-30 Field.Irrigation
+    55.0 mm of water added at depth 0
+    
+
+
+1999-01-07 Field.Irrigation
+    50.0 mm of water added at depth 0
+    
+
+
+1999-01-21 Field.Irrigation
+    40.0 mm of water added at depth 0
+    
+
+
+1999-01-25 Field.MCSP.Summariser
+    StartSenescence
+    
+    
+
+
+1999-02-10 Field.Irrigation
+    28.0 mm of water added at depth 0
+    
+
+
+1999-02-11 Field.MCSP.Summariser
+    EndReproductive
+    
+    
+
+
+1999-02-19 Field.Irrigation
+    15.0 mm of water added at depth 0
+    
+
+
+1999-02-28 Field.MCSP.Summariser
+    Maturity
+    
+    
+
+
+1999-03-09 Field.Irrigation
+    25.0 mm of water added at depth 0
+    
+
+
+1999-05-02 Clock
+    Simulation terminated normally
+    
+
+
+############################################################################

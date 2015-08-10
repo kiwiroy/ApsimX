@@ -71,6 +71,7 @@ namespace UserInterface.Presenters
         /// <param name="explorerPresenter">The parent explorer presenter</param>
         public void Attach(object model, object view, ExplorerPresenter explorerPresenter)
         {
+            string[] split;
             this.grid = view as IGridView;
             this.model = model as Model;
             this.explorerPresenter = explorerPresenter;
@@ -78,7 +79,15 @@ namespace UserInterface.Presenters
             this.FindAllProperties();
             this.PopulateGrid(this.model);
             this.grid.CellsChanged += this.OnCellValueChanged;
+            this.grid.ButtonClick += OnFileBrowseClick;
+            this.grid.ResizeControls();
             this.explorerPresenter.CommandHistory.ModelChanged += this.OnModelChanged;
+            if (model != null)
+            {
+                split = this.model.GetType().ToString().Split('.');
+                this.grid.ModelName = split[split.Length - 1];
+                this.grid.LoadImage();
+            }
         }
 
         /// <summary>
@@ -87,6 +96,7 @@ namespace UserInterface.Presenters
         public void Detach()
         {
             this.grid.CellsChanged -= this.OnCellValueChanged;
+            this.grid.ButtonClick -= OnFileBrowseClick;
             this.explorerPresenter.CommandHistory.ModelChanged -= this.OnModelChanged;
         }
 
@@ -181,6 +191,7 @@ namespace UserInterface.Presenters
         /// </summary>
         private void FormatGrid()
         {
+            string[] fieldNames = null;
             for (int i = 0; i < this.properties.Count; i++)
             {
                 IGridCell cell = this.grid.GetCell(1, i);
@@ -190,6 +201,12 @@ namespace UserInterface.Presenters
                     DataStore dataStore = new DataStore(this.model);
                     cell.EditorType = EditorTypeEnum.DropDown;
                     cell.DropDownStrings = dataStore.TableNames;
+                    if (cell.Value != null && cell.Value.ToString() != string.Empty)
+                    {
+                        DataTable data = dataStore.RunQuery("SELECT * FROM " + cell.Value.ToString() + " LIMIT 1");
+                        if (data != null)
+                            fieldNames = DataTableUtilities.GetColumnNames(data);
+                    }
                     dataStore.Disconnect();
                 }
                 else if (this.properties[i].DisplayType == DisplayAttribute.DisplayTypeEnum.CultivarName)
@@ -201,6 +218,16 @@ namespace UserInterface.Presenters
                         cell.DropDownStrings = crop.CultivarNames;
                     }
                     
+                }
+                else if (this.properties[i].DisplayType == DisplayAttribute.DisplayTypeEnum.FileName)
+                {
+                    cell.EditorType = EditorTypeEnum.Button;
+                }
+                else if (this.properties[i].DisplayType == DisplayAttribute.DisplayTypeEnum.FieldName)
+                {
+                    cell.EditorType = EditorTypeEnum.DropDown;
+                    if (fieldNames != null)
+                        cell.DropDownStrings = fieldNames;
                 }
                 else
                 {
@@ -290,8 +317,6 @@ namespace UserInterface.Presenters
             this.explorerPresenter.CommandHistory.ModelChanged += this.OnModelChanged;
         }
 
-
-
         /// <summary>
         /// Set the value of the specified property
         /// </summary>
@@ -337,6 +362,22 @@ namespace UserInterface.Presenters
             if (changedModel == this.model)
             {
                 this.PopulateGrid(this.model);
+            }
+        }
+
+        /// <summary>
+        /// Called when user clicks on a file name.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void OnFileBrowseClick(object sender, GridCellsChangedArgs e)
+        {
+            string fileName = explorerPresenter.AskUserForFile("Select file");
+            if (fileName != null)
+            {
+                e.ChangedCells[0].Value = fileName;
+                OnCellValueChanged(sender, e);
+                PopulateGrid(model);
             }
         }
     }

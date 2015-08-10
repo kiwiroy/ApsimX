@@ -11,33 +11,32 @@ using APSIM.Shared.Utilities;
 
 namespace Models.PMF.Organs
 {
-     /*! 
-        <summary>
-        Model of generic organ 
-        </summary>
-        \param <b>(IFunction, Optional)</b> SenescenceRateFunction Rate of organ senescence 
-            (default 0 if this parameter does not exist, i.e no senescence).
-        \param <b>(IFunction, Optional)</b> StructuralFraction Fraction of organ structural component 
-            (default 1 if this parameter does not exist, i.e all biomass is structural).
-        \param <b>(IFunction, Optional)</b> InitialWtFunction Initial weight of organ 
-            (default 0 if this parameter does not exist, i.e. no initial weight).
-        \param <b>(IFunction, Optional)</b> InitialStructuralFraction Fraction of initial weight of organ 
-            (default 1 if this parameter does not exist, i.e. all initial biomass is structural).
-        \param <b>(IFunction, Optional)</b> NReallocationFactor Factor of nitrogen reallocation  
-            (0-1; default 0 if this parameter does not exist, i.e. no nitrogen reallocation).
-        \param <b>(IFunction, Optional)</b> NRetranslocationFactor Factor of nitrogen retranslocation  
-            (0-1; default 0 if this parameter does not exist, i.e. no nitrogen retranslocation).
-        \param MinimumNConc MinimumNConc Minimum nitrogen concentration
-        \param MinimumNConc MaximumNConc Maximum nitrogen concentration.
-        \retval LiveFWt The live fresh weight (g m<sup>-2</sup>)
-        <remarks>
-        </remarks>
-    */
-
-
+ 
     /// <summary>
-    /// Model of generic organ
+    /// Model of generic organ 
     /// </summary>
+    /// \param <b>(IFunction, Optional)</b> SenescenceRateFunction Rate of organ senescence 
+    ///     (default 0 if this parameter does not exist, i.e no senescence).
+    /// \param <b>(IFunction, Optional)</b> StructuralFraction Fraction of organ structural component 
+    ///     (default 1 if this parameter does not exist, i.e all biomass is structural).
+    /// \param <b>(IFunction, Optional)</b> InitialWtFunction Initial weight of organ 
+    ///      (default 0 if this parameter does not exist, i.e. no initial weight).
+    /// \param <b>(IFunction, Optional)</b> InitialStructuralFraction Fraction of initial weight of organ 
+    ///      (default 1 if this parameter does not exist, i.e. all initial biomass is structural).
+    /// \param <b>(IFunction, Optional)</b> NReallocationFactor Factor of nitrogen reallocation  
+    ///      (0-1; default 0 if this parameter does not exist, i.e. no nitrogen reallocation).
+    /// \param <b>(IFunction, Optional)</b> NRetranslocationFactor Factor of nitrogen retranslocation  
+    ///       (0-1; default 0 if this parameter does not exist, i.e. no nitrogen retranslocation).
+    /// \param MinimumNConc MinimumNConc Minimum nitrogen concentration
+    /// \param MinimumNConc MaximumNConc Maximum nitrogen concentration.
+    /// \retval LiveFWt The live fresh weight (g m<sup>-2</sup>)
+    /// <remarks>
+    /// Biomass demand 
+    /// -----------------------
+    /// 
+    /// Biomass supply
+    /// -----------------------
+    /// </remarks>
     [Serializable]
     public class GenericOrgan : BaseOrgan, IArbitration
     {
@@ -58,42 +57,54 @@ namespace Models.PMF.Organs
         #region Class Parameter Function Links
         /// <summary>The senescence rate function</summary>
         [Link(IsOptional = true)]
+        [Units("/d")]
         IFunction SenescenceRateFunction = null;
         /// <summary>The detachment rate function</summary>
         [Link(IsOptional = true)]
+        [Units("/d")]
         IFunction DetachmentRateFunction = null;
 
         /// <summary>The n reallocation factor</summary>
         [Link(IsOptional = true)]
+        [Units("/d")]
         IFunction NReallocationFactor = null;
         /// <summary>The n retranslocation factor</summary>
         [Link(IsOptional = true)]
+        [Units("/d")]
         IFunction NRetranslocationFactor = null;
         /// <summary>The nitrogen demand switch</summary>
         [Link(IsOptional = true)]
         IFunction NitrogenDemandSwitch = null;
         /// <summary>The dm retranslocation factor</summary>
         [Link(IsOptional = true)]
+        [Units("/d")]
         IFunction DMRetranslocationFactor = null;
         /// <summary>The structural fraction</summary>
         [Link(IsOptional = true)]
+        [Units("g/g")]
         IFunction StructuralFraction = null;
         /// <summary>The dm demand Function</summary>
         [Link(IsOptional = true)]
+        [Units("g/m2/d")]
         IFunction DMDemandFunction = null;
         /// <summary>The initial wt function</summary>
         [Link(IsOptional = true)]
+        [Units("g/m2")]
         IFunction InitialWtFunction = null;
         /// <summary>The initial structural fraction</summary>
+        [Units("g/g")]
         [Link(IsOptional = true)]
         IFunction InitialStructuralFraction = null;
         /// <summary>The dry matter content</summary>
         [Link(IsOptional = true)]
+        [Units("g/g")]
         IFunction DryMatterContent = null;
         /// <summary>The maximum n conc</summary>
         [Link(IsOptional = true)]
+        [Units("g/g")]
         IFunction MaximumNConc = null;
         /// <summary>The minimum n conc</summary>
+        [Units("g/g")]
         [Link(IsOptional = true)]
         IFunction MinimumNConc = null;
         #endregion
@@ -163,7 +174,10 @@ namespace Models.PMF.Organs
         {
             get
             {
-                StructuralDMDemand = DMDemandFunction.Value * _StructuralFraction;
+                if (DMDemandFunction != null)
+                    StructuralDMDemand = DMDemandFunction.Value * _StructuralFraction;
+                else
+                    StructuralDMDemand = 0;
                 double MaximumDM = (StartLive.StructuralWt + StructuralDMDemand) * 1 / _StructuralFraction;
                 MaximumDM = Math.Min(MaximumDM, 10000); // FIXME-EIT Temporary solution: Cealing value of 10000 g/m2 to ensure that infinite MaximumDM is not reached when 0% goes to structural fraction   
                 NonStructuralDMDemand = Math.Max(0.0, MaximumDM - StructuralDMDemand - StartLive.StructuralWt - StartLive.NonStructuralWt);
@@ -393,43 +407,46 @@ namespace Models.PMF.Organs
         [EventSubscribe("DoActualPlantGrowth")]
         protected void OnDoActualPlantGrowth(object sender, EventArgs e)
         {
-            Biomass Loss = new Biomass();
-            Loss.StructuralWt = Live.StructuralWt * SenescenceRate;
-            Loss.NonStructuralWt = Live.NonStructuralWt * SenescenceRate;
-            Loss.StructuralN = Live.StructuralN * SenescenceRate;
-            Loss.NonStructuralN = Live.NonStructuralN * SenescenceRate;
-
-            Live.StructuralWt -= Loss.StructuralWt;
-            Live.NonStructuralWt -= Loss.NonStructuralWt;
-            Live.StructuralN -= Loss.StructuralN;
-            Live.NonStructuralN -= Loss.NonStructuralN;
-
-            Dead.StructuralWt += Loss.StructuralWt;
-            Dead.NonStructuralWt += Loss.NonStructuralWt;
-            Dead.StructuralN += Loss.StructuralN;
-            Dead.NonStructuralN += Loss.NonStructuralN;
-
-            double DetachedFrac = 0;
-            if (DetachmentRateFunction != null)
-                DetachedFrac = DetachmentRateFunction.Value;
-            if (DetachedFrac > 0.0)
+            if (Plant.IsAlive)
             {
-                double DetachedWt = Dead.Wt * DetachedFrac;
-                double DetachedN = Dead.N * DetachedFrac;
+                Biomass Loss = new Biomass();
+                Loss.StructuralWt = Live.StructuralWt * SenescenceRate;
+                Loss.NonStructuralWt = Live.NonStructuralWt * SenescenceRate;
+                Loss.StructuralN = Live.StructuralN * SenescenceRate;
+                Loss.NonStructuralN = Live.NonStructuralN * SenescenceRate;
 
-                Dead.StructuralWt *= (1 - DetachedFrac);
-                Dead.StructuralN *= (1 - DetachedFrac);
-                Dead.NonStructuralWt *= (1 - DetachedFrac);
-                Dead.NonStructuralN *= (1 - DetachedFrac);
-                Dead.MetabolicWt *= (1 - DetachedFrac);
-                Dead.MetabolicN *= (1 - DetachedFrac);
+                Live.StructuralWt -= Loss.StructuralWt;
+                Live.NonStructuralWt -= Loss.NonStructuralWt;
+                Live.StructuralN -= Loss.StructuralN;
+                Live.NonStructuralN -= Loss.NonStructuralN;
 
-                if (DetachedWt > 0)
-                    SurfaceOrganicMatter.Add(DetachedWt * 10, DetachedN * 10, 0, Plant.CropType, Name);
+                Dead.StructuralWt += Loss.StructuralWt;
+                Dead.NonStructuralWt += Loss.NonStructuralWt;
+                Dead.StructuralN += Loss.StructuralN;
+                Dead.NonStructuralN += Loss.NonStructuralN;
+
+                double DetachedFrac = 0;
+                if (DetachmentRateFunction != null)
+                    DetachedFrac = DetachmentRateFunction.Value;
+                if (DetachedFrac > 0.0)
+                {
+                    double DetachedWt = Dead.Wt * DetachedFrac;
+                    double DetachedN = Dead.N * DetachedFrac;
+
+                    Dead.StructuralWt *= (1 - DetachedFrac);
+                    Dead.StructuralN *= (1 - DetachedFrac);
+                    Dead.NonStructuralWt *= (1 - DetachedFrac);
+                    Dead.NonStructuralN *= (1 - DetachedFrac);
+                    Dead.MetabolicWt *= (1 - DetachedFrac);
+                    Dead.MetabolicN *= (1 - DetachedFrac);
+
+                    if (DetachedWt > 0)
+                        SurfaceOrganicMatter.Add(DetachedWt * 10, DetachedN * 10, 0, Plant.CropType, Name);
+                }
+
+                if ((DryMatterContent != null) && (Live.Wt != 0))
+                    LiveFWt = Live.Wt / DryMatterContent.Value;
             }
-
-            if ((DryMatterContent != null) && (Live.Wt != 0))
-                LiveFWt = Live.Wt / DryMatterContent.Value;
         }
 
         /// <summary>Called when crop is ending</summary>

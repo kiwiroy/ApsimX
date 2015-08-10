@@ -58,8 +58,16 @@ namespace UserInterface
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            Utility.Configuration.Settings.MainFormLocation = RestoreBounds.Location; 
-            Utility.Configuration.Settings.MainFormSize = RestoreBounds.Size;
+            if (WindowState == FormWindowState.Normal)
+            {
+                Utility.Configuration.Settings.MainFormLocation = this.Location;
+                Utility.Configuration.Settings.MainFormSize = this.Size;
+            }
+            else
+            {
+                Utility.Configuration.Settings.MainFormLocation = RestoreBounds.Location;
+                Utility.Configuration.Settings.MainFormSize = RestoreBounds.Size;
+            }
             Utility.Configuration.Settings.MainFormWindowState = WindowState;
             if (disposing && (components != null))
             {
@@ -93,7 +101,7 @@ namespace UserInterface
             if (version.Major == 0)
                 this.Text = "APSIM (Custom Build)";
             else
-                this.Text = "APSIM " + version.Major + "." + version.Minor;                
+                this.Text = "APSIM " + version.ToString();                
 
             // Look for a script specified on the command line.
             if (commandLineArguments != null && commandLineArguments.Length > 0)

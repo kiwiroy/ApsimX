@@ -56,10 +56,7 @@ namespace UserInterface.Views
         public void SetSummaryContent(string content)
         {
             htmlView1.UseMonoSpacedFont();
-            htmlView1.ReadOnly = true;
-
-            content = content.Replace("&", "and");
-            this.htmlView1.MemoText = content;
+            this.htmlView1.SetContents(content, false);
         }
 
         private void comboBox1_TextChanged(object sender, EventArgs e)

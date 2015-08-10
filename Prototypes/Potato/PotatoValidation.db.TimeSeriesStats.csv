@@ -1,0 +1,243 @@
+                                       Name,                      VariableName,  n, residual,  R^2,     RMSD,      %,          MSD,          SB,        SDSD,          LCS
+              BaxtersSowing14OctPopulation2,ExtraVariables.Script.AccumTtemerg,  8,    0.000,1.000,    0.003,  0.000,        0.000,       0.000,       0.000,        0.000
+              BaxtersSowing14OctPopulation2,               Potato.Leaf.Live.Wt,  8,  -28.479,0.867,   32.807, 34.118,     1076.275,     811.070,       0.595,      264.611
+              BaxtersSowing14OctPopulation2,               Potato.Stem.Live.Wt,  8,  -48.247,0.868,   55.889, 40.572,     3123.528,    2327.794,     428.112,      367.621
+              BaxtersSowing14OctPopulation2,              Potato.Tuber.Live.Wt,  9, -123.876,0.980,  178.018, 21.382,    31690.425,   15345.197,   10271.036,     6074.192
+              BaxtersSowing14OctPopulation2,                   Potato.Leaf.LAI,  8,   -1.007,0.863,    1.126, 39.931,        1.268,       1.014,       0.030,        0.224
+              BaxtersSowing14OctPopulation2,          Potato.Leaf.SpecificArea,  8,-2006.960,0.053, 3080.493, 10.711,  9489437.533, 4027890.331, 1191028.633,  4270518.568
+              BaxtersSowing14OctPopulation2,              Potato.Tuber.LiveFWt,  9, -330.048,0.997,  375.645, 10.313,   141109.132,  108931.585,   18428.460,    13749.088
+              BaxtersSowing14OctPopulation4,ExtraVariables.Script.AccumTtemerg,  8,    0.000,1.000,    0.003,  0.000,        0.000,       0.000,       0.000,        0.000
+              BaxtersSowing14OctPopulation4,               Potato.Leaf.Live.Wt,  8,  -27.723,0.858,   32.539, 33.308,     1058.763,     768.583,       4.422,      285.758
+              BaxtersSowing14OctPopulation4,               Potato.Stem.Live.Wt,  8,   -9.025,0.768,   26.667, 20.409,      711.114,      81.444,      11.138,      618.532
+              BaxtersSowing14OctPopulation4,              Potato.Tuber.Live.Wt,  9,  -58.553,0.985,   98.252, 10.675,     9653.519,    3428.437,    1036.848,     5188.233
+              BaxtersSowing14OctPopulation4,                   Potato.Leaf.LAI,  8,   -0.908,0.743,    1.177, 38.581,        1.386,       0.824,       0.011,        0.550
+              BaxtersSowing14OctPopulation4,          Potato.Leaf.SpecificArea,  8,-1158.849,0.150, 3002.019,  9.669,  9012116.993, 1342931.252, 1651863.244,  6017322.496
+              BaxtersSowing14OctPopulation4,              Potato.Tuber.LiveFWt,  9,  255.243,0.974,  497.731, 13.095,   247736.245,   65149.123,   35600.062,   146987.060
+              BaxtersSowing23NovPopulation2,ExtraVariables.Script.AccumTtemerg,  8,    0.000,1.000,    0.003,  0.000,        0.000,       0.000,       0.000,        0.000
+              BaxtersSowing23NovPopulation2,               Potato.Leaf.Live.Wt,  7,  -39.443,0.902,   42.049, 49.128,     1768.110,    1555.782,      95.940,      116.388
+              BaxtersSowing23NovPopulation2,               Potato.Stem.Live.Wt,  7,  -66.648,0.349,   82.242, 56.391,     6763.745,    4441.971,    1207.912,     1113.861
+              BaxtersSowing23NovPopulation2,              Potato.Tuber.Live.Wt,  8,    9.536,0.968,   72.363, 10.844,     5236.372,      90.926,      95.322,     5050.124
+              BaxtersSowing23NovPopulation2,                   Potato.Leaf.LAI,  7,   -1.308,0.870,    1.437, 53.785,        2.064,       1.711,       0.192,        0.161
+              BaxtersSowing23NovPopulation2,          Potato.Leaf.SpecificArea,  7,-1403.452,0.870, 1905.721,  6.226,  3631773.006, 1969678.728, 1150445.998,   511648.279
+              BaxtersSowing23NovPopulation2,              Potato.Tuber.LiveFWt,  8,  120.762,0.947,  416.215, 13.833,   173234.980,   14583.540,    1915.711,   156735.729
+              BaxtersSowing23NovPopulation4,ExtraVariables.Script.AccumTtemerg,  8,    0.000,1.000,    0.003,  0.000,        0.000,       0.000,       0.000,        0.000
+              BaxtersSowing23NovPopulation4,               Potato.Leaf.Live.Wt,  7,  -43.089,0.784,   47.155, 45.598,     2223.636,    1856.629,       7.489,      359.518
+              BaxtersSowing23NovPopulation4,               Potato.Stem.Live.Wt,  7,  -90.406,0.791,   99.621, 54.438,     9924.425,    8173.312,    1521.210,      229.904
+              BaxtersSowing23NovPopulation4,              Potato.Tuber.Live.Wt,  8, -180.669,0.849,  343.327, 35.621,   117873.583,   32641.203,   40407.659,    44824.721
+              BaxtersSowing23NovPopulation4,                   Potato.Leaf.LAI,  7,   -1.563,0.742,    1.703, 50.545,        2.901,       2.444,       0.004,        0.454
+              BaxtersSowing23NovPopulation4,          Potato.Leaf.SpecificArea,  7,-2571.981,0.817, 2884.839,  8.874,  8322293.367, 6615084.747,  715926.498,   991282.122
+              BaxtersSowing23NovPopulation4,              Potato.Tuber.LiveFWt,  8, -593.907,0.842, 1320.923, 31.281,  1744836.640,  352725.227,  538183.935,   853927.478
+               BaxtersSowing2NovPopulation2,ExtraVariables.Script.AccumTtemerg,  8,    0.001,1.000,    0.003,  0.000,        0.000,       0.000,       0.000,        0.000
+               BaxtersSowing2NovPopulation2,               Potato.Leaf.Live.Wt,  7,  -28.559,0.956,   29.581, 32.218,      875.061,     815.638,       2.184,       57.240
+               BaxtersSowing2NovPopulation2,               Potato.Stem.Live.Wt,  7,  -51.240,0.610,   62.252, 45.538,     3875.283,    2625.569,     380.172,      869.542
+               BaxtersSowing2NovPopulation2,              Potato.Tuber.Live.Wt,  8,   43.592,0.964,  105.375, 15.910,    11103.960,    1900.260,     787.634,     8416.066
+               BaxtersSowing2NovPopulation2,                   Potato.Leaf.LAI,  7,   -0.886,0.937,    0.927, 34.545,        0.859,       0.785,       0.003,        0.071
+               BaxtersSowing2NovPopulation2,          Potato.Leaf.SpecificArea,  7, -961.115,0.365, 1838.080,  6.312,  3378538.124,  923742.619,   42855.812,  2411939.693
+               BaxtersSowing2NovPopulation2,              Potato.Tuber.LiveFWt,  8,  370.144,0.973,  520.588, 17.832,   271011.603,  137006.925,   29786.165,   104218.513
+               BaxtersSowing2NovPopulation4,ExtraVariables.Script.AccumTtemerg,  8,    0.001,1.000,    0.003,  0.000,        0.000,       0.000,       0.000,        0.000
+               BaxtersSowing2NovPopulation4,               Potato.Leaf.Live.Wt,  7,  -38.103,0.847,   40.762, 38.524,     1661.566,    1451.814,      10.397,      199.354
+               BaxtersSowing2NovPopulation4,               Potato.Stem.Live.Wt,  7,  -61.807,0.881,   69.289, 42.049,     4800.956,    3820.099,     738.899,      241.958
+               BaxtersSowing2NovPopulation4,              Potato.Tuber.Live.Wt,  8,  -52.034,0.926,  183.357, 21.246,    33619.796,    2707.579,    8280.053,    22632.164
+               BaxtersSowing2NovPopulation4,                   Potato.Leaf.LAI,  7,   -1.289,0.785,    1.398, 41.761,        1.954,       1.661,       0.014,        0.278
+               BaxtersSowing2NovPopulation4,          Potato.Leaf.SpecificArea,  7,-1678.553,0.278, 2604.149,  8.216,  6781591.736, 2817540.641,  425804.527,  3538246.568
+               BaxtersSowing2NovPopulation4,              Potato.Tuber.LiveFWt,  8,   -5.975,0.916,  696.542, 18.294,   485170.577,      35.699,   37271.647,   447863.230
+Combined ExtraVariables.Script.AccumTtemerg,ExtraVariables.Script.AccumTtemerg,161,   -0.001,1.000,    0.003,  0.000,        0.000,       0.000,       0.000,        0.000
+                   Combined Potato.Leaf.LAI,                   Potato.Leaf.LAI,146,   -0.470,0.780,    0.921, 33.115,        0.848,       0.221,       0.000,        0.626
+               Combined Potato.Leaf.Live.Wt,               Potato.Leaf.Live.Wt,195,  -26.757,0.653,   44.054, 47.103,     1940.792,     715.928,      71.556,     1153.309
+          Combined Potato.Leaf.SpecificArea,          Potato.Leaf.SpecificArea,146,  280.170,0.004, 6522.980, 22.510, 42549266.561,   78495.331,    1095.754, 42469675.476
+                Combined Potato.Stem.Live.N,                Potato.Stem.Live.N,105,   -0.083,0.209,    1.612, 66.186,        2.599,       0.007,       0.355,        2.237
+               Combined Potato.Stem.Live.Wt,               Potato.Stem.Live.Wt,204,  -25.607,0.248,   84.406, 67.755,     7124.331,     655.724,    1845.827,     4622.781
+               Combined Potato.Tuber.Live.N,               Potato.Tuber.Live.N,145,    0.974,0.955,    2.213, 21.011,        4.897,       0.948,       0.762,        3.188
+              Combined Potato.Tuber.Live.Wt,              Potato.Tuber.Live.Wt,250,  -13.509,0.942,  145.542, 19.409,    21182.350,     182.490,     292.293,    20707.566
+              Combined Potato.Tuber.LiveFWt,              Potato.Tuber.LiveFWt,214,   12.770,0.955,  604.212, 16.646,   365072.719,     163.072,       4.667,   364904.980
+                               FSPNitrogen0,ExtraVariables.Script.AccumTtemerg,  5,   -0.005,1.000,    0.005,  0.001,        0.000,       0.000,       0.000,        0.000
+                               FSPNitrogen0,              Potato.Tuber.Live.Wt,  5,   20.598,0.945,   46.907, 38.376,     2200.233,     424.272,    1059.467,      716.494
+                               FSPNitrogen0,               Potato.Tuber.Live.N,  4,   -0.659,0.993,    0.794, 40.564,        0.630,       0.434,       0.190,        0.007
+                               FSPNitrogen0,              Potato.Tuber.LiveFWt,  4,  218.725,0.925,  351.771, 44.154,   123742.937,   47840.822,   54326.954,    21575.161
+                             FSPNitrogen242,ExtraVariables.Script.AccumTtemerg,  5,   -0.005,1.000,    0.005,  0.001,        0.000,       0.000,       0.000,        0.000
+                             FSPNitrogen242,              Potato.Tuber.Live.Wt,  5,  -17.639,0.898,   75.642, 31.664,     5721.694,     311.145,     265.788,     5144.761
+                             FSPNitrogen242,               Potato.Tuber.Live.N,  4,   -0.593,0.952,    1.047, 18.125,        1.096,       0.352,       0.001,        0.743
+                             FSPNitrogen242,              Potato.Tuber.LiveFWt,  4, -170.521,0.835,  529.159, 30.539,   280009.201,   29077.253,   20195.325,   230736.623
+                             FSPNitrogen350,ExtraVariables.Script.AccumTtemerg,  5,   -0.005,1.000,    0.005,  0.001,        0.000,       0.000,       0.000,        0.000
+                             FSPNitrogen350,              Potato.Tuber.Live.Wt,  5,  -12.289,0.939,   58.243, 24.939,     3392.265,     151.027,     159.081,     3082.157
+                             FSPNitrogen350,               Potato.Tuber.Live.N,  4,   -0.726,0.987,    0.948, 16.042,        0.898,       0.526,       0.157,        0.215
+                             FSPNitrogen350,              Potato.Tuber.LiveFWt,  4, -113.231,0.908,  394.636, 23.554,   155737.195,   12821.156,   13369.009,   129547.030
+                             FSPNitrogen472,ExtraVariables.Script.AccumTtemerg,  5,   -0.005,1.000,    0.005,  0.001,        0.000,       0.000,       0.000,        0.000
+                             FSPNitrogen472,              Potato.Tuber.Live.Wt,  5,  -28.625,0.899,   78.714, 31.502,     6195.933,     819.407,      46.100,     5330.426
+                             FSPNitrogen472,               Potato.Tuber.Live.N,  4,   -0.886,0.957,    1.226, 20.214,        1.504,       0.784,       0.027,        0.693
+                             FSPNitrogen472,              Potato.Tuber.LiveFWt,  4, -226.656,0.851,  526.490, 29.431,   277191.268,   51372.735,    9195.130,   216623.404
+                            FUE_NINitrogen0,ExtraVariables.Script.AccumTtemerg,  1,    0.002,     ,         ,       ,             ,       0.000,       0.000,             
+                            FUE_NINitrogen0,              Potato.Tuber.Live.Wt,  1,    4.473,     ,         ,       ,             ,      20.005,       0.000,             
+                            FUE_NINitrogen0,               Potato.Tuber.Live.N,  1,   -1.928,     ,         ,       ,             ,       3.716,       0.000,             
+                            FUE_NINitrogen0,              Potato.Tuber.LiveFWt,  1,    8.075,     ,         ,       ,             ,      65.202,       0.000,             
+                          FUE_NINitrogen253,ExtraVariables.Script.AccumTtemerg,  1,    0.002,     ,         ,       ,             ,       0.000,       0.000,             
+                          FUE_NINitrogen253,              Potato.Tuber.Live.Wt,  1,   84.680,     ,         ,       ,             ,    7170.712,       0.000,             
+                          FUE_NINitrogen253,               Potato.Tuber.Live.N,  1,    0.450,     ,         ,       ,             ,       0.202,       0.000,             
+                          FUE_NINitrogen253,              Potato.Tuber.LiveFWt,  1, -376.033,     ,         ,       ,             ,  141400.827,       0.000,             
+                          FUE_NINitrogen368,ExtraVariables.Script.AccumTtemerg,  1,    0.002,     ,         ,       ,             ,       0.000,       0.000,             
+                          FUE_NINitrogen368,              Potato.Tuber.Live.Wt,  1,   25.650,     ,         ,       ,             ,     657.927,       0.000,             
+                          FUE_NINitrogen368,               Potato.Tuber.Live.N,  1,   -1.380,     ,         ,       ,             ,       1.905,       0.000,             
+                          FUE_NINitrogen368,              Potato.Tuber.LiveFWt,  1, -867.313,     ,         ,       ,             ,  752231.491,       0.000,             
+                      FUEFertiliser150early,ExtraVariables.Script.AccumTtemerg,  9,   -0.002,1.000,    0.003,  0.000,        0.000,       0.000,       0.000,        0.000
+                      FUEFertiliser150early,               Potato.Leaf.Live.Wt,  7,   -4.556,0.989,   12.929, 11.823,      167.164,      20.757,     116.011,       30.396
+                      FUEFertiliser150early,               Potato.Stem.Live.Wt,  9,   -1.188,0.090,   40.711, 32.166,     1657.411,       1.413,     196.313,     1459.686
+                      FUEFertiliser150early,              Potato.Tuber.Live.Wt,  9,  -53.074,0.942,  156.913, 13.648,    24621.629,    2816.857,     805.932,    20998.840
+                      FUEFertiliser150early,                Potato.Stem.Live.N,  8,    0.582,0.829,    0.734, 36.247,        0.539,       0.338,       0.080,        0.121
+                      FUEFertiliser150early,               Potato.Tuber.Live.N,  9,    2.239,0.954,    3.160, 20.867,        9.985,       5.014,       1.861,        3.110
+                      FUEFertiliser150early,                   Potato.Leaf.LAI,  7,    0.072,0.908,    0.514, 16.082,        0.265,       0.005,       0.026,        0.233
+                      FUEFertiliser150early,          Potato.Leaf.SpecificArea,  7, 2229.123,0.461, 4428.210, 15.416, 19609042.298, 4968989.837,11688371.136,  2951681.325
+                      FUEFertiliser150early,              Potato.Tuber.LiveFWt,  1,  508.823,     ,         ,       ,             ,  258901.061,       0.000,             
+                      FUEFertiliser275split,ExtraVariables.Script.AccumTtemerg,  9,   -0.002,1.000,    0.003,  0.000,        0.000,       0.000,       0.000,        0.000
+                      FUEFertiliser275split,               Potato.Leaf.Live.Wt,  7,   -8.802,0.980,   13.241, 11.655,      175.312,      77.471,      46.225,       51.617
+                      FUEFertiliser275split,               Potato.Stem.Live.Wt,  9,  -20.670,0.302,   43.295, 29.644,     1874.426,     427.232,     379.628,     1067.565
+                      FUEFertiliser275split,              Potato.Tuber.Live.Wt,  9,  -34.276,0.979,   97.713,  8.640,     9547.866,    1174.864,     676.540,     7696.461
+                      FUEFertiliser275split,                Potato.Stem.Live.N,  8,    1.095,0.490,    1.660, 65.112,        2.757,       1.199,       0.032,        1.525
+                      FUEFertiliser275split,               Potato.Tuber.Live.N,  9,    2.747,0.975,    3.560, 21.399,       12.674,       7.547,       2.838,        2.288
+                      FUEFertiliser275split,                   Potato.Leaf.LAI,  7,   -0.211,0.874,    0.645, 18.538,        0.417,       0.045,       0.040,        0.332
+                      FUEFertiliser275split,          Potato.Leaf.SpecificArea,  7, 1897.479,0.314, 4888.767, 16.825, 23900039.544, 3600427.073,15753294.446,  4546318.025
+                      FUEFertiliser275split,              Potato.Tuber.LiveFWt,  1, -107.577,     ,         ,       ,             ,   11572.744,       0.000,             
+                      FUEFertiliser300early,ExtraVariables.Script.AccumTtemerg,  9,   -0.002,1.000,    0.003,  0.000,        0.000,       0.000,       0.000,        0.000
+                      FUEFertiliser300early,               Potato.Leaf.Live.Wt,  7,  -10.035,0.965,   15.093, 13.143,      227.803,     100.693,      38.418,       88.693
+                      FUEFertiliser300early,               Potato.Stem.Live.Wt,  9,  -34.936,0.335,   54.590, 34.052,     2980.061,    1220.543,     636.590,     1122.929
+                      FUEFertiliser300early,              Potato.Tuber.Live.Wt,  9, -115.099,0.985,  169.649, 14.001,    28780.740,   13247.670,    9697.267,     5835.803
+                      FUEFertiliser300early,                Potato.Stem.Live.N,  8,    0.661,0.013,    1.593, 44.839,        2.539,       0.437,       0.186,        1.917
+                      FUEFertiliser300early,               Potato.Tuber.Live.N,  9,    1.104,0.968,    2.179, 11.401,        4.747,       1.218,       0.011,        3.518
+                      FUEFertiliser300early,                   Potato.Leaf.LAI,  7,   -0.410,0.977,    0.513, 13.928,        0.263,       0.168,       0.037,        0.058
+                      FUEFertiliser300early,          Potato.Leaf.SpecificArea,  7, -972.064,0.247, 3207.761, 10.047, 10289732.716,  944908.637, 5771010.784,  3573813.295
+                      FUEFertiliser300early,              Potato.Tuber.LiveFWt,  1, -938.657,     ,         ,       ,             ,  881077.445,       0.000,             
+                           FUEFertiliserNil,ExtraVariables.Script.AccumTtemerg,  9,   -0.002,1.000,    0.003,  0.000,        0.000,       0.000,       0.000,        0.000
+                           FUEFertiliserNil,               Potato.Leaf.Live.Wt,  6,   -0.853,0.905,    9.891, 10.401,       97.839,       0.728,       2.951,       94.160
+                           FUEFertiliserNil,               Potato.Stem.Live.Wt,  9,   -4.392,0.009,   19.260, 23.501,      370.932,      19.294,      39.349,      312.289
+                           FUEFertiliserNil,              Potato.Tuber.Live.Wt,  9,  -62.304,0.942,  140.581, 13.239,    19762.966,    3881.762,     211.663,    15669.541
+                           FUEFertiliserNil,                Potato.Stem.Live.N,  7,    0.203,0.918,    0.243, 30.750,        0.059,       0.041,       0.005,        0.013
+                           FUEFertiliserNil,               Potato.Tuber.Live.N,  9,    0.024,0.872,    1.686, 18.788,        2.842,       0.001,       0.390,        2.452
+                           FUEFertiliserNil,                   Potato.Leaf.LAI,  6,    0.300,0.933,    0.393, 14.443,        0.154,       0.090,       0.003,        0.061
+                           FUEFertiliserNil,          Potato.Leaf.SpecificArea,  6, 3672.230,0.231, 4538.358, 15.990, 20596690.415,13485270.284, 1347370.145,  5764049.985
+                           FUEFertiliserNil,              Potato.Tuber.LiveFWt,  1,  924.917,     ,         ,       ,             ,  855471.419,       0.000,             
+            ParillaSowing17DecNitrogenhighN,ExtraVariables.Script.AccumTtemerg,  6,    0.000,1.000,    0.003,  0.001,        0.000,       0.000,       0.000,        0.000
+            ParillaSowing17DecNitrogenhighN,               Potato.Leaf.Live.Wt,  4,  -67.989,0.913,   69.831, 57.249,     4876.366,    4622.449,     159.998,       93.919
+            ParillaSowing17DecNitrogenhighN,               Potato.Stem.Live.Wt,  4,   -5.716,0.986,    6.720, 11.633,       45.160,      32.669,       0.774,       11.716
+            ParillaSowing17DecNitrogenhighN,              Potato.Tuber.Live.Wt,  5,  -80.322,0.973,  104.007, 29.422,    10817.543,    6451.561,    2320.745,     2045.237
+            ParillaSowing17DecNitrogenhighN,                Potato.Stem.Live.N,  4,    0.893,0.126,    1.429,118.320,        2.041,       0.798,       0.505,        0.738
+            ParillaSowing17DecNitrogenhighN,               Potato.Tuber.Live.N,  5,    0.385,0.967,    1.387, 27.734,        1.923,       0.148,       1.148,        0.626
+            ParillaSowing17DecNitrogenhighN,              Potato.Tuber.LiveFWt,  5, -341.118,0.943,  510.445, 26.703,   260554.261,  116361.284,   35206.153,   108986.825
+             ParillaSowing17DecNitrogenlowN,ExtraVariables.Script.AccumTtemerg,  6,    0.000,1.000,    0.003,  0.001,        0.000,       0.000,       0.000,        0.000
+             ParillaSowing17DecNitrogenlowN,               Potato.Leaf.Live.Wt,  4,  -52.784,0.808,   56.354, 53.414,     3175.796,    2786.202,     166.560,      223.034
+             ParillaSowing17DecNitrogenlowN,               Potato.Stem.Live.Wt,  4,   -0.656,0.937,    7.304, 14.945,       53.342,       0.430,       4.994,       47.918
+             ParillaSowing17DecNitrogenlowN,              Potato.Tuber.Live.Wt,  5, -128.549,0.999,  155.826, 38.993,    24281.703,   16524.913,    7681.312,       75.478
+             ParillaSowing17DecNitrogenlowN,                Potato.Stem.Live.N,  4,    0.941,0.016,    1.451,218.137,        2.104,       0.885,       0.751,        0.468
+             ParillaSowing17DecNitrogenlowN,               Potato.Tuber.Live.N,  5,    0.777,0.984,    2.033, 47.067,        4.134,       0.604,       3.283,        0.248
+             ParillaSowing17DecNitrogenlowN,              Potato.Tuber.LiveFWt,  5, -539.922,0.990,  639.025, 30.463,   408352.509,  291516.296,   96038.512,    20797.701
+             ParillaSowing17DecNitrogenmedN,ExtraVariables.Script.AccumTtemerg,  6,    0.000,1.000,    0.003,  0.001,        0.000,       0.000,       0.000,        0.000
+             ParillaSowing17DecNitrogenmedN,               Potato.Leaf.Live.Wt,  4,  -51.151,0.903,   53.560, 50.941,     2868.659,    2616.434,     147.714,      104.510
+             ParillaSowing17DecNitrogenmedN,               Potato.Stem.Live.Wt,  4,    9.267,0.953,   13.320, 31.134,      177.435,      85.874,      62.972,       28.589
+             ParillaSowing17DecNitrogenmedN,              Potato.Tuber.Live.Wt,  5,  -86.608,0.994,  106.949, 29.725,    11438.133,    7500.879,    3440.034,      497.221
+             ParillaSowing17DecNitrogenmedN,                Potato.Stem.Live.N,  4,    1.356,0.000,    1.831,249.997,        3.353,       1.839,       0.662,        0.853
+             ParillaSowing17DecNitrogenmedN,               Potato.Tuber.Live.N,  5,    0.792,0.999,    1.560, 34.068,        2.435,       0.627,       1.788,        0.020
+             ParillaSowing17DecNitrogenmedN,              Potato.Tuber.LiveFWt,  5, -326.318,0.970,  442.717, 23.340,   195998.197,  106483.252,   33732.606,    55782.339
+            ParillaSowing23NovNitrogenhighN,ExtraVariables.Script.AccumTtemerg,  6,   -0.001,1.000,    0.002,  0.000,        0.000,       0.000,       0.000,        0.000
+            ParillaSowing23NovNitrogenhighN,               Potato.Leaf.Live.Wt,  4,  -95.362,0.898,   96.005, 64.298,     9216.899,    9093.934,      78.527,       44.438
+            ParillaSowing23NovNitrogenhighN,               Potato.Stem.Live.Wt,  4,  -14.563,0.819,   18.873, 25.657,      356.196,     212.080,      21.389,      122.727
+            ParillaSowing23NovNitrogenhighN,              Potato.Tuber.Live.Wt,  5,   15.407,0.986,   36.548, 12.844,     1335.734,     237.386,     443.128,      655.219
+            ParillaSowing23NovNitrogenhighN,                Potato.Stem.Live.N,  4,    0.836,0.311,    1.106, 66.157,        1.224,       0.699,       0.202,        0.323
+            ParillaSowing23NovNitrogenhighN,               Potato.Tuber.Live.N,  5,    0.968,0.974,    1.449, 27.837,        2.098,       0.937,       0.730,        0.431
+            ParillaSowing23NovNitrogenhighN,              Potato.Tuber.LiveFWt,  5,   93.945,0.995,  135.376,  8.282,    18326.751,    8825.750,    3268.778,     6232.223
+             ParillaSowing23NovNitrogenlowN,ExtraVariables.Script.AccumTtemerg,  6,   -0.001,1.000,    0.002,  0.000,        0.000,       0.000,       0.000,        0.000
+             ParillaSowing23NovNitrogenlowN,               Potato.Leaf.Live.Wt,  4,  -70.573,0.605,   71.332, 58.866,     5088.290,    4980.576,      34.682,       73.031
+             ParillaSowing23NovNitrogenlowN,               Potato.Stem.Live.Wt,  4,    1.643,0.419,   13.520, 34.154,      182.787,       2.701,      70.472,      109.614
+             ParillaSowing23NovNitrogenlowN,              Potato.Tuber.Live.Wt,  5,   24.560,0.961,   62.431, 23.385,     3897.656,     603.210,    1756.491,     1537.955
+             ParillaSowing23NovNitrogenlowN,                Potato.Stem.Live.N,  4,    0.307,0.955,    0.455, 81.636,        0.207,       0.094,       0.007,        0.107
+             ParillaSowing23NovNitrogenlowN,               Potato.Tuber.Live.N,  5,    0.195,0.966,    0.728, 20.594,        0.530,       0.038,       0.244,        0.248
+             ParillaSowing23NovNitrogenlowN,              Potato.Tuber.LiveFWt,  5,  206.831,0.972,  338.978, 23.037,   114905.900,   42778.860,   43020.278,    29106.762
+             ParillaSowing23NovNitrogenmedN,ExtraVariables.Script.AccumTtemerg,  6,   -0.001,1.000,    0.002,  0.000,        0.000,       0.000,       0.000,        0.000
+             ParillaSowing23NovNitrogenmedN,               Potato.Leaf.Live.Wt,  4,  -82.460,0.794,   82.833, 60.724,     6861.342,    6799.589,       0.072,       61.681
+             ParillaSowing23NovNitrogenmedN,               Potato.Stem.Live.Wt,  4,   -2.683,0.920,    7.546, 12.233,       56.935,       7.198,      12.881,       36.855
+             ParillaSowing23NovNitrogenmedN,              Potato.Tuber.Live.Wt,  5,    4.103,0.987,   31.123, 10.520,      968.660,      16.837,     357.911,      593.912
+             ParillaSowing23NovNitrogenmedN,                Potato.Stem.Live.N,  4,    1.290,0.080,    1.534,143.336,        2.352,       1.664,       0.387,        0.301
+             ParillaSowing23NovNitrogenmedN,               Potato.Tuber.Live.N,  5,    1.257,0.995,    1.711, 36.426,        2.928,       1.580,       1.279,        0.070
+             ParillaSowing23NovNitrogenmedN,              Potato.Tuber.LiveFWt,  5,   79.281,0.998,  126.807,  7.689,    16080.010,    6285.552,    7695.990,     2098.468
+             ParillaSowing3DecNitrogenhighN,ExtraVariables.Script.AccumTtemerg,  6,    0.000,1.000,    0.003,  0.001,        0.000,       0.000,       0.000,        0.000
+             ParillaSowing3DecNitrogenhighN,               Potato.Leaf.Live.Wt,  4,  -93.523,0.941,  105.251, 74.018,    11077.673,    8746.594,    2215.009,      116.069
+             ParillaSowing3DecNitrogenhighN,               Potato.Stem.Live.Wt,  4,  -30.886,0.894,   43.604, 55.082,     1901.328,     953.958,     768.212,      179.158
+             ParillaSowing3DecNitrogenhighN,              Potato.Tuber.Live.Wt,  5,   -7.981,0.995,   23.646,  8.068,      559.135,      63.691,      66.908,      428.536
+             ParillaSowing3DecNitrogenhighN,                Potato.Stem.Live.N,  4,   -0.238,0.986,    0.291, 12.601,        0.085,       0.057,       0.007,        0.022
+             ParillaSowing3DecNitrogenhighN,               Potato.Tuber.Live.N,  4,    0.810,0.995,    1.017, 16.515,        1.034,       0.656,       0.254,        0.125
+             ParillaSowing3DecNitrogenhighN,              Potato.Tuber.LiveFWt,  5,  -54.460,0.978,  253.966, 14.630,    64498.856,    2965.859,    5883.438,    55649.560
+              ParillaSowing3DecNitrogenlowN,ExtraVariables.Script.AccumTtemerg,  6,    0.000,1.000,    0.003,  0.001,        0.000,       0.000,       0.000,        0.000
+              ParillaSowing3DecNitrogenlowN,               Potato.Leaf.Live.Wt,  4,  -87.996,0.913,   95.570, 77.898,     9133.549,    7743.234,    1273.293,      117.021
+              ParillaSowing3DecNitrogenlowN,               Potato.Stem.Live.Wt,  4,  -41.326,0.932,   47.987, 78.148,     2302.736,    1707.865,     548.473,       46.398
+              ParillaSowing3DecNitrogenlowN,              Potato.Tuber.Live.Wt,  5, -115.605,0.988,  161.785, 44.552,    26174.315,   13364.584,   11510.467,     1299.264
+              ParillaSowing3DecNitrogenlowN,                Potato.Stem.Live.N,  4,   -0.709,0.158,    0.881, 70.588,        0.775,       0.502,       0.000,        0.273
+              ParillaSowing3DecNitrogenlowN,               Potato.Tuber.Live.N,  4,   -0.236,0.989,    0.926, 16.474,        0.857,       0.055,       0.550,        0.252
+              ParillaSowing3DecNitrogenlowN,              Potato.Tuber.LiveFWt,  5, -570.680,0.987,  771.109, 38.339,   594609.623,  325675.945,  233447.890,    35485.789
+              ParillaSowing3DecNitrogenmedN,ExtraVariables.Script.AccumTtemerg,  6,    0.000,1.000,    0.003,  0.001,        0.000,       0.000,       0.000,        0.000
+              ParillaSowing3DecNitrogenmedN,               Potato.Leaf.Live.Wt,  4, -102.335,0.999,  115.118, 76.685,    13252.087,   10472.416,    2776.921,        2.750
+              ParillaSowing3DecNitrogenmedN,               Potato.Stem.Live.Wt,  4,  -33.705,0.967,   44.595, 56.929,     1988.748,    1136.039,     800.895,       51.814
+              ParillaSowing3DecNitrogenmedN,              Potato.Tuber.Live.Wt,  5,  -46.029,0.999,   68.287, 20.783,     4663.132,    2118.657,    2471.075,       73.400
+              ParillaSowing3DecNitrogenmedN,                Potato.Stem.Live.N,  4,   -0.328,0.901,    0.500, 24.835,        0.250,       0.108,       0.005,        0.137
+              ParillaSowing3DecNitrogenmedN,               Potato.Tuber.Live.N,  4,    0.733,0.994,    1.017, 16.627,        1.034,       0.538,       0.321,        0.175
+              ParillaSowing3DecNitrogenmedN,              Potato.Tuber.LiveFWt,  5, -258.271,0.994,  405.762, 21.094,   164642.422,   66703.693,   81463.906,    16474.823
+                      PotatoCultivarBurbank,               Potato.Leaf.Live.Wt, 11,   22.860,0.860,   34.559, 50.518,     1194.339,     522.592,      56.909,      614.838
+                      PotatoCultivarBurbank,               Potato.Stem.Live.Wt, 11,   15.903,0.129,   85.057, 71.349,     7234.642,     252.899,     239.457,     6742.285
+                      PotatoCultivarBurbank,              Potato.Tuber.Live.Wt, 12,   84.232,0.966,  178.766, 20.324,    31957.235,    7095.097,   11756.918,    13105.220
+                      PotatoCultivarBurbank,                Potato.Stem.Live.N,  5,   -0.548,0.945,    1.094, 37.180,        1.196,       0.300,       0.865,        0.031
+                      PotatoCultivarBurbank,               Potato.Tuber.Live.N,  6,   -0.255,0.930,    1.799, 12.864,        3.236,       0.065,       0.001,        3.171
+                      PotatoCultivarBurbank,                   Potato.Leaf.LAI,  9,    0.804,0.856,    1.134, 46.937,        1.285,       0.646,       0.169,        0.471
+                      PotatoCultivarBurbank,          Potato.Leaf.SpecificArea,  9, 1159.408,0.177, 4176.557, 14.620, 17443630.794, 1344226.362, 7956596.020,  8142808.412
+                      PotatoCultivarBurbank,              Potato.Tuber.LiveFWt, 12, -128.361,0.976,  471.998, 10.151,   222782.576,   16476.613,    2959.110,   203346.853
+                      PotatoCultivarHorizon,               Potato.Leaf.Live.Wt, 11,   -6.525,0.969,   15.502, 23.729,      240.312,      42.581,      84.634,      113.098
+                      PotatoCultivarHorizon,               Potato.Stem.Live.Wt, 11,   34.553,0.012,   84.447,105.711,     7131.267,    1193.877,     213.391,     5723.999
+                      PotatoCultivarHorizon,              Potato.Tuber.Live.Wt, 12,  -61.049,0.990,   90.102,  8.930,     8118.363,    3726.937,     701.320,     3690.106
+                      PotatoCultivarHorizon,                Potato.Stem.Live.N,  4,   -0.345,0.833,    0.790, 27.466,        0.625,       0.119,       0.457,        0.048
+                      PotatoCultivarHorizon,               Potato.Tuber.Live.N,  6,    0.240,0.989,    0.811,  5.096,        0.658,       0.057,       0.068,        0.533
+                      PotatoCultivarHorizon,                   Potato.Leaf.LAI,  8,   -0.245,0.977,    0.438, 16.336,        0.191,       0.060,       0.067,        0.064
+                      PotatoCultivarHorizon,          Potato.Leaf.SpecificArea,  8, 1522.964,0.116, 4835.467, 16.876, 23381745.032, 2319419.656, 2929910.838, 18132414.539
+                      PotatoCultivarHorizon,              Potato.Tuber.LiveFWt, 12, -241.188,0.988,  494.378,  7.939,   244409.264,   58171.708,   17720.851,   168516.705
+                    PotatoCultivarIlamHardy,               Potato.Leaf.Live.Wt, 11,  -19.579,0.987,   26.347, 34.875,      694.159,     383.343,     261.639,       49.177
+                    PotatoCultivarIlamHardy,               Potato.Stem.Live.Wt, 11,  -43.771,0.052,  114.454, 77.649,    13099.806,    1915.904,    4588.491,     6595.410
+                    PotatoCultivarIlamHardy,              Potato.Tuber.Live.Wt, 12,   67.077,0.970,  127.678, 14.036,    16301.796,    4499.274,     475.329,    11327.193
+                    PotatoCultivarIlamHardy,                Potato.Stem.Live.N,  5,   -1.495,0.938,    2.224, 60.767,        4.946,       2.235,       2.635,        0.076
+                    PotatoCultivarIlamHardy,               Potato.Tuber.Live.N,  6,    2.308,0.965,    2.672, 18.286,        7.141,       5.326,       0.044,        1.771
+                    PotatoCultivarIlamHardy,                   Potato.Leaf.LAI, 10,   -0.696,0.986,    0.870, 33.481,        0.756,       0.485,       0.219,        0.052
+                    PotatoCultivarIlamHardy,          Potato.Leaf.SpecificArea, 10,-2214.215,0.000,10304.460, 34.551,106181897.763, 4902749.486,33150022.623, 68129125.653
+                    PotatoCultivarIlamHardy,              Potato.Tuber.LiveFWt, 12,  487.079,0.973,  733.107, 14.655,   537446.031,  237245.999,    2054.495,   298145.538
+                  PotatoCultivarJerseyBenny,               Potato.Leaf.Live.Wt, 11,   -4.950,0.968,   12.322, 22.201,      151.841,      24.500,      25.764,      101.577
+                  PotatoCultivarJerseyBenny,               Potato.Stem.Live.Wt, 11,   67.717,0.040,   94.502,215.342,     8930.612,    4585.631,     165.655,     4179.325
+                  PotatoCultivarJerseyBenny,              Potato.Tuber.Live.Wt, 12,   -1.453,0.967,   89.358, 12.023,     7984.904,       2.112,    1173.344,     6809.447
+                  PotatoCultivarJerseyBenny,                Potato.Stem.Live.N,  4,    1.407,0.278,    1.571, 82.475,        2.468,       1.978,       0.286,        0.205
+                  PotatoCultivarJerseyBenny,               Potato.Tuber.Live.N,  6,    1.058,0.975,    1.876, 13.905,        3.520,       1.120,       1.607,        0.793
+                  PotatoCultivarJerseyBenny,                   Potato.Leaf.LAI,  8,    0.160,0.974,    0.298, 17.099,        0.089,       0.026,       0.016,        0.047
+                  PotatoCultivarJerseyBenny,          Potato.Leaf.SpecificArea,  8, 7105.864,0.499, 9184.739, 43.497, 84359426.707,50493306.730,   23355.726, 33842764.251
+                  PotatoCultivarJerseyBenny,              Potato.Tuber.LiveFWt, 12,   52.681,0.969,  438.861, 11.883,   192599.371,    2775.257,   37506.298,   152317.816
+                       PotatoCultivarKaraka,               Potato.Leaf.Live.Wt, 11,  -20.258,0.976,   23.591, 29.241,      556.557,     410.383,      56.263,       89.911
+                       PotatoCultivarKaraka,               Potato.Stem.Live.Wt, 11,  -57.981,0.134,  127.527, 73.305,    16263.246,    3361.837,    4913.750,     7987.659
+                       PotatoCultivarKaraka,              Potato.Tuber.Live.Wt, 12,  -73.162,0.977,  148.219, 14.581,    21968.995,    5352.619,    7019.564,     9596.812
+                       PotatoCultivarKaraka,                Potato.Stem.Live.N,  5,   -1.925,0.913,    2.545, 59.553,        6.479,       3.704,       2.684,        0.091
+                       PotatoCultivarKaraka,               Potato.Tuber.Live.N,  6,    1.303,0.977,    1.689, 11.525,        2.852,       1.698,       0.003,        1.151
+                       PotatoCultivarKaraka,                   Potato.Leaf.LAI, 10,   -0.444,0.954,    0.592, 24.242,        0.350,       0.198,       0.008,        0.145
+                       PotatoCultivarKaraka,          Potato.Leaf.SpecificArea, 10, 1492.029,0.155, 8525.943, 33.555, 72691705.888, 2226150.238,29767081.470, 40698474.179
+                       PotatoCultivarKaraka,              Potato.Tuber.LiveFWt, 12, -279.942,0.983,  604.541, 11.915,   365469.442,   78367.754,  117347.314,   169754.374
+                      PotatoCultivarNooksac,               Potato.Leaf.Live.Wt, 11,   -4.251,0.941,   16.259, 21.650,      264.343,      18.071,       8.579,      237.693
+                      PotatoCultivarNooksac,               Potato.Stem.Live.Wt, 11,   14.478,0.126,   73.267, 76.243,     5368.074,     209.626,     119.635,     5038.813
+                      PotatoCultivarNooksac,              Potato.Tuber.Live.Wt, 12,   76.166,0.992,  112.452, 13.856,    12645.362,    5801.226,    4162.060,     2682.076
+                      PotatoCultivarNooksac,                Potato.Stem.Live.N,  5,   -0.655,0.928,    1.338, 43.573,        1.789,       0.430,       1.303,        0.057
+                      PotatoCultivarNooksac,               Potato.Tuber.Live.N,  6,    0.659,0.977,    1.329,  9.621,        1.767,       0.434,       0.144,        1.189
+                      PotatoCultivarNooksac,                   Potato.Leaf.LAI, 10,   -0.206,0.972,    0.396, 15.577,        0.157,       0.043,       0.013,        0.101
+                      PotatoCultivarNooksac,          Potato.Leaf.SpecificArea, 10,   -5.057,0.209, 8447.812, 28.169, 71365524.748,      25.570,19023499.228, 52341999.950
+                      PotatoCultivarNooksac,              Potato.Tuber.LiveFWt, 12,  332.894,0.988,  539.192, 13.524,   290727.868,  110818.317,   85218.756,    94690.794
+                    PotatoCultivarRedRascal,               Potato.Leaf.Live.Wt, 11,   -8.744,0.951,   16.178, 20.849,      261.741,      76.450,      17.702,      167.589
+                    PotatoCultivarRedRascal,               Potato.Stem.Live.Wt, 11, -143.694,0.503,  201.295, 75.666,    40519.796,   20647.889,   14979.081,     4892.826
+                    PotatoCultivarRedRascal,              Potato.Tuber.Live.Wt, 12,  139.239,0.929,  223.805, 25.272,    50088.625,   19387.395,     397.001,    30304.229
+                    PotatoCultivarRedRascal,                Potato.Stem.Live.N,  5,   -3.309,0.317,    3.542, 63.667,       12.549,      10.949,       0.923,        0.677
+                    PotatoCultivarRedRascal,               Potato.Tuber.Live.N,  6,    2.338,0.906,    3.248, 24.018,       10.552,       5.465,       0.196,        4.891
+                    PotatoCultivarRedRascal,                   Potato.Leaf.LAI, 10,   -0.265,0.909,    0.723, 27.009,        0.522,       0.070,       0.184,        0.269
+                    PotatoCultivarRedRascal,          Potato.Leaf.SpecificArea, 10,   42.413,0.112, 6797.925, 21.925, 46211780.742,    1798.823, 7078797.332, 39131184.586
+                    PotatoCultivarRedRascal,              Potato.Tuber.LiveFWt, 12,  553.908,0.962,  832.421, 17.756,   692925.046,  306813.627,   10773.695,   375337.723
+                          PotatoCultivarRua,               Potato.Leaf.Live.Wt, 11,  -25.648,0.914,   32.888, 38.171,     1081.611,     657.840,      85.101,      338.670
+                          PotatoCultivarRua,               Potato.Stem.Live.Wt, 11,  -55.367,0.706,   80.289, 47.582,     6446.317,    3065.481,    1749.504,     1631.333
+                          PotatoCultivarRua,              Potato.Tuber.Live.Wt, 12,  124.292,0.920,  210.464, 26.754,    44295.066,   15448.461,      36.823,    28809.782
+                          PotatoCultivarRua,                Potato.Stem.Live.N,  5,   -2.163,0.716,    2.409, 53.339,        5.802,       4.679,       0.907,        0.216
+                          PotatoCultivarRua,               Potato.Tuber.Live.N,  6,    4.577,0.907,    5.087, 45.532,       25.875,      20.947,       0.398,        4.529
+                          PotatoCultivarRua,                   Potato.Leaf.LAI, 10,   -0.642,0.841,    0.941, 36.386,        0.886,       0.412,       0.000,        0.474
+                          PotatoCultivarRua,          Potato.Leaf.SpecificArea, 10, -419.510,0.210,11940.595, 44.375,142577812.121,  175988.741,19702715.852,122699107.528
+                          PotatoCultivarRua,              Potato.Tuber.LiveFWt, 12,  460.085,0.949,  776.655, 19.650,   603193.556,  211678.603,     240.465,   391274.488

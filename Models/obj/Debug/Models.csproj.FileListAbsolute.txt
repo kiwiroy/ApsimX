@@ -1,0 +1,9 @@
+C:\ApsimX\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\ApsimX\Models\obj\Debug\Models.Properties.Resources.resources
+C:\ApsimX\Models\obj\Debug\Models.csproj.GenerateResource.Cache
+C:\ApsimX\Bin\Model.exe.config
+C:\ApsimX\Bin\Model.exe
+C:\ApsimX\Bin\Model.pdb
+C:\ApsimX\Models\obj\Debug\Model.exe
+C:\ApsimX\Models\obj\Debug\Model.pdb
+C:\ApsimX\Bin\Model.xml

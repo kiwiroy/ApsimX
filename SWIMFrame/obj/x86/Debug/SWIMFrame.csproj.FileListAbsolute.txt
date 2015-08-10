@@ -1,0 +1,10 @@
+C:\ApsimX\SWIMFrame\bin\Debug\SWIMFrame.exe
+C:\ApsimX\SWIMFrame\bin\Debug\SWIMFrame.pdb
+C:\ApsimX\SWIMFrame\bin\Debug\APSIM.Shared.dll
+C:\ApsimX\SWIMFrame\bin\Debug\MathNet.Numerics.dll
+C:\ApsimX\SWIMFrame\bin\Debug\APSIM.Shared.pdb
+C:\ApsimX\SWIMFrame\bin\Debug\APSIM.Shared.xml
+C:\ApsimX\SWIMFrame\bin\Debug\MathNet.Numerics.xml
+C:\ApsimX\SWIMFrame\obj\x86\Debug\SWIMFrame.csprojResolveAssemblyReference.cache
+C:\ApsimX\SWIMFrame\obj\x86\Debug\SWIMFrame.exe
+C:\ApsimX\SWIMFrame\obj\x86\Debug\SWIMFrame.pdb
